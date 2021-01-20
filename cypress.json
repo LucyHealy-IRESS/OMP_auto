@@ -1,0 +1,24 @@
+
+{
+    "defaultCommandTimeout": 12000,
+    "execTimeout": 8000,
+    "downloadsFolder": "C:/Users/LEAPTEST/Desktop/AUTOMATION/Cypress/OMP/cypress/screenshots",
+    "videosFolder": "cypress/videos",
+    "screenshotOnRunFailure": true,
+    "testFiles": "**/*.feature",
+    "baseUrl": "https://html.omprofiler.int.aws-wealth-staging-uk.iress.online",
+    "env": {
+        "usernameE": "lucy.healy@iress.com",
+        "passwordE": "Y",
+
+        "usernameS": "lucy.healy@iress.com",
+        "passwordS": "Y",
+
+        "usernameP": "lucy.healy@iress.com",
+        "passwordP": "Y"
+
+    }
+
+
+}
+
