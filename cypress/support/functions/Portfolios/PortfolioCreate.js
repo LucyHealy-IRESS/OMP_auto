@@ -1,4 +1,4 @@
-import * as constants from "../../constants.js";
+import * as constants from "../../constantsSelectors.js";
 
 Cypress.Commands.add("PortfolioCreate", (PortfolioID) => {
 
@@ -45,14 +45,14 @@ Cypress.Commands.add("PortfolioCreate", (PortfolioID) => {
             cy.wait(16000)
             cy.contains('Add New Portfolio').click();
             cy.wait(16000);
-            cy.get(productconst).type('{selectAll}General Investment Account');
+            cy.get(constants.productconst).type('{selectAll}General Investment Account');
             //cy.get('.productCombo').select('Personal Pension')
             cy.get('.ui-priority-primary').click();
-            cy.get(nameconst).type('GIA1');
-            cy.get(currentvalueaccordconst).click();
-            cy.get(currentvalueconst).type('120000');
-            cy.get(okportfolioeditorconst).click({force: true});
-            cy.get(okportfoliogridconst).click({force: true});
+            cy.get(constants.nameconst).type('GIA1');
+            cy.get(constants.currentvalueaccordconst).click();
+            cy.get(constants.currentvalueconst).type('120000');
+            cy.get(constants.okportfolioeditorconst).click({force: true});
+            cy.get(constants.okportfoliogridconst).click({force: true});
             //cy.expect('#headerContainer > div:nth-child(3) > div > span:nth-child(1)').contains('Ted');
         }
 

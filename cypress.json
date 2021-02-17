@@ -5,17 +5,25 @@
     "downloadsFolder": "C:/Users/LEAPTEST/Desktop/AUTOMATION/Cypress/OMP/cypress/screenshots",
     "videosFolder": "cypress/videos",
     "screenshotOnRunFailure": true,
-    "testFiles": "**/*.feature",
+    "$schema": "https://on.cypress.io/cypress.schema.json",
+    "projectId": "6nrckv",
+    "ignoreTestFiles": "C:/Users/LEAPTEST/Desktop/AUTOMATION/Cypress/OMP/cypress/integration/examples/*.js",
+
     "baseUrl": "https://html.omprofiler.int.aws-wealth-staging-uk.iress.online",
     "env": {
-        "usernameE": "lucy.healy@iress.com",
-        "passwordE": "Y",
 
-        "usernameS": "lucy.healy@iress.com",
-        "passwordS": "Y",
+        "_Comment":{"Username": "lucy.healy@iress.com", "password": "Y", "comment":"It doesnt supports object, I will likely have to create a cypress.env.json"}, 
+        
+        "username1": "lucy.healy@iress.com",
+        "password1": "",
+        "feature1": ["1"],
 
-        "usernameP": "lucy.healy@iress.com",
-        "passwordP": "Y"
+        "username2": "lucy.healy@iress.com",
+        "password2": "",
+        "featureS2": ["1", "2"],
+
+        "username3": "lucy.healy@iress.com",
+        "password3": ""
 
     }
 

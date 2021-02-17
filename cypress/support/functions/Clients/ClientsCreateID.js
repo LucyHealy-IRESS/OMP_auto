@@ -1,4 +1,4 @@
-import * as constants from "../../constants.js";
+import * as constants from "../../constantsSelectors.js";
 
 Cypress.Commands.add("ClientCreate", (ClientID) => {
 
@@ -13,7 +13,7 @@ Cypress.Commands.add("ClientCreate", (ClientID) => {
         cy.get(constants.firstnameconst).type('Ted');
         cy.get(constants.surnameconst).type('Cypress');
         cy.get(constants.dobconst).type('10/09/1981');
-        cy.get('#ClientDetailsPopup_PlannedRetirementAge').click();
+        cy.get(constants.plannedretirementage).click();
         //cy.get(constansts.genderconst).type('Male');
         //cy.get('.ui-priority-primary').click();
         cy.get('.btn-viewportfolios-action > .ui-button-text').click();
@@ -30,7 +30,7 @@ Cypress.Commands.add("ClientCreate", (ClientID) => {
         cy.get(constants.firstnameconst).type('Tina');
         cy.get(constants.surnameconst).type('Cypress');
         cy.get(constants.dobconst).type('30/12/1967');
-        cy.get('#ClientDetailsPopup_PlannedRetirementAge').click();
+        cy.get(constants.plannedretirementage).click();
         //cy.get(constansts.genderconst).type('Male');
         //cy.get('.ui-priority-primary').click();
         cy.get('.btn-viewportfolios-action > .ui-button-text').click();
@@ -46,7 +46,7 @@ Cypress.Commands.add("ClientCreate", (ClientID) => {
         cy.get(constants.firstnameconst).type('Cecilia');
         cy.get(constants.surnameconst).type('Cypress');
         cy.get(constants.dobconst).type('30/12/1967');
-        cy.get('#ClientDetailsPopup_PlannedRetirementAge').click();
+        cy.get(constants.plannedretirementage).click();
         cy.get(constants.genderconst).type('female');
         cy.get('.ui-priority-primary').click();
         cy.get('.btn-viewportfolios-action > .ui-button-text').click();
@@ -62,7 +62,7 @@ Cypress.Commands.add("ClientCreate", (ClientID) => {
         cy.get(constants.firstnameconst).type('George');
         cy.get(constants.surnameconst).type('Cypress');
         cy.get(constants.dobconst).type('30/12/1952');
-        cy.get('#ClientDetailsPopup_PlannedRetirementAge').click();
+        cy.get(constants.plannedretirementage).click();
         //cy.get(constansts.genderconst).type('female');
         //cy.get('.ui-priority-primary').click();
         cy.get('.btn-viewportfolios-action > .ui-button-text').click();
@@ -79,7 +79,7 @@ Cypress.Commands.add("ClientCreate", (ClientID) => {
         cy.get(constants.firstnameconst).type('Gary');
         cy.get(constants.surnameconst).type('Cypress');
         cy.get(constants.dobconst).type('22/02/1957');
-        cy.get('#ClientDetailsPopup_PlannedRetirementAge').click();
+        cy.get(constants.plannedretirementage).click();
         //cy.get(constansts.genderconst).type('female');
         //cy.get('.ui-priority-primary').click();
         cy.get('.btn-viewportfolios-action > .ui-button-text').click();
@@ -96,7 +96,7 @@ Cypress.Commands.add("ClientCreate", (ClientID) => {
         cy.get(constants.firstnameconst).type('Karen');
         cy.get(constants.surnameconst).type('Cypress');
         cy.get(constants.dobconst).type('12/08/1991');
-        cy.get('#ClientDetailsPopup_PlannedRetirementAge').click();
+        cy.get(constants.plannedretirementage).click();
         //cy.get(constansts.genderconst).type('female');
         //cy.get('.ui-priority-primary').click();
         cy.get('.btn-viewportfolios-action > .ui-button-text').click();

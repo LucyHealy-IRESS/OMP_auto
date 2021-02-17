@@ -11,6 +11,7 @@ export const
        surnameconst='#ClientDetailsPopup_Surname',
        dobconst='#DateOfBirthInput',
        genderconst='#ClientDetailsPopup_Gender',
+       plannedretirementage='#ClientDetailsPopup_PlannedRetirementAge',
 
 //Portfolios
 

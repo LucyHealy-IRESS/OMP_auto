@@ -7,7 +7,7 @@ describe("Client Search", () => {
         
     it('Search Client', () => {
         
-        cy.login('live', 'lucy.healy@iress.com','Y');
+        cy.login('live', 'lucy.healy@iress.com','');
         cy.wait(1200);
         cy.get('#ExistingClientsIconMenu').click();
         cy.wait(20000);

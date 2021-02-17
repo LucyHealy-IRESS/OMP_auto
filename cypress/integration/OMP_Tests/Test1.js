@@ -7,7 +7,7 @@ describe("Creating Client and Portfolio", () => {
         
     it('New Client', () => {
 
-        cy.login('staging','lucy.healy@iress.com', 'Y');
+        cy.login('staging','lucy.healy@iress.com', '');
         cy.ClientCreate('2');
 
             cy.wait(7000);
@@ -16,11 +16,15 @@ describe("Creating Client and Portfolio", () => {
         cy.PortfolioCreate('1');
 
         //cy.get('[data-bind="text:MainViewModel.Overview_HeaderTitle1"]').should('contain', 'Tina Cypress')
-        cy.get('[data-bind="text:MainViewModel.Overview_HeaderTitle1"]').then(($header) => {
+
+        
+       /* cy.get('[data-bind="text:MainViewModel.Overview_HeaderTitle1"]').then(($header) => {
 
             return $header.text();
         }).as('header')
 
+        cy.get('[data-bind="text:MainViewModel.Overview_HeaderTitle1"]').invoke.text().as('header');
+        */
 
         /*
         //it('New Quote via client'), () => {

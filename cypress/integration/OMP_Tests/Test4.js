@@ -5,7 +5,7 @@
 describe("New Client Using json library", () =>{
 
     before("Login", () => {
-        cy.login("staging", "lucy.healy@iress.com", "Y");
+        cy.login("staging", "lucy.healy@iress.com", "");
         cy.wait(16000)
 
 

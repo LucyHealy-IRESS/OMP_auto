@@ -10,7 +10,12 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^6.2.1",
+    "chai": "^4.3.0",
+    "cypress": "^6.5.0",
     "cypress-cucumber-preprocessor": "^4.0.0"
-  }
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true
+  },
+  "testFiles": "**/*.feature"
 }

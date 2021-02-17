@@ -1,4 +1,4 @@
-import * as constants from "../../constants.js";
+import * as constants from "../../constantsSelectors.js";
 
 Cypress.Commands.add("login", (url,username, password) => {
   cy.clearCookies()
@@ -22,8 +22,8 @@ Cypress.Commands.add("login", (url,username, password) => {
   
 
         //cy.visit('html.omprofiler.co.uk');
-        cy.get(constants.usernameconst).type(username);
-        cy.get(constants.passwordconst).type(password);
+        cy.get(constants.usernameconst).type(Cypress.env(username));
+        cy.get(constants.passwordconst).type(Cypress.env(password));
         cy.get(constants.okconst).click();
         cy.url().should('contain', 'StoryBoardManager/StoryBoardManager_Workspace&d')
 

@@ -7,7 +7,7 @@ describe("Creating Client and Portfolio", () => {
         
     it('New Client', () => {
 
-        cy.login('staging','lucy.healy@iress.com', 'Y');
+        cy.login('staging','lucy.healy@iress.com', '');
         cy.ClientCreate('2');
 
             cy.wait(7000);

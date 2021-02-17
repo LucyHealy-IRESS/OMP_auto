@@ -1,14 +1,18 @@
 //Function to define what CRUD and file it is being called
 
-Cypress.Commands.add('Client', (mode, file) =>{
+//mode = Create or Read or Edit
+//clcreatemode = Client Search or Home
+import * as constantsScenarios from "C:/Users/LEAPTEST/Desktop/AUTOMATION/Cypress/OMP/cypress/support/constantsScenarios.js"
 
-    cy.fixture(file).as('clientfile');
+Cypress.Commands.add('Client', (clcreatemode, mode, file) =>{
 
+    cy.fixture(constantsScenarios[file]).as('clientfile');
+    cy.wait(12000);
         if (mode=='Create') 
         {
    
             cy.get('@clientfile').then((clientfile) => {
-                cy.ClientCreate(clientfile.Title, clientfile.Firstname, clientfile.Surname, clientfile.DOB, clientfile.gender);
+                cy.ClientCreate(clcreatemode, clientfile.Title, clientfile.Firstname, clientfile.Surname, clientfile.DOB, clientfile.gender);
                     
             })
             
