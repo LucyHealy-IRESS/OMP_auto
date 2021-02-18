@@ -23,7 +23,11 @@
         "featureS2": ["1", "2"],
 
         "username3": "lucy.healy@iress.com",
-        "password3": "Y"
+        "password3": "Y",
+
+        "usernamestandard": "lucy.healy@iress.com",
+        "passwordstandard": "Y",
+        "featuresstandard": ["1", "2"]
 
     }
 

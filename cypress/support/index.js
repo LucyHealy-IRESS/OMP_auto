@@ -16,6 +16,8 @@
 // Import commands.js using ES2015 syntax:
 import './commands'
 import './functions/Login/login'
+import './functions/Login/loginAPI'
+import './functions/Login/loginAPI'
 import './functions/Clients/ClientsCreateID'
 import './functions/Clients/ClientCreate'
 import './functions/Clients/ClientsRead'

@@ -2,7 +2,7 @@
 
 //mode = Create or Read or Edit
 //clcreatemode = Client Search or Home
-import * as constantsScenarios from "C:/Users/LEAPTEST/Desktop/AUTOMATION/Cypress/OMP/cypress/support/constantsScenarios.js"
+import * as constantsScenarios from "../../constantsScenarios.js"
 
 Cypress.Commands.add('Client', (clcreatemode, mode, file) =>{
 
