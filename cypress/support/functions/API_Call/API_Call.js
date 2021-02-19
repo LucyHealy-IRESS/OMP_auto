@@ -7,8 +7,8 @@ Cypress.Commands.add("API_Call", () => {
     //C:\GitHub\OMP_Auto\fixtures\Client001_xyz.xml
     cy.readFile("cypress/fixtures/Clients/Client001_xyz.xml").then(function (fileContents) {
         //These will be read in from elsewhere
-        var username = "emily.hedgecock@omprofiler.co.uk";
-        var password = "1";
+        var username = (Cypress.env('usernameAPI'));
+        var password = (Cypress.env('passwordAPI'));
         var requestCaller = "Automation"; //Identifies company making call
         var requestCallerID = "Automation_Emily"; //dentify an individual user within the company making the web service call
         var transactionID = ""; //uniquely identify this particular request

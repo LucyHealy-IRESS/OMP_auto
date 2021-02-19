@@ -27,7 +27,10 @@
 
         "usernamestandard": "lucy.healy@iress.com",
         "passwordstandard": "",
-        "featuresstandard": ["1", "2"]
+        "featuresstandard": ["1", "2"],
+
+        "usernameAPI":"emily.hedgecock@omprofiler.co.uk",
+        "passwordAPI":"1"
 
     }
 
