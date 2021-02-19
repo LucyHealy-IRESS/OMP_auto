@@ -3,8 +3,8 @@
 import { Given, And } from "cypress-cucumber-preprocessor/steps"
 
     Given('Login with {string} and {string}', (username, password) => {
-
-        cy.login("live", username, password);
+        cy.API_Call();
+       // cy.login("live", username, password);
 
     })
 
@@ -12,4 +12,4 @@ import { Given, And } from "cypress-cucumber-preprocessor/steps"
         
         cy.Client(clcreatemode, mode, Client);
 
-    })
+    }) 
