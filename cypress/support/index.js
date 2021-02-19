@@ -23,7 +23,8 @@ import './functions/Clients/ClientCreate'
 import './functions/Clients/ClientsRead'
 import './functions/Portfolios/PortfolioCreate'
 import './functions/Clients/Client.js'
-import './functions/Generic/RandomDate'
+import './functions/Generic/Utils.js'
+import './functions/API_Call/API_Call.js'
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 

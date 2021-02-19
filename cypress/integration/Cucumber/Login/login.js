@@ -4,6 +4,8 @@ import { Given, And } from "cypress-cucumber-preprocessor/steps"
 
       Cypress.Commands.add("loginMode", (tech) => {
     
+        API_Call();
+
          if (tech=='API') {
              cy.loginAPI();
          }
