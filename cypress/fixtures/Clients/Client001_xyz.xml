@@ -1,0 +1,17 @@
+<Client xmlns="http://api.omsystems.co.uk">
+  <ClientID>Emily_009</ClientID>
+  <Title>Mr</Title>
+  <Firstname>WS</Firstname>
+  <Surname>2021 Web Service Test</Surname>
+  <DateOfBirth>1969-11-09T00:00:00</DateOfBirth>
+  <Status>Current</Status>
+  <Gender>Male</Gender>
+  <EmploymentStatus>Employed</EmploymentStatus>
+  <Address1>16 House</Address1>
+  <City>City</City>
+  <County>County</County>
+  <Postcode>CO11 2LB</Postcode>
+  <third_party_tag>T4A</third_party_tag>
+  <CurrentSalary>123456</CurrentSalary>
+  <StatePension>78910</StatePension>
+</Client>
