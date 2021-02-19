@@ -15,19 +15,22 @@
         "_Comment":{"Username": "lucy.healy@iress.com", "password": "Y", "comment":"It doesnt supports object, I will likely have to create a cypress.env.json"}, 
         
         "username1": "lucy.healy@iress.com",
-        "password1": "Y",
+        "password1": "",
         "feature1": ["1"],
 
         "username2": "lucy.healy@iress.com",
-        "password2": "Y",
+        "password2": "",
         "featureS2": ["1", "2"],
 
         "username3": "lucy.healy@iress.com",
-        "password3": "Y",
+        "password3": "",
 
         "usernamestandard": "lucy.healy@iress.com",
         "passwordstandard": "",
-        "featuresstandard": ["1", "2"]
+        "featuresstandard": ["1", "2"],
+
+        "usernameAPI":"emily.hedgecock@omprofiler.co.uk",
+        "passwordAPI":""
 
     }
 
