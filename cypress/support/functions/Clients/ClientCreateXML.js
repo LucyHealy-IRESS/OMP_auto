@@ -2,7 +2,7 @@ import * as constantsScenarios from "../../constantsScenarios.js"
 
 describe ('readClientFile', () => {
 
-   cy.fixture(constantsScenarios['Client001_xyz.xml']).as('clientfile');
+   cy.fixture('Client001_xyz.xml').as('clientfile');
    cy.wait(12000);
        {
   
