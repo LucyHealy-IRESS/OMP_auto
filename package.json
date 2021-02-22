@@ -17,5 +17,8 @@
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": true
   },
-  "testFiles": "**/*.feature"
+  "testFiles": "**/*.feature",
+  "dependencies": {
+    "xml2js": "^0.4.23"
+  }
 }
