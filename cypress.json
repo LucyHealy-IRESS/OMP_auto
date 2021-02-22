@@ -15,7 +15,7 @@
         "_Comment":{"Username": "lucy.healy@iress.com", "password": "Y", "comment":"It doesnt supports object, I will likely have to create a cypress.env.json"}, 
         
         "username1": "lucy.healy@iress.com",
-        "password1": "",
+        "password1": "Y",
         "feature1": ["1"],
 
         "username2": "lucy.healy@iress.com",
