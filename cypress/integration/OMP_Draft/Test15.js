@@ -9,6 +9,7 @@
       // let username = name.firstname;
       cy.getFile().then((username) => {
 
+         
       cy.get('#loginPrompt-username').type(username);
       })
       })
