@@ -1,7 +1,3 @@
-//when creating dates and we need months and days to have 2 digits e.g. 2 = 02
-function fixDigit(val) {
-    return val.toString().length === 1 ? "0" + val : val;
-  }
 
 Cypress.Commands.add("API_Call", () => {
     //C:\GitHub\OMP_Auto\fixtures\Client001_xyz.xml
@@ -42,10 +38,10 @@ Cypress.Commands.add("API_Call", () => {
         var currentdate = new Date();
         var datetimeNow =
           currentdate.getFullYear() +"-" +
-          fixDigit(currentdate.getMonth() + 1) + "-" +
-          fixDigit(currentdate.getDate()) + "T" +
-          fixDigit(currentdate.getHours()) + ":" +
-          fixDigit(currentdate.getMinutes());
+          cy.fixDigit(currentdate.getMonth() + 1) + "-" +
+          cy.fixDigit(currentdate.getDate()) + "T" +
+          cy.fixDigit(currentdate.getHours()) + ":" +
+          cy.fixDigit(currentdate.getMinutes());
   
         xml_Payload = xml_Payload
           .replace(/&/g, "&amp;")
