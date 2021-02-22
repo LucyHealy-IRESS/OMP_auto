@@ -7,3 +7,6 @@ cy.fixDigit = function(val) {
     return val.toString().length === 1 ? "0" + val : val;
   }
 
+cy.randomID = function(){
+    return "00_" + Math.floor(Math.random() * 10000 + 1);
+}

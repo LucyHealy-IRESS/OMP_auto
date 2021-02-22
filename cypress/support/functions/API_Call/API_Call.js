@@ -28,14 +28,14 @@ cy.getRequestXML = function (responseXML) {
   return retValue;
 };
 
-Cypress.Commands.add("API_Call", (fileContents) => {
+Cypress.Commands.add("API_Call", (fileContents, Type) => {
   //These will be read in from elsewhere
   var username = Cypress.env("usernameAPI");
   var password = Cypress.env("passwordAPI");
   var requestCaller = "Automation"; //Identifies company making call
   var requestCallerID = "Automation_Emily"; //dentify an individual user within the company making the web service call
   var transactionID = ""; //uniquely identify this particular request
-  var type = "Create"; //CRUD
+  var type = Type; //CRUD
   var xml_Payload = fileContents;
   //START
   var xml = `<s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:a="http://www.w3.org/2005/08/addressing">
@@ -171,3 +171,43 @@ Cypress.Commands.add("Create_Client_API", (xmlFilePath) => {
     }
   });
 });
+
+
+Cypress.Commands.add("RetreiveClient_API", (clientID) => {
+
+  var xml_Payload = `<Client xmlns="http://api.omsystems.co.uk">
+  <ClientID>[CLIENT_ID]</ClientID>
+</Client>`;
+xml_Payload = xml_Payload.replace("[CLIENT_ID]", clientID);
+
+  return cy.API_Call(xml_Payload,"Retrieve");
+});
+
+
+Cypress.Commands.add("getResponseXMLData", (responseXML, attibute) => {
+
+  var retValue = "";
+
+  var callback = function (err, result) {
+    retValue = result.Envelope.Body.ProfilerResponse.ProfilerResult.ResponseXMLData;
+  };
+
+  cy.xml2JS_parseString(responseXML, callback);
+
+  return retValue;
+});
+
+Cypress.Commands.add("getResponseXMLData_ClientRetreive", (responseXML, attibute) => {
+
+  var retValue = "";
+
+  var callback = function (err, result) {
+    var clientData = result.Response.Client;
+    retValue = clientData[attibute];
+  };
+
+  cy.xml2JS_parseString(responseXML, callback);
+
+  return retValue;
+});
+
