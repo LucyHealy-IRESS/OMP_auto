@@ -7,7 +7,7 @@
     "screenshotOnRunFailure": true,
     "$schema": "https://on.cypress.io/cypress.schema.json",
     "projectId": "6nrckv",
-    "ignoreTestFiles": "C:/Users/LEAPTEST/Desktop/AUTOMATION/Cypress/OMP/cypress/integration/examples/*.js",
+  
 
     "baseUrl": "https://html.omprofiler.int.aws-wealth-staging-uk.iress.online",
     "env": {

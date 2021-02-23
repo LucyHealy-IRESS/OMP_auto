@@ -2,7 +2,7 @@
 <Clients>
 	<Client>
 		<ClientID>
-			EKH_07
+			LH_108
 		</ClientID>
 		<Title>
 			Mrs
@@ -82,10 +82,10 @@
 		<Portfolios>
 			<Portfolio>
 				<PortfolioID>
-					EKH_07_Portfolio01
+					LH_108_Portfolio01
 				</PortfolioID>
 				<ClientID>
-					EKH_07
+					LH_108
 				</ClientID>
 				<Reference>
 					Pension 001

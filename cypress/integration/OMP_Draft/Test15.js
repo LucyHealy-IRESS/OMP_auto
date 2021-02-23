@@ -7,11 +7,14 @@
       
       // let name = cy.getFile();
       // let username = name.firstname;
-      cy.getFile().then((username) => {
-
-         
-      cy.get('#loginPrompt-username').type(username);
+      cy.getFile('Firstname').then((firstName) => {
+         cy.get('#loginPrompt-username').type(firstName);
+         debugger;
       })
+      // cy.getFile().then((username) => {
+         
+      // cy.get('#loginPrompt-username').type(username);
+      // })
       })
       })
       // cy.wait(12000);
