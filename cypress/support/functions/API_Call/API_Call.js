@@ -10,7 +10,7 @@ cy.xml2JS_parseString = function (responseXML, callback) {
   };
 
   parseString(responseXML, options, function (err, result) {
-    callback(err, result);
+    callback(err, result);esults
   });
 
   return retValue;
