@@ -17,26 +17,19 @@ describe("new test", () => {
 
          
          cy.getXMLData_Client(fileLocation,"DateOfBirth").then(function(DOB){
-            // var x = new Date(DOB);
-            //    var datetimeNow =
-            //    cy.fixDigit(x.getDate() + "/" + cy.fixDigit(x.getMonth() + 1) + "/" + x.getFullYear()) 
-            //newDOB.toDateString()
-
-            //var DOB = datespit[2] + "/" + datespit[1] + "/" datesplit[0]; 
-
-            var date = DOB.split('T');
-            var datesplit = date[0].split('-')
-
-            var newDOB = (datesplit[2] + "/" + datesplit[1] + "/" + datesplit[0]);
-            cy.get('#DateOfBirthInput').type(newDOB)
+               var date = DOB.split('T');
+               var datesplit = date[0].split('-')
+               var dd = (datesplit[2]);
+               var mm = (datesplit[1]);
+               var yyyy = (datesplit[0]);
+            cy.get(constants.dobDD).type(dd)
+            cy.get(constants.dobMM).type(mm)
+            cy.get(constants.dobYYYY).type(yyyy)
          });
-            debugger;
-         
-
-         
-
-         cy.inputXMLData(fileLocation, constants.genderconst, "Gender")
-         cy.get('.ui-priority-primary').click();
+            
+         cy.get(constants.genderconst).clear();
+         cy.inputXMLData(fileLocation, constants.genderconst, "Gender").blur();
+         //cy.get('.ui-priority-primary').click();
          cy.get(constants.plannedretirementage).click();
 
 
