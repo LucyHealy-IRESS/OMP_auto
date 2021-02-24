@@ -10,7 +10,7 @@ cy.xml2JS_parseString = function (responseXML, callback) {
   };
 
   parseString(responseXML, options, function (err, result) {
-    callback(err, result);esults
+    callback(err, result);
   });
 
   return retValue;
@@ -202,6 +202,7 @@ Cypress.Commands.add("getResponseXMLData_ClientRetreive", (responseXML, attibute
   var retValue = "";
 
   var callback = function (err, result) {
+    debugger;
     var clientData = result.Response.Client;
     retValue = clientData[attibute];
   };

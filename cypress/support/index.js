@@ -26,6 +26,7 @@ import './functions/Clients/Client.js'
 import './functions/Generic/Utils.js'
 import './functions/API_Call/API_Call.js'
 import './functions/Clients/ClientCreateXML.js'
+import './functions/Clients/ClientXML.js'
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 
