@@ -14,6 +14,9 @@ Cypress.Commands.add("login", (url,username, password) => {
     else if (url=='staging') {
         cy.visit('https://html.omprofiler.int.aws-wealth-staging-uk.iress.online');
     }
+    else if (url=='uat') {
+        cy.visit('https://html.omprofiler.uat.aws-wealth-uat-uk.iress.online');
+    }
 
     else {
         Cypress.log({name :'INVALID URL'}).end()

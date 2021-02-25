@@ -15,6 +15,14 @@ export const
        dobYYYY = '#ClientDetailsPopup_DOB_Year',
        genderconst = '#ClientDetailsPopup_Gender',
        plannedretirementage = '#ClientDetailsPopup_PlannedRetirementAge',
+       clStatus = '#ClientDetailsPopup_ClientStatus',
+       clAddress1 = '#ClientDetailsPopup_Address1', 
+       clCity = '#ClientDetailsPopup_Town',
+       clCounty = '#ClientDetailsPopup_County', 
+       clPostcode = '#ClientDetailsPopup_Postcode', 
+       clCurrentSalaryAmount = '',
+       clStatePension = '', 
+       
 
 //Portfolios
 
