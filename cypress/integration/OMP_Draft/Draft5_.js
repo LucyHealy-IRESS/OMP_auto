@@ -1,18 +1,46 @@
-Cypress.Commands.add("getPortfolios", (file) => {
 
-      cy.readFile(file).then(contents => {
+
+//-------------------
+//Get Client data from the XML
+Cypress.Commands.add("getXMLData_Client", (location, attribute) => {
+  cy.readFile('cypress/fixtures/Clients/EmilyTest.xml').then(content => {
+    
+   var retValue = "";
+  
+   var callback = function (err, result) {
+    
+     var clientData = result.Root.Clients.Client;
+     retValue = clientData[attribute];
+     debugger;
+   };
+ 
+   cy.xml2JS_parseString(content, callback);
+   debugger;
+   return retValue.trim();
+   
+ })
+
+});
+
+//Get portfolio data
+
+Cypress.Commands.add("getPortfolios", () => {
+
+      cy.readFile('cypress/fixtures/Clients/EmilyTest.xml').then(contents => {
       
       var callback = function (err, result) {
       var portfolioData = result.Root.Clients.Client.Portfolios;
       //portfolios = portfolioData;
       debugger;
       return portfolioData;
-      }
+      };
+debugger;
       cy.xml2JS_parseString(contents, callback);
       debugger;
+      
 })
 });
-
+//---
 Cypress.Commands.add("getXMLData_Portfolios", (attribute) => {
    cy.getPortfolios('cypress/fixtures/Clients/EmilyTest.xml').then(content => {
       debugger;
@@ -30,6 +58,11 @@ Cypress.Commands.add("getXMLData_Portfolios", (attribute) => {
      })
 });
 
-it('test', () => {
+
+// it('test1', () => {
+//   cy.getXMLData_Client('cypress/fixtures/Clients/EmilyTest.xml', 'Title');
+//   });
+
+it('test2', () => {
 cy.getXMLData_Portfolios('PortfolioID');
 });
