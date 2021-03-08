@@ -12,7 +12,7 @@
 // You can read more here:
 // https://on.cypress.io/configuration
 // ***********************************************************
-//require('cypress-plugin-tab')
+require('cypress-plugin-tab')
 // Import commands.js using ES2015 syntax:
 import './commands'
 import './functions/Login/login'
@@ -27,6 +27,7 @@ import './functions/Generic/Utils.js'
 import './functions/API_Call/API_Call.js'
 import './functions/Clients/ClientCreateXML.js'
 import './functions/Clients/ClientXML.js'
+import './functions/Clients/ClientProcessing.js'
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 
