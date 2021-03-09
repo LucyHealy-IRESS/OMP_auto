@@ -202,7 +202,6 @@ Cypress.Commands.add("getResponseXMLData_ClientRetreive", (responseXML, attibute
   var retValue = "";
 
   var callback = function (err, result) {
-    debugger;
     var clientData = result.Response.Client;
     retValue = clientData[attibute];
   };
