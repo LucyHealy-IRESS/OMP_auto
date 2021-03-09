@@ -10,9 +10,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "chai": "^4.3.0",
-    "cypress": "^6.5.0",
-    "cypress-cucumber-preprocessor": "^4.0.0",
+    "chai": "^4.3.3",
+    "cypress": "^6.6.0",
+    "cypress-cucumber-preprocessor": "^4.0.1",
     "cypress-plugin-tab": "^1.0.5"
   },
   "cypress-cucumber-preprocessor": {
