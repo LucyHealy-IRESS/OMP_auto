@@ -27,8 +27,19 @@ export const
 //Portfolios
 
         productconst = '.productCombo',
+        providerconst = '.portProvider',
         nameconst = '.ProductName_tooltip',
         currentvalueaccordconst = '[data-bind="visible: ShowCurrentValue_Section"] > .ui-icon',
         currentvalueconst = '.CurrentValue_tooltip',
         okportfolioeditorconst = '[aria-describedby="PortfolioAddPopUp"] > .ui-dialog-buttonpane > .ui-dialog-buttonset > .ui-button > .ui-button-text',
-        okportfoliogridconst = '.ui-dialog-buttonset > .ui-button > .ui-button-text'
+        okportfoliogridconst = '.ui-dialog-buttonset > .ui-button > .ui-button-text',
+        ptHoldingsAccordion = '[data-bind="visible: Holdings_Relevant"]',
+        ptAddFund = '#AddFund',
+        ptFundPicker = '#AddFund > .wijmo-wijmenu-list > :nth-child(1) > .wijmo-wijmenu-link > .wijmo-wijmenu-text > span',
+        ptFundName = '.quickAddFund_ComboBox',
+        ptFundPickerOk = '#ui-id-12 > div:nth-child(2) > table > tbody > tr > td > div > div.wijmo-wijcombobox-trigger.ui-state-default.ui-corner-right',
+        ptAddSearchFund = '#omprofiler > div:nth-child(47) > div.ui-dialog-buttonpane.ui-widget-content.ui-helper-clearfix > div > button:nth-child(2) > span'
+
+
+
+
