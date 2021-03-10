@@ -1,4 +1,4 @@
-import * as constants from "../../constantsSelectors.js";
+import * as constants from "../constants/constantsSelectors.js";
 
 Cypress.Commands.add("login", (url,username, password) => {
   cy.clearCookies()

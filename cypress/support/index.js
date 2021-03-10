@@ -15,20 +15,12 @@
 require('cypress-plugin-tab')
 // Import commands.js using ES2015 syntax:
 import './commands'
-import './functions/Login/login'
-import './functions/Login/loginAPI'
-import './functions/Login/loginAPI'
-import './functions/Clients/ClientsCreateID'
-import './functions/Clients/ClientCreate'
-import './functions/Clients/ClientsRead'
-import './functions/Portfolios/PortfolioCreate'
-import './functions/Clients/Client.js'
-import './functions/Generic/Utils.js'
-import './functions/API_Call/API_Call.js'
-import './functions/Clients/ClientXML.js'
-import './functions/Clients/ClientProcessing.js'
+import './functions/login.js'
+import './functions/API_Call.js'
+import './functions/baseProcessing.js'
+import './functions/Utils.js'
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 
-//CUCUMBER
+
 
