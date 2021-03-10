@@ -1,3 +1,8 @@
+import * as constants from "../../constantsSelectors.js"
+import * as constantsProviders from "../../constantsProviders.js"
+import * as constantsProductID from "../../constantsProductID.js"
+
+
 //Get Client data from the XML
 Cypress.Commands.add("getXMLData_Client", (location, attribute) => {
   cy.readFile(location).then(content => {
@@ -36,14 +41,67 @@ Cypress.Commands.add("retrieveAssertUIData", (location, selector, value) => {
 
 });
 
+//--------------------------------------------------------------------------------------------------------------------------
+// import * as constants from "../../constantsSelectors.js"
+
+Cypress.Commands.add("createClientXml", (fileLocation) => {
+  cy.get('#NewClientIconMenu', { timeout: 16000 }).click()
+  //cy.wait(16000)
+     cy.inputXMLData(fileLocation, constants.titleconst, "Title");
+     cy.inputXMLData(fileLocation, constants.firstnameconst, "Firstname");
+     cy.inputXMLData(fileLocation, constants.surnameconst, "Surname");
+     
+     cy.getXMLData_Client(fileLocation,"DateOfBirth").then(function(DOB){
+           var date = DOB.split('T');
+           var datesplit = date[0].split('-')
+           var dd = (datesplit[2]);
+           var mm = (datesplit[1]);
+           var yyyy = (datesplit[0]);
+        cy.get(constants.dobDD).type(dd)
+        cy.get(constants.dobMM).type(mm)
+        cy.get(constants.dobYYYY).type(yyyy)
+     });
+        
+     cy.get(constants.genderconst).clear();
+     cy.inputXMLData(fileLocation, constants.genderconst, "Gender").type(`{enter}`).type(`{enter}`);
+     cy.get(constants.plannedretirementage).click();
+     //cy.get('.ui-dialog-buttonset > .ui-button > .ui-button-text').click(); //OK button in the Client Editor
+
+     cy.get('.btn-viewportfolios-action > .ui-button-text').click(); //Next to Portfolios in the Client Editor 
+     
+})
+
+
+Cypress.Commands.add("reloadClientXML", (fileLocation) => {
+  cy.get('#Continue').click({force:true});
+         cy.wait(16000)
+         cy.get('[style="text-align:right;margin-top:24pt"] > button').click({force:true});
+         cy.get('[data-u="thumbnavigator"]').children().contains('Client Summary').click({force:true});
+         cy.get('#EditClientIconMenu').click();
+
+         cy.retrieveAssertUIData(fileLocation, constants.titleconst, "Title");
+         cy.retrieveAssertUIData(fileLocation, constants.firstnameconst, "Firstname");
+         cy.retrieveAssertUIData(fileLocation, constants.surnameconst, "Surname");
+         cy.retrieveAssertUIData(fileLocation, constants.genderconst, "Gender");
+
+
+})
+
+
+
+
+
+
+
+
+
+
+
 
 //--------------------------------------------------------------------------------------------------------------------------
 
 
 
-import * as constants from "../../constantsSelectors.js"
-import * as constantsProviders from "../../constantsProviders.js"
-import * as constantsProductID from "../../constantsProductID.js"
 
 //Get Portfolio data from the XML
 //Get portfolio data
