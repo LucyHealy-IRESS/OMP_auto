@@ -1,4 +1,12 @@
+import * as constants from "../constants/constantsSelectors.js";
 export const
+
+Portfolio_BasicDetailsInputs = {
+   ProductID: {
+     Selector: constants.productconst,
+     inputType: "ProductDropdown",
+   },  
+ },
 
    P_1 = "Personal Pension",
    P_2 = "SIPP",

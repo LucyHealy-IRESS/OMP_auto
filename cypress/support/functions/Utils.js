@@ -1,3 +1,10 @@
+//SETTING UI ELEMENT UTILITIES
+Cypress.Commands.add('SetDropdown',(Selector,Value) => { 
+    cy.get(Selector).clear().type(Value).type(`{enter}`).type(`{enter}`).tab();
+})
+
+
+//DATE UTILITIES
 Cypress.Commands.add('RandomDate',(start, end) => { 
     return new Date(start + Math.random() * ('10/10/2000' - '01/01/1945')); 
 })
@@ -6,11 +13,6 @@ Cypress.Commands.add('RandomDate',(start, end) => {
 cy.fixDigit = function(val) {
     return val.toString().length === 1 ? "0" + val : val;
   }
-
-cy.randomID = function(){
-    return "00_" + Math.floor(Math.random() * 10000 + 1);
-}
-
 
 //Convert ISO date to a short date (non simple mode)
 Cypress.Commands.add('shortDate',(ISODate) => { 
@@ -32,3 +34,8 @@ Cypress.Commands.add('simpleDate',(ISODate) => {
     var yyyy = (datesplit[0]);
     return dd, mm, yyyy
 })
+
+//OTHER
+cy.randomID = function(){
+    return "00_" + Math.floor(Math.random() * 10000 + 1);
+}

@@ -1,19 +1,19 @@
 import * as constants from "../../support/constants/constantsSelectors.js"
 
 //This function takes the client object and creates it using the UI of the client editor
-Cypress.Commands.add("CreateClient_UI", (clientObject, xmlMappings) => {
+Cypress.Commands.add("ProcessCreate_UI", (xmlObject, xmlMappings) => {
   
-   for (let xmlInput in clientObject) { //iterate each tag of the xml object for the client
+   for (let xmlInput in xmlObject) { //iterate each tag of the xml object for the client
  
      var XmlInputObject = xmlMappings[xmlInput]; //match the xml tag with the object in Client Inputs,if that xml tag has been passed in we can go ahead and create it
      if (XmlInputObject) {
        if (XmlInputObject.inputType == "String") {
-         var textInput = clientObject[xmlInput.toString()];
+         var textInput = xmlObject[xmlInput.toString()];
          if (textInput) {
            cy.get(XmlInputObject.Selector).type(textInput);
          }
        } else if (XmlInputObject.inputType == "Date") {
-         var textInput = clientObject[xmlInput.toString()];
+         var textInput = xmlObject[xmlInput.toString()];
          if (textInput) {
            var date = textInput.split("T");
            var datesplit = date[0].split("-");
@@ -25,36 +25,34 @@ Cypress.Commands.add("CreateClient_UI", (clientObject, xmlMappings) => {
            cy.get(constants.dobYYYY).type(yyyy);
          }
        } else if (XmlInputObject.inputType == "Dropdown") {
-         var textInput = clientObject[xmlInput.toString()];
+         var textInput = xmlObject[xmlInput.toString()];
          if (textInput) {
-           cy.get(XmlInputObject.Selector)
-             .type(textInput)
-             .type(`{enter}`)
-             .type(`{enter}`)
-             .tab();
+          cy.SetDropdown(XmlInputObject.Selector,textInput);
          }
        } else if (XmlInputObject.inputType == "ValueOrClick") {
          cy.get(XmlInputObject.Selector).click();
-         var textInput = clientObject[xmlInput.toString()];
+         var textInput = xmlObject[xmlInput.toString()];
          if (textInput) {
            cy.get(XmlInputObject.Selector).type(textInput);
          }
        }
+       else if (XmlInputObject.inputType == "ProductDropdown") {         
+          cy.TranslateProductID(xmlObject,XmlInputObject)  ; 
+       }
      }
    }
- 
-   cy.get('.btn-viewportfolios-action > .ui-button-text').click(); //Next to Portfolios in the Client Editor 
+
  });
  
  
- Cypress.Commands.add("AssertingClient_UI", (clientObject, xmlMappings) => {
+ Cypress.Commands.add("ProcessAssert_UI", (xmlObject, xmlMappings) => {
    
-     for (let xmlInput in clientObject) { //iterate each tag of the xml object for the client
+     for (let xmlInput in xmlObject) { //iterate each tag of the xml object for the client
    
        var XmlInputObject = xmlMappings[xmlInput]; //match the xml tag with the object in Client Inputs, if that xml tag has been passed in we can go ahead and assert it
        if (XmlInputObject) {
          if (XmlInputObject.inputType == "String") {
-           var textInput = clientObject[xmlInput.toString()];
+           var textInput = xmlObject[xmlInput.toString()];
            if (textInput) {
              cy.get(XmlInputObject.Selector).should('have.value', textInput)
            }
