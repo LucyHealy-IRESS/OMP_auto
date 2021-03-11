@@ -16,6 +16,9 @@ ClientInputs = {
   },
   DateOfBirth: {
     Selector: constants.dobDD,
+    ddSelector:constants.dobDD,
+    mmSelector:constants.dobMM,
+    yyyySelector:constants.dobYYYY,
     inputType: "Date",
   },
   Gender: {

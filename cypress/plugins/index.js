@@ -21,7 +21,18 @@ module.exports = (on, config) => {
 }
 
 const cucumber = require('cypress-cucumber-preprocessor').default
+const fs = require('fs')
 
 module.exports = (on, config) => {
-  on('file:preprocessor', cucumber())
+  on('file:preprocessor', cucumber(),
+  on("task", {
+    ReadFolderDirectory(path){
+      var fs = require('fs');
+      var files = fs.readdirSync(path);
+      return files; //Returns array of file names
+    }
+   })
+  )
 }
+
+

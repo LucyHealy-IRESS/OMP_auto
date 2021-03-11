@@ -1,8 +1,22 @@
 //SETTING UI ELEMENT UTILITIES
 Cypress.Commands.add('SetDropdown',(Selector,Value) => { 
-    cy.get(Selector).clear().type(Value).type(`{enter}`).type(`{enter}`).tab();
+    cy.get(Selector).clear().type(Value);
+    cy.get(".wijmo-wijlist-item ").contains(Value).click(); 
 })
 
+Cypress.Commands.add('SetSimpleDatefromXMLDateFormat',(ddSelector,mmSelector,yyyySelector,Value) => {    
+    var textInput = Value;
+         if (textInput) {
+           var date = textInput.split("T");
+           var datesplit = date[0].split("-");
+           var dd = datesplit[2];
+           var mm = datesplit[1];
+           var yyyy = datesplit[0];
+           cy.get(ddSelector).type(dd);
+           cy.get(mmSelector).type(mm);
+           cy.get(yyyySelector).type(yyyy);
+         }
+})
 
 //DATE UTILITIES
 Cypress.Commands.add('RandomDate',(start, end) => { 
