@@ -19,6 +19,11 @@ import './functions/login.js'
 import './functions/API_Call.js'
 import './functions/baseProcessing.js'
 import './functions/Utils.js'
+
+import './functions/Client/Assert.js'
+import './functions/Client/create.js'
+
+import '.'
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 

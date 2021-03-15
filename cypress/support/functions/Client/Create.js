@@ -1,5 +1,5 @@
-import * as clientMapping from "../../support/constants/client.js";
-import * as portfolioMapping from "../../support/constants/portfolio.js";
+import * as clientMapping from "../../../support/constants/client.js";
+import * as portfolioMapping from "../../../support/constants/portfolio.js";
 
 Cypress.Commands.add("CreateClientCallback", (Client) => {
   cy.ProcessCreate_UI(Client, clientMapping.ClientInputs);
@@ -12,22 +12,6 @@ Cypress.Commands.add("CreateClientCallback", (Client) => {
   cy.get("#Client_ViewPortfolios", { timeout: 226000 }).then(function (fileContents) {   //Portfolio Editor is open
     cy.CreateClientPortfolios(Client);
   });
-
-  //LOG BACK IN ASSET, COMMENTED OUT WHILST STILL BUSY WITH CREATING IT ALL
-  //   cy.reload();
-  //   cy.login("uat", "username2", "password2");
-  //   cy.get("#Continue", { timeout: 36000 }).click({ force: true });
-
-  //   cy.get(
-  //     "#StoryCarousel5_Slides .ThumbnailContainer .JssorThumbnailContainer_A141A33F-04B8-4697-8637-9DA2458B2C2B",
-  //     { timeout: 36000 }
-  //   ).click(); //Client client Summary buttton
-  //   cy.wait(5000); //Allow the client workspace some breathing space to load the client in;
-  //   cy.get("#EditClientIconMenu", { timeout: 36000 }).click(); //Client Edit Client Icon Button
-  //   cy.get("#EditClientPopup .client_info_table").then(function () {
-  //     //ensure client editor is there and client info section has loaded
-  //     cy.ProcessAssert_UI(Client, clientMapping.ClientInputs);
-  //   });
 });
 
 Cypress.Commands.add("TranslateProductID", (Portfolio, XmlInputObject) => {
@@ -42,8 +26,6 @@ Cypress.Commands.add("TranslateProviderID", (Portfolio, XmlInputObject) => {
   ProviderID = ProviderID.replace(/-/g, "");
   cy.SetDropdown(XmlInputObject.Selector, portfolioMapping[ProviderID]);
 });
-
-
 
 
 Cypress.Commands.add("CreateClientPortfolios_Investments", (Portfolio) => { 
@@ -124,18 +106,4 @@ Cypress.Commands.add("ProcessClientFile", (fileLocation) => {
   }); //end cy get EditClientPopup
 });
 
-describe("Create Client and Client Portfolios", () => {
-  it("Create Client and Portfolio via XML", () => {
-    var ExecutiionFolderLocation = "cypress/fixtures/ExecutionFolder";
-    cy.task("ReadFolderDirectory", ExecutiionFolderLocation).then(
-      (fileNames) => {
-        if (fileNames.length > 0) {
-          for (var x = 0; x < fileNames.length; x++) {
-            var fileLocation = ExecutiionFolderLocation + "/" + fileNames[x];
-            cy.ProcessClientFile(fileLocation);
-          }
-        }
-      }
-    );
-  });
-});
+
