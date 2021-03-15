@@ -1,11 +1,12 @@
 import * as clientMapping from "../../support/constants/client.js";
 import * as portfolioMapping from "../../support/constants/portfolio.js";
+import * as selectors from "../../support/constants/constantsSelectors.js";
 
 Cypress.Commands.add("CreateClientCallback", (Client) => {
   cy.ProcessCreate_UI(Client, clientMapping.ClientInputs);
-  cy.get('.clientdetailseditorOverview').children().contains('Health Details').click();
+  cy.clickAccordion(selectors.clientDetailsPopup,'Health Details');
   cy.ProcessCreate_UI(Client, clientMapping.ClientHealth);
-  cy.get('.clientdetailseditorOverview').children().contains('Contact Details').click();
+  cy.clickAccordion(selectors.clientDetailsPopup,'Contact Details');
   cy.ProcessCreate_UI(Client, clientMapping.ClientContact);
   cy.get(".btn-viewportfolios-action > .ui-button-text").click(); //Click 'View Portfolios >' in the Client Editor
 
