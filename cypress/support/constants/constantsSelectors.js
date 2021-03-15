@@ -1,5 +1,6 @@
 export const 
 //Login
+        clientDetailsPopup = '.clientdetailseditorOverview',
         usernameconst = '#loginPrompt-username',
         passwordconst = '#loginPrompt-password',
         okconst = '.ui-button-text',

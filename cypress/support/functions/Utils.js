@@ -53,3 +53,10 @@ Cypress.Commands.add('simpleDate',(ISODate) => {
 cy.randomID = function(){
     return "00_" + Math.floor(Math.random() * 10000 + 1);
 }
+
+
+//Get Accordion
+
+Cypress.Commands.add('clickAccordion', (editor, accordion) => {
+    cy.get(editor).children().contains(accordion).click({force:true});
+})

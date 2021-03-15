@@ -1,5 +1,5 @@
-import * as clientMapping from "../../../support/constants/client.js";
-import * as portfolioMapping from "../../../support/constants/portfolio.js";
+import * as clientMapping from "../../support/constants/client.js";
+import * as portfolioMapping from "../../support/constants/portfolio.js";
 
 Cypress.Commands.add("CreateClientCallback", (Client) => {
   cy.ProcessCreate_UI(Client, clientMapping.ClientInputs);
