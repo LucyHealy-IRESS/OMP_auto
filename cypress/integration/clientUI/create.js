@@ -32,6 +32,15 @@ Cypress.Commands.add("TranslateProductID", (Portfolio, XmlInputObject) => {
   ProductID = ProductID.join("_");
   cy.SetDropdown(XmlInputObject.Selector, portfolioMapping[ProductID]);
 });
+//could both of thse be grouped into one function with an if statement?
+Cypress.Commands.add("TranslateProviderID", (Portfolio, XmlInputObject) => {
+  var ProviderID = Portfolio["ProviderID"].trim();
+  ProviderID = ProviderID.replace(/-/g, "");
+  cy.SetDropdown(XmlInputObject.Selector, portfolioMapping[ProviderID]);
+});
+
+
+
 
 Cypress.Commands.add("CreateClientPortfolios_Investments", (Portfolio) => { 
     var CreateInvestment_Callback = function(){
@@ -81,7 +90,7 @@ Cypress.Commands.add("CreateClientPortfolios", (Client) => {
 });
 
 Cypress.Commands.add("ProcessClientFile", (fileLocation) => {
-  cy.login("uat", "username2", "password2");
+  cy.login("staging", "username2", "password2");
   cy.get("#NewClientIconMenu", { timeout: 36000 }).click();
 
   cy.get("#EditClientPopup .client_info_table", {  //ensure client editor is there and client info section has loaded

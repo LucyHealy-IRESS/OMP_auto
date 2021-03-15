@@ -29,6 +29,10 @@ Cypress.Commands.add("ProcessCreate_UI", (xmlObject, xmlMappings) => {
        else if (XmlInputObject.inputType == "ProductDropdown") {         
           cy.TranslateProductID(xmlObject,XmlInputObject)  ; 
        }
+       else if (XmlInputObject.inputType == "ProviderDropdown") {         
+        cy.TranslateProviderID(xmlObject,XmlInputObject)  ; 
+       }
+       
      }
   }
 

@@ -2,11 +2,41 @@ import * as constants from "../constants/constantsSelectors.js";
 export const
 
 Portfolio_BasicDetailsInputs = {
-   ProductID: {
-     Selector: constants.productconst,
-     inputType: "ProductDropdown",
-   },  
- },
+  ProductID: {
+    Selector: constants.productconst,
+    inputType: "ProductDropdown",
+  },  
+  ProviderID: {
+    Selector: constants.providerconst,
+    inputType: "ProviderDropdown",
+  },  
+  Name: {
+    Selector: constants.nameconst,
+    inputType: "String",
+  },  
+  currentvalue: {
+    Selector: constants.currentvalueconst,
+    inputType: "currentvalueconst",
+  },  
+  FundPicker: {
+    Selector: constants.ptFundName,
+    inputType: "FundPicker",
+  },  
+},
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
    P_1 = "Personal Pension",
    P_2 = "SIPP",
