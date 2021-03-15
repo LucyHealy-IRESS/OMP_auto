@@ -29,4 +29,26 @@ ClientInputs = {
     Selector: constants.plannedretirementage,
     inputType: "ValueOrClick",
   },
-};
+},
+
+ClientContact = {
+  Address1: {
+    Selector: constants.clAddress1,
+    inputType: "String",
+  },
+  City: {
+    Selector: constants.clCity,
+    inputType: "String",
+  },
+  County: {
+    Selector: constants.clCounty,
+    inputType: "String",
+  },
+},
+
+ClientHealth = {
+  Postcode: {
+    Selector: constants.clPostcode,
+    inputType: "String",
+  }
+}

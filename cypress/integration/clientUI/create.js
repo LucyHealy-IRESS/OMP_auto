@@ -3,6 +3,10 @@ import * as portfolioMapping from "../../support/constants/portfolio.js";
 
 Cypress.Commands.add("CreateClientCallback", (Client) => {
   cy.ProcessCreate_UI(Client, clientMapping.ClientInputs);
+  cy.get('.clientdetailseditorOverview').children().contains('Health Details').click();
+  cy.ProcessCreate_UI(Client, clientMapping.ClientHealth);
+  cy.get('.clientdetailseditorOverview').children().contains('Contact Details').click();
+  cy.ProcessCreate_UI(Client, clientMapping.ClientContact);
   cy.get(".btn-viewportfolios-action > .ui-button-text").click(); //Click 'View Portfolios >' in the Client Editor
 
   cy.get("#Client_ViewPortfolios", { timeout: 226000 }).then(function (fileContents) {   //Portfolio Editor is open
