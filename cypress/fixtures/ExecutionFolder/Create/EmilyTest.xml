@@ -7,7 +7,7 @@
 		<Surname>Duplicate</Surname>
 		<DateOfBirth>1969-11-09T00:00:00</DateOfBirth>		
 		<Gender>Male</Gender>
-		<PlannedRetirementAge>69</PlannedRetirementAge>
+		<PlannedRetirementAge>79</PlannedRetirementAge>
 		<ExpenseProfile />
 		<TargetPathway />
 		<MaritalStatus>Single</MaritalStatus>
@@ -22,7 +22,7 @@
 		<AllowanceIncreases />
 		<ProtectedAmount>1260000</ProtectedAmount>
 		<LifetimeAllowanceEnhancementFactor />
-		<LifetimeAllowancePreviouslyUsed />
+		<LifetimeAllowancePreviouslyUsed>5</LifetimeAllowancePreviouslyUsed>
 		<Address1>3 Keats Close</Address1>
 		<Address2>more</Address2>
 		<Address3>yet more</Address3>

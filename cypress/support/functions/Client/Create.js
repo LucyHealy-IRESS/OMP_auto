@@ -3,7 +3,7 @@ import * as portfolioMapping from "../../../support/constants/portfolio.js";
 import * as selectors from "../../../support/constants/constantsSelectors.js";
 
 Cypress.Commands.add("CreateClientCallback", (Client) => {
- // cy.ProcessCreate_UI(Client, clientMapping.ClientInputs);
+   cy.ProcessCreate_UI(Client, clientMapping.ClientInputs);
  
   // cy.clickAccordion(selectors.clientDetailsPopup,'Family Details');
   // cy.get("#FamilyDetails .client_info_table").then(function(){

@@ -116,10 +116,10 @@ Tax = {
   },
   ProtectedAmount: {
     Selector: "#ClientDetailsPopup_ProtectedAmount",
-    inputType: "Currency",
+    inputType: "Integer",
   },
   LifetimeAllowancePreviouslyUsed: {
     Selector: "#ClientDetailsPopup_PreviouslyUsed",
-    inputType: "String",
+    inputType: "Integer",
   }
 }
