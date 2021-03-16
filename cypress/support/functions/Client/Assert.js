@@ -31,6 +31,7 @@ Cypress.Commands.add("ProcessClientFile_Assert", (fileLocation) => { //this is a
 Cypress.Commands.add("RetrieveClientUsingClientSearch", (Client) => {
   cy.get('#ExistingClientsIconMenu').click();
   cy.wait(16000);
+  //cy.clickThumbnail(ClientSearch)
   cy.get('[data-u="thumbnavigator"]').children().contains('Client Search').click({force:true});
   cy.wait(16000);
   cy.get('#AmendClientSearch', {timeout:17000}).click({force:true}); //timeout not working here, need to leave wait in for now
@@ -41,7 +42,7 @@ Cypress.Commands.add("RetrieveClientUsingClientSearch", (Client) => {
   cy.get('.tableContainer', {timeout:16000}).children().find('tbody').find('tr').first().dblclick();
   cy.get('[data-u="thumbnavigator"]').children().contains('Client Summary').click({force:true});
   cy.get('#EditClientIconMenu', {timeout:16000}).click();
-  cy.ProcessAssert_UI(Portfolio,portfolioMapping.Portfolio_BasicDetailsInputs)
+  cy.ProcessAssert_UI(Client, clientMapping.ClientInputs)
   //cy.ProcessAssert_UI
 
 
