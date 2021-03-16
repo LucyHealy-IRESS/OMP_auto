@@ -13,3 +13,13 @@ describe("Create Client and Client Portfolios", () => {
       );
     });
   });
+
+// describe("retreive",() => {
+//     it("retreive",() => {
+//        // cy.login("staging", "username2", "password2");
+//        cy.RetreiveClient_API('d9d65f4c-8b71-4427-ae0e-25196cc1fe27').then(function(response){
+//         cy.getResponseXMLData(response.body).then(function(clientxml){});
+//        });
+//     })
+
+// })

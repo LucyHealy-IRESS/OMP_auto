@@ -12,7 +12,15 @@ Cypress.Commands.add("ProcessCreate_UI", (xmlObject, xmlMappings) => {
          if (textInput) {
            cy.get(XmlInputObject.Selector).type(textInput);
          }
-       } else if (XmlInputObject.inputType == "Date") {
+       } 
+       else if (XmlInputObject.inputType == "Currency") {
+        var textInput = xmlObject[xmlInput.toString()];
+        if (textInput) {
+          //cy.get(XmlInputObject.Selector).focus().type(textInput +"{rightarrow}").type(textInput).blur();   //puts in one digit     
+          cy.get(XmlInputObject.Selector).click().focus().type(textInput).blur();     
+        }
+      } 
+       else if (XmlInputObject.inputType == "Date") {
           cy.SetSimpleDatefromXMLDateFormat(constants.dobDD,constants.dobMM,constants.dobYYYY,xmlObject[xmlInput.toString()])         
        } else if (XmlInputObject.inputType == "Dropdown") {
          var textInput = xmlObject[xmlInput.toString()];
@@ -21,10 +29,11 @@ Cypress.Commands.add("ProcessCreate_UI", (xmlObject, xmlMappings) => {
          }
        } else if (XmlInputObject.inputType == "ValueOrClick") {
          cy.get(XmlInputObject.Selector).click();
-         var textInput = xmlObject[xmlInput.toString()];
-         if (textInput) {
-           cy.get(XmlInputObject.Selector).type(textInput);
-         }
+         cy.wait(100); //Auto gen value is entered
+          var textInput = xmlObject[xmlInput.toString()];
+          if (textInput) {
+            cy.get(XmlInputObject.Selector).clear().type(textInput);
+          }      
        }
        else if (XmlInputObject.inputType == "ProductDropdown") {         
           cy.TranslateProductID(xmlObject,XmlInputObject)  ; 

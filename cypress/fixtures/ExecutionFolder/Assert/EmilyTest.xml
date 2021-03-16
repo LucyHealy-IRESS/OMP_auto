@@ -1,84 +1,44 @@
 <Root>
 <Clients>
 	<Client>
-		<ClientID>
-			LH_115
-		</ClientID>
-		<Title>
-			Dr
-		</Title>
-		<Firstname>
-			Mrs 20
-		</Firstname>
-		<Surname>
-			2020
-		</Surname>
-		<DateOfBirth>
-			1969-11-09T00:00:00
-		</DateOfBirth>
-		<Status>
-			Current
-		</Status>
-		<Gender>
-			Male
-		</Gender>
-		<EmploymentStatus>
-			Employed
-		</EmploymentStatus>
-		<Address1>
-			16 House
-		</Address1>
-		<City>
-			City
-		</City>
-		<County>
-			County
-		</County>
-		<Postcode>
-			CO11 2LB
-		</Postcode>
+		<ClientID>Client01</ClientID>
+		<Title>Mrs</Title>
+		<Firstname>AllClient</Firstname>
+		<Surname>Duplicate</Surname>
+		<DateOfBirth>1969-11-09T00:00:00</DateOfBirth>		
+		<Gender>Male</Gender>
+		<PlannedRetirementAge>69</PlannedRetirementAge>
+		<ExpenseProfile />
+		<TargetPathway />
+		<MaritalStatus>Single</MaritalStatus>
+		<DependantChildren>2</DependantChildren>
+		<IndependantChildren>3</IndependantChildren>
+		<Siblings>4</Siblings>
+		<HealthStatus>4</HealthStatus>
+		<SmokerStatus>4</SmokerStatus>
+		<TaxRegion />
+		<LifetimeAllowanceType />
+		<CustomLifetimeAllowance />
+		<AllowanceIncreases />
+		<ProtectedAmount />
+		<LifetimeAllowanceEnhancementFactor />
+		<LifetimeAllowancePreviouslyUsed />
+		<Address1>3 Keats Close</Address1>
+		<Address2>Maldon</Address2>
+		<Address3>Essex</Address3>
+		<City>Maldon</City>
+		<County>Essex</County>
+		<Postcode>cm9 6dh</Postcode>
+		<Email>hello@gmail.com</Email>
+		<WorkNumber>0711</WorkNumber>
+		<HomeNumber>0722</HomeNumber>
+		<MobileNumber>0733</MobileNumber>
 		<CurrentSalary>
 			123456
 		</CurrentSalary>
 		<StatePension>
 			78910
 		</StatePension>
-		<Expenses>
-			<Expense>
-				<Name>
-					Food Shopping
-				</Name>
-				<Amount>
-					12345
-				</Amount>
-				<Starts>
-					Current
-				</Starts>
-				<Ends>
-					At Mortality
-				</Ends>
-				<EscalationRate>
-					Inflation
-				</EscalationRate>
-			</Expense>
-			<Expense>
-				<Name>
-					00000000-0000-0000-0000-300000000020
-				</Name>
-				<Amount>
-					89
-				</Amount>
-				<Starts>
-					Current
-				</Starts>
-				<Ends>
-					At Mortality
-				</Ends>
-				<EscalationRate>
-					Inflation
-				</EscalationRate>
-			</Expense>
-		</Expenses>
 		<Portfolios>
 			<Portfolio>
 				<PortfolioID>

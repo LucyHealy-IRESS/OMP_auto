@@ -1,17 +1,41 @@
 import * as clientMapping from "../../../support/constants/client.js";
 import * as portfolioMapping from "../../../support/constants/portfolio.js";
+import * as selectors from "../../../support/constants/constantsSelectors.js";
 
 Cypress.Commands.add("CreateClientCallback", (Client) => {
-  cy.ProcessCreate_UI(Client, clientMapping.ClientInputs);
-  cy.get('.clientdetailseditorOverview').children().contains('Health Details').click();
-  cy.ProcessCreate_UI(Client, clientMapping.ClientHealth);
-  cy.get('.clientdetailseditorOverview').children().contains('Contact Details').click();
-  cy.ProcessCreate_UI(Client, clientMapping.ClientContact);
-  cy.get(".btn-viewportfolios-action > .ui-button-text").click(); //Click 'View Portfolios >' in the Client Editor
+ // cy.ProcessCreate_UI(Client, clientMapping.ClientInputs);
+ 
+  // cy.clickAccordion(selectors.clientDetailsPopup,'Family Details');
+  // cy.get("#FamilyDetails .client_info_table").then(function(){
+  //   cy.ProcessCreate_UI(Client, clientMapping.FamilyDetails);
+  // })
 
-  cy.get("#Client_ViewPortfolios", { timeout: 226000 }).then(function (fileContents) {   //Portfolio Editor is open
-    cy.CreateClientPortfolios(Client);
-  });
+  // cy.clickAccordion(selectors.clientDetailsPopup,'Health Details');
+  // cy.get("#HealthDetails .client_info_table").then(function(){
+  //   cy.ProcessCreate_UI(Client, clientMapping.ClientHealth);
+  // })
+  
+  cy.clickAccordion(selectors.clientDetailsPopup,'Tax and Lifetime Allowance');
+  cy.get("#TaxAndLifetimeAllowance .client_info_table").then(function(){
+    cy.ProcessCreate_UI(Client, clientMapping.Tax);
+    cy.wait(7000);
+  })
+
+  cy.clickAccordion(selectors.clientDetailsPopup,'Contact Details');
+  cy.get("#ContactDetails .client_info_table").then(function(){
+    cy.ProcessCreate_UI(Client, clientMapping.ClientContact);
+  })
+ 
+  cy.clickAccordion(selectors.clientDetailsPopup,'Service Basis');
+  cy.get("#ServiceBasis .autoSerServeiceBasisTable").then(function(){
+    //cy.ProcessCreate_UI(Client, clientMapping.ClientContact);
+  })
+
+ cy.get(".btn-viewportfolios-action > .ui-button-text").click(); //Click 'View Portfolios >' in the Client Editor
+
+  // cy.get("#Client_ViewPortfolios", { timeout: 226000 }).then(function (fileContents) {   //Portfolio Editor is open
+  //   cy.CreateClientPortfolios(Client);
+  // });
 });
 
 Cypress.Commands.add("TranslateProductID", (Portfolio, XmlInputObject) => {

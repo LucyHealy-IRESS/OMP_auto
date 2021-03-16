@@ -1,7 +1,7 @@
 //SETTING UI ELEMENT UTILITIES
 Cypress.Commands.add('SetDropdown',(Selector,Value) => { 
     cy.get(Selector).clear().type(Value);
-    cy.get(".wijmo-wijlist-item ").contains(Value).click(); 
+    cy.get(".wijmo-wijlist-item ").filter(':visible').contains(new RegExp(Value, "g")).click();  //regex to say we want exact match!
 })
 
 Cypress.Commands.add('SetSimpleDatefromXMLDateFormat',(ddSelector,mmSelector,yyyySelector,Value) => {    
@@ -55,8 +55,9 @@ cy.randomID = function(){
 }
 
 
+
 //Get Accordion
 
 Cypress.Commands.add('clickAccordion', (editor, accordion) => {
-    cy.get(editor).children().contains(accordion).click({force:true});
+    cy.get(editor).children().contains(accordion).click({force:true});   
 })
