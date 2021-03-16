@@ -55,8 +55,31 @@ Cypress.Commands.add("RetrieveClientUsingClientSearch", (ClientSur) => {
 Cypress.Commands.add("AssertClient", (Client) => {
 
   cy.ProcessAssert_UI(Client, clientMapping.ClientInputs);
-  cy.get('"#ContactDetails .client_info_table"').click();
-  cy.ProcessAssert_UI(Client, clientMapping.ClientContact);
+
+  cy.clickAccordion(constantsSelectors.clientDetailsPopup,'Family Details');
+  cy.get("#FamilyDetails .client_info_table").then(function(){
+    cy.ProcessAssert_UI(Client, clientMapping.FamilyDetails);
+  })
+
+  cy.clickAccordion(constantsSelectors.clientDetailsPopup,'Health Details');
+  cy.get("#HealthDetails .client_info_table").then(function(){
+    cy.ProcessAssert_UI(Client, clientMapping.ClientHealth);
+  })
+  
+  cy.clickAccordion(constantsSelectors.clientDetailsPopup,'Tax and Lifetime Allowance');
+  cy.get("#TaxAndLifetimeAllowance .client_info_table").then(function(){
+    cy.ProcessAssert_UI(Client, clientMapping.Tax);
+  })
+
+  cy.clickAccordion(constantsSelectors.clientDetailsPopup,'Contact Details');
+  cy.get("#ContactDetails .client_info_table").then(function(){
+    cy.ProcessAssert_UI(Client, clientMapping.ClientContact);
+  })
+ 
+  cy.clickAccordion(constantsSelectors.clientDetailsPopup,'Service Basis');
+  cy.get("#ServiceBasis .autoSerServeiceBasisTable").then(function(){
+    cy.ProcessAssert_UI(Client, clientMapping.ServiceBasis);
+  })
   
 
 });
