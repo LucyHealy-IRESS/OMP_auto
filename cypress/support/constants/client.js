@@ -72,6 +72,10 @@ ClientContact = {
     Selector: constants.clCounty,
     inputType: "String",
   },
+  Postcode: {
+    Selector: constants.clPostcode,
+    inputType: "String",
+  },
   Email: {
     Selector: "#ClientDetailsPopup_Email",
     inputType: "String",
@@ -121,5 +125,51 @@ Tax = {
   LifetimeAllowancePreviouslyUsed: {
     Selector: "#ClientDetailsPopup_PreviouslyUsed",
     inputType: "Integer",
+  },
+  LifetimeAllowanceEnhancementFactor: {
+    Selector: "#ClientDetailsPopup_EnhancementFactor",
+    inputType: "Integer",
+  },
+  CustomLifetimeAllowance: {
+    Selector: "#ClientDetailsPopup_CustomLifetimeAllowance",
+    inputType: "Integer",
+  },
+  AllowanceIncreases: {
+    Selector: "#ClientDetailsPopup_AllowanceIncreases",
+    inputType: "Dropdown",
   }
+  
+},
+
+
+ServiceBasis = {
+  ServiceBasis: {
+    Selector: "#ClientDetailsPopup_ServiceBasis",
+    inputType: "DropdownIndex",
+  },
+  EthicalInvestment: {
+    Selector: "#ClientDetailsPopup_EthicalInvestment",
+    inputType: "DropdownIndex",
+  },
+  PayingFee: {
+    Selector: "#ClientDetailsPopup_PayingFee",
+    inputType: "Dropdown",
+  },
+  NextReviewDate: {
+    Selector: "#ClientDetailsPopup_NextReviewVisit_Day",
+    ddSelector:"#ClientDetailsPopup_NextReviewVisit_Day",
+    mmSelector:"#ClientDetailsPopup_NextReviewVisit_Month",
+    yyyySelector:"#ClientDetailsPopup_NextReviewVisit_Year",
+    inputType: "Date",
+  },
+  ClientStatus: {
+    Selector: "#ClientDetailsPopup_ClientStatus",
+    inputType: "Dropdown",
+  },
+  IsSharedWithCompany:{
+    Selector: "#ClientDetailsPopup_ShareClient",
+    inputType: "Checkbox",
+  }
+  //Adviser is ownerguid, not done yet
+  
 }

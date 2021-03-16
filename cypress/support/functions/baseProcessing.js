@@ -27,7 +27,7 @@ Cypress.Commands.add("ProcessCreate_UI", (xmlObject, xmlMappings) => {
         }
       } 
        else if (XmlInputObject.inputType == "Date") {
-          cy.SetSimpleDatefromXMLDateFormat(constants.dobDD,constants.dobMM,constants.dobYYYY,xmlObject[xmlInput.toString()])         
+          cy.SetSimpleDatefromXMLDateFormat(XmlInputObject.ddSelector,XmlInputObject.mmSelector,XmlInputObject.yyyySelector,xmlObject[xmlInput.toString()])         
        } else if (XmlInputObject.inputType == "Dropdown") {
          var textInput = xmlObject[xmlInput.toString()];
          if (textInput) {
@@ -47,7 +47,24 @@ Cypress.Commands.add("ProcessCreate_UI", (xmlObject, xmlMappings) => {
        else if (XmlInputObject.inputType == "ProviderDropdown") {         
         cy.TranslateProviderID(xmlObject,XmlInputObject)  ; 
        }
-       
+       else if (XmlInputObject.inputType == "DropdownIndex") {      //e.g. value is 1 so select 2nd dropdown input (0 based)    
+        var textInput = xmlObject[xmlInput.toString()];
+         if (textInput) {
+          cy.SetDropdown_ByIndex(XmlInputObject.Selector,textInput);
+         }
+       }
+       else if (XmlInputObject.inputType == "Checkbox") {      //e.g. value is 1 so select 2nd dropdown input (0 based)    
+        var textInput = xmlObject[xmlInput.toString()];
+        if (textInput) {
+          var isTrueSet = (textInput == 'true' || textInput == 'True');
+          if(isTrueSet){
+            cy.get(XmlInputObject.Selector).check({ force: true });
+          }
+          else{
+            cy.get(XmlInputObject.Selector).uncheck({ force: true });
+          }         
+         }
+       }
      }
   }
 
