@@ -13,15 +13,21 @@ Cypress.Commands.add("ProcessCreate_UI", (xmlObject, xmlMappings) => {
            cy.get(XmlInputObject.Selector).type(textInput);
          }
        } 
-       else if (XmlInputObject.inputType == "Currency") {
+       else if (XmlInputObject.inputType == "Integer") {
         var textInput = xmlObject[xmlInput.toString()];
         if (textInput) {
-          //cy.get(XmlInputObject.Selector).focus().type(textInput +"{rightarrow}").type(textInput).blur();   //puts in one digit     
-          cy.get(XmlInputObject.Selector).click().focus().type(textInput).blur();     
+          cy.get(XmlInputObject.Selector).type(`{selectall}`).type(textInput);
+          //or
+          // cy.get(XmlInputObject.Selector).clear();
+          // cy.wait(100); //Auto gen value is entered
+          //  var textInput = xmlObject[xmlInput.toString()];
+          //  if (textInput) {
+          //    cy.get(XmlInputObject.Selector).type(textInput);
+          //  }  
         }
       } 
        else if (XmlInputObject.inputType == "Date") {
-          cy.SetSimpleDatefromXMLDateFormat(constants.dobDD,constants.dobMM,constants.dobYYYY,xmlObject[xmlInput.toString()])         
+          cy.SetSimpleDatefromXMLDateFormat(XmlInputObject.ddSelector,XmlInputObject.mmSelector,XmlInputObject.yyyySelector,xmlObject[xmlInput.toString()])         
        } else if (XmlInputObject.inputType == "Dropdown") {
          var textInput = xmlObject[xmlInput.toString()];
          if (textInput) {
@@ -41,7 +47,24 @@ Cypress.Commands.add("ProcessCreate_UI", (xmlObject, xmlMappings) => {
        else if (XmlInputObject.inputType == "ProviderDropdown") {         
         cy.TranslateProviderID(xmlObject,XmlInputObject)  ; 
        }
-       
+       else if (XmlInputObject.inputType == "DropdownIndex") {      //e.g. value is 1 so select 2nd dropdown input (0 based)    
+        var textInput = xmlObject[xmlInput.toString()];
+         if (textInput) {
+          cy.SetDropdown_ByIndex(XmlInputObject.Selector,textInput);
+         }
+       }
+       else if (XmlInputObject.inputType == "Checkbox") {      //e.g. value is 1 so select 2nd dropdown input (0 based)    
+        var textInput = xmlObject[xmlInput.toString()];
+        if (textInput) {
+          var isTrueSet = (textInput == 'true' || textInput == 'True');
+          if(isTrueSet){
+            cy.get(XmlInputObject.Selector).check({ force: true });
+          }
+          else{
+            cy.get(XmlInputObject.Selector).uncheck({ force: true });
+          }         
+         }
+       }
      }
   }
 

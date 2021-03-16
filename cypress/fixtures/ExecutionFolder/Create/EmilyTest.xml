@@ -7,7 +7,7 @@
 		<Surname>Duplicate</Surname>
 		<DateOfBirth>1969-11-09T00:00:00</DateOfBirth>		
 		<Gender>Male</Gender>
-		<PlannedRetirementAge>69</PlannedRetirementAge>
+		<PlannedRetirementAge>79</PlannedRetirementAge>
 		<ExpenseProfile />
 		<TargetPathway />
 		<MaritalStatus>Single</MaritalStatus>
@@ -17,12 +17,12 @@
 		<HealthStatus>Yes</HealthStatus>
 		<SmokerStatus>No</SmokerStatus>
 		<TaxRegion />
-		<LifetimeAllowanceType>Individual Protection 2014</LifetimeAllowanceType>
-		<CustomLifetimeAllowance />
-		<AllowanceIncreases />
-		<ProtectedAmount>1260000</ProtectedAmount>
+		<LifetimeAllowanceType>Custom Protection</LifetimeAllowanceType>
+		<CustomLifetimeAllowance>500</CustomLifetimeAllowance>
+		<AllowanceIncreases>Fixed</AllowanceIncreases>
+		<ProtectedAmount />
 		<LifetimeAllowanceEnhancementFactor />
-		<LifetimeAllowancePreviouslyUsed />
+		<LifetimeAllowancePreviouslyUsed>71</LifetimeAllowancePreviouslyUsed>
 		<Address1>3 Keats Close</Address1>
 		<Address2>more</Address2>
 		<Address3>yet more</Address3>
@@ -33,12 +33,14 @@
 		<WorkNumber>0711</WorkNumber>
 		<HomeNumber>0722</HomeNumber>
 		<MobileNumber>0733</MobileNumber>
-		<CurrentSalary>
-			123456
-		</CurrentSalary>
-		<StatePension>
-			78910
-		</StatePension>
+		<ServiceBasis>3</ServiceBasis>
+		<EthicalInvestment>2</EthicalInvestment>
+		<PayingFee>No</PayingFee>
+		<NextReviewDate>2021-01-01T00:00:00</NextReviewDate>	
+		<ClientStatus>Proposed</ClientStatus>	
+		<IsSharedWithCompany>False</IsSharedWithCompany>	
+		<CurrentSalary>123456</CurrentSalary>
+		<StatePension>78910</StatePension>
 		<Portfolios>
 			<Portfolio>
 				<PortfolioID>

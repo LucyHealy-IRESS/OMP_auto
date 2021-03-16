@@ -3,22 +3,21 @@ import * as portfolioMapping from "../../../support/constants/portfolio.js";
 import * as selectors from "../../../support/constants/constantsSelectors.js";
 
 Cypress.Commands.add("CreateClientCallback", (Client) => {
- // cy.ProcessCreate_UI(Client, clientMapping.ClientInputs);
+   cy.ProcessCreate_UI(Client, clientMapping.ClientInputs);
  
-  // cy.clickAccordion(selectors.clientDetailsPopup,'Family Details');
-  // cy.get("#FamilyDetails .client_info_table").then(function(){
-  //   cy.ProcessCreate_UI(Client, clientMapping.FamilyDetails);
-  // })
+  cy.clickAccordion(selectors.clientDetailsPopup,'Family Details');
+  cy.get("#FamilyDetails .client_info_table").then(function(){
+    cy.ProcessCreate_UI(Client, clientMapping.FamilyDetails);
+  })
 
-  // cy.clickAccordion(selectors.clientDetailsPopup,'Health Details');
-  // cy.get("#HealthDetails .client_info_table").then(function(){
-  //   cy.ProcessCreate_UI(Client, clientMapping.ClientHealth);
-  // })
+  cy.clickAccordion(selectors.clientDetailsPopup,'Health Details');
+  cy.get("#HealthDetails .client_info_table").then(function(){
+    cy.ProcessCreate_UI(Client, clientMapping.ClientHealth);
+  })
   
   cy.clickAccordion(selectors.clientDetailsPopup,'Tax and Lifetime Allowance');
   cy.get("#TaxAndLifetimeAllowance .client_info_table").then(function(){
     cy.ProcessCreate_UI(Client, clientMapping.Tax);
-    cy.wait(7000);
   })
 
   cy.clickAccordion(selectors.clientDetailsPopup,'Contact Details');
@@ -28,7 +27,7 @@ Cypress.Commands.add("CreateClientCallback", (Client) => {
  
   cy.clickAccordion(selectors.clientDetailsPopup,'Service Basis');
   cy.get("#ServiceBasis .autoSerServeiceBasisTable").then(function(){
-    //cy.ProcessCreate_UI(Client, clientMapping.ClientContact);
+    cy.ProcessCreate_UI(Client, clientMapping.ServiceBasis);
   })
 
  cy.get(".btn-viewportfolios-action > .ui-button-text").click(); //Click 'View Portfolios >' in the Client Editor
