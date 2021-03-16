@@ -32,9 +32,9 @@ Cypress.Commands.add("CreateClientCallback", (Client) => {
 
  cy.get(".btn-viewportfolios-action > .ui-button-text").click(); //Click 'View Portfolios >' in the Client Editor
 
-  // cy.get("#Client_ViewPortfolios", { timeout: 226000 }).then(function (fileContents) {   //Portfolio Editor is open
-  //   cy.CreateClientPortfolios(Client);
-  // });
+  cy.get("#Client_ViewPortfolios", { timeout: 226000 }).then(function (fileContents) {   //Portfolio Editor is open
+    cy.CreateClientPortfolios(Client);
+  });
 });
 
 Cypress.Commands.add("TranslateProductID", (Portfolio, XmlInputObject) => {
