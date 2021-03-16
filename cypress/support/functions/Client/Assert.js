@@ -31,14 +31,14 @@ Cypress.Commands.add("ProcessClientFile_Assert", (fileLocation) => { //this is a
   
 });
 
-Cypress.Commands.add("RetrieveClientUsingClientSearch", (ClientSur) => {
+Cypress.Commands.add("RetrieveClientUsingClientSearch", (SearchParam) => {
   cy.get('#ExistingClientsIconMenu').click();
-  cy.wait(16000);
-  cy.clickThumbnail('Client Search');
-  //cy.get('[data-u="thumbnavigator"]').children().contains('Client Search').click({force:true});
-  cy.wait(16000);
+  //cy.wait(16000);
+  cy.clickThumbnail('Client Search', {timeout:16000});
+
+  //cy.wait(16000);
   cy.get('#AmendClientSearch', {timeout:17000}).click({force:true}); //timeout not working here, need to leave wait in for now
-  cy.get(constantsSelectors.searchTextMatch).type(ClientSur);
+  cy.get(constantsSelectors.searchTextMatch).type(SearchParam);
 
   cy.get('.OverviewSearchButton').click();
   cy.wait(16000);
