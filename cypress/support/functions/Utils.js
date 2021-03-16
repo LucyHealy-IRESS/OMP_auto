@@ -66,8 +66,14 @@ cy.randomID = function(){
 
 
 
-//Get Accordion
+//Click Accordion
 
 Cypress.Commands.add('clickAccordion', (editor, accordion) => {
     cy.get(editor).children().contains(accordion).click({force:true});   
+})
+
+//Click Thumbnail
+
+Cypress.Commands.add('clickThumbnail', (thumbnailName) => {
+    cy.get('[data-u="thumbnavigator"]').children().contains(thumbnailName).click({force:true});
 })

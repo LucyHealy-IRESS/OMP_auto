@@ -12,25 +12,25 @@
     "baseUrl": "https://html.omprofiler.int.aws-wealth-staging-uk.iress.online",
     "env": {
 
-        "_Comment":{"Username": "emily.hedgecock@iress.com", "password": "1", "comment":"It doesnt supports object, I will likely have to create a cypress.env.json"}, 
+        "_Comment":{"Username": "lucy.healy@iress.com", "password": "Y", "comment":"It doesnt supports object, I will likely have to create a cypress.env.json"}, 
         
-        "username1": "emily.hedgecock@iress.com",
-        "password1": "",
+        "username1": "lucy.healy@iress.com",
+        "password1": "Y",
         "feature1": ["1"],
 
-        "username2": "emily.hedgecock@iress.com",
-        "password2": "1",
+        "username2": "lucy.healy@omprofiler.co.uk",
+        "password2": "Y",
         "featureS2": ["1", "2"],
 
-        "username3": "emily.hedgecock@iress.com",
+        "username3": "lucy.healy@iress.com",
         "password3": "",
 
-        "usernamestandard": "emily.hedgecock@iress.com",
+        "usernamestandard": "lucy.healy@iress.com",
         "passwordstandard": "",
         "featuresstandard": ["1", "2"],
 
-        "usernameAPI":"emily.hedgecock@iress.com",
-        "passwordAPI":"1"
+        "usernameAPI":"emily.hedgecock@omprofiler.co.uk",
+        "passwordAPI":""
 
     }
 
