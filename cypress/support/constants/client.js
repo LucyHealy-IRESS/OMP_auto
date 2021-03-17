@@ -72,10 +72,6 @@ ClientContact = {
     Selector: constants.clCounty,
     inputType: "String",
   },
-  Postcode: {
-    Selector: constants.clPostcode,
-    inputType: "String",
-  },
   Email: {
     Selector: "#ClientDetailsPopup_Email",
     inputType: "String",

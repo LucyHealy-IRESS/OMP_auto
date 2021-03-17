@@ -33,23 +33,28 @@ Cypress.Commands.add("ProcessClientFile_Assert", (fileLocation) => { //this is a
 
 
 Cypress.Commands.add("SearchHasCompleted", (callback) => {
-  cy.get(".overviewHeader").find("div").find("span").contains("Matching Client",{timeout:32000}).then(function(){ //initial search completes as header contains x Matching Clients
-    //now we wait for the results grid to finish loading
-    cy.get("#StoryCarousel4 .TypeCompositePanel .tableContainer tr",{timeout:32000}).then(function(){
+  cy.get(".overviewHeader").find("div").find("span").contains("Matching Client",{timeout:32000}).then(function($span){ //initial search completes as header contains x Matching Clients
+    var NoMatchingClients = $span.text();
+    var numb = NoMatchingClients.replace(/[^0-9]/g,''); //extract numbers from text only
+    if (numb > 0) { 
+     cy.get("#StoryCarousel4 .TypeCompositePanel .tableContainer tr",{timeout:32000}).then(function(){     //now we wait for the results grid to finish loading
       callback();
-    })
+      }) 
+    } else {//no clients = 0 matching clients
+      cy.get("#StoryCarousel4 .TypeCompositePanel .tableContainer",{timeout:32000}).then(function(){ //no clients so no trs to wait for
+        callback();
+      }) 
+    }    
   })
 })
-
-
 
 Cypress.Commands.add("RetrieveClientUsingClientSearch", (SearchParam) => {
   cy.get('#ExistingClientsIconMenu').click();
   cy.clickThumbnail('Client Search', {timeout:16000});
 
-  var DefaultSearchCompletedCallback = function(){
+  var DefaultSearchCompletedCallback = function() { //This function exectutes only when the default search has finished loading
     
-    var SearchCompletedCallback = function(){
+    var SearchCompletedCallback = function(){ //This function executes only when out client search has finished loading
         cy.wait(1000); //1 second ui catchup to prevent any detatching from async refreshes
         cy.get('#StoryCarousel4 .TypeCompositePanel .tableContainer', {timeout:16000}).find('tr', {timeout:16000}).first().dblclick();
         cy.clickThumbnail('Client Summary');
