@@ -20,14 +20,14 @@ Cypress.Commands.add("ProcessClientFile_Assert", (fileLocation) => { //this is a
           Client = Clients.Client[x];
           cy.RetrieveClientUsingClientSearch(ClientSur);
           cy.AssertClient(Client);
-          cy.RetrieveClientPortfolios();
+          //cy.RetrieveClientPortfolios();
         }
       } else {
         //One client to create
         Client = API_Requests["Clients"]["Client"]; // same as <root><clients><client>
         cy.RetrieveClientUsingClientSearch(ClientSur);
         cy.AssertClient(Client);
-        cy.RetrieveClientPortfolios();
+        //cy.RetrieveClientPortfolios();
       }
     }); //end readFile
   
@@ -114,17 +114,26 @@ Cypress.Commands.add("AssertClient", (Client) => {
 
 Cypress.Commands.add("RetrieveClientPortfolios", (SearchParam) => {
   cy.get(".btn-viewportfolios-action > .ui-button-text").click({force:true});
-  cy.wait(1000);
-  cy.get('#Client_ViewPortfolios > .gridContainer > .wijmo-wijgrid', {timeout:16000})
-    .children()
-    .find('tbody')
-    .find('tr').should('be.visible')
-
-    //attempt #1 (DOM ELEMENT NOT PRESENT)
-    .each( ($el, index) => {
-      cy.get($el).dblclick(index);
-      cy.AssertClientPortfolios();
+  cy.get("#Client_ViewPortfolios .wijmo-wijgrid tr",{timeout:32000}).then(function($tr){     //now we wait for the results grid to finish loading
+    $tr.each( ($el, index) => {
+debugger
     })
+  }) 
+
+
+
+
+  // cy.wait(1000);
+  // cy.get('#Client_ViewPortfolios > .gridContainer > .wijmo-wijgrid', {timeout:16000})
+  //   .children()
+  //   .find('tbody')
+  //   .find('tr').should('be.visible')
+
+  //   //attempt #1 (DOM ELEMENT NOT PRESENT)
+  //   .each( ($el, index) => {
+  //     cy.get($el).dblclick(index);
+  //     cy.AssertClientPortfolios();
+  //   })
 
     //attempt #2
     // .then($rows => {

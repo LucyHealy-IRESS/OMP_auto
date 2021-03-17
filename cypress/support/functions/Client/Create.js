@@ -76,6 +76,7 @@ Cypress.Commands.add("CreateClientPortfoliosCallback", (Portfolio) => {
   cy.get("#QuickEditPortfolioContentWrapper", { timeout: 226000 }).then(function(){ //New portfolio editor is on screen
     cy.ProcessCreate_UI(Portfolio,portfolioMapping.Portfolio_BasicDetailsInputs);
     cy.CreateClientPortfolios_Investments(Portfolio);
+    cy.get('[aria-describedby="PortfolioAddPopUp"] > .ui-dialog-buttonpane > .ui-dialog-buttonset > .ui-button > .ui-button-text').contains("Ok").click();
   })
 });
 
@@ -99,7 +100,7 @@ Cypress.Commands.add("CreateClientPortfolios", (Client) => {
 });
 
 Cypress.Commands.add("ProcessClientFile", (fileLocation) => {
-  cy.login("staging", "username2", "password2");
+  cy.login("uat", "username1", "password2");
   cy.get("#NewClientIconMenu", { timeout: 36000 }).click();
 
   cy.get("#EditClientPopup .client_info_table", {  //ensure client editor is there and client info section has loaded
