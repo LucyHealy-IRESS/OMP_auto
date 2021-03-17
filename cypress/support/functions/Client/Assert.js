@@ -20,12 +20,14 @@ Cypress.Commands.add("ProcessClientFile_Assert", (fileLocation) => { //this is a
           Client = Clients.Client[x];
           cy.RetrieveClientUsingClientSearch(ClientSur);
           cy.AssertClient(Client);
+          cy.RetrieveClientPortfolios();
         }
       } else {
         //One client to create
         Client = API_Requests["Clients"]["Client"]; // same as <root><clients><client>
         cy.RetrieveClientUsingClientSearch(ClientSur);
         cy.AssertClient(Client);
+        cy.RetrieveClientPortfolios();
       }
     }); //end readFile
   
@@ -103,3 +105,45 @@ Cypress.Commands.add("AssertClient", (Client) => {
   
 
 });
+
+
+Cypress.Commands.add("RetrieveClientPortfolios", (SearchParam) => {
+  cy.get(".btn-viewportfolios-action > .ui-button-text").click({force:true});
+  cy.wait(1000);
+  cy.get('#Client_ViewPortfolios > .gridContainer > .wijmo-wijgrid', {timeout:16000})
+    .children()
+    .find('tbody')
+    .find('tr').should('be.visible')
+
+    //attempt #1 (DOM ELEMENT NOT PRESENT)
+    .each( ($el, index) => {
+      cy.get($el).dblclick(index);
+      cy.AssertClientPortfolios();
+    })
+
+    //attempt #2
+    // .then($rows => {
+    //   const rowCount = $rows.length;
+    //   for (let i = 0; i < rowCount; i++) {
+    //     cy.get('#Client_ViewPortfolios > .gridContainer > .wijmo-wijgrid', {timeout:16000})
+    //     .children()
+    //     .find('tbody')
+    //     .find('tr').eq(i).dblclick();
+    //   }
+    // })
+
+
+});
+
+
+Cypress.Commands.add("AssertClientPortfolios", () => {
+  cy.ProcessAssert_UI(Portfolio, portfolioMapping.Portfolio_BasicDetailsInputs);
+
+})
+
+// var SearchCompletedCallback = function(){
+//   cy.wait(1000); //1 second ui catchup to prevent any detatching from async refreshes
+//   cy.get('#StoryCarousel4 .TypeCompositePanel .tableContainer', {timeout:16000}).find('tr', {timeout:16000}).first().dblclick();
+//   cy.clickThumbnail('Client Summary');
+//   cy.get('#EditClientIconMenu', {timeout:16000}).click();  
+// }
