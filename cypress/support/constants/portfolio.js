@@ -13,11 +13,17 @@ Portfolio_BasicDetailsInputs = {
   Name: {
     Selector: constants.nameconst,
     inputType: "String",
-  },  
-  currentvalue: {
+  },
+},
+
+Portfolio_CurrentValue = {
+  currentValue: {//not on xml
     Selector: constants.currentvalueconst,
-    inputType: "currentvalueconst",
-  },  
+    inputType: "String",
+  },
+},
+
+Portfolio_Holdings = {
   FundPicker: {
     Selector: constants.ptFundName,
     inputType: "FundPicker",

@@ -74,8 +74,10 @@ Cypress.Commands.add("CreateClientPortfoliosCallback", (Portfolio) => {
   cy.contains("Add New Portfolio", { timeout: 226000 }).click();
 
   cy.get("#QuickEditPortfolioContentWrapper", { timeout: 226000 }).then(function(){ //New portfolio editor is on screen
-    cy.ProcessCreate_UI(Portfolio,portfolioMapping.Portfolio_BasicDetailsInputs);
-    cy.CreateClientPortfolios_Investments(Portfolio);
+    cy.ProcessCreate_UI(Portfolio, portfolioMapping.Portfolio_BasicDetailsInputs);
+
+      cy.clickAccordion(selectors.portfolioQuickAddPopup,'Holdings');
+      cy.CreateClientPortfolios_Investments(Portfolio);
   })
 });
 

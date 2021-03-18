@@ -26,7 +26,7 @@ export const
        
 
 //Portfolios
-
+        portfolioQuickAddPopup = '[aria-describedby="PortfolioAddPopUp"]',
         productconst = '.productCombo',
         providerconst = '.portProvider',
         nameconst = '.ProductName_tooltip',

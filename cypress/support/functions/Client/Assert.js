@@ -3,7 +3,7 @@ import * as portfolioMapping from "../../../support/constants/portfolio.js";
 import * as constantsSelectors from "../../constants/constantsSelectors.js"
 
 Cypress.Commands.add("ProcessClientFile_Assert", (fileLocation) => { //this is a near duplicate of ProcessClientFile - will refactor later
-  cy.login("staging", "username2", "password2");
+  cy.login("live", "username1", "password1");
 
   cy.readFile(fileLocation).then(function (fileContents) {
       fileContents = fileContents.replace(/[\t\n\r]/gm, ""); //remove new lines and tabs
@@ -40,10 +40,12 @@ Cypress.Commands.add("SearchHasCompleted", (callback) => {
     var numb = NoMatchingClients.replace(/[^0-9]/g,''); //extract numbers from text only
     if (numb > 0) { 
      cy.get("#StoryCarousel4 .TypeCompositePanel .tableContainer tr",{timeout:32000}).then(function(){     //now we wait for the results grid to finish loading
+      debugger;
       callback();
       }) 
     } else {//no clients = 0 matching clients
       cy.get("#StoryCarousel4 .TypeCompositePanel .tableContainer",{timeout:32000}).then(function(){ //no clients so no trs to wait for
+        debugger;
         callback();
       }) 
     }    
@@ -53,28 +55,30 @@ Cypress.Commands.add("SearchHasCompleted", (callback) => {
 Cypress.Commands.add("RetrieveClientUsingClientSearch", (SearchParam) => {
   cy.get('#ExistingClientsIconMenu').click();
   cy.clickThumbnail('Client Search', {timeout:16000});
-
+  debugger;
   var DefaultSearchCompletedCallback = function() { //This function exectutes only when the default search has finished loading
-    
+    debugger;
     var SearchCompletedCallback = function(){ //This function executes only when out client search has finished loading
         cy.wait(1000); //1 second ui catchup to prevent any detatching from async refreshes
         cy.get('#StoryCarousel4 .TypeCompositePanel .tableContainer', {timeout:16000}).find('tr', {timeout:16000}).first().dblclick();
         cy.clickThumbnail('Client Summary');
         cy.get('#EditClientIconMenu', {timeout:16000}).click();  
     }
-
+    debugger;
     cy.clickThumbnail('Client Search', {timeout:16000});
     cy.get(".JSSORPopUpMenu.DashboardNo_9D8375A5-D2F6-4073-B19D-1F128A6CAED3 .JSSORPopUpMenu_Open").then(function(){ //wait till client search menu is actually open 
-                                                                                                                     //- JSSORPopUpMenu_Open is used by the amend search popup code and crashes if its not present
+      debugger;                                                                                                           //- JSSORPopUpMenu_Open is used by the amend search popup code and crashes if its not present
       cy.get('#AmendClientSearch', {timeout:17000}).click();
       cy.get(".AmendSearchPopup_Container").then(function(){ //check amend search has opened before continuing
         cy.get(constantsSelectors.searchTextMatch).type(SearchParam);
         cy.get('.OverviewSearchButton').click();
+        debugger;
         cy.SearchHasCompleted(SearchCompletedCallback);
       })
     })
     
   }
+  debugger;
   cy.SearchHasCompleted(DefaultSearchCompletedCallback);
 });
 
@@ -111,38 +115,28 @@ Cypress.Commands.add("AssertClient", (Client) => {
 
 });
 
+//without the callbacks
+// Cypress.Commands.add("RetrieveClientPortfolios", () => {
+//   cy.get(".btn-viewportfolios-action > .ui-button-text").click({force:true});
+//   cy.wait(1000);
+//   var SearchCompletedCallback = function(){
+//   cy.get('#GridMenu_b3301c9c-a043-4ef5-a42e-0c3902b6a6c1').then(function(){ //wait for popup menu to be present
+//   cy.get('#Client_ViewPortfolios > div.gridContainer > div > div.wijmo-wijgrid-fixedview > div.wijmo-wijgrid-scroller.wijmo-wijsuperpanel.ui-widget.ui-widget-content.ui-corner-all > div > div > div > div > table', {timeout:16000})
+//     .wait(1000)
+//     .children().find('tr').should('be.visible')
+//     // .then(function(){
+//     .each( ($el, index) => {
+//       cy.get($el).dblclick(index);
+//       cy.AssertClientPortfolios();
+//     })
+//     })
+//   }
+//   })
 
-Cypress.Commands.add("RetrieveClientPortfolios", (SearchParam) => {
-  cy.get(".btn-viewportfolios-action > .ui-button-text").click({force:true});
-  cy.wait(1000);
-  cy.get('#Client_ViewPortfolios > .gridContainer > .wijmo-wijgrid', {timeout:16000})
-    .children()
-    .find('tbody')
-    .find('tr').should('be.visible')
-
-    //attempt #1 (DOM ELEMENT NOT PRESENT)
-    .each( ($el, index) => {
-      cy.get($el).dblclick(index);
-      cy.AssertClientPortfolios();
-    })
-
-    //attempt #2
-    // .then($rows => {
-    //   const rowCount = $rows.length;
-    //   for (let i = 0; i < rowCount; i++) {
-    //     cy.get('#Client_ViewPortfolios > .gridContainer > .wijmo-wijgrid', {timeout:16000})
-    //     .children()
-    //     .find('tbody')
-    //     .find('tr').eq(i).dblclick();
-    //   }
-    // })
-
-
-});
 
 
 Cypress.Commands.add("AssertClientPortfolios", () => {
-  cy.ProcessAssert_UI(Portfolio, portfolioMapping.Portfolio_BasicDetailsInputs);
+  cy.ProcessAssert_UI(Portfolios, portfolioMapping.Portfolio_BasicDetailsInputs);
 
 })
 
@@ -152,3 +146,43 @@ Cypress.Commands.add("AssertClientPortfolios", () => {
 //   cy.clickThumbnail('Client Summary');
 //   cy.get('#EditClientIconMenu', {timeout:16000}).click();  
 // }
+
+Cypress.Commands.add("PortfolioSearchHasCompleted", (callback) => {
+
+  cy.get('#Client_ViewPortfolios > div.gridContainer > div > div.wijmo-wijgrid-fixedview > div.wijmo-wijgrid-scroller.wijmo-wijsuperpanel.ui-widget.ui-widget-content.ui-corner-all > div > div > div > div > table',{timeout:32000}).then(function(tr){     //now we wait for the results grid to finish loading
+     var rows = tr.children().find('tr');
+    if (rows > 0) { 
+     cy.get('#Client_ViewPortfolios > div.gridContainer > div > div.wijmo-wijgrid-fixedview > div.wijmo-wijgrid-scroller.wijmo-wijsuperpanel.ui-widget.ui-widget-content.ui-corner-all > div > div > div > div > table',{timeout:32000}).then(function(){     //now we wait for the results grid to finish loading
+      callback();
+      }) 
+    } else {//no clients = 0 matching clients
+      cy.get("'#Client_ViewPortfolios > div.gridContainer > div > div.wijmo-wijgrid-fixedview > div.wijmo-wijgrid-scroller.wijmo-wijsuperpanel.ui-widget.ui-widget-content.ui-corner-all > div > div > div > div",{timeout:32000}).then(function(){ //no clients so no trs to wait for
+       callback();
+      }) 
+    }    
+  })
+})
+
+
+  // cy.get(".overviewHeader").find("div").find("span").contains("Matching Client",{timeout:32000}).then(function($span){ //initial search completes as header contains x Matching Clients
+  //   var NoMatchingClients = $span.text();
+  //   var numb = NoMatchingClients.replace(/[^0-9]/g,''); //extract numbers from text only
+  //   if (numb > 0) { 
+  
+Cypress.Commands.add("RetrieveClientPortfolios", () => {
+  cy.get(".btn-viewportfolios-action > .ui-button-text").click({force:true});
+  cy.wait(1000);
+  var SearchCompletedCallback = function(){
+  cy.get('#GridMenu_b3301c9c-a043-4ef5-a42e-0c3902b6a6c1').then(function(){ //wait for popup menu to be present
+  cy.get('#Client_ViewPortfolios > div.gridContainer > div > div.wijmo-wijgrid-fixedview > div.wijmo-wijgrid-scroller.wijmo-wijsuperpanel.ui-widget.ui-widget-content.ui-corner-all > div > div > div > div > table', {timeout:16000})
+    .wait(1000)
+    .children().find('tr').should('be.visible')
+    // .then(function(){
+    .each( ($el, index) => {
+      cy.get($el).dblclick(index);
+      cy.AssertClientPortfolios();
+    })
+    })
+  }
+  cy.PortfolioSearchHasCompleted(SearchCompletedCallback);
+  })
