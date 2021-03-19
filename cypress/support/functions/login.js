@@ -3,7 +3,14 @@ import * as constants from "../constants/constantsSelectors.js";
 Cypress.Commands.add("login", (url,username, password) => {
   cy.clearCookies()
 
-    if (url=='test') {
+
+    if (url=='Dev') {
+        cy.visit('http://localhost:57204/index.html',{ timeout: 16000 });
+    }
+    else if (url=='test2') {
+        cy.visit('http://testomprofiler/',{ timeout: 16000 });
+    }
+    else if (url=='test') {
         cy.visit('http://uat.omprofiler.co.uk',{ timeout: 16000 });
     }
 
