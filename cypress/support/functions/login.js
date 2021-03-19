@@ -3,11 +3,10 @@ import * as constants from "../constants/constantsSelectors.js";
 Cypress.Commands.add("login", (url,username, password) => {
   cy.clearCookies()
 
-
     if (url=='Dev') {
         cy.visit('http://localhost:57204/index.html',{ timeout: 16000 });
     }
-    else if (url=='test2') {
+    else if (url=='testProfiler') {
         cy.visit('http://testomprofiler/',{ timeout: 16000 });
     }
     else if (url=='test') {
@@ -27,7 +26,6 @@ Cypress.Commands.add("login", (url,username, password) => {
 
     else {
         Cypress.log({name :'INVALID URL'}).end()
-       // return 'error abc'
     }
   
     cy.get(constants.usernameconst).type(Cypress.env(username));
