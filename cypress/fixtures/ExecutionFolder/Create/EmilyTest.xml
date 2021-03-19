@@ -84,6 +84,26 @@
 							Current
 						</Status>
 					</PortfolioInvestment>
+					<PortfolioInvestment>
+						<FundID>
+							GB00B5Q2M757
+						</FundID>
+						<FundName>
+							Blu Frog
+						</FundName>
+						<Units>
+							155.8
+						</Units>
+						<TotalValue>
+							316436.71
+						</TotalValue>
+						<InvestmentType>
+							Fund
+						</InvestmentType>
+						<Status>
+							Current
+						</Status>
+					</PortfolioInvestment>
 				</Investments>
 				<RetirementAge>
 					65
