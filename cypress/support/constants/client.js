@@ -1,3 +1,4 @@
+import { contains } from "cypress/types/jquery";
 import * as constants from "../constants/constantsSelectors.js";
 export const
 
@@ -33,19 +34,19 @@ ClientInputs = {
 
 FamilyDetails = {
   MaritalStatus: {
-    Selector: "#ClientDetailsPopup_MaritalStatus",
+    Selector: constants.clMaritalStatus,
     inputType: "Dropdown",
   },
   DependantChildren: {
-    Selector: "#ClientDetailsPopup_DependantChildren",
+    Selector: constants.clDependantChildren,
     inputType: "String",
   },
   IndependantChildren: {
-    Selector: "#ClientDetailsPopup_IndependantChildren",
+    Selector: constants.clIndependantChildren,
     inputType: "String",
   },
   Siblings: {
-    Selector: "#ClientDetailsPopup_Siblings",
+    Selector: constants.clSiblings,
     inputType: "String",
   }
 },
@@ -57,11 +58,11 @@ ClientContact = {
     inputType: "String",
   },
   Address2: {
-    Selector: "#ClientDetailsPopup_Address2",
+    Selector: constants.clAddress2,
     inputType: "String",
   },
   Address3: {
-    Selector: "#ClientDetailsPopup_Address3",
+    Selector: constants.clAddress3,
     inputType: "String",
   },
   City: {
@@ -73,30 +74,30 @@ ClientContact = {
     inputType: "String",
   },
   Email: {
-    Selector: "#ClientDetailsPopup_Email",
+    Selector: constants.clEmail,
     inputType: "String",
   },
   WorkNumber: {
-    Selector: "#ClientDetailsPopup_WorkPhone",
+    Selector: constants.clWorkNumber,
     inputType: "String",
   },
   HomeNumber: {
-    Selector: "#ClientDetailsPopup_HomePhone",
+    Selector: constants.clHomeNumber,
     inputType: "String",
   },
   MobileNumber: {
-    Selector: "#ClientDetailsPopup_MobilePhone",
+    Selector: constants.clMobileNumber,
     inputType: "String",
   },
 },
 
 ClientHealth = {
   HealthStatus: {
-    Selector: "#ClientDetailsPopup_HealthIssues",
+    Selector: constants.clHealthStatus,
     inputType: "Dropdown",
   },
   SmokerStatus: {
-    Selector: "#ClientDetailsPopup_Smoker",
+    Selector: constants.clSmokerStatus,
     inputType: "Dropdown",
   },
   Postcode: {
@@ -107,31 +108,31 @@ ClientHealth = {
 
 Tax = {
   TaxRegion: {
-    Selector: "#ClientDetailsPopup_TaxRegion",
+    Selector: constants.clTaxRegion,
     inputType: "String",
   },
   LifetimeAllowanceType: {
-    Selector: "#ClientDetailsPopup_LifetimeAllowanceType",
+    Selector: constants.clLifetimeAllowanceType,
     inputType: "Dropdown",
   },
   ProtectedAmount: {
-    Selector: "#ClientDetailsPopup_ProtectedAmount",
+    Selector: constants.clProtectedAmount,
     inputType: "Integer",
   },
   LifetimeAllowancePreviouslyUsed: {
-    Selector: "#ClientDetailsPopup_PreviouslyUsed",
+    Selector: constants.clLifetimeAllowancePreviouslyUsed,
     inputType: "Integer",
   },
   LifetimeAllowanceEnhancementFactor: {
-    Selector: "#ClientDetailsPopup_EnhancementFactor",
+    Selector: constants.clLifetimeAllowanceEnhancementFactor,
     inputType: "Integer",
   },
   CustomLifetimeAllowance: {
-    Selector: "#ClientDetailsPopup_CustomLifetimeAllowance",
+    Selector: constants.clCustomLifetimeAllowance,
     inputType: "Integer",
   },
   AllowanceIncreases: {
-    Selector: "#ClientDetailsPopup_AllowanceIncreases",
+    Selector: constants.clAllowanceIncreases,
     inputType: "Dropdown",
   }
   
@@ -140,30 +141,30 @@ Tax = {
 
 ServiceBasis = {
   ServiceBasis: {
-    Selector: "#ClientDetailsPopup_ServiceBasis",
+    Selector: constants.clServiceBasis,
     inputType: "DropdownIndex",
   },
   EthicalInvestment: {
-    Selector: "#ClientDetailsPopup_EthicalInvestment",
+    Selector: constants.clEthicalInvestment,
     inputType: "DropdownIndex",
   },
   PayingFee: {
-    Selector: "#ClientDetailsPopup_PayingFee",
+    Selector: constants.clPayingFee,
     inputType: "Dropdown",
   },
   NextReviewDate: {
-    Selector: "#ClientDetailsPopup_NextReviewVisit_Day",
-    ddSelector:"#ClientDetailsPopup_NextReviewVisit_Day",
-    mmSelector:"#ClientDetailsPopup_NextReviewVisit_Month",
-    yyyySelector:"#ClientDetailsPopup_NextReviewVisit_Year",
+    Selector: constants.clNextReviewVisit_Day,
+    ddSelector: constants.clNextReviewVisit_Day,
+    mmSelector: constants.clNextReviewVisit_Month,
+    yyyySelector: constants.clNextReviewVisit_Year,
     inputType: "Date",
   },
   ClientStatus: {
-    Selector: "#ClientDetailsPopup_ClientStatus",
+    Selector: constants.clClientStatus,
     inputType: "Dropdown",
   },
   IsSharedWithCompany:{
-    Selector: "#ClientDetailsPopup_ShareClient",
+    Selector: constants.clIsSharedWithCompany,
     inputType: "Checkbox",
   }
   //Adviser is ownerguid, not done yet
