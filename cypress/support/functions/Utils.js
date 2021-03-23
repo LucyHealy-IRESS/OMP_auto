@@ -79,7 +79,7 @@ Cypress.Commands.add('clickThumbnail', (thumbnailName) => {
 })
 
 Cypress.Commands.add('clickButtonInPopup', (PopupID, ButtonText) => {
-    cy.get("[aria-describedby='" + PopupID.replace("#","") + "']").contains(ButtonText).click();
+    cy.get("[aria-describedby='" + PopupID.replace("#","") + "']").contains(ButtonText).click({force:true});
 })
 
 // //click thumnail button such as Home or Client Search
