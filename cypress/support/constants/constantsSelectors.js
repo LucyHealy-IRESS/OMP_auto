@@ -66,7 +66,7 @@ export const
 
 //Portfolios
 //Portfolio_BasicDetailsInputs	
-       ptImport = '.basic_details_table > tbody > :nth-child(1) > td > .wijmo-wijcombobox > .wijmo-wijcombobox-wrapper > .wijmo-wijcombobox-input',
+       ptImport = '.basic_details_table > tbody > :nth-child(1) > td > .wijmo-wijcombobox > .wijmo-wijcombobox-wrapper > .wijmo-wijcombobox-input', //needs renaming
        ptXplanID = '.IRESSKey_tooltip',
        ptTransactKey = '.TransactKey_tooltip',
        ptFNAccountNumber = '.FundsNetworkAccountNumber_tooltip',

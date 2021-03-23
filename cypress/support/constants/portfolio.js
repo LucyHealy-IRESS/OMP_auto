@@ -3,6 +3,7 @@ export const
 
 ClientPortfoliosSelector = "#Client_ViewPortfolios",
 PortfoliosQuickEditorSelector = "#PortfolioAddPopUp",
+PortfoliosAdvancedEditorSelector = '#EditPortfolioAdvancedPopup', //depends where we lad it from
 
 Portfolio_BasicDetailsInputs_EmilyBasic = {
   ProductID: {
@@ -20,11 +21,11 @@ Portfolio_BasicDetailsInputs_EmilyBasic = {
 },
 
 
-Portfolio_BasicDetailsInputs = {
-  third_party_tag: {
-    Selector: constants.ptImport,
-    inputType: "Dropdown",
-    },
+Portfolio_BasicDetailsAdvanced = {
+  // third_party_tag: { //needs a better selector
+  //   Selector: constants.ptImport,
+  //   inputType: "Dropdown",
+  //   },
   ExternalKey: {
       Selector: constants.ptXplanID,
       inputType: "String",
@@ -38,26 +39,14 @@ Portfolio_BasicDetailsInputs = {
       inputType: "String",
     },
   ProductID: {
-      Selector: constants.ptProduct,
-      inputType: "Dropdown",
-    },
-  NA: {
       Selector: constants.ptAProduct,
-      inputType: "Dropdown",
+      inputType: "ProductDropdown",
     }, 
   ProviderID: {
-      Selector: constants.ptProvider,
-      inputType: "Dropdown",
-    }, 
-  NA: {
       Selector: constants.ptAProvider,
-      inputType: "Dropdown",
+      inputType: "ProviderDropdown",
     }, 
   Reference: {
-      Selector: constants.ptReference,
-      inputType: "String",
-    }, 
-  NA: {
       Selector: constants.ptAReference,
       inputType: "String",
     }, 
@@ -79,6 +68,41 @@ Portfolio_BasicDetailsInputs = {
     }, 
   IsSharedWithCompany: {
       Selector: constants.ptASharePortfolio,
+      inputType: "Checkbox",
+    }, 
+},
+
+Portfolio_BasicDetailsSimple = {
+  // third_party_tag: {  //needs a better selector
+  //   Selector: constants.ptImport,
+  //   inputType: "Dropdown",
+  //   },
+  ExternalKey: {
+      Selector: constants.ptXplanID,
+      inputType: "String",
+    },
+  TransactKey: {
+      Selector: constants.ptTransactKey,
+      inputType: "String",
+    },
+  ExternalKey: {
+      Selector: constants.ptFNAccountNumber,
+      inputType: "String",
+    },
+  ProductID: {
+      Selector: constants.ptProduct,
+      inputType: "ProductDropdown",
+    },
+  ProviderID: {
+      Selector: constants.ptProvider,
+      inputType: "ProviderDropdown",
+    },  
+  Reference: {
+      Selector: constants.ptReference,
+      inputType: "String",
+    }, 
+  IsWorkplacePension: {
+      Selector: constants.ptWorkplacePension,
       inputType: "Checkbox",
     }, 
 },
@@ -286,8 +310,41 @@ PortfolioAccordians = {
     AccordianName: 'Basic Details', 
     AccordianSelector:"#PortfolioSimpleEditor_BasicDetails",   
     AccordianContentMappings:Portfolio_BasicDetailsInputs_EmilyBasic
+  },
+  BasicDetails: {
+    AccordianName: 'Basic Details', 
+    AccordianSelector:"#PortfolioSimpleEditor_BasicDetails",   
+    AccordianContentMappings:Portfolio_BasicDetailsInputs_EmilyBasic
+  },
+  BasicDetails: {
+    AccordianName: 'Basic Details', 
+    AccordianSelector:"#PortfolioSimpleEditor_BasicDetails",   
+    AccordianContentMappings:Portfolio_BasicDetailsInputs_EmilyBasic
   }
 },
+
+PortfolioAccordioansSimple = {
+  BasicDetailsSimple: {
+    AccordianName: 'Basic Details',
+    AccordianSelector: '#PortfolioSimpleEditor_BasicDetails',
+    AccordianContentMappings: Portfolio_BasicDetailsSimple
+  }
+},
+
+PortfolioAccordioansAdvanced = {
+  BasicDetailsAdvanced: {
+    AccordianName: 'Basic Details',
+    AccordianSelector: '#portfolio_info_table',
+    AccordianContentMappings: Portfolio_BasicDetailsAdvanced
+  }
+
+},
+
+
+
+
+
+
 
    P_1 = "Personal Pension",
    P_2 = "SIPP",
