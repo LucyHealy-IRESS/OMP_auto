@@ -1,6 +1,25 @@
 import * as constants from "../constants/constantsSelectors.js";
 export const
 
+ClientPortfoliosSelector = "#Client_ViewPortfolios",
+PortfoliosQuickEditorSelector = "#PortfolioAddPopUp",
+
+Portfolio_BasicDetailsInputs_EmilyBasic = {
+  ProductID: {
+      Selector: constants.ptProduct,
+      inputType: "ProductDropdown",
+    },
+  ProviderID: {
+      Selector: constants.ptProvider,
+      inputType: "ProviderDropdown",
+    }, 
+  Reference: {
+      Selector: constants.ptReference,
+      inputType: "String",
+    }
+},
+
+
 Portfolio_BasicDetailsInputs = {
   third_party_tag: {
     Selector: constants.ptImport,
@@ -262,14 +281,13 @@ Portfolio_DrawdownIncome = {
 },
 
 
-
-
-
-
-
-
-
-
+PortfolioAccordians = {
+  BasicDetails: {
+    AccordianName: 'Basic Details', 
+    AccordianSelector:"#PortfolioSimpleEditor_BasicDetails",   
+    AccordianContentMappings:Portfolio_BasicDetailsInputs_EmilyBasic
+  }
+},
 
    P_1 = "Personal Pension",
    P_2 = "SIPP",

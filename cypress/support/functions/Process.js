@@ -69,12 +69,18 @@ Cypress.Commands.add("PopulateEditor",(EditorSelector, AccordianMappings, XMLDat
     var AccordiansArray = Object.entries(AccordianMappings);
       AccordiansArray.forEach(([key, value]) => {
         var Accordian = AccordianMappings[key];
-        debugger;  
+   
         if (key != "NoAccordian") {
-          cy.clickAccordion(EditorSelector, Accordian.AccordianName);
-          cy.get(Accordian.AccordianSelector + ".wijmo-wijaccordion-content-active").then(function () {
-            //ensure accordian is open          
-            cy.ProcessCreate_UI(XMLDataObject,Accordian.AccordianContentMappings); //apply the conents of the xml to the inputs
+          cy.get(Accordian.AccordianSelector).then(function ($AccordianSelector) {
+            if($AccordianSelector.hasClass('wijmo-wijaccordion-content-active')){
+              cy.ProcessCreate_UI(XMLDataObject,Accordian.AccordianContentMappings);
+            }
+            else {
+              cy.clickAccordion(EditorSelector, Accordian.AccordianName);
+              cy.get(Accordian.AccordianSelector + ".wijmo-wijaccordion-content-active").then(function () {
+                cy.ProcessCreate_UI(XMLDataObject,Accordian.AccordianContentMappings); //apply the conents of the xml to the inputs
+              });
+            }          
           });
         } else { 
           cy.ProcessCreate_UI(XMLDataObject,Accordian.AccordianContentMappings); //apply the conents of the xml to the inputs
