@@ -20,20 +20,20 @@ import './functions/API_Call.js'
 import './functions/baseProcessing.js'
 import './functions/Utils.js'
 
-import './functions/_Client/Assert.js'
-import './functions/_Client/create.js.js'
-import './functions/Assert/Client_Assert.js'
-import './functions/Assert/Clients_Assert.js'
-import './functions/Create/Client_Create.js'
-import './functions/Create/Clients_Create.js'
-import './functions/Assert/Portfolio_Assert.js'
-import './functions/Assert/Portfolios_Assert.js'
-import './functions/Create/Portfolio_Create.js'
-import './functions/Create/Portfolios_Create.js'
+import './functions/Client/Assert.js'
+import './functions/Client/create.js'
+import './functions/Client/Client_Assert.js'
+import './functions/Client/Clients_Assert.js'
+import './functions/Client/Client_Create.js'
+import './functions/Client/Clients_Create.js'
+import './functions/Client/Portfolio_Assert.js'
+import './functions/Client/Portfolios_Assert.js'
+import './functions/Client/Portfolio_Create.js'
+import './functions/Client/Portfolios_Create.js'
 
 import './functions/Process.js'
 import './functions/Process2.js'
- 
+
 import '.'
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
