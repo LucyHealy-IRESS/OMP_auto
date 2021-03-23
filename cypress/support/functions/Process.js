@@ -35,34 +35,25 @@ Cypress.Commands.add("ProcessXMLFile", (fileLocation, Type) => {
         if (XMLtoArray !== null) {
            for (var x = 0; x < XMLtoArray.length; x++) {
              var Entity = XMLtoArray[x]; //e.g. string C
-             if (Array.isArray(XMLtoArray)) {
+
                for (var x = 0; x < XMLtoArray.length; x++) {
                  var Entity = XMLtoArray[x]; //e.g. string Clients
                  var EntityData = Data[Entity];
-                 if (constants.EntityTypes[Entity]) {    
-                  var EntityInfo = constants.EntityTypes[Entity];                    
-                  if(EntityInfo.CanBeMultiple){
+                 if (constants.EntityTypes[Entity]) {                     
                     if (Array.isArray(EntityData)) {
                       for (var x = 0; x < EntityData.length; x++) {
                         console.log(Entity + " " + Type);
                         eval("cy."+Entity+"_"+Type+"(EntityData[x]);");
                       }
                     }
-                    else{
+                    else {
                       console.log(Entity + " " + Type);
                       eval("cy."+Entity+"_"+Type+"(EntityData);");
                     }
-                  }        
-                  else{
-                    console.log(Entity + " " + Type);
-                    eval("cy."+Entity+"_"+Type+"(EntityData);");
-                  }
-
                   var XMLtoArraySub = Object.keys(EntityData);
                   traverse(XMLtoArraySub, EntityData);
               }
             }
-          }
         }
       }
     }

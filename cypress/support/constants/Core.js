@@ -10,8 +10,8 @@ EntityTypes = {
     Client: {CanBeMultiple: true},
     Portfolios: {CanBeMultiple: false},
     Portfolio: {CanBeMultiple: true},
-    // Investments: {CanBeMultiple: false},
-    // PortfolioInvestment: {CanBeMultiple: true}
+    Investments: {CanBeMultiple: false},
+    PortfolioInvestment: {CanBeMultiple: true}
 }
 
 // Workspace_ClientSearch = {
