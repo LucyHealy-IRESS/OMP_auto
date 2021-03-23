@@ -72,8 +72,8 @@ export const
        ptFundName = '.quickAddFund_ComboBox',
        ptFundPickerOk = '#ui-id-12 > div:nth-child(2) > table > tbody > tr > td > div > div.wijmo-wijcombobox-trigger.ui-state-default.ui-corner-right',
        ptAddSearchFund = '#omprofiler > div:nth-child(47) > div.ui-dialog-buttonpane.ui-widget-content.ui-helper-clearfix > div > button:nth-child(2) > span',
-       ptFundPickerOk = '#ui-id-12 > div:nth-child(2) > table > tbody > tr > td > div > div.wijmo-wijcombobox-trigger.ui-state-default.ui-corner-right',
-       ptAddSearchFund = '#omprofiler > div:nth-child(47) > div.ui-dialog-buttonpane.ui-widget-content.ui-helper-clearfix > div > button:nth-child(2) > span',
+       //ptFundPickerOk = '#ui-id-12 > div:nth-child(2) > table > tbody > tr > td > div > div.wijmo-wijcombobox-trigger.ui-state-default.ui-corner-right',
+       //ptAddSearchFund = '#omprofiler > div:nth-child(47) > div.ui-dialog-buttonpane.ui-widget-content.ui-helper-clearfix > div > button:nth-child(2) > span',
        
 
 //Portfolio_Purpose	

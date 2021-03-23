@@ -6,47 +6,63 @@ RunType_Create = "Create",
 RunType_Assert = "Assert",
 
 Workspace_ClientSearch = {
-    Paths: {CurrentLocation: "Home"}
+    Name: "ClientSearch",
+    Paths: [{CurrentLocation: "Home", Path: [{Click:"#ExistingClientsIconMenu"}]},
+            {CurrentLocation: "ClientSearch", Path: [""]}],
+    Task: "RunSearch",
+    SearchParam: "Surname",
+    ThumbnailName: "Client Search",
+    MenuSelector: ".JSSORPopUpMenu.DashboardNo_9D8375A5-D2F6-4073-B19D-1F128A6CAED3 .JSSORPopUpMenu_Open"
 },
 
 Workspace_Client = {
-    Paths: {CurrentLocation: "Home"}
+    Name: "Client",
+    Paths: [{CurrentLocation: "Home", Path: [{Click:"#NewClientIcon"}]},
+            {CurrentLocation: "ClientSearch", Path: [""]}],
+    Task: "PopulateEditor"
 },
 
+ClientPortfolios = {
+    Name: "Client Portfolios",
+    Paths: [{CurrentLocation: "Client", Path: ["#Client_ViewPortfolios"]}],
+    Task: "PopulateEditor"
+},
+
+//Matching XML
 EntityTypes = {
-    Clients : Workspace_ClientSearch,
-    Client: Workspace_Client,
-    Portfolios: {},
-    Portfolio: {},
-    Investments: {},
-    PortfolioInvestment:{}
+ Clients : Workspace_ClientSearch,
+ Client: Workspace_Client,
+ Portfolios: ClientPortfolios,
+ Portfolio: {},
+ Investments: {},
+ PortfolioInvestment:{}
 }
 
 // EntityTypes = {
-//     Client: {    
+//     Client: {
 //       HomeButtonName: "New Client",
 //       Editors: [
 //         {Selector:'#EditClientPopup',
-//         Mappings: ClientConstants.ClientAccordians, 
+//         Mappings: ClientConstants.ClientAccordians,
 //         NextButtonText: 'View Portfolios >'},
 //         {Selector:'#Client_ViewPortfolios',
-//         Mappings: null, 
+//         Mappings: null,
 //         NextButtonText: 'Income Sources >',
-//         SubEditor: 
-//             {Selector: "#PortfolioAddPopUp", 
+//         SubEditor:
+//             {Selector: "#PortfolioAddPopUp",
 //             AccessPoint: "Add New Portfolio",
 //             DataEntityRoot: "Portfolios",
-//             DataEntity: "Portfolio", 
+//             DataEntity: "Portfolio",
 //             Mappings: PortfolioConstants.PortfolioAccordians,
 //             NextButtonText: 'Ok' ,
 //                 SubEditor : {Selector: "#PortfolioSimpleEditor_QuickAddFundPopup",
-//                 AccessPoint: "Pick funds from shortlist using fund name or ISIN", 
+//                 AccessPoint: "Pick funds from shortlist using fund name or ISIN",
 //                 DataEntityRoot: "Investments",
-//                 DataEntity: "PortfolioInvestment", 
+//                 DataEntity: "PortfolioInvestment",
 //                 customFunction: "ProcessAddHoldingQuick"
 //             }
-//         }    
-//         }        
+//         }
+//         }
 //         // ,{Selector:'#Client_ViewIncomes',Mappings: null, NextButtonText: 'Target Income, Expenses & Goals >'},
 //         // {Selector:'#Client_ViewGoals',Mappings: null, NextButtonText: 'OK'},
 //       ]
@@ -56,11 +72,11 @@ EntityTypes = {
 
 
 
-//Mappings:PortfolioConstants.SimpleFundPicker, 
+//Mappings:PortfolioConstants.SimpleFundPicker,
 
 //NextButtonText: 'Close'
 // EntityTypes = {
-//     Client: {    
+//     Client: {
 //       HomeButtonName: "New Client",
 //       Editors: [
 //         {Selector:'#EditClientPopup',Mappings: ClientConstants.ClientAccordians, NextButtonText: 'View Portfolios >'},
