@@ -82,3 +82,6 @@ Cypress.Commands.add('clickThumbnail', (thumbnailName) => {
 // Cypress.Commands.add("MenuClick", (MenuText) => {
 //     cy.get(".thumbNailTitleText").filter(':visible').contains(new RegExp(MenuText, "g")).closest('#JssorThumbnailContainer').click();
 //   })
+
+
+

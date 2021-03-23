@@ -1,6 +1,8 @@
 import * as constants from "../constants/constantsSelectors.js";
 export const
 
+ClientEditorSelector = '#EditClientPopup',
+
 ClientInputs = {
   Title: {
     Selector: constants.titleconst,
@@ -165,7 +167,20 @@ ServiceBasis = {
   IsSharedWithCompany:{
     Selector: constants.clIsSharedWithCompany,
     inputType: "Checkbox",
-  }
+  },
   //Adviser is ownerguid, not done yet
-  
+ 
+},
+
+ClientAccordians = {
+  PersonalDetails: {
+    AccordianName: 'Personal Details', 
+    AccordianSelector:"#PersonalDetails",   
+    AccordianContentMappings:ClientInputs
+  },
+  FamilyDetails: {
+    AccordianName: 'Family Details', 
+    AccordianSelector:"#FamilyDetails",   
+    AccordianContentMappings:FamilyDetails
+  }
 }

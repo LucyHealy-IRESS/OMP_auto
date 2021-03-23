@@ -2,7 +2,7 @@ import * as constants from "../../support/constants/constantsSelectors.js"
 
 //This function takes the client object and creates it using the UI of the client editor
 Cypress.Commands.add("ProcessCreate_UI", (xmlObject, xmlMappings) => {
-  
+
   for (let xmlInput in xmlObject) { //iterate each tag of the xml object for the client
 
      var XmlInputObject = xmlMappings[xmlInput]; //match the xml tag with the object in Client Inputs,if that xml tag has been passed in we can go ahead and create it
