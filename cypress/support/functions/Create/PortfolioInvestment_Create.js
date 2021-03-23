@@ -1,5 +1,6 @@
 import * as PortfolioConstants from "../../constants/portfolio.js";
 
+
 Cypress.Commands.add("PortfolioInvestment_Create", (EntityData) => {
     //click Add New Portfolio
     cy.clickButtonInPopup(PortfolioConstants.PortfoliosQuickEditorSelector,"Pick funds from shortlist using fund name or ISIN");
