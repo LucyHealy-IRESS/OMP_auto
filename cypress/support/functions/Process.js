@@ -21,7 +21,7 @@ Cypress.Commands.add("ProcessFolder", (ExecutiionFolderLocation) => {
 //Receiving the filename and decoding it in order to call the correct create or assert functions
 //Type = Create or Assert
 Cypress.Commands.add("ProcessXMLFile", (fileLocation, Type) => {
-  cy.login("Dev", "username5", "password5");
+  cy.login("test", "username3", "password3");
 
   cy.get("#StoryCarousel1 .additionalInfo").then(function () {
     cy.readFile(fileLocation).then(function (fileContents) {

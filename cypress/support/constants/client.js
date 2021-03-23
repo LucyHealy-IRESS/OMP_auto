@@ -182,5 +182,25 @@ ClientAccordians = {
     AccordianName: 'Family Details', 
     AccordianSelector:"#FamilyDetails",   
     AccordianContentMappings:FamilyDetails
+  },
+  HealthDetails: {
+    AccordianName: 'Health Details', 
+    AccordianSelector:"#HealthDetails",   
+    AccordianContentMappings:ClientHealth
+  },
+  TaxandLifetimeAllowance: {
+    AccordianName: 'Tax and Lifetime Allowance', 
+    AccordianSelector:"#TaxAndLifetimeAllowance",   
+    AccordianContentMappings:Tax
+  },
+  ContactDetails: {
+    AccordianName: 'Contact Details', 
+    AccordianSelector:"#ContactDetails",   
+    AccordianContentMappings:ClientContact
+  },
+  ServiceBasis: {
+    AccordianName: 'Service Basis', 
+    AccordianSelector:"#ServiceBasis",   
+    AccordianContentMappings:ServiceBasis
   }
 }
