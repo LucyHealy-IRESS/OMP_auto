@@ -6,12 +6,12 @@ RunType_Create = "Create",
 RunType_Assert = "Assert",
 
 EntityTypes = {
-    Clients: {CanBeMultiple: false},
-    Client: {CanBeMultiple: true},
-    Portfolios: {CanBeMultiple: false},
-    Portfolio: {CanBeMultiple: true},
-    //Investments: {CanBeMultiple: false},
-    //PortfolioInvestment: {CanBeMultiple: true}
+    Clients: {},
+    Client: {},
+    Portfolios: {},
+    Portfolio: {},
+    //Investments: {},
+    //PortfolioInvestment: {}
 }
 
 // Workspace_ClientSearch = {
