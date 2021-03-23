@@ -42,7 +42,6 @@ export const
         //ClientHealth
         clHealthStatus = "#ClientDetailsPopup_HealthIssues",
         clSmokerStatus = "#ClientDetailsPopup_Smoker",
-        clPostcode = constants.clPostcode,
 
         //Tax
         clTaxRegion = "#ClientDetailsPopup_TaxRegion",

@@ -5,38 +5,50 @@ export const
 RunType_Create = "Create",
 RunType_Assert = "Assert",
 
-Workspace_ClientSearch = {
-    Name: "ClientSearch",
-    Paths: [{CurrentLocation: "Home", Path: [{Click:"#ExistingClientsIconMenu"}]},
-            {CurrentLocation: "ClientSearch", Path: [""]}],
-    Task: "RunSearch",
-    SearchParam: "Surname",
-    ThumbnailName: "Client Search",
-    MenuSelector: ".JSSORPopUpMenu.DashboardNo_9D8375A5-D2F6-4073-B19D-1F128A6CAED3 .JSSORPopUpMenu_Open"
-},
+EntityTypes = {
+    Clients: {CanBeMultiple: false},
+    Client: {CanBeMultiple: true},
+    Portfolios: {CanBeMultiple: false},
+    Portfolio: {CanBeMultiple: true},
+    // Investments: {CanBeMultiple: false},
+    // PortfolioInvestment: {CanBeMultiple: true}
+}
 
-Workspace_Client = {
-    Name: "Client",
-    Paths: [{CurrentLocation: "Home", Path: [{Click:"#NewClientIcon"}]},
-            {CurrentLocation: "ClientSearch", Path: [""]}],
-    Task: "PopulateEditor"
-},
+// Workspace_ClientSearch = {
+//     Name: "ClientSearch",
+//     Paths: [{CurrentLocation: "Home", Path: [{Click:"#ExistingClientsIconMenu",ActionType:"Click"}]},
+//             {CurrentLocation: "ClientSearch", Path: [""]}],
+//     Task: "RunSearch",
+//     SearchParam: "Surname",
+//     ThumbnailName: "Client Search",
+//     MenuSelector: ".JSSORPopUpMenu.DashboardNo_9D8375A5-D2F6-4073-B19D-1F128A6CAED3 .JSSORPopUpMenu_Open"
+// },
 
-ClientPortfolios = {
-    Name: "Client Portfolios",
-    Paths: [{CurrentLocation: "Client", Path: ["#Client_ViewPortfolios"]}],
-    Task: "PopulateEditor"
-},
+// Workspace_Client = {
+//     Name: "Client",
+//     Paths: [{CurrentLocation: "Home", Path: [{Click:"#NewClientIcon",ActionType:"Click"}]},
+//             {CurrentLocation: "ClientSearch", Path: [{Click:"",ActionType:"Search_DoubleClickTopRow"}]}, //Assuming Client Search has already been run
+//             {CurrentLocation: "Client", Path: []}],
+//     Task: "PopulateEditor"
+// },
+
+// ClientPortfolios = {
+//     Name: "Client Portfolios",
+//     Paths: [{CurrentLocation: "Home", Path: [ {Click:"#Client_ViewPortfolios",ActionType:"Click"}]}, //Not really possible, you need a client loaded in
+//             {CurrentLocation: "ClientSearch", Path: [ {Click:"#Client_ViewPortfolios",ActionType:"Click"}]},
+//             {CurrentLocation: "Client", Path: ["#Client_ViewPortfolios"]}],
+//     Task: "PopulateEditor"
+// },
 
 //Matching XML
-EntityTypes = {
- Clients : Workspace_ClientSearch,
- Client: Workspace_Client,
- Portfolios: ClientPortfolios,
- Portfolio: {},
- Investments: {},
- PortfolioInvestment:{}
-}
+// EntityTypes = {
+//  Clients : Workspace_ClientSearch,
+//  Client: Workspace_Client,
+//  Portfolios: ClientPortfolios,
+//  Portfolio: {},
+//  Investments: {},
+//  PortfolioInvestment:{}
+// }
 
 // EntityTypes = {
 //     Client: {
