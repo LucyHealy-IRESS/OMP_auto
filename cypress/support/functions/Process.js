@@ -20,7 +20,7 @@ Cypress.Commands.add("ProcessFolder", (ExecutiionFolderLocation, Type) => {
 //Type = Create or Assert
 Cypress.Commands.add("ProcessXMLFile", (fileLocation,Type) => {
     
-    cy.login("uat", "username1", "password2");
+    cy.login("Dev", "username5", "password5");
     
     cy.readFile(fileLocation).then(function (fileContents) {
         fileContents = fileContents.replace(/[\t\n\r]/gm, ""); //remove new lines and tabs
@@ -42,6 +42,50 @@ Cypress.Commands.add("ProcessXMLFile", (fileLocation,Type) => {
     
   });
 
+  Cypress.Commands.add("Close_SubEditor", (SubEditor) => {
+    if(SubEditor.NextButtonText){
+    cy.get("[aria-describedby='" + SubEditor.Selector.replace("#","") + "']" + " .ui-dialog-buttonpane .ui-button span").contains(SubEditor.NextButtonText).click();    //button on editor to click after entering data 
+    }
+  })
+
+  Cypress.Commands.add("Process_SubEditor", (PreviousSelector,SubEditor,Entity) => {
+
+   //1.Click Access Point
+    cy.get("[aria-describedby='" + PreviousSelector.replace("#","") + "']").contains(SubEditor.AccessPoint).click({force: true});
+   
+    if(SubEditor.Mappings){
+      cy.PopulateEditor(SubEditor.Selector,SubEditor.Mappings,Entity);
+    }
+    else if (SubEditor.customFunction){
+      eval("cy."+ SubEditor.customFunction + "(SubEditor.Selector,SubEditor,Entity);");
+    }
+    
+    cy.wait(2500);
+   
+    //any more sub editors inside this subeditor? e.g. Add Funds?
+    if(SubEditor.SubEditor){
+      cy.Process_SubEditorData(SubEditor.Selector,SubEditor.SubEditor,Entity)
+    } 
+
+    cy.Close_SubEditor(SubEditor);
+ })
+
+  Cypress.Commands.add("Process_SubEditorData", (PreviousSelector,SubEditor,Entity) => {
+
+    var SubEditorData = Entity[SubEditor.DataEntityRoot]; //e.g. portfolios
+ 
+     if (SubEditorData) {
+      if (Array.isArray(SubEditorData[SubEditor.DataEntity])) { //e.g. portfolio
+        for (var x = 0; x < SubEditorData[SubEditor.DataEntity].length; x++) {
+          cy.Process_SubEditor(PreviousSelector,SubEditor,SubEditorData[SubEditor.DataEntity][x]);
+        }
+      } else {
+        cy.Process_SubEditor(PreviousSelector,SubEditor,SubEditorData[SubEditor.DataEntity]);
+      }
+    }
+
+  })
+
   Cypress.Commands.add("Process_Create", (subEntityType,Entity) => {
     
     var EntityInfo = constants.EntityTypes[subEntityType];
@@ -50,7 +94,13 @@ Cypress.Commands.add("ProcessXMLFile", (fileLocation,Type) => {
     for (var x = 0; x < Editors.length; x++) {
       var selector = Editors[x].Selector;
       var mappings = Editors[x].Mappings;
-      cy.PopulateEditor(selector,mappings,Entity);
+      if(mappings){
+        cy.PopulateEditor(selector,mappings,Entity);
+      }     
+      var SubEditor = Editors[x].SubEditor;
+      if(SubEditor){
+        cy.Process_SubEditorData(selector,SubEditor,Entity);         
+      }
       cy.get("[aria-describedby='" + selector.replace("#","") + "']" + " .ui-dialog-buttonpane .ui-button span").contains(Editors[x].NextButtonText).click();    //button on editor to click after entering data
     }  
   });
@@ -63,11 +113,17 @@ Cypress.Commands.add("ProcessXMLFile", (fileLocation,Type) => {
       }).then(function () {
         var AccordiansArray = Object.entries(AccordianMappings);
         AccordiansArray.forEach(([key, value]) => {
-            var Accordian = AccordianMappings[key];
+          var Accordian = AccordianMappings[key];
+          if(!key == 'NoAccordian'){           
             cy.clickAccordion(EditorSelector,Accordian.AccordianName)
             cy.get(Accordian.AccordianSelector +".wijmo-wijaccordion-content-active").then(function(){ //ensure accordian is open
                 cy.ProcessCreate_UI(XMLDataObject, Accordian.AccordianContentMappings); //apply the conents of the xml to the inputs
             })
+          }
+          else{
+            cy.ProcessCreate_UI(XMLDataObject, Accordian.AccordianContentMappings); //apply the conents of the xml to the inputs
+          }
+            
           });
       })
 });
@@ -75,3 +131,33 @@ Cypress.Commands.add("ProcessXMLFile", (fileLocation,Type) => {
 
 
 
+//Will be moved but here for now due to merging conflicts 
+Cypress.Commands.add("ProcessAddHoldingQuick", (PreviousSelector,SubEditor,Entity) => {
+  cy.wait(2500); //allow control to prime
+  var textInput = Entity.FundID;
+   if (textInput) {
+   cy.wrap(".quickAddFund_ComboBox").as('inputSelector'); //want access to this later in the then
+    cy.get(".quickAddFund_ComboBox").clear().type(textInput).type("{enter}").then(function(){
+      cy.get(".wijmo-wijlist-ul",{timeout:36000}).filter(':visible').contains(textInput).first().click();
+      cy.wait(2500);        
+      cy.get(this.inputSelector).then(function($SelectedFund){
+        var SelectedFund = $SelectedFund[0].value;
+        SelectedFund = SelectedFund.split("-")[0].trim();
+        cy.get("[aria-describedby='PortfolioSimpleEditor_QuickAddFundPopup']" + " .ui-dialog-buttonpane .ui-button span").contains(/^Add Selected Fund$/).click();
+        cy.wait(2500);
+        cy.get("[aria-describedby='PortfolioSimpleEditor_QuickAddFundPopup']" + " .ui-dialog-buttonpane .ui-button span").contains("Close").click();           
+        if(Entity.Units){
+          cy.clickAccordion("#PortfolioAddPopUp","Holdings");
+          cy.get('.CurrentHoldings_table tbody tr td .wijmo-wijgrid-innercell').contains(SelectedFund).then(function($td){ //find the added fund in the holdings table
+            cy.wrap($td).closest("tr").find("button").find(".ui-icon-pencil").click().then(function(){ //click the associated edit icon
+              cy.get("#PortfolioSimpleEditor_editRowPopup").then(function(){ //check editor is open
+                cy.get("#PortfolioSimpleEditor_editRowPopup .RowEditUnits").type(`{selectall}`).type(Entity.Units);
+                cy.get("[aria-describedby='PortfolioSimpleEditor_editRowPopup']" + " .ui-dialog-buttonpane .ui-button span").contains("OK").click();
+            })
+          })
+        });
+      }
+      })
+    });
+   }
+})

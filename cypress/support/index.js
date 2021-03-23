@@ -23,6 +23,9 @@ import './functions/Utils.js'
 import './functions/Client/Assert.js'
 import './functions/Client/create.js'
 
+import './functions/Process.js'
+import './functions/Process2.js'
+
 import '.'
 // Alternatively you can use CommonJS syntax:
 // require('./commands')

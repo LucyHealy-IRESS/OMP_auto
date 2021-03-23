@@ -2,26 +2,111 @@ import * as constants from "../constants/constantsSelectors.js";
 export const
 
 Portfolio_BasicDetailsInputs = {
+  third_party_tag: {
+    Selector: constants.ptImport,
+    inputType: "Dropdown",
+    },
+  ExternalKey: {
+      Selector: constants.ptXplanID,
+      inputType: "String",
+    },
+  TransactKey: {
+      Selector: constants.ptTransactKey,
+      inputType: "String",
+    },
+  ExternalKey: {
+      Selector: constants.ptFNAccountNumber,
+      inputType: "String",
+    },
   ProductID: {
-    Selector: constants.productconst,
-    inputType: "ProductDropdown",
-  },  
+      Selector: constants.ptProduct,
+      inputType: "Dropdown",
+    },
+  NA: {
+      Selector: constants.ptAProduct,
+      inputType: "Dropdown",
+    }, 
   ProviderID: {
-    Selector: constants.providerconst,
-    inputType: "ProviderDropdown",
-  },  
-  Name: {
-    Selector: constants.nameconst,
-    inputType: "String",
-  },
+      Selector: constants.ptProvider,
+      inputType: "Dropdown",
+    }, 
+  NA: {
+      Selector: constants.ptAProvider,
+      inputType: "Dropdown",
+    }, 
+  Reference: {
+      Selector: constants.ptReference,
+      inputType: "String",
+    }, 
+  NA: {
+      Selector: constants.ptAReference,
+      inputType: "String",
+    }, 
+  BenchMark: {
+      Selector: constants.ptBenchmark,
+      inputType: "Dropdown",
+    }, 
+  Status: {
+      Selector: constants.ptStatus,
+      inputType: "Dropdown",
+    }, 
+  NextReviewDate: {
+      Selector: constants.ptNextReviewDate,
+      inputType: "Date",
+    },
+  IsWorkplacePension: {
+      Selector: constants.ptWorkplacePension,
+      inputType: "Checkbox",
+    }, 
+  IsSharedWithCompany: {
+      Selector: constants.ptASharePortfolio,
+      inputType: "Checkbox",
+    }, 
 },
 
 Portfolio_CurrentValue = {
-  currentValue: {//not on xml
-    Selector: constants.currentvalueconst,
-    inputType: "String",
+  currentValue: {
+    Selector: constants.ptCurrentValue,
+    inputType: "Value",
   },
 },
+
+Portfolio_OngoingContribution = {
+  OngoingContsPremium: {
+      Selector: constants.ptGrossPremium,
+      inputType: "Value",
+    },
+  OngoingContsType: {
+      Selector: constants.ptFrequency,
+      inputType: "Dropdown",
+    },
+  OngoingContsEscalationRate: {
+      Selector: constants.ptEscalation,
+      inputType: "Dropdown",
+    },
+  OngoingContsEscalationRateOther: {
+      Selector: constants.ptEscalationOther,
+      inputType: "Value",
+    },
+  OngoingContsIncreasingEvery: {
+      Selector: constants.ptIncreasingEvery,
+      inputType: "Dropdown",
+    },
+  ContributionsStop: {
+      Selector: constants.ptContributionStop,
+      inputType: "Value",
+    },
+  StopAge: {
+      Selector: constants.ptStopAge,
+      inputType: "String",
+    }, 
+  ClientExpenses: {
+      Selector: constants.ptClientExpenses,
+      inputType: "Dropdown",
+    }, 
+  },
+
+
 
 Portfolio_Holdings = {
   FundPicker: {
@@ -30,9 +115,151 @@ Portfolio_Holdings = {
   },  
 },
 
+Portfolio_Purpose = {
+  DN: {
+    Selector: constants.ptInvestmentObjective,
+    inputType: "Dropdown",
+  },
+  RiskTargetAmount: {
+    Selector: constants.ptTargetAmount,
+    inputType: "String",
+  },
+  InceptionDate: {
+    Selector: constants.ptInceptionDate,
+    inputType: "Date",
+  },
+  DN: {
+    Selector: constants.ptOriginalTerm,
+    inputType: "String",
+  },
+  DN: {
+    Selector: constants.ptMaturityAge,
+    inputType: "Value",
+  },
+},
 
+Portfolio_Risk = {
+  RiskBasis: {
+    Selector: constants.ptTargetRisk,
+    inputType: "Dropdown",
+  },
+  RiskEstBy: {
+    Selector: constants.ptEstablishedBy,
+    inputType: "Dropdown",
+  },
+  Risk: {
+    Selector: constants.ptCurrentRisk,
+    inputType: "Dropdown",
+  },
+},
 
+Portfolio_GrowthRates = {
+  GrowthRateBasis: {
+      Selector: constants.ptGrowthRates,
+      inputType: "Dropdown",
+    },
+  GrowthRateLow: {
+      Selector: constants.ptISLow,
+      inputType: "Value",
+    },
+  GrowthRateMid: {
+      Selector: constants.ptISMid,
+      inputType: "Value",
+    },
+  GrowthRateHigh: {
+      Selector: constants.ptISHigh,
+      inputType: "Value",
+    },
+  GrowthRateLow: {
+      Selector: constants.ptIALow,
+      inputType: "Value",
+    },
+  GrowthRateMid: {
+      Selector: constants.ptIAMid,
+      inputType: "Value",
+    },
+  GrowthRateHigh: {
+      Selector: constants.ptIAHigh,
+      inputType: "Value",
+    },
+},
 
+Portfolio_ProductCharges = {
+  FundCharge: {
+      Selector: constants.ptFundCharges,
+      inputType: "Value",
+    },
+  PlanCharge: {
+      Selector: constants.ptPlanCharges,
+      inputType: "Value",
+    },
+  PolicyFee: {
+      Selector: constants.ptPolicyFee,
+      inputType: "Value",
+    },
+  AdviserCharge: {
+      Selector: constants.ptAdviserCharge,
+      inputType: "Value",
+    },
+},
+
+Portfolio_AssetAllocation = {
+  Category_Name: {
+      Selector: constants.ptTier1,
+      inputType: "Dropdown",
+    },
+  Subcategory_Name: {
+      Selector: constants.ptTier2,
+      inputType: "Dropdown",
+    },
+  Subcategory_Two_Name: {
+      Selector: constants.ptTier3,
+      inputType: "Dropdown",
+    },
+  Value: {
+      Selector: constants.ptAllocation,
+      inputType: "Value",
+    },
+},
+
+Portfolio_DrawdownIncome = {
+  CurrentAnnualPensionIncome: {
+      Selector: constants.ptCurrentAnnualPension,
+      inputType: "Value",
+    },
+  CurrentIncomeType: {
+      Selector: constants.ptIncomeType,
+      inputType: "Dropdown",
+    },
+  Date: {
+      Selector: constants.ptDate,
+      inputType: "Date",
+    },
+  FundValue: {
+      Selector: constants.ptDrawdownFundValue,
+      inputType: "Value",
+    },
+  IncomeType: {
+      Selector: constants.ptIncomeTypeFromDate,
+      inputType: "Dropdown",
+    },
+  AnnualIncome: {
+      Selector: constants.ptAnnualIncomeFromDate,
+      inputType: "Value",
+    },
+  Paid: {
+      Selector: constants.ptPaid,
+      inputType: "Dropdown",
+    },
+  LumpSumType: {
+      Selector: constants.ptLumpSumType,
+      inputType: "Dropdown",
+    },
+  LumpSumAmount: {
+      Selector: constants.ptLumpSumAmount,
+      inputType: "Value",
+    },
+},
 
 
 
