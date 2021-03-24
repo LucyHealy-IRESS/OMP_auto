@@ -3,7 +3,7 @@ import * as portfolioMapping from "../../../support/constants/portfolio.js";
 import * as constantsSelectors from "../../constants/constantsSelectors.js"
 
 Cypress.Commands.add("ProcessClientFile_Assert", (fileLocation) => { //this is a near duplicate of ProcessClientFile - will refactor later
-  cy.login("live", "username1", "password1");
+  cy.login("test", "username3", "password3");
 
   cy.readFile(fileLocation).then(function (fileContents) {
       fileContents = fileContents.replace(/[\t\n\r]/gm, ""); //remove new lines and tabs
@@ -57,7 +57,7 @@ Cypress.Commands.add("RetrieveClientUsingClientSearch", (SearchParam) => {
   cy.clickThumbnail('Client Search', {timeout:16000});
   var DefaultSearchCompletedCallback = function() { //This function exectutes only when the default search has finished loading
     var SearchCompletedCallback = function(){ //This function executes only when out client search has finished loading
-        cy.wait(1000); //1 second ui catchup to prevent any detatching from async refreshes
+        cy.wait(12000); //1 second ui catchup to prevent any detatching from async refreshes
         cy.get('#StoryCarousel4 .TypeCompositePanel .tableContainer', {timeout:16000}).find('tr', {timeout:16000}).first().dblclick();
         cy.clickThumbnail('Client Summary');
         cy.get('#EditClientIconMenu', {timeout:16000}).click();  
