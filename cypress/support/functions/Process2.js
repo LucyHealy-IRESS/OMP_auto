@@ -96,7 +96,7 @@
 //     cy.get(Entity.MenuSelector).then(function(){ //wait till client search menu is actually open                                                                                                        //- JSSORPopUpMenu_Open is used by the amend search popup code and crashes if its not present
 //       cy.get('#AmendClientSearch', {timeout:17000}).click();
 //       cy.get(".AmendSearchPopup_Container").then(function(){ //check amend search has opened before continuing
-//         cy.get(constantsSelectors.searchTextMatch).type(SearchParam);
+//         cy.get(.searchTextMatch).type(SearchParam);
 //         cy.get('.OverviewSearchButton').click();
 //         cy.SearchHasCompleted(SearchCompletedCallback);
 //       })

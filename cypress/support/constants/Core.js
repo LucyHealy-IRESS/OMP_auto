@@ -10,8 +10,8 @@ EntityTypes = {
     Client: {},
     Portfolios: {},
     Portfolio: {},
-    //Investments: {},
-    //PortfolioInvestment: {}
+    Investments: {},
+    PortfolioInvestment: {}
 }
 
 // Workspace_ClientSearch = {
