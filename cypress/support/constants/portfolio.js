@@ -3,11 +3,8 @@ export const
 
 ClientPortfoliosSelector = "#Client_ViewPortfolios",
 PortfoliosQuickEditorSelector = "#PortfolioAddPopUp",
-<<<<<<< HEAD
-PortfoliosAdvancedEditorSelector = '#EditPortfolioAdvancedPopup', //depends where we land it from
-=======
 PortfolioQuickAddFundSelector = "PortfolioSimpleEditor_QuickAddFundPopup",
->>>>>>> 79fef7ad78a659378f73529ab141e448de545588
+PortfoliosAdvancedEditorSelector = '#EditPortfolioAdvancedPopup', //depends where we land it from
 
 Portfolio_BasicDetailsInputs_EmilyBasic = {
   ProductID: {
@@ -23,7 +20,6 @@ Portfolio_BasicDetailsInputs_EmilyBasic = {
       inputType: "String",
     }
 },
-
 
 Portfolio_BasicDetailsAdvanced = {
   // third_party_tag: { //needs a better selector
@@ -533,5 +529,8 @@ BBBBBBBB555500000000000000000228 = "Nucleus",
 BBBBBBBB555500000000000000000229 = "AJ Bell",
 BBBBBBBB555500000000000000000230 = "AXA Life Europe",
 BBBBBBBB555500000000000000000328 = "Non Pension Funds"
+
+
+
 
 
