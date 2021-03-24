@@ -5,23 +5,39 @@ import * as constants from "../constants/Core.js";
 Cypress.Commands.add("ProcessFolder", (ExecutiionFolderLocation) => {
   cy.task("ReadFolderDirectory", ExecutiionFolderLocation).then((fileNames) => {
     if (fileNames.length > 0) {
-      //2 Passes - 1 = Create, 2 = Assert
-      for (var x = 0; x < fileNames.length; x++) {
-        var fileLocation = ExecutiionFolderLocation + "/" + fileNames[x];
-        cy.ProcessXMLFile(fileLocation, constants.RunType_Create);
+
+      var NoOfActionFiles = 2;
+      for (var ActionFileNo = 1; ActionFileNo < NoOfActionFiles+1; ActionFileNo++) {
+
+      //1 Creation Pass
+       for (var C = 0; C < fileNames.length; C++) {
+        var fileLocation = ExecutiionFolderLocation + "/" + fileNames[C];
+        cy.ProcessXMLFile(fileLocation, constants.RunType_Create, ActionFileNo);
       }
-      // for (var x = 0; x < fileNames.length; x++) {
-      //   var fileLocation = ExecutiionFolderLocation + "/" + fileNames[x];
-      //   cy.ProcessXMLFile(fileLocation, constants.RunType_Assert);
-      // }
+      //2 Assert Pass
+      for (var A = 0; A < fileNames.length; A++) {
+       var fileLocation = ExecutiionFolderLocation + "/" + fileNames[A];
+       cy.ProcessXMLFile(fileLocation, constants.RunType_Assert,ActionFileNo);
+      }
+      //3 Roll off what we have created
+      for (var D = 0; D < fileNames.length; D++) {
+        var fileLocation = ExecutiionFolderLocation + "/" + fileNames[D];
+        cy.ProcessXMLFile(fileLocation,constants.RunType_Delete, ActionFileNo);
+      }
+      
+      if(ActionFileNo < NoOfActionFiles-1){ //Dont reload if on last iteration
+        cy.reload();
+        cy.wait(3000);
+      }      
     }
+   }
   });
 });
 
 //Receiving the filename and decoding it in order to call the correct create or assert functions
 //Type = Create or Assert
-Cypress.Commands.add("ProcessXMLFile", (fileLocation, Type) => {
-  cy.login("test", "username3", "password3");
+Cypress.Commands.add("ProcessXMLFile", (fileLocation, Type,ActionFileNo) => {
+  cy.login();
 
   cy.get("#StoryCarousel1 .additionalInfo").then(function () {
     cy.readFile(fileLocation).then(function (fileContents) {
@@ -42,14 +58,14 @@ Cypress.Commands.add("ProcessXMLFile", (fileLocation, Type) => {
                 //We could have multiple clients to create in which case they would be in an array
                 for (var x = 0; x < EntityData.length; x++) {
                   // For each client......
-                  console.log(Entity + " " + Type);
-                  eval("cy." + Entity + "_" + Type + "(EntityData[x]);");
+                  console.log(Entity + " " + Type + " Action" + ActionFileNo);
+                  eval("cy." + Entity + "_" + Type + "_" + ActionFileNo + "(EntityData[x]);");
                   var XMLtoArraySub = Object.keys(EntityData[x]); //Get the specific client from the array
                   traverse(XMLtoArraySub, EntityData[x]); //and start processing that down...
                 }
               } else {
-                console.log(Entity + " " + Type);
-                eval("cy." + Entity + "_" + Type + "(EntityData);");
+                console.log(Entity + " " + Type + " Action:" + ActionFileNo);
+                eval("cy." + Entity + "_" + Type + "_" + ActionFileNo + "(EntityData);");
                 var XMLtoArraySub = Object.keys(EntityData);
                 traverse(XMLtoArraySub, EntityData);
               }
@@ -63,7 +79,7 @@ Cypress.Commands.add("ProcessXMLFile", (fileLocation, Type) => {
 });
 
 Cypress.Commands.add("PopulateEditor",(EditorSelector, AccordianMappings, XMLDataObject) => {
-   
+
   cy.get(EditorSelector, { timeout: 226000}).then(function () {
     
     var AccordiansArray = Object.entries(AccordianMappings);

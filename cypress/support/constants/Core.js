@@ -4,6 +4,7 @@ export const
 
 RunType_Create = "Create",
 RunType_Assert = "Assert",
+RunType_Delete = "Delete",
 
 EntityTypes = {
     Clients: {},

@@ -44,7 +44,7 @@ Cypress.Commands.add("API_Call", (fileContents, Type) => {
         <a:ReplyTo>
             <a:Address>http://www.w3.org/2005/08/addressing/anonymous</a:Address>
         </a:ReplyTo>
-        <a:To s:mustUnderstand="1">https://html.omprofiler.uat.aws-wealth-uat-uk.iress.online/WebserviceAccessPoint/OMSService.svc</a:To>
+        <a:To s:mustUnderstand="1">[WebServiceAPIAddress]</a:To>
     </s:Header>
     <s:Body>
         <Profiler xmlns="http://tempuri.org/">
@@ -61,6 +61,8 @@ Cypress.Commands.add("API_Call", (fileContents, Type) => {
         </Profiler>
     </s:Body>
     </s:Envelope>`;
+
+  xml = xml.replace("[WebServiceAPIAddress]",Cypress.env("API_URL"));
 
   var currentdate = new Date();
   var datetimeNow =
@@ -94,10 +96,10 @@ Cypress.Commands.add("API_Call", (fileContents, Type) => {
     "Content-Type": "application/soap+xml",
   };
 
+  //"https://html.omprofiler.uat.aws-wealth-uat-uk.iress.online/WebserviceAccessPoint/OMSService.svc"
   cy.request({
     method: "POST",
-    url:
-      "https://html.omprofiler.uat.aws-wealth-uat-uk.iress.online/WebserviceAccessPoint/OMSService.svc",
+    url: Cypress.env("API_URL"),
     headers: xmlHeaders,
     form: false,
     body: xml,

@@ -1,6 +1,6 @@
 import * as constantsSelectors from "../../constants/constantsSelectors.js";
 
-Cypress.Commands.add("Client_Assert", (EntityData) => {
+Cypress.Commands.add("Client_Assert_1", (EntityData) => {
 
     cy.get("#ExistingClientsIconMenu", { timeout: 36000 }).click();
 
@@ -29,6 +29,12 @@ Cypress.Commands.add("Client_Assert", (EntityData) => {
     cy.RunSearch(SearchOptions,EntityData);
 
 })
+
+Cypress.Commands.add("Client_Assert_2", (EntityData) => {
+  cy.Client_Assert_1(EntityData);
+});
+
+Cypress.Commands.add("Client_Assert_3", (EntityData) => {});
 
 Cypress.Commands.add("RunSearch", (SearchOptions, EntityData) => {
   var SearchParam = EntityData[SearchOptions.SearchParam];

@@ -1,7 +1,11 @@
 import * as constants from "../constants/constantsSelectors.js";
 
-Cypress.Commands.add("login", (url,username, password) => {
+Cypress.Commands.add("login", () => {
   cy.clearCookies()
+
+    var url = Cypress.env("LoginEnvironment");
+    var username = "LoginUsername";
+    var password = "LoginPassword";
 
     if (url=='Dev') {
         cy.visit('http://localhost:57204/index.html',{ timeout: 16000 });

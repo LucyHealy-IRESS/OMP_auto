@@ -35,6 +35,13 @@ import './functions/Assert/Investments_Assert.js'
 import './functions/Create/PortfolioInvestment_Create.js'
 import './functions/Create/Investments_Create.js'
 
+import './functions/Delete/Clients_Delete.js'
+import './functions/Delete/Client_Delete.js'
+import './functions/Delete/Portfolio_Delete.js'
+import './functions/Delete/Portfolios_Delete.js'
+import './functions/Delete/Investments_Delete.js'
+import './functions/Delete/PortfolioInvestment_Delete.js'
+
 import './functions/Process.js'
 import './functions/Process2.js'
 
