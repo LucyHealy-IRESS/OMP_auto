@@ -1,4 +1,4 @@
-import * as constants from "../../support/constants/constantsSelectors.js"
+import * as constants from "../constants/constantsSelectors.js"
 
 //This function takes the client object and creates it using the UI of the client editor
 Cypress.Commands.add("ProcessCreate_UI", (xmlObject, xmlMappings) => {
@@ -17,13 +17,6 @@ Cypress.Commands.add("ProcessCreate_UI", (xmlObject, xmlMappings) => {
         var textInput = xmlObject[xmlInput.toString()];
         if (textInput) {
           cy.get(XmlInputObject.Selector).type(`{selectall}`).type(textInput);
-          //or
-          // cy.get(XmlInputObject.Selector).clear();
-          // cy.wait(100); //Auto gen value is entered
-          //  var textInput = xmlObject[xmlInput.toString()];
-          //  if (textInput) {
-          //    cy.get(XmlInputObject.Selector).type(textInput);
-          //  }  
         }
       } 
        else if (XmlInputObject.inputType == "Date") {

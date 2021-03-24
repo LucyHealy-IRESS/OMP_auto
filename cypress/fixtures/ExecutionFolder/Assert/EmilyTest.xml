@@ -3,8 +3,8 @@
 	<Client>
 		<ClientID>Client01</ClientID>
 		<Title>Mrs</Title>
-		<Firstname>AllClient</Firstname>
-		<Surname>Duplicate</Surname>
+		<Firstname>Latest</Firstname>
+		<Surname>AndGreatest</Surname>
 		<DateOfBirth>1969-11-09T00:00:00</DateOfBirth>		
 		<Gender>Male</Gender>
 		<PlannedRetirementAge>79</PlannedRetirementAge>

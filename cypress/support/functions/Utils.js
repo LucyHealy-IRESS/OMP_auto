@@ -1,3 +1,5 @@
+import * as portfolioMapping from "../../support/constants/portfolio.js";
+
 //SETTING UI ELEMENT UTILITIES
 Cypress.Commands.add('SetDropdown',(Selector,Value) => { 
     cy.get(Selector).clear().type(Value);
@@ -27,6 +29,19 @@ Cypress.Commands.add('SetSimpleDatefromXMLDateFormat',(ddSelector,mmSelector,yyy
            cy.get(yyyySelector).type(yyyy);
          }
 })
+
+Cypress.Commands.add("TranslateProductID", (Portfolio, XmlInputObject) => {
+    var ProductID = Portfolio["ProductID"].trim();
+    ProductID = ["P", ProductID];
+    ProductID = ProductID.join("_");
+    cy.SetDropdown(XmlInputObject.Selector, portfolioMapping[ProductID]);
+  });
+  //could both of thse be grouped into one function with an if statement?
+  Cypress.Commands.add("TranslateProviderID", (Portfolio, XmlInputObject) => {
+    var ProviderID = Portfolio["ProviderID"].trim();
+    ProviderID = ProviderID.replace(/-/g, "");
+    cy.SetDropdown(XmlInputObject.Selector, portfolioMapping[ProviderID]);
+  });
 
 //DATE UTILITIES
 Cypress.Commands.add('RandomDate',(start, end) => { 
@@ -64,16 +79,12 @@ cy.randomID = function(){
     return "00_" + Math.floor(Math.random() * 10000 + 1);
 }
 
-
-
 //Click Accordion
-
 Cypress.Commands.add('clickAccordion', (editor, accordion) => {
     cy.get(editor).children().contains(accordion).click({force:true});   
 })
 
 //Click Thumbnail
-
 Cypress.Commands.add('clickThumbnail', (thumbnailName) => {
     cy.get('[data-u="thumbnavigator"]').children().contains(thumbnailName).click({force:true});
 })
