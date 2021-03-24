@@ -12,7 +12,11 @@ Cypress.Commands.add("Client_Assert_1", (EntityData) => {
       cy.get('#StoryCarousel4 .TypeCompositePanel .tableContainer', {timeout:16000}).find('tr', {timeout:16000}).first().dblclick();
       cy.clickThumbnail('Client Summary', {timeout:16000});
       cy.get('#EditClientIconMenu', {timeout:16000}).click(); 
-      cy.ProcessAssert_UI(EntityData, portfolioMapping.Portfolio_BasicDetailsInputs_EmilyBasic);
+      cy.get("#EditClientPopup .client_info_table", {  //ensure client editor is there and client info section has loaded
+        timeout: 226000,
+      }).then(function () {         
+        cy.ProcessAssert_UI(EntityData, portfolioMapping.Portfolio_BasicDetailsInputs_EmilyBasic);     
+      });     
     }
 
     var SearchOptions = {
