@@ -1,4 +1,5 @@
 import * as constants from "../constants/Core.js";
+import * as constantsSelectors from "../constants/constantsSelectors.js";
 
 //Iterate through the recieved folder, taking each file and passing it to the ProcessXMLFile function
 //Type = Create or Assert
@@ -6,7 +7,7 @@ Cypress.Commands.add("ProcessFolder", (ExecutiionFolderLocation) => {
   cy.task("ReadFolderDirectory", ExecutiionFolderLocation).then((fileNames) => {
     if (fileNames.length > 0) {
 
-      var NoOfActionFiles = 2;
+      var NoOfActionFiles = 1;
       for (var ActionFileNo = 1; ActionFileNo < NoOfActionFiles+1; ActionFileNo++) {
 
       //1 Creation Pass
@@ -17,11 +18,13 @@ Cypress.Commands.add("ProcessFolder", (ExecutiionFolderLocation) => {
       //2 Assert Pass
       for (var A = 0; A < fileNames.length; A++) {
        var fileLocation = ExecutiionFolderLocation + "/" + fileNames[A];
+       cy.wait(3000);
        cy.ProcessXMLFile(fileLocation, constants.RunType_Assert,ActionFileNo);
       }
       //3 Roll off what we have created
       for (var D = 0; D < fileNames.length; D++) {
         var fileLocation = ExecutiionFolderLocation + "/" + fileNames[D];
+        cy.wait(3000);
         cy.ProcessXMLFile(fileLocation,constants.RunType_Delete, ActionFileNo);
       }
       
@@ -34,8 +37,8 @@ Cypress.Commands.add("ProcessFolder", (ExecutiionFolderLocation) => {
   });
 });
 
-//Receiving the filename and decoding it in order to call the correct create or assert functions
-//Type = Create or Assert
+//Receiving the filename and decoding it in order to call the correct create/assert/delete functions
+//Type = Create or Assert or Delete
 Cypress.Commands.add("ProcessXMLFile", (fileLocation, Type,ActionFileNo) => {
   cy.login();
 
@@ -58,13 +61,13 @@ Cypress.Commands.add("ProcessXMLFile", (fileLocation, Type,ActionFileNo) => {
                 //We could have multiple clients to create in which case they would be in an array
                 for (var x = 0; x < EntityData.length; x++) {
                   // For each client......
-                  console.log(Entity + " " + Type + " Action" + ActionFileNo);
+                  cy.log(Entity + " " + Type + " Action" + ActionFileNo);
                   eval("cy." + Entity + "_" + Type + "_" + ActionFileNo + "(EntityData[x]);");
                   var XMLtoArraySub = Object.keys(EntityData[x]); //Get the specific client from the array
                   traverse(XMLtoArraySub, EntityData[x]); //and start processing that down...
                 }
               } else {
-                console.log(Entity + " " + Type + " Action:" + ActionFileNo);
+                cy.log(Entity + " " + Type + " Action:" + ActionFileNo);
                 eval("cy." + Entity + "_" + Type + "_" + ActionFileNo + "(EntityData);");
                 var XMLtoArraySub = Object.keys(EntityData);
                 traverse(XMLtoArraySub, EntityData);
@@ -105,3 +108,41 @@ Cypress.Commands.add("PopulateEditor",(EditorSelector, AccordianMappings, XMLDat
     });
   }
 );
+
+
+Cypress.Commands.add("RunSearch", (SearchOptions, EntityData) => {
+  var SearchParam = EntityData[SearchOptions.SearchParam];
+  var DefaultSearchCompletedCallback = function() { //This function exectutes only when the default search has finished loading
+    var SearchCompletedCallback = function(){ //This function executes only when out client search has finished loading
+        cy.wait(1000); //1 second ui catchup to prevent any detatching from async refreshes
+        SearchOptions.SearchCompleteCallbackFunc();
+    }
+    cy.clickThumbnail(SearchOptions.ThumbnailName, {timeout:16000});
+    cy.get(SearchOptions.MenuSelector).then(function(){ //wait till client search menu is actually open                                                                                                        //- JSSORPopUpMenu_Open is used by the amend search popup code and crashes if its not present
+      cy.get('#AmendClientSearch', {timeout:17000}).click();
+      cy.get(".AmendSearchPopup_Container").then(function(){ //check amend search has opened before continuing
+        cy.get(constantsSelectors.searchTextMatch).type(SearchParam);
+        cy.get('.OverviewSearchButton').click();
+        cy.SearchHasCompleted(SearchCompletedCallback);
+      })
+    })
+    
+  }
+  cy.SearchHasCompleted(DefaultSearchCompletedCallback);
+});
+
+Cypress.Commands.add("SearchHasCompleted", (callback) => {
+  cy.get(".overviewHeader").find("div").find("span").contains("Matching Client",{timeout:32000}).then(function($span){ //initial search completes as header contains x Matching Clients
+    var NoMatchingClients = $span.text();
+    var numb = NoMatchingClients.replace(/[^0-9]/g,''); //extract numbers from text only
+    if (numb > 0) { 
+     cy.get("#StoryCarousel4 .TypeCompositePanel .tableContainer tr",{timeout:32000}).then(function(){     //now we wait for the results grid to finish loading
+      callback();
+      }) 
+    } else {//no clients = 0 matching clients
+      cy.get("#StoryCarousel4 .TypeCompositePanel .tableContainer",{timeout:32000}).then(function(){ //no clients so no trs to wait for
+        callback();
+      }) 
+    }    
+  })
+});
