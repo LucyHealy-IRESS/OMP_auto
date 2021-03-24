@@ -40,12 +40,10 @@ Cypress.Commands.add("SearchHasCompleted", (callback) => {
     var numb = NoMatchingClients.replace(/[^0-9]/g,''); //extract numbers from text only
     if (numb > 0) { 
      cy.get("#StoryCarousel4 .TypeCompositePanel .tableContainer tr",{timeout:32000}).then(function(){     //now we wait for the results grid to finish loading
-      debugger;
       callback();
       }) 
     } else {//no clients = 0 matching clients
       cy.get("#StoryCarousel4 .TypeCompositePanel .tableContainer",{timeout:32000}).then(function(){ //no clients so no trs to wait for
-        debugger;
         callback();
       }) 
     }    

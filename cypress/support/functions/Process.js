@@ -2,7 +2,6 @@ import * as constants from "../constants/Core.js";
 import * as constantsSelectors from "../constants/constantsSelectors.js";
 
 //Iterate through the recieved folder, taking each file and passing it to the ProcessXMLFile function
-//Type = Create or Assert
 Cypress.Commands.add("ProcessFolder", (ExecutiionFolderLocation) => {
   cy.task("ReadFolderDirectory", ExecutiionFolderLocation).then((fileNames) => {
     if (fileNames.length > 0) {
@@ -109,6 +108,33 @@ Cypress.Commands.add("PopulateEditor",(EditorSelector, AccordianMappings, XMLDat
   }
 );
 
+Cypress.Commands.add("AssertEditor",(EditorSelector, AccordianMappings, XMLDataObject) => {
+
+  cy.get(EditorSelector, { timeout: 226000}).then(function () {
+    
+    var AccordiansArray = Object.entries(AccordianMappings);
+      AccordiansArray.forEach(([key, value]) => {
+        var Accordian = AccordianMappings[key];
+   
+        if (key != "NoAccordian") {
+          cy.get(Accordian.AccordianSelector).then(function ($AccordianSelector) {
+            if($AccordianSelector.hasClass('wijmo-wijaccordion-content-active')){
+              cy.ProcessAssert_UI(XMLDataObject,Accordian.AccordianContentMappings);
+            }
+            else {
+              cy.clickAccordion(EditorSelector, Accordian.AccordianName);
+              cy.get(Accordian.AccordianSelector + ".wijmo-wijaccordion-content-active").then(function () {
+                cy.ProcessAssert_UI(XMLDataObject,Accordian.AccordianContentMappings); //apply the conents of the xml to the inputs
+              });
+            }          
+          });
+        } else { 
+          cy.ProcessAssert_UI(XMLDataObject,Accordian.AccordianContentMappings); //apply the conents of the xml to the inputs
+        }
+      });
+    });
+  }
+);
 
 Cypress.Commands.add("RunSearch", (SearchOptions, EntityData) => {
   var SearchParam = EntityData[SearchOptions.SearchParam];

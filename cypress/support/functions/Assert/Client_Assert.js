@@ -1,6 +1,5 @@
 import * as constantsSelectors from "../../constants/constantsSelectors.js";
-import * as portfolioMapping from "../../constants/portfolio.js";
-
+import * as ClientConstants from "../../constants/client.js";
 
 Cypress.Commands.add("Client_Assert_1", (EntityData) => {
 
@@ -14,8 +13,8 @@ Cypress.Commands.add("Client_Assert_1", (EntityData) => {
       cy.get('#EditClientIconMenu', {timeout:16000}).click(); 
       cy.get("#EditClientPopup .client_info_table", {  //ensure client editor is there and client info section has loaded
         timeout: 226000,
-      }).then(function () {         
-        cy.ProcessAssert_UI(EntityData, portfolioMapping.Portfolio_BasicDetailsInputs_EmilyBasic);     
+      }).then(function () {        
+        cy.AssertEditor(ClientConstants.ClientEditorSelector,ClientConstants.ClientAccordians,EntityData);   
       });     
     }
 
