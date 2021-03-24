@@ -5,7 +5,7 @@ Cypress.Commands.add("Client_Assert", (EntityData) => {
     cy.get("#ExistingClientsIconMenu", { timeout: 36000 }).click();
 
     var SearchCompleteCallback = function(){
-      cy.wait(10000); //1 second ui catchup to prevent any detatching from async refreshes
+      cy.wait(1000); //1 second ui catchup to prevent any detatching from async refreshes
         cy.get('#StoryCarousel4 .TypeCompositePanel .tableContainer', {timeout:16000}).find('tr', {timeout:16000}).first().dblclick();
 
         // cy.get('#StoryCarousel4 .TypeCompositePanel .tableContainer tbody tr', {timeout:16000}).first().click();
