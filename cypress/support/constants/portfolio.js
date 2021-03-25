@@ -4,19 +4,19 @@ export const
 ClientPortfoliosSelector = "#Client_ViewPortfolios",
 PortfoliosQuickEditorSelector = "#PortfolioAddPopUp",
 PortfolioQuickAddFundSelector = "PortfolioSimpleEditor_QuickAddFundPopup",
-PortfoliosAdvancedEditorSelector = '#EditPortfolioAdvancedPopup', //depends where we land it from
+PortfoliosAdvancedEditorSelector = '#EditPortfolioAdvancedPopup', //depends where we lands from
 
 Portfolio_BasicDetailsInputs_EmilyBasic = {
   ProductID: {
-      Selector: constants.ptProduct,
+      Selector: constants.Portfolio_Product,
       inputType: "ProductDropdown",
     },
   ProviderID: {
-      Selector: constants.ptProvider,
+      Selector: constants.Portfolio_Provider,
       inputType: "ProviderDropdown",
     }, 
   Reference: {
-      Selector: constants.ptReference,
+      Selector: constants.Portfolio_Reference,
       inputType: "String",
     }
 },
@@ -27,47 +27,47 @@ Portfolio_BasicDetailsAdvanced = {
   //   inputType: "Dropdown",
   //   },
   ExternalKey: {
-      Selector: constants.ptXplanID,
+      Selector: constants.Portfolio_XplanID,
       inputType: "String",
     },
   TransactKey: {
-      Selector: constants.ptTransactKey,
+      Selector: constants.Portfolio_TransactKey,
       inputType: "String",
     },
   ExternalKey: {
-      Selector: constants.ptFNAccountNumber,
+      Selector: constants.Portfolio_FNAccountNumber,
       inputType: "String",
     },
   ProductID: {
-      Selector: constants.ptAProduct,
+      Selector: constants.Portfolio_AProduct,
       inputType: "ProductDropdown",
     }, 
   ProviderID: {
-      Selector: constants.ptAProvider,
+      Selector: constants.Portfolio_AProvider,
       inputType: "ProviderDropdown",
     }, 
   Reference: {
-      Selector: constants.ptAReference,
+      Selector: constants.Portfolio_Reference,
       inputType: "String",
     }, 
   BenchMark: {
-      Selector: constants.ptBenchmark,
+      Selector: constants.Portfolio_Benchmark,
       inputType: "Dropdown",
     }, 
   Status: {
-      Selector: constants.ptStatus,
+      Selector: constants.Portfolio_Status,
       inputType: "Dropdown",
     }, 
   NextReviewDate: {
-      Selector: constants.ptNextReviewDate,
+      Selector: constants.Portfolio_NextReviewDate,
       inputType: "Date",
     },
   IsWorkplacePension: {
-      Selector: constants.ptWorkplacePension,
+      Selector: constants.Portfolio_WorkplacePension,
       inputType: "Checkbox",
     }, 
   IsSharedWithCompany: {
-      Selector: constants.ptASharePortfolio,
+      Selector: constants.Portfolio_ASharePortfolio,
       inputType: "Checkbox",
     }, 
 },
@@ -78,73 +78,73 @@ Portfolio_BasicDetailsSimple = {
   //   inputType: "Dropdown",
   //   },
   ExternalKey: {
-      Selector: constants.ptXplanID,
+      Selector: constants.Portfolio_XplanID,
       inputType: "String",
     },
   TransactKey: {
-      Selector: constants.ptTransactKey,
+      Selector: constants.Portfolio_TransactKey,
       inputType: "String",
     },
   ExternalKey: {
-      Selector: constants.ptFNAccountNumber,
+      Selector: constants.Portfolio_FNAccountNumber,
       inputType: "String",
     },
   ProductID: {
-      Selector: constants.ptProduct,
+      Selector: constants.Portfolio_Product,
       inputType: "ProductDropdown",
     },
   ProviderID: {
-      Selector: constants.ptProvider,
+      Selector: constants.Portfolio_Provider,
       inputType: "ProviderDropdown",
     },  
   Reference: {
-      Selector: constants.ptReference,
+      Selector: constants.Portfolio_Reference,
       inputType: "String",
     }, 
   IsWorkplacePension: {
-      Selector: constants.ptWorkplacePension,
+      Selector: constants.Portfolio_WorkplacePension,
       inputType: "Checkbox",
     }, 
 },
 
 Portfolio_CurrentValue = {
   currentValue: {
-    Selector: constants.ptCurrentValue,
+    Selector: constants.Portfolio_CurrentValue,
     inputType: "Value",
   },
 },
 
 Portfolio_OngoingContribution = {
   OngoingContsPremium: {
-      Selector: constants.ptGrossPremium,
+      Selector: constants.Portfolio_GrossPremium,
       inputType: "Value",
     },
   OngoingContsType: {
-      Selector: constants.ptFrequency,
+      Selector: constants.Portfolio_Frequency,
       inputType: "Dropdown",
     },
   OngoingContsEscalationRate: {
-      Selector: constants.ptEscalation,
+      Selector: constants.Portfolio_Escalation,
       inputType: "Dropdown",
     },
   OngoingContsEscalationRateOther: {
-      Selector: constants.ptEscalationOther,
+      Selector: constants.Portfolio_EscalationOther,
       inputType: "Value",
     },
   OngoingContsIncreasingEvery: {
-      Selector: constants.ptIncreasingEvery,
+      Selector: constants.Portfolio_IncreasingEvery,
       inputType: "Dropdown",
     },
   ContributionsStop: {
-      Selector: constants.ptContributionStop,
+      Selector: constants.Portfolio_ContributionStop,
       inputType: "Value",
     },
   StopAge: {
-      Selector: constants.ptStopAge,
+      Selector: constants.Portfolio_StopAge,
       inputType: "String",
     }, 
   ClientExpenses: {
-      Selector: constants.ptClientExpenses,
+      Selector: constants.Portfolio_ClientExpenses,
       inputType: "Dropdown",
     }, 
   },
@@ -153,153 +153,153 @@ Portfolio_OngoingContribution = {
 
 Portfolio_Holdings = {
   FundPicker: {
-    Selector: constants.ptFundName,
+    Selector: constants.FundPicker,
     inputType: "FundPicker",
   },  
 },
 
 Portfolio_Purpose = {
   DN: {
-    Selector: constants.ptInvestmentObjective,
+    Selector: constants.Portfolio_InvestmentObjective,
     inputType: "Dropdown",
   },
   RiskTargetAmount: {
-    Selector: constants.ptTargetAmount,
+    Selector: constants.Portfolio_TargetAmount,
     inputType: "String",
   },
   InceptionDate: {
-    Selector: constants.ptInceptionDate,
+    Selector: constants.Portfolio_InceptionDate,
     inputType: "Date",
   },
   DN: {
-    Selector: constants.ptOriginalTerm,
+    Selector: constants.Portfolio_OriginalTerm,
     inputType: "String",
   },
   DN: {
-    Selector: constants.ptMaturityAge,
+    Selector: constants.Portfolio_MaturityAge,
     inputType: "Value",
   },
 },
 
 Portfolio_Risk = {
   RiskBasis: {
-    Selector: constants.ptTargetRisk,
+    Selector: constants.Portfolio_TargetRisk,
     inputType: "Dropdown",
   },
   RiskEstBy: {
-    Selector: constants.ptEstablishedBy,
+    Selector: constants.Portfolio_EstablishedBy,
     inputType: "Dropdown",
   },
   Risk: {
-    Selector: constants.ptCurrentRisk,
+    Selector: constants.Portfolio_CurrentRisk,
     inputType: "Dropdown",
   },
 },
 
 Portfolio_GrowthRates = {
   GrowthRateBasis: {
-      Selector: constants.ptGrowthRates,
+      Selector: constants.Portfolio_GrowthRates,
       inputType: "Dropdown",
     },
   GrowthRateLow: {
-      Selector: constants.ptISLow,
+      Selector: constants.Portfolio_ISLow,
       inputType: "Value",
     },
   GrowthRateMid: {
-      Selector: constants.ptISMid,
+      Selector: constants.Portfolio_ISMid,
       inputType: "Value",
     },
   GrowthRateHigh: {
-      Selector: constants.ptISHigh,
+      Selector: constants.Portfolio_ISHigh,
       inputType: "Value",
     },
   GrowthRateLow: {
-      Selector: constants.ptIALow,
+      Selector: constants.Portfolio_IALow,
       inputType: "Value",
     },
   GrowthRateMid: {
-      Selector: constants.ptIAMid,
+      Selector: constants.Portfolio_IAMid,
       inputType: "Value",
     },
   GrowthRateHigh: {
-      Selector: constants.ptIAHigh,
+      Selector: constants.Portfolio_IAHigh,
       inputType: "Value",
     },
 },
 
 Portfolio_ProductCharges = {
   FundCharge: {
-      Selector: constants.ptFundCharges,
+      Selector: constants.Portfolio_FundCharges,
       inputType: "Value",
     },
   PlanCharge: {
-      Selector: constants.ptPlanCharges,
+      Selector: constants.Portfolio_PlanCharges,
       inputType: "Value",
     },
   PolicyFee: {
-      Selector: constants.ptPolicyFee,
+      Selector: constants.Portfolio_PolicyFee,
       inputType: "Value",
     },
   AdviserCharge: {
-      Selector: constants.ptAdviserCharge,
+      Selector: constants.Portfolio_AdviserCharge,
       inputType: "Value",
     },
 },
 
 Portfolio_AssetAllocation = {
   Category_Name: {
-      Selector: constants.ptTier1,
+      Selector: constants.Portfolio_Tier1,
       inputType: "Dropdown",
     },
   Subcategory_Name: {
-      Selector: constants.ptTier2,
+      Selector: constants.Portfolio_Tier2,
       inputType: "Dropdown",
     },
   Subcategory_Two_Name: {
-      Selector: constants.ptTier3,
+      Selector: constants.Portfolio_Tier3,
       inputType: "Dropdown",
     },
   Value: {
-      Selector: constants.ptAllocation,
+      Selector: constants.Portfolio_Allocation,
       inputType: "Value",
     },
 },
 
 Portfolio_DrawdownIncome = {
   CurrentAnnualPensionIncome: {
-      Selector: constants.ptCurrentAnnualPension,
+      Selector: constants.Portfolio_CurrentAnnualPension,
       inputType: "Value",
     },
   CurrentIncomeType: {
-      Selector: constants.ptIncomeType,
+      Selector: constants.Portfolio_IncomeType,
       inputType: "Dropdown",
     },
   Date: {
-      Selector: constants.ptDate,
+      Selector: constants.Portfolio_Date,
       inputType: "Date",
     },
   FundValue: {
-      Selector: constants.ptDrawdownFundValue,
+      Selector: constants.Portfolio_DrawdownFundValue,
       inputType: "Value",
     },
   IncomeType: {
-      Selector: constants.ptIncomeTypeFromDate,
+      Selector: constants.Portfolio_IncomeTypeFromDate,
       inputType: "Dropdown",
     },
   AnnualIncome: {
-      Selector: constants.ptAnnualIncomeFromDate,
+      Selector: constants.Portfolio_AnnualIncomeFromDate,
       inputType: "Value",
     },
   Paid: {
-      Selector: constants.ptPaid,
+      Selector: constants.Portfolio_Paid,
       inputType: "Dropdown",
     },
   LumpSumType: {
-      Selector: constants.ptLumpSumType,
+      Selector: constants.Portfolio_LumpSumType,
       inputType: "Dropdown",
     },
   LumpSumAmount: {
-      Selector: constants.ptLumpSumAmount,
+      Selector: constants.Portfolio_LumpSumAmount,
       inputType: "Value",
     },
 },
