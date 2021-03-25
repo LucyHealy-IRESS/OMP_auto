@@ -32,9 +32,9 @@ Cypress.Commands.add("login", () => {
         Cypress.log({name :'INVALID URL'}).end()
     }
   
-    cy.get(constants.usernameconst).type(Cypress.env(username));
-    cy.get(constants.passwordconst).type(Cypress.env(password));
-    cy.get(constants.okconst).click();
+    cy.get(constants.Login_Username).type(Cypress.env(username));
+    cy.get(constants.Login_Password).type(Cypress.env(password));
+    cy.get(constants.Login_ok).click();
     cy.url().should('contain', 'StoryBoardManager/StoryBoardManager_Workspace&d')
 
 })
