@@ -8,24 +8,24 @@ Cypress.Commands.add("login", () => {
     var password = "LoginPassword";
 
     if (url=='Dev') {
-        cy.visit('http://localhost:57204/index.html',{ timeout: 16000 });
+        cy.visit('http://localhost:57204/index.html',{ timeout: 26000 });
     }
     else if (url=='testProfiler') {
-        cy.visit('http://testomprofiler/',{ timeout: 16000 });
+        cy.visit('http://testomprofiler/',{ timeout: 26000 });
     }
     else if (url=='test') {
-        cy.visit('http://uat.omprofiler.co.uk',{ timeout: 16000 });
+        cy.visit('http://uat.omprofiler.co.uk',{ timeout: 26000 });
     }
 
     else if (url=='live') {
-        cy.visit('https://html.omprofiler.co.uk',{ timeout: 16000 });
+        cy.visit('https://html.omprofiler.co.uk',{ timeout: 26000 });
     }
 
     else if (url=='staging') {
-        cy.visit('https://html.omprofiler.int.aws-wealth-staging-uk.iress.online',{ timeout: 16000 });
+        cy.visit('https://html.omprofiler.int.aws-wealth-staging-uk.iress.online',{ timeout: 26000 });
     }
     else if (url=='uat') {
-        cy.visit('https://html.omprofiler.uat.aws-wealth-uat-uk.iress.online',{ timeout: 16000 });
+        cy.visit('https://html.omprofiler.uat.aws-wealth-uat-uk.iress.online',{ timeout: 26000 });
     }
 
     else {
