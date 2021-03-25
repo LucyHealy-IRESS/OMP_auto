@@ -8,16 +8,22 @@ PortfoliosAdvancedEditorSelector = '#EditPortfolioAdvancedPopup', //depends wher
 
 Portfolio_BasicDetailsInputs_EmilyBasic = {
   ProductID: {
-      Selector: constants.ptProduct,
+      Selector: constants.Portfolio_Product,
       inputType: "ProductDropdown",
+      AccordianName: 'Basic Details',
+      AccordianSelector: '#PortfolioSimpleEditor_BasicDetails',
     },
   ProviderID: {
-      Selector: constants.ptProvider,
+      Selector: constants.Portfolio_Provider,
       inputType: "ProviderDropdown",
+      AccordianName: 'Basic Details',
+      AccordianSelector: '#PortfolioSimpleEditor_BasicDetails',
     }, 
   Reference: {
-      Selector: constants.ptReference,
+      Selector: constants.Portfolio_Reference,
       inputType: "String",
+      AccordianName: 'Basic Details',
+      AccordianSelector: '#PortfolioSimpleEditor_BasicDetails',
     }
 },
 
@@ -305,31 +311,16 @@ Portfolio_DrawdownIncome = {
 },
 
 
-PortfolioAccordians = {
-  BasicDetails: {
-    AccordianName: 'Basic Details', 
-    AccordianSelector:"#PortfolioSimpleEditor_BasicDetails",   
-    AccordianContentMappings:Portfolio_BasicDetailsInputs_EmilyBasic
-  },
-  BasicDetails: {
-    AccordianName: 'Basic Details', 
-    AccordianSelector:"#PortfolioSimpleEditor_BasicDetails",   
-    AccordianContentMappings:Portfolio_BasicDetailsInputs_EmilyBasic
-  },
-  BasicDetails: {
-    AccordianName: 'Basic Details', 
-    AccordianSelector:"#PortfolioSimpleEditor_BasicDetails",   
-    AccordianContentMappings:Portfolio_BasicDetailsInputs_EmilyBasic
-  }
+AllPortfolioSimpleInputs = {
+...Portfolio_BasicDetailsInputs_EmilyBasic
 },
 
-PortfolioAccordioansSimple = {
-  BasicDetailsSimple: {
-    AccordianName: 'Basic Details',
-    AccordianSelector: '#PortfolioSimpleEditor_BasicDetails',
-    AccordianContentMappings: Portfolio_BasicDetailsSimple
-  }
-},
+
+// BasicDetailsSimple: {
+//   AccordianName: 'Basic Details',
+//   AccordianSelector: '#PortfolioSimpleEditor_BasicDetails',
+//   AccordianContentMappings: Portfolio_BasicDetailsSimple
+// }
 
 PortfolioAccordioansAdvanced = {
   BasicDetailsAdvanced: {

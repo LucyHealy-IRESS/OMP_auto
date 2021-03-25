@@ -7,6 +7,7 @@ cy.xml2JS_parseString = function (responseXML, callback) {
   const options = {
     tagNameProcessors: [stripNS], //removce namespaces
     explicitArray: false,
+    preserveChildrenOrder:true,
   };
 
   parseString(responseXML, options, function (err, result) {

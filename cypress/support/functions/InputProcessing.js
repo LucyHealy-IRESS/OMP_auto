@@ -1,11 +1,9 @@
 import * as constants from "../constants/constantsSelectors.js"
 
 //This function takes the client object and creates it using the UI of the client editor
-Cypress.Commands.add("ProcessCreate_UI", (xmlObject, xmlMappings) => {
+Cypress.Commands.add("ProcessCreate_UI", (xmlObject, xmlInput, xmlMappings) => {
 
-  for (let xmlInput in xmlObject) { //iterate each tag of the xml object for the client
-
-     var XmlInputObject = xmlMappings[xmlInput]; //match the xml tag with the object in Client Inputs,if that xml tag has been passed in we can go ahead and create it
+  var XmlInputObject = xmlMappings[xmlInput]; //match the xml tag with the object in Client Inputs,if that xml tag has been passed in we can go ahead and create it
      if (XmlInputObject) {
        if (XmlInputObject.inputType == "String") {
          var textInput = xmlObject[xmlInput.toString()];
@@ -59,14 +57,11 @@ Cypress.Commands.add("ProcessCreate_UI", (xmlObject, xmlMappings) => {
          }
        }
      }
-  }
 
  });
  
  
- Cypress.Commands.add("ProcessAssert_UI", (xmlObject, xmlMappings) => {
-   
-     for (let xmlInput in xmlObject) { //iterate each tag of the xml object for the client
+ Cypress.Commands.add("ProcessAssert_UI", (xmlObject, xmlInput, xmlMappings) => {
    
        var XmlInputObject = xmlMappings[xmlInput]; //match the xml tag with the object in Client Inputs, if that xml tag has been passed in we can go ahead and assert it
        if (XmlInputObject) {
@@ -83,7 +78,6 @@ Cypress.Commands.add("ProcessCreate_UI", (xmlObject, xmlMappings) => {
  
          }
        }
-     }
    });
    
  

@@ -70,61 +70,52 @@ Cypress.Commands.add("ProcessXMLFile", (fileLocation, Type,ActionFileNo) => {
   });
 });
 
-Cypress.Commands.add("PopulateEditor",(EditorSelector, AccordianMappings, XMLDataObject) => {
-
-  cy.get(EditorSelector, { timeout: 226000}).then(function () {
-    
-    var AccordiansArray = Object.entries(AccordianMappings);
-      AccordiansArray.forEach(([key, value]) => {
-        var Accordian = AccordianMappings[key];
-   
-        if (key != "NoAccordian") {
-          cy.get(Accordian.AccordianSelector).then(function ($AccordianSelector) {
-            if($AccordianSelector.hasClass('wijmo-wijaccordion-content-active')){
-              cy.ProcessCreate_UI(XMLDataObject,Accordian.AccordianContentMappings);
-            }
-            else {
-              cy.clickAccordion(EditorSelector, Accordian.AccordianName);
-              cy.get(Accordian.AccordianSelector + ".wijmo-wijaccordion-content-active").then(function () {
-                cy.ProcessCreate_UI(XMLDataObject,Accordian.AccordianContentMappings); //apply the conents of the xml to the inputs
-              });
-            }          
-          });
-        } else { 
-          cy.ProcessCreate_UI(XMLDataObject,Accordian.AccordianContentMappings); //apply the conents of the xml to the inputs
-        }
-      });
-    });
+Cypress.Commands.add("ProcesssInput",(XMLDataObject,xmlInput,mapping, isCreate) => {
+  if(isCreate){
+    cy.ProcessCreate_UI(XMLDataObject,xmlInput,mapping);
   }
-);
-
-Cypress.Commands.add("AssertEditor",(EditorSelector, AccordianMappings, XMLDataObject) => {
-
-  cy.get(EditorSelector, { timeout: 226000}).then(function () {
-    
-    var AccordiansArray = Object.entries(AccordianMappings);
-      AccordiansArray.forEach(([key, value]) => {
-        var Accordian = AccordianMappings[key];
-   
-        if (key != "NoAccordian") {
-          cy.get(Accordian.AccordianSelector).then(function ($AccordianSelector) {
-            if($AccordianSelector.hasClass('wijmo-wijaccordion-content-active')){
-              cy.ProcessAssert_UI(XMLDataObject,Accordian.AccordianContentMappings);
-            }
-            else {
-              cy.clickAccordion(EditorSelector, Accordian.AccordianName);
-              cy.get(Accordian.AccordianSelector + ".wijmo-wijaccordion-content-active").then(function () {
-                cy.ProcessAssert_UI(XMLDataObject,Accordian.AccordianContentMappings); //apply the conents of the xml to the inputs
-              });
-            }          
-          });
-        } else { 
-          cy.ProcessAssert_UI(XMLDataObject,Accordian.AccordianContentMappings); //apply the conents of the xml to the inputs
-        }
-      });
-    });
+  else{
+    cy.ProcessAssert_UI(XMLDataObject,xmlInput,mapping);
   }
-);
+})
+
+Cypress.Commands.add("ProcessAccordian",(EditorSelector,mapping,xmlInput,XMLDataObject,InputMappings,isCreate) => {
+  cy.get(mapping.AccordianSelector).then(function ($AccordianSelector) {
+    if($AccordianSelector.hasClass('wijmo-wijaccordion-content-active')){
+      cy.ProcesssInput(XMLDataObject,xmlInput,InputMappings,isCreate);
+    }
+    else {
+      cy.clickAccordion(EditorSelector, mapping.AccordianName);
+      cy.get(mapping.AccordianSelector + ".wijmo-wijaccordion-content-active").then(function () {
+        cy.ProcesssInput(XMLDataObject,xmlInput,InputMappings,isCreate);
+      });
+    }          
+  });
+})
+
+Cypress.Commands.add("EditorProcesssor",(EditorSelector, InputMappings, XMLDataObject, isCreate) => {
+  cy.get(EditorSelector, { timeout: 226000}).then(function () {
+    for (let xmlInput in XMLDataObject) { //for each xml tag
+      if(InputMappings[xmlInput]) { //if we have a mapping for this input
+        var mapping = InputMappings[xmlInput];
+        if(mapping.hasOwnProperty('AccordianSelector')){ //if this input is inside an accordian
+          cy.ProcessAccordian(EditorSelector,mapping,xmlInput,XMLDataObject,InputMappings,isCreate);
+        }
+        else{
+          cy.ProcesssInput(XMLDataObject,xmlInput,InputMappings,isCreate);
+        }
+      }
+    }
+    });
+})
+
+Cypress.Commands.add("PopulateEditor",(EditorSelector, InputMappings, XMLDataObject) => {
+  cy.EditorProcesssor(EditorSelector, InputMappings, XMLDataObject, true);
+});
+
+Cypress.Commands.add("AssertEditor",(EditorSelector, InputMappings, XMLDataObject) => {
+  cy.EditorProcesssor(EditorSelector, InputMappings, XMLDataObject,false);
+});
 
 Cypress.Commands.add("RunSearch", (SearchOptions, EntityData) => {
   var SearchParam = EntityData[SearchOptions.SearchParam];
