@@ -17,7 +17,6 @@ Client_DOB_MM = '#ClientDetailsPopup_DOB_Month',
 Client_DOB_YYYY = '#ClientDetailsPopup_DOB_Year',
 Client_Gender = '#ClientDetailsPopup_Gender',
 Client_PlannedRetirementAge = '#ClientDetailsPopup_PlannedRetirementAge',
-Client_Status = '#ClientDetailsPopup_ClientStatus',
 Client_CurrentSalaryAmount = '',
 Client_StatePension = '',
 
