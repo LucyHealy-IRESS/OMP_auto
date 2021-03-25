@@ -2,38 +2,28 @@ import * as constants from "../constants/Core.js";
 import * as constantsSelectors from "../constants/constantsSelectors.js";
 
 //Iterate through the recieved folder, taking each file and passing it to the ProcessXMLFile function
-Cypress.Commands.add("ProcessFolder", (ExecutiionFolderLocation) => {
-  cy.task("ReadFolderDirectory", ExecutiionFolderLocation).then((fileNames) => {
-    if (fileNames.length > 0) {
+Cypress.Commands.add("ProcessFile", (ExecutiionFolderLocation,fileName) => {
 
       var NoOfActionFiles = 1;
-      for (var ActionFileNo = 1; ActionFileNo < NoOfActionFiles+1; ActionFileNo++) {
-
+      for (var ActionFileNo = 1; ActionFileNo < NoOfActionFiles+1; ActionFileNo++) {    
+      
+      var fileLocation = ExecutiionFolderLocation + "/" + fileName;
       //1 Creation Pass
-       for (var C = 0; C < fileNames.length; C++) {
-        var fileLocation = ExecutiionFolderLocation + "/" + fileNames[C];
-        cy.ProcessXMLFile(fileLocation, constants.RunType_Create, ActionFileNo);
-      }
+      cy.ProcessXMLFile(fileLocation, constants.RunType_Create, ActionFileNo);
+
       //2 Assert Pass
-      for (var A = 0; A < fileNames.length; A++) {
-       var fileLocation = ExecutiionFolderLocation + "/" + fileNames[A];
        cy.wait(3000);
        cy.ProcessXMLFile(fileLocation, constants.RunType_Assert,ActionFileNo);
-      }
-      //3 Roll off what we have created
-      for (var D = 0; D < fileNames.length; D++) {
-        var fileLocation = ExecutiionFolderLocation + "/" + fileNames[D];
-        cy.wait(3000);
-        cy.ProcessXMLFile(fileLocation,constants.RunType_Delete, ActionFileNo);
-      }
+      
+       //3 Roll off what we have created
+      cy.wait(3000);
+      cy.ProcessXMLFile(fileLocation,constants.RunType_Delete, ActionFileNo);
       
       if(ActionFileNo < NoOfActionFiles-1){ //Dont reload if on last iteration
         cy.reload();
         cy.wait(3000);
       }      
     }
-   }
-  });
 });
 
 //Receiving the filename and decoding it in order to call the correct create/assert/delete functions

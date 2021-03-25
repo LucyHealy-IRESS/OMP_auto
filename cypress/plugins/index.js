@@ -26,10 +26,13 @@ const fs = require('fs')
 module.exports = (on, config) => {
   on('file:preprocessor', cucumber(),
   on("task", {
-    ReadFolderDirectory(path){
+    ReadFolderDirectory({path,fileNo}){
       var fs = require('fs');
       var files = fs.readdirSync(path);
-      return files; //Returns array of file names
+      if(fileNo < files.length ){
+        return files[fileNo];
+      }      
+      return ""; 
     }
    })
   )
