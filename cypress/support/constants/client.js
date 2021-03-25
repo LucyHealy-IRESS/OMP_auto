@@ -5,49 +5,49 @@ ClientEditorSelector = '#EditClientPopup',
 
 ClientInputs = {
   Title: {
-    Selector: constants.titleconst,
+    Selector: constants.Client_Title,
     inputType: "String",
   },
   Firstname: {
-    Selector: constants.firstnameconst,
+    Selector: constants.Client_Firstname,
     inputType: "String",
   },
   Surname: {
-    Selector: constants.surnameconst,
+    Selector: constants.Client_Surname,
     inputType: "String",
   },
   DateOfBirth: {
-    Selector: constants.dobDD,
-    ddSelector:constants.dobDD,
-    mmSelector:constants.dobMM,
-    yyyySelector:constants.dobYYYY,
+    Selector: constants.Client_DOB,
+    ddSelector:constants.Client_DOB_DD,
+    mmSelector:constants.Client_DOB_MM,
+    yyyySelector:constants.Client_DOB_YYYY,
     inputType: "Date",
   },
   Gender: {
-    Selector: constants.genderconst,
+    Selector: constants.Client_Gender,
     inputType: "Dropdown",
   },
   PlannedRetirementAge: {
-    Selector: constants.plannedretirementage,
+    Selector: constants.Client_PlannedRetirementAge,
     inputType: "ValueOrClick",
   },
 },
 
 FamilyDetails = {
   MaritalStatus: {
-    Selector: constants.clMaritalStatus,
+    Selector: constants.Client_MaritalStatus,
     inputType: "Dropdown",
   },
   DependantChildren: {
-    Selector: constants.clDependantChildren,
+    Selector: constants.Client_DependantChildren,
     inputType: "String",
   },
   IndependantChildren: {
-    Selector: constants.clIndependantChildren,
+    Selector: constants.Client_IndependantChildren,
     inputType: "String",
   },
   Siblings: {
-    Selector: constants.clSiblings,
+    Selector: constants.Client_Siblings,
     inputType: "String",
   }
 },
@@ -55,85 +55,85 @@ FamilyDetails = {
 
 ClientContact = {
   Address1: {
-    Selector: constants.clAddress1,
+    Selector: constants.Client_Address1,
     inputType: "String",
   },
   Address2: {
-    Selector: constants.clAddress2,
+    Selector: constants.Client_Address2,
     inputType: "String",
   },
   Address3: {
-    Selector: constants.clAddress3,
+    Selector: constants.Client_Address3,
     inputType: "String",
   },
   City: {
-    Selector: constants.clCity,
+    Selector: constants.Client_City,
     inputType: "String",
   },
   County: {
-    Selector: constants.clCounty,
+    Selector: constants.Client_County,
     inputType: "String",
   },
   Email: {
-    Selector: constants.clEmail,
+    Selector: constants.Client_Email,
     inputType: "String",
   },
   WorkNumber: {
-    Selector: constants.clWorkNumber,
+    Selector: constants.Client_WorkNumber,
     inputType: "String",
   },
   HomeNumber: {
-    Selector: constants.clHomeNumber,
+    Selector: constants.Client_HomeNumber,
     inputType: "String",
   },
   MobileNumber: {
-    Selector: constants.clMobileNumber,
+    Selector: constants.Client_MobileNumber,
     inputType: "String",
   },
 },
 
 ClientHealth = {
   HealthStatus: {
-    Selector: constants.clHealthStatus,
+    Selector: constants.Client_HealthStatus,
     inputType: "Dropdown",
   },
   SmokerStatus: {
-    Selector: constants.clSmokerStatus,
+    Selector: constants.Client_SmokerStatus,
     inputType: "Dropdown",
   },
   Postcode: {
-    Selector: constants.clPostcode,
+    Selector: constants.Client_Postcode,
     inputType: "String",
   }
 },
 
 Tax = {
   TaxRegion: {
-    Selector: constants.clTaxRegion,
+    Selector: constants.Client_TaxRegion,
     inputType: "String",
   },
   LifetimeAllowanceType: {
-    Selector: constants.clLifetimeAllowanceType,
+    Selector: constants.Client_LifetimeAllowanceType,
     inputType: "Dropdown",
   },
   ProtectedAmount: {
-    Selector: constants.clProtectedAmount,
+    Selector: constants.Client_ProtectedAmount,
     inputType: "Integer",
   },
   LifetimeAllowancePreviouslyUsed: {
-    Selector: constants.clLifetimeAllowancePreviouslyUsed,
+    Selector: constants.Client_LifetimeAllowancePreviouslyUsed,
     inputType: "Integer",
   },
   LifetimeAllowanceEnhancementFactor: {
-    Selector: constants.clLifetimeAllowanceEnhancementFactor,
+    Selector: constants.Client_LifetimeAllowanceEnhancementFactor,
     inputType: "Integer",
   },
   CustomLifetimeAllowance: {
-    Selector: constants.clCustomLifetimeAllowance,
+    Selector: constants.Client_CustomLifetimeAllowance,
     inputType: "Integer",
   },
   AllowanceIncreases: {
-    Selector: constants.clAllowanceIncreases,
+    Selector: constants.Client_AllowanceIncreases,
     inputType: "Dropdown",
   }
   
@@ -142,30 +142,30 @@ Tax = {
 
 ServiceBasis = {
   ServiceBasis: {
-    Selector: constants.clServiceBasis,
+    Selector: constants.Client_ServiceBasis,
     inputType: "DropdownIndex",
   },
   EthicalInvestment: {
-    Selector: constants.clEthicalInvestment,
+    Selector: constants.Client_EthicalInvestment,
     inputType: "DropdownIndex",
   },
   PayingFee: {
-    Selector: constants.clPayingFee,
+    Selector: constants.Client_PayingFee,
     inputType: "Dropdown",
   },
   NextReviewDate: {
-    Selector: constants.clNextReviewVisit_Day,
-    ddSelector: constants.clNextReviewVisit_Day,
-    mmSelector: constants.clNextReviewVisit_Month,
-    yyyySelector: constants.clNextReviewVisit_Year,
+    Selector: constants.dd,
+    ddSelector: constants.Client_NextReviewVisit_Day,
+    mmSelector: constants.Client_NextReviewVisit_Month,
+    yyyySelector: constants.Client_NextReviewVisit_Year,
     inputType: "Date",
   },
   ClientStatus: {
-    Selector: constants.clClientStatus,
+    Selector: constants.Client_Status,
     inputType: "Dropdown",
   },
   IsSharedWithCompany:{
-    Selector: constants.clIsSharedWithCompany,
+    Selector: constants.Client_IsSharedWithCompany,
     inputType: "Checkbox",
   },
   //Adviser is ownerguid, not done yet
