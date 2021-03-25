@@ -1,0 +1,116 @@
+<Root>
+<Clients>
+	<Client>
+		<ClientID>Client01</ClientID>
+		<Title>Mrs</Title>
+		<Firstname>Latest</Firstname>
+		<Surname>AndGreatest</Surname>
+		<DateOfBirth>1969-11-09T00:00:00</DateOfBirth>		
+		<Gender>Male</Gender>
+		<PlannedRetirementAge>79</PlannedRetirementAge>
+		<ExpenseProfile />
+		<TargetPathway />
+		<MaritalStatus>Single</MaritalStatus>
+		<DependantChildren>2</DependantChildren>
+		<IndependantChildren>3</IndependantChildren>
+		<Siblings>4</Siblings>
+		<HealthStatus>Yes</HealthStatus>
+		<SmokerStatus>No</SmokerStatus>
+		<TaxRegion />
+		<LifetimeAllowanceType>Custom Protection</LifetimeAllowanceType>
+		<CustomLifetimeAllowance>500</CustomLifetimeAllowance>
+		<AllowanceIncreases>Fixed</AllowanceIncreases>
+		<ProtectedAmount />
+		<LifetimeAllowanceEnhancementFactor />
+		<LifetimeAllowancePreviouslyUsed>71</LifetimeAllowancePreviouslyUsed>
+		<Address1>3 Keats Close</Address1>
+		<Address2>more</Address2>
+		<Address3>yet more</Address3>
+		<City>Maldon</City>
+		<County>Essex</County>
+		<Email>hello@gmail.com</Email>
+		<WorkNumber>0711</WorkNumber>
+		<HomeNumber>0722</HomeNumber>
+		<MobileNumber>0733</MobileNumber>
+		<ServiceBasis>3</ServiceBasis>
+		<EthicalInvestment>2</EthicalInvestment>
+		<PayingFee>No</PayingFee>
+		<NextReviewDate>2021-01-01T00:00:00</NextReviewDate>	
+		<ClientStatus>Proposed</ClientStatus>	
+		<IsSharedWithCompany>False</IsSharedWithCompany>	
+		<CurrentSalary>123456</CurrentSalary>
+		<StatePension>78910</StatePension>
+		<Portfolios>
+			<Portfolio>
+				<PortfolioID>
+					LH_115_Portfolio01
+				</PortfolioID>
+				<ClientID>
+					LH_115
+				</ClientID>
+				<Reference>
+					Pension 001
+				</Reference>
+				<third_party_tag>
+					T4A
+				</third_party_tag>
+				<Status>
+					Current
+				</Status>
+				<ProductID>
+					1
+				</ProductID>
+				<ProviderID>
+					BBBBBBBB-5555-0000-0000-000000000046
+				</ProviderID>
+				<Investments>
+					<PortfolioInvestment>
+						<FundID>
+							GB00B3CGHN82
+						</FundID>
+						<FundName>
+							Aviva Inv Strategic Bond 2 Inc
+						</FundName>
+						<Units>
+							285463.8764
+						</Units>
+						<TotalValue>
+							316436.71
+						</TotalValue>
+						<InvestmentType>
+							Fund
+						</InvestmentType>
+						<Status>
+							Current
+						</Status>
+					</PortfolioInvestment>					
+				</Investments>
+				<RetirementAge>
+					65
+				</RetirementAge>
+				<GrowthRateBasis>
+					Industry Standard Growth Rates
+				</GrowthRateBasis>
+				<OngoingContsPremium>
+					0
+				</OngoingContsPremium>
+				<OngoingContsType>
+					Annually
+				</OngoingContsType>
+				<MaturityValueLow>
+					0
+				</MaturityValueLow>
+				<MaturityValueMid>
+					0
+				</MaturityValueMid>
+				<MaturityValueHigh>
+					0
+				</MaturityValueHigh>
+				<TotalMemberContributionsToScheme>
+					1234567
+				</TotalMemberContributionsToScheme>
+			</Portfolio>
+		</Portfolios>
+	</Client>
+</Clients>
+</Root>
