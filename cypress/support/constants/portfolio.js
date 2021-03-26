@@ -4,7 +4,7 @@ export const
 ClientPortfoliosSelector = "#Client_ViewPortfolios",
 PortfoliosQuickEditorSelector = "#PortfolioAddPopUp",
 PortfolioQuickAddFundSelector = "PortfolioSimpleEditor_QuickAddFundPopup",
-PortfoliosAdvancedEditorSelector = '#EditPortfolioAdvancedPopup', //depends where we lands from
+PortfoliosAdvancedEditorSelector = '##EditPortfolioAdvancedPopup', //depends where we lands from
 
 Portfolio_BasicDetailsInputs_EmilyBasic = {
   ProductID: {

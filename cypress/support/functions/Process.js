@@ -9,7 +9,7 @@ Cypress.Commands.add("ProcessFile", (ExecutiionFolderLocation,fileName) => {
       
       var fileLocation = ExecutiionFolderLocation + "/" + fileName;
       //1 Creation Pass
-      cy.ProcessXMLFile(fileLocation, constants.RunType_Create, ActionFileNo);
+       cy.ProcessXMLFile(fileLocation, constants.RunType_Create, ActionFileNo);
 
       //2 Assert Pass
        cy.wait(3000);
@@ -162,3 +162,11 @@ Cypress.Commands.add("SearchHasCompleted", (callback) => {
     }    
   })
 });
+
+Cypress.Commands.add("ClientPortfoliosListReturned", (callback) => {
+  cy.get('.ui-dialog-buttons > .ui-dialog-titlebar').contains('Client Portfolios').then(function(){
+    cy.get('#Client_ViewPortfolios > .gridContainer', {timeout:16000}).then(function(){
+      callback();
+    })
+  })
+})
