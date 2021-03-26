@@ -1,4 +1,5 @@
-import * as constants from "../constants/constantsSelectors.js";
+import * as constantSelectors from "../constants/constantsSelectors.js";
+import * as constants from "../constants/Core";
 
 Cypress.Commands.add("login", () => {
   cy.clearCookies()
@@ -8,33 +9,33 @@ Cypress.Commands.add("login", () => {
     var password = "LoginPassword";
 
     if (url=='Dev') {
-        cy.visit('http://localhost:57204/index.html',{ timeout: 26000 });
+        cy.visit('http://localhost:57204/index.html',{ timeout: constants.Timeout_Login });
     }
     else if (url=='testProfiler') {
-        cy.visit('http://testomprofiler/',{ timeout: 26000 });
+        cy.visit('http://testomprofiler/',{ timeout: constants.Timeout_Login });
     }
     else if (url=='test') {
-        cy.visit('http://uat.omprofiler.co.uk',{ timeout: 26000 });
+        cy.visit('http://uat.omprofiler.co.uk',{ timeout: constants.Timeout_Login });
     }
 
     else if (url=='live') {
-        cy.visit('https://html.omprofiler.co.uk',{ timeout: 26000 });
+        cy.visit('https://html.omprofiler.co.uk',{ timeout: constants.Timeout_Login });
     }
 
     else if (url=='staging') {
-        cy.visit('https://html.omprofiler.int.aws-wealth-staging-uk.iress.online',{ timeout: 26000 });
+        cy.visit('https://html.omprofiler.int.aws-wealth-staging-uk.iress.online',{ timeout: constants.Timeout_Login });
     }
     else if (url=='uat') {
-        cy.visit('https://html.omprofiler.uat.aws-wealth-uat-uk.iress.online',{ timeout: 26000 });
+        cy.visit('https://html.omprofiler.uat.aws-wealth-uat-uk.iress.online',{ timeout: constants.Timeout_Login });
     }
 
     else {
         Cypress.log({name :'INVALID URL'}).end()
     }
   
-    cy.get(constants.Login_Username).type(Cypress.env(username));
-    cy.get(constants.Login_Password).type(Cypress.env(password));
-    cy.get(constants.Login_ok).click();
+    cy.get(constantSelectors.Login_Username).type(Cypress.env(username));
+    cy.get(constantSelectors.Login_Password).type(Cypress.env(password));
+    cy.get(constantSelectors.Login_ok).click();
     cy.url().should('contain', 'StoryBoardManager/StoryBoardManager_Workspace&d')
 
 })

@@ -1,15 +1,17 @@
+import * as Constants from "../../constants/Core.js";
+
 Cypress.Commands.add("Client_Delete_1", (EntityData) => {
 
-  cy.get("#ExistingClientsIconMenu", { timeout: 36000 }).click();
+  cy.get("#ExistingClientsIconMenu", { timeout: Constants.Timeout_MenuButtonWait }).click();
 
   var SearchCompleteCallback = function(){
     cy.wait(1000); //1 second ui catchup to prevent any detatching from async refreshes
-      cy.get('#StoryCarousel4 .TypeCompositePanel .tableContainer', {timeout:16000}).find('tr', {timeout:16000}).first().dblclick();
+      cy.get('#StoryCarousel4 .TypeCompositePanel .tableContainer', {timeout:Constants.Timeout_Medium}).find('tr', {timeout:Constants.Timeout_Medium}).first().dblclick();
       cy.wait(1000); 
       cy.clickThumbnail('Client Summary');
-      cy.get("#EditClientIconMenu", { timeout: 36000 }).click({force:true});
+      cy.get("#EditClientIconMenu", { timeout: Constants.Timeout_MenuButtonWait }).click({force:true});
       cy.get("#EditClientPopup .client_info_table", {  //ensure client editor is there and client info section has loaded
-        timeout: 226000,
+        timeout: Constants.Timeout_EditorWait,
       }).then(function () {         
         cy.get("#DeleteMenu a").click({force:true}); //Click delete button  
         cy.get("[aria-describedby='Client_Delete_Confirm']").then(function($Container){
