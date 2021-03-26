@@ -1,13 +1,14 @@
 import * as ClientConstants from "../../constants/client.js";
+import * as Constants from "../../constants/Core.js";
 
 Cypress.Commands.add("Client_Create_1", (EntityData) => {
     //Navigate to New client
-    cy.get("#NewClientIconMenu", { timeout: 36000 }).click();
+    cy.get("#NewClientIconMenu", { timeout: Constants.Timeout_MenuButtonWait }).click();
 
     cy.get("#EditClientPopup .client_info_table", {  //ensure client editor is there and client info section has loaded
-      timeout: 226000,
+      timeout: Constants.Timeout_EditorWait,
     }).then(function () {         
-        cy.PopulateEditor(ClientConstants.ClientEditorSelector,ClientConstants.ClientAccordians,EntityData);       
+        cy.PopulateEditor(ClientConstants.ClientEditorSelector,ClientConstants.AllClientInputs,EntityData);       
     });
    
 });

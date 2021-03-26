@@ -1,20 +1,20 @@
-import * as constantsSelectors from "../../constants/constantsSelectors.js";
 import * as ClientConstants from "../../constants/client.js";
+import * as Constants from "../../constants/Core.js";
 
 Cypress.Commands.add("Client_Assert_1", (EntityData) => {
 
-    cy.get("#ExistingClientsIconMenu", { timeout: 36000 }).click();
+    cy.get("#ExistingClientsIconMenu", { timeout:Constants.Timeout_MenuButtonWait }).click();
 
     var SearchCompleteCallback = function(){
       cy.wait(1000); //1 second ui catchup to prevent any detatching from async refreshes
 
-      cy.get('#StoryCarousel4 .TypeCompositePanel .tableContainer', {timeout:16000}).find('tr', {timeout:16000}).first().dblclick();
-      cy.clickThumbnail('Client Summary', {timeout:16000});
-      cy.get('#EditClientIconMenu', {timeout:16000}).click(); 
+      cy.get('#StoryCarousel4 .TypeCompositePanel .tableContainer', {timeout:Constants.Timeout_Medium}).find('tr', {timeout:Constants.Timeout_Medium}).first().dblclick();
+      cy.clickThumbnail('Client Summary', {timeout: Constants.Timeout_Medium});
+      cy.get('#EditClientIconMenu', {timeout:Constants.Timeout_Medium}).click(); 
       cy.get("#EditClientPopup .client_info_table", {  //ensure client editor is there and client info section has loaded
-        timeout: 226000,
+        timeout: Constants.Timeout_EditorWait,
       }).then(function () {        
-        cy.AssertEditor(ClientConstants.ClientEditorSelector,ClientConstants.ClientAccordians,EntityData);   
+        cy.AssertEditor(ClientConstants.ClientEditorSelector,ClientConstants.AllClientInputs,EntityData);   
       });     
     }
 

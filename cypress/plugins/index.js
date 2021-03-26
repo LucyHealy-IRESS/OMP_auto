@@ -29,10 +29,10 @@ module.exports = (on, config) => {
     ReadFolderDirectory({path,fileNo}){
       var fs = require('fs');
       var files = fs.readdirSync(path);
-      if(fileNo < files.length ){
-        return files[fileNo];
-      }      
-      return ""; 
+      // if(fileNo < files.length ){
+      //   return files[fileNo];
+      // }      
+      return files; 
     }
    })
   )
