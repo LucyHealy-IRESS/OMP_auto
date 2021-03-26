@@ -110,6 +110,75 @@
 					1234567
 				</TotalMemberContributionsToScheme>
 			</Portfolio>
+			<Portfolio>
+				<PortfolioID>
+					LH_115_Portfolio02
+				</PortfolioID>
+				<ClientID>
+					LH_115
+				</ClientID>
+				<Reference>
+					Pension 002
+				</Reference>
+				<third_party_tag>
+					T4A
+				</third_party_tag>
+				<Status>
+					Current
+				</Status>
+				<ProductID>
+					1
+				</ProductID>
+				<ProviderID>
+					BBBBBBBB-5555-0000-0000-000000000046
+				</ProviderID>
+				<Investments>
+					<PortfolioInvestment>
+						<FundID>
+							GB00B3CGHN82
+						</FundID>
+						<FundName>
+							Aviva Inv Strategic Bond 2 Inc
+						</FundName>
+						<Units>
+							285463.8764
+						</Units>
+						<TotalValue>
+							316436.71
+						</TotalValue>
+						<InvestmentType>
+							Fund
+						</InvestmentType>
+						<Status>
+							Current
+						</Status>
+					</PortfolioInvestment>					
+				</Investments>
+				<RetirementAge>
+					65
+				</RetirementAge>
+				<GrowthRateBasis>
+					Industry Standard Growth Rates
+				</GrowthRateBasis>
+				<OngoingContsPremium>
+					0
+				</OngoingContsPremium>
+				<OngoingContsType>
+					Annually
+				</OngoingContsType>
+				<MaturityValueLow>
+					0
+				</MaturityValueLow>
+				<MaturityValueMid>
+					0
+				</MaturityValueMid>
+				<MaturityValueHigh>
+					0
+				</MaturityValueHigh>
+				<TotalMemberContributionsToScheme>
+					1234567
+				</TotalMemberContributionsToScheme>
+			</Portfolio>
 		</Portfolios>
 	</Client>
 </Clients>
