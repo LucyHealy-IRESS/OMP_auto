@@ -4,14 +4,12 @@ import * as Constants from "../../constants/Core.js";
 
 Cypress.Commands.add("Portfolio_Create_1", (EntityData) => {
 
-cy.Portfolio_Create_2(EntityData);
+//cy.Portfolio_Create_2(EntityData);
 
     //Portfolio Editor simple mode
-    //cy.clickButtonInPopup(PortfolioConstants.ClientPortfoliosSelector,"Add New Portfolio");
-    //cy.PopulateEditor(PortfolioConstants.PortfoliosQuickEditorSelector,PortfolioConstants.AllPortfolioSimpleInputs,EntityData);
-    //cy.PopulateEditor(PortfolioConstants.PortfoliosAdvancedEditorSelector,PortfolioConstants.PortfolioAccordioansAdvanced,EntityData); //this will fail as the portfolio popup has a differnet id depending if edit or add, i need to look into that
+    cy.clickButtonInPopup(PortfolioConstants.ClientPortfoliosSelector,"Add New Portfolio");
+    cy.PopulateEditor(PortfolioConstants.PortfoliosQuickEditorSelector,PortfolioConstants.AllPortfolioSimpleInputs,EntityData);
 
-    
 });
 
 Cypress.Commands.add("Portfolio_Create_2", (EntityData) => {
