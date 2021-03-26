@@ -94,7 +94,7 @@ Cypress.Commands.add("ProcessAccordian",(EditorSelector,mapping,xmlInput,XMLData
 })
 
 Cypress.Commands.add("EditorProcesssor",(EditorSelector, InputMappings, XMLDataObject, isCreate) => {
-  cy.get(EditorSelector, { timeout: 226000}).then(function () {
+  cy.get(EditorSelector, { timeout: constants.Timeout_EditorWait}).then(function () {
     for (let xmlInput in XMLDataObject) { //for each xml tag
       if(InputMappings[xmlInput]) { //if we have a mapping for this input
         var mapping = InputMappings[xmlInput];
@@ -124,9 +124,9 @@ Cypress.Commands.add("RunSearch", (SearchOptions, EntityData) => {
         cy.wait(1000); //1 second ui catchup to prevent any detatching from async refreshes
         SearchOptions.SearchCompleteCallbackFunc();
     }
-    cy.clickThumbnail(SearchOptions.ThumbnailName, {timeout:16000});
+    cy.clickThumbnail(SearchOptions.ThumbnailName, {timeout:constants.Timeout_Medium});
     cy.get(SearchOptions.MenuSelector).then(function(){ //wait till client search menu is actually open                                                                                                        //- JSSORPopUpMenu_Open is used by the amend search popup code and crashes if its not present
-      cy.get('#AmendClientSearch', {timeout:17000}).click();
+      cy.get('#AmendClientSearch', {timeout:constants.Timeout_Medium}).click();
       cy.get(".AmendSearchPopup_Container").then(function(){ //check amend search has opened before continuing
         cy.get(constantsSelectors.searchTextMatch).type(SearchParam);
         cy.get('.OverviewSearchButton').click();
@@ -139,15 +139,15 @@ Cypress.Commands.add("RunSearch", (SearchOptions, EntityData) => {
 });
 
 Cypress.Commands.add("SearchHasCompleted", (callback) => {
-  cy.get(".overviewHeader").find("div").find("span").contains("Matching Client",{timeout:32000}).then(function($span){ //initial search completes as header contains x Matching Clients
+  cy.get(".overviewHeader").find("div").find("span").contains("Matching Client",{timeout:constants.Timeout_SearchWait}).then(function($span){ //initial search completes as header contains x Matching Clients
     var NoMatchingClients = $span.text();
     var numb = NoMatchingClients.replace(/[^0-9]/g,''); //extract numbers from text only
     if (numb > 0) { 
-     cy.get("#StoryCarousel4 .TypeCompositePanel .tableContainer tr",{timeout:32000}).then(function(){     //now we wait for the results grid to finish loading
+     cy.get("#StoryCarousel4 .TypeCompositePanel .tableContainer tr",{timeout:constants.Timeout_SearchWait}).then(function(){     //now we wait for the results grid to finish loading
       callback();
       }) 
     } else {//no clients = 0 matching clients
-      cy.get("#StoryCarousel4 .TypeCompositePanel .tableContainer",{timeout:32000}).then(function(){ //no clients so no trs to wait for
+      cy.get("#StoryCarousel4 .TypeCompositePanel .tableContainer",{timeout:constants.Timeout_SearchWait}).then(function(){ //no clients so no trs to wait for
         callback();
       }) 
     }    

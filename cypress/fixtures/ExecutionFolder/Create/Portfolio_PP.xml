@@ -1,0 +1,34 @@
+<Root>
+<Clients>
+	<Client>
+		<ClientID>Client01</ClientID>
+		<Title>Mrs</Title>
+		<Firstname>Portfolio</Firstname>
+		<Surname>CreationAutomation</Surname>
+		<DateOfBirth>1969-11-09T00:00:00</DateOfBirth>				
+		<NextReviewDate>2021-01-01T00:00:00</NextReviewDate>	
+		<IsSharedWithCompany>False</IsSharedWithCompany>	
+		<Portfolios>
+			<Portfolio>
+				<PortfolioID>Client01_Portfolio01</PortfolioID>
+				<ClientID>Client01</ClientID>
+				<Reference>Pension 001</Reference>
+				<ProviderID>BBBBBBBB-5555-0000-0000-000000000046</ProviderID>
+				<ProductID>1</ProductID>
+				<Benchmark>FTSE 100 TR GBP</Benchmark>
+				<Status>Current</Status>
+				<NextReviewDate>2021-01-01T00:00:00</NextReviewDate>
+				<IsWorkplacePension>True</IsWorkplacePension>
+				<IsSharedWithCompany>True</IsSharedWithCompany>
+				<RiskObj>0</RiskObj>
+				<RiskTargetAmount>5000</RiskTargetAmount>
+				<InceptionDate>2020-05-05T00:00:00</InceptionDate>
+				<RiskTermYear>10</RiskTermYear>
+				<MaturityAge>56</MaturityAge>
+				<Risk>1</Risk>
+				<RiskEstBy>1</RiskEstBy>
+			</Portfolio>
+		</Portfolios>
+	</Client>
+</Clients>
+</Root>
