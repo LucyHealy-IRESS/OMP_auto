@@ -58,14 +58,14 @@ Portfolio_Simple = {
 //Current Value 
     CurrentValue: {
         Selector: constants.PortfolioSmp_CVCurrentValue,
-        inputType: "Value",
+        inputType: "String",
         AccordianSelector: constants.PortfolioSmp_ACCurrentValue,
         AccordianName: "Current Value",
       },  
 //Ongoing Contribution
     OngoingContsPremium: {
         Selector: constants.PortfolioSmp_OCGrossPremium,
-        inputType: "Value",
+        inputType: "String",
         AccordianSelector: constants.PortfolioSmp_ACOngoingContributions,
         AccordianName: "Ongoing Contributions",
       },  
@@ -83,7 +83,7 @@ Portfolio_Simple = {
       },  
     OngoingContsEscalationRateOther: {
         Selector: constants.PortfolioSmp_OCEscalationOther,
-        inputType: "Value",
+        inputType: "String",
         AccordianSelector: constants.PortfolioSmp_ACOngoingContributions,
         AccordianName: "Ongoing Contributions",
       },  
@@ -95,7 +95,7 @@ Portfolio_Simple = {
       },  
     ContributionsStop: {
         Selector: constants.PortfolioSmp_OCContributionStop,
-        inputType: "Value",
+        inputType: "String",
         AccordianSelector: constants.PortfolioSmp_ACOngoingContributions,
         AccordianName: "Ongoing Contributions",
       },  
@@ -126,13 +126,13 @@ Portfolio_Simple = {
       },  
     Units: {
         Selector: constants.PortfolioSmp_HDUnits,
-        inputType: "Value",
+        inputType: "String",
         AccordianSelector: constants.PortfolioSmp_ACHoldings,
         AccordianName: "Holdings",
       },  
     CurrentPrice: {
         Selector: constants.PortfolioSmp_HDCurrentPrice,
-        inputType: "Value",
+        inputType: "String",
         AccordianSelector: constants.PortfolioSmp_ACHoldings,
         AccordianName: "Holdings",
       },  
@@ -150,19 +150,19 @@ Portfolio_Simple = {
     //   },  
     // XXX: {
     //     Selector: constants.PortfolioSmp_HDCashValue,
-    //     inputType: "Value",
+    //     inputType: "String",
     //     AccordianSelector: constants.PortfolioSmp_ACHoldings,
     //     AccordianName: "Holdings",
     //   },  
     // XXX: {
     //     Selector: constants.PortfolioSmp_HDPercentage,
-    //     inputType: "Value",
+    //     inputType: "String",
     //     AccordianSelector: constants.PortfolioSmp_ACHoldings,
     //     AccordianName: "Holdings",
     //   },  
     // XXX: {
     //     Selector: constants.PortfolioSmp_HDOfTotalPlan,
-    //     inputType: "Value",
+    //     inputType: "String",
     //     AccordianSelector: constants.PortfolioSmp_ACHoldings,
     //     AccordianName: "Holdings",
     //   },  
@@ -174,7 +174,7 @@ Portfolio_Simple = {
       },  
     CustomFundPrice: {
         Selector: constants.PortfolioSmp_HDCustomFundPrice,
-        inputType: "Value",
+        inputType: "String",
         AccordianSelector: constants.PortfolioSmp_ACHoldings,
         AccordianName: "Holdings",
       },  
@@ -206,13 +206,13 @@ Portfolio_Simple = {
       },  
     RegularWithdrawalAmount: {
         Selector: constants.PortfolioSmp_RWAmount,
-        inputType: "Value",
+        inputType: "String",
         AccordianSelector: constants.PortfolioSmp_ACRegularWithdrawals,
         AccordianName: "Regular Withdrawals",
       },  
     RegularWithdrawalPercentage: {
         Selector: constants.PortfolioSmp_RWPercentage,
-        inputType: "Value",
+        inputType: "String",
         AccordianSelector: constants.PortfolioSmp_ACRegularWithdrawals,
         AccordianName: "Regular Withdrawals",
       },  
@@ -236,7 +236,7 @@ Portfolio_Simple = {
       },  
     RegularWithdrawalEscalationRateOther: {
         Selector: constants.PortfolioSmp_RWEscalationOther,
-        inputType: "Value",
+        inputType: "String",
         AccordianSelector: constants.PortfolioSmp_ACRegularWithdrawals,
         AccordianName: "Regular Withdrawals",
       }

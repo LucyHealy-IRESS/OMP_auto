@@ -4,13 +4,13 @@ import * as Constants from "../../constants/Core.js";
 
 Cypress.Commands.add("Portfolio_Assert_1", (EntityData) => {
 
-    cy.get('.btn-viewportfolios-action').click();
     var entity = EntityData["Reference"];
     var ClientPortfolios = function(){
-        cy.wait(1000);
+        cy.wait(12000);
         cy.get('#Client_ViewPortfolios > .gridContainer', {timeout:Constants.Timeout_Medium}).find('tr', {timeout:Constants.Timeout_Medium}).find('td').contains(entity).dblclick().then(function () {   
             cy.get("[aria-describedby='" + Portfolio_Smp_Constants.PortfoliosQuickEditorSelector.replace("#","") + "']",{timeout:Constants.Timeout_Medium}).then(function(){
-               cy.AssertEditor(Portfolio_Smp_Constants.PortfoliosQuickEditorSelector,Portfolio_Smp_Constants.Portfolio_Simple, EntityData);            
+               cy.AssertEditor(Portfolio_Smp_Constants.PortfoliosQuickEditorSelector,Portfolio_Smp_Constants.Portfolio_Simple, EntityData);
+               cy.get('[aria-describedby="PortfolioAddPopUp"] > .ui-dialog-buttonpane > .ui-dialog-buttonset > .ui-button > .ui-button-text').click();            
             })
         });     
         }
