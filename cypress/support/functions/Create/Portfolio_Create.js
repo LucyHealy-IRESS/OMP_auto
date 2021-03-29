@@ -34,3 +34,14 @@ Cypress.Commands.add("Portfolio_Create_2", (EntityData) => {
 });
 
 Cypress.Commands.add("Portfolio_Create_3", (EntityData) => {});
+
+Cypress.Commands.add("Portfolio_Tidy", (ActionFileNo) => {
+    //close an outstanding portfolio editor
+    if(ActionFileNo == 1){
+        var Element = Cypress.$("[aria-describedby='" + Portfolio_Smp_Constants.PortfoliosQuickEditorSelector.replace("#","") + "']");
+        if(Element && Element.length > 0 ){
+            cy.get('[aria-describedby="PortfolioAddPopUp"] > .ui-dialog-buttonpane > .ui-dialog-buttonset > .ui-button > .ui-button-text').click();
+            cy.wait(1000); //allow for save
+        }
+    }  
+})

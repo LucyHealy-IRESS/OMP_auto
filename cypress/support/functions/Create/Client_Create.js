@@ -18,3 +18,6 @@ Cypress.Commands.add("Client_Create_2", (EntityData) => {
 });
 
 Cypress.Commands.add("Client_Create_3", (EntityData) => {});
+
+
+Cypress.Commands.add("Client_Tidy", (ActionFileNo) => {})

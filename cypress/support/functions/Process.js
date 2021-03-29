@@ -13,7 +13,7 @@ Cypress.Commands.add("ProcessFile", (ExecutiionFolderLocation,fileName) => {
 
       //2 Assert Pass
       cy.wait(3000);
-       cy.ProcessXMLFile(fileLocation, constants.RunType_Assert,ActionFileNo);
+      cy.ProcessXMLFile(fileLocation, constants.RunType_Assert,ActionFileNo);
       
        //3 Roll off what we have created
       cy.wait(3000);
@@ -74,8 +74,12 @@ Cypress.Commands.add("ProcessXMLFile", (fileLocation, Type,ActionFileNo) => {
         }
       }
       traverse(XMLtoArray, API_Requests); //e,g, clients|| Clients Data
-      if(Type==constants.RunType_Create){
+      if(Type==constants.RunType_Create){ //when finished creating we can call tidy up functions to close off any open popups
         var Distinct_ArrayOfFunctionCalls = cy.removeDuplicatesInArray(ArrayOfFunctionCalls);
+        for (var x = 0; x < Distinct_ArrayOfFunctionCalls.length; x++) {
+          cy.log(Distinct_ArrayOfFunctionCalls[x]);
+           eval("cy." + Distinct_ArrayOfFunctionCalls[x] + "(ActionFileNo);");
+        }
         //iterte and call
       }
       

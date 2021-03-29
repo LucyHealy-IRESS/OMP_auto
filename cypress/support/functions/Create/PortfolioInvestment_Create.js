@@ -44,3 +44,7 @@ Cypress.Commands.add("ProcessAddHoldingQuick", (Entity) => {
     });
    }
 });
+
+
+
+Cypress.Commands.add("PortfolioInvestment_Tidy", (ActionFileNo) => {});
