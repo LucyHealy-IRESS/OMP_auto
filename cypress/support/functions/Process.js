@@ -9,10 +9,10 @@ Cypress.Commands.add("ProcessFile", (ExecutiionFolderLocation,fileName) => {
       
       var fileLocation = ExecutiionFolderLocation + "/" + fileName;
       //1 Creation Pass
-       cy.ProcessXMLFile(fileLocation, constants.RunType_Create, ActionFileNo);
+      // cy.ProcessXMLFile(fileLocation, constants.RunType_Create, ActionFileNo);
 
       //2 Assert Pass
-       cy.wait(3000);
+      // cy.wait(3000);
        cy.ProcessXMLFile(fileLocation, constants.RunType_Assert,ActionFileNo);
       
        //3 Roll off what we have created
@@ -26,6 +26,11 @@ Cypress.Commands.add("ProcessFile", (ExecutiionFolderLocation,fileName) => {
     }
 });
 
+
+
+
+
+
 //Receiving the filename and decoding it in order to call the correct create/assert/delete functions
 //Type = Create or Assert or Delete
 Cypress.Commands.add("ProcessXMLFile", (fileLocation, Type,ActionFileNo) => {
@@ -37,7 +42,7 @@ Cypress.Commands.add("ProcessXMLFile", (fileLocation, Type,ActionFileNo) => {
 
       var API_Requests = cy.getRequestXML(fileContents); //translates are string of xml into an object we can work with
       var XMLtoArray = Object.keys(API_Requests);
-
+      var ArrayOfFunctionCalls = [];
       function traverse(XMLtoArray, Data) {
         if (XMLtoArray !== null) {
           //Do We have something to process?
@@ -52,13 +57,16 @@ Cypress.Commands.add("ProcessXMLFile", (fileLocation, Type,ActionFileNo) => {
                   // For each client......
                   cy.log(Entity + " " + Type + " Action" + ActionFileNo);
                   eval("cy." + Entity + "_" + Type + "_" + ActionFileNo + "(EntityData[x]);");
-                  var XMLtoArraySub = Object.keys(EntityData[x]); //Get the specific client from the array
+                  var XMLtoArraySub = Object.keys(EntityData[x]); //Get the specific client from the array    
+                  ArrayOfFunctionCalls.push(Entity + "_Tidy" );       
                   traverse(XMLtoArraySub, EntityData[x]); //and start processing that down...
                 }
+                
               } else {
                 cy.log(Entity + " " + Type + " Action:" + ActionFileNo);
                 eval("cy." + Entity + "_" + Type + "_" + ActionFileNo + "(EntityData);");
                 var XMLtoArraySub = Object.keys(EntityData);
+                ArrayOfFunctionCalls.push(Entity + "_Tidy" );
                 traverse(XMLtoArraySub, EntityData);
               }
             }
@@ -66,6 +74,11 @@ Cypress.Commands.add("ProcessXMLFile", (fileLocation, Type,ActionFileNo) => {
         }
       }
       traverse(XMLtoArray, API_Requests); //e,g, clients|| Clients Data
+      if(Type==constants.RunType_Create){
+        var Distinct_ArrayOfFunctionCalls = cy.removeDuplicatesInArray(ArrayOfFunctionCalls);
+        //iterte and call
+      }
+      
     }); //end readFile
   });
 });
@@ -154,10 +167,3 @@ Cypress.Commands.add("SearchHasCompleted", (callback) => {
   })
 });
 
-Cypress.Commands.add("ClientPortfoliosListReturned", (callback) => {
-  cy.get('.ui-dialog-buttons > .ui-dialog-titlebar').contains('Client Portfolios').then(function(){
-    cy.get('#Client_ViewPortfolios > .gridContainer', {timeout:16000}).then(function(){
-      callback();
-    })
-  })
-})

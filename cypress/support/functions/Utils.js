@@ -53,6 +53,30 @@ cy.fixDigit = function(val) {
     return val.toString().length === 1 ? "0" + val : val;
   }
 
+
+  cy.removeDuplicatesInArray = function(arr) {
+    var i,
+        len = arr.length,
+        out = [],
+        obj = { };
+    
+    // for (i = 0; i < len; i++) {
+    for (var i = len - 1; i >= 0; i--) {
+        obj[arr[i]] = 0;
+    }
+    for (i in obj) {
+        out.push(i);
+    }
+    return out;
+};
+
+// cy.removeDuplicatesInArray  = function(array){
+//     return Cypress.$.grep(array,function(el,index){
+//         return index == Cypress.$.inArray(el,array);
+//     });
+// }
+
+
 //Convert ISO date to a short date (non simple mode)
 Cypress.Commands.add('shortDate',(ISODate) => { 
     var date = ISODate.split('T');
