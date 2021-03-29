@@ -20,17 +20,17 @@ Cypress.Commands.add("Portfolio_Create_1", (EntityData) => {
 });
 
 //Portfolio Editor Advanced mode
-// Cypress.Commands.add("Portfolio_Create_2", (EntityData) => {
+Cypress.Commands.add("Portfolio_Create_2", (EntityData) => {
     
-//     cy.clickButtonInPopup(PortfolioConstants.ClientPortfoliosSelector,"Add New Portfolio");
-//     cy.get("[aria-describedby='" + PortfolioConstants.PortfoliosQuickEditorSelector.replace("#","") + "'] #btn-advancedDetails-action").click();
+    cy.clickButtonInPopup(PortfolioConstants.ClientPortfoliosSelector,"Add New Portfolio");
+    cy.get("[aria-describedby='" + PortfolioConstants.PortfoliosQuickEditorSelector.replace("#","") + "'] #btn-advancedDetails-action").click();
 
-//     cy.get(PortfolioConstants.PortfoliosAdvancedEditorSelector + " .AccordianContainer", {  //ensure portfolio adv editor is there and has loaded
-//         timeout: Constants.Timeout_EditorWait,
-//       }).then(function () {         
-//           cy.PopulateEditor(PortfolioConstants.PortfoliosAdvancedEditorSelector,Portfolio_Adv_Constants.AllPortfolioAdvancedInputs,EntityData);       
-//       });
+    cy.get(PortfolioConstants.PortfoliosAdvancedEditorSelector + " .AccordianContainer", {  //ensure portfolio adv editor is there and has loaded
+        timeout: Constants.Timeout_EditorWait,
+      }).then(function () {         
+          cy.PopulateEditor(PortfolioConstants.PortfoliosAdvancedEditorSelector,Portfolio_Adv_Constants.AllPortfolioAdvancedInputs,EntityData);       
+      });
     
-// });
+});
 
 Cypress.Commands.add("Portfolio_Create_3", (EntityData) => {});

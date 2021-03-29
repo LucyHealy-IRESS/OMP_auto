@@ -1,4 +1,5 @@
 import * as PortfolioConstants from "../../constants/portfolio.js";
+import * as Portfolio_Smp_Constants from "../../constants/portfolio_Simple.js";
 import * as Constants from "../../constants/Core.js";
 
 Cypress.Commands.add("Portfolio_Assert_1", (EntityData) => {
@@ -8,8 +9,8 @@ Cypress.Commands.add("Portfolio_Assert_1", (EntityData) => {
     var ClientPortfolios = function(){
         cy.wait(1000);
         cy.get('#Client_ViewPortfolios > .gridContainer', {timeout:Constants.Timeout_Medium}).find('tr', {timeout:Constants.Timeout_Medium}).find('td').contains(entity).dblclick().then(function () {   
-            cy.get("[aria-describedby='" + PortfolioConstants.PortfoliosQuickEditorSelector.replace("#","") + "']",{timeout:Constants.Timeout_Medium}).then(function(){
-               cy.AssertEditor(PortfolioConstants.PortfoliosQuickEditorSelector,PortfolioConstants.AllPortfolioSimpleInputs,EntityData);            
+            cy.get("[aria-describedby='" + Portfolio_Smp_Constants.PortfoliosQuickEditorSelector.replace("#","") + "']",{timeout:Constants.Timeout_Medium}).then(function(){
+               cy.AssertEditor(Portfolio_Smp_Constants.PortfoliosQuickEditorSelector,Portfolio_Smp_Constants.Portfolio_Simple, EntityData);            
             })
         });     
         }
