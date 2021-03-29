@@ -38,7 +38,7 @@ Cypress.Commands.add("TranslateProductID", (Portfolio, XmlInputObject) => {
   });
   //could both of thse be grouped into one function with an if statement?
   Cypress.Commands.add("TranslateProviderID", (Portfolio, XmlInputObject) => {
-    var ProviderID = Portfolio["ProviderID"].trim();
+    var ProviderID = Portfolio["ProviderID"].toUpperCase().trim();
     ProviderID = ProviderID.replace(/-/g, "");
     cy.SetDropdown(XmlInputObject.Selector, portfolioMapping[ProviderID]);
   });
