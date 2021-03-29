@@ -184,12 +184,19 @@ Portfolio_Simple = {
         AccordianSelector: constants.PortfolioSmp_ACHoldings,
         AccordianName: "Holdings",
       },  
-    FundPicker: {
+    FundName: {
         Selector: constants.PortfolioSmp_HDFundName,
         inputType: "FundPicker",
         AccordianSelector: constants.PortfolioSmp_ACHoldings,
         AccordianName: "Holdings",
       },  
+    FundPicker: {
+        Selector: constants.PortfolioSmp_HDPicker,
+        inputType: "FundPicker",
+        AccordianSelector: constants.PortfolioSmp_ACHoldings,
+        AccordianName: "Holdings",
+      }, 
+
 //Regular Withdrawal
     RegularWithdrawal: {
         Selector: constants.PortfolioSmp_RWRegularWithdrawal,
