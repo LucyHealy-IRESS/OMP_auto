@@ -1,5 +1,6 @@
 import * as PortfolioConstants from "../../constants/portfolio.js";
 import * as Portfolio_Adv_Constants from "../../constants/portfolio_Advanced.js";
+import * as Portfolio_Smp_Constants from "../../constants/portfolio_Simple.js";
 import * as Constants from "../../constants/Core.js";
 
 //Portfolio Editor simple mode

@@ -6,13 +6,13 @@ PortfoliosQuickEditorSelector = "#PortfolioAddPopUp",
 PortfolioQuickAddFundSelector = "PortfolioSimpleEditor_QuickAddFundPopup",
 
 Portfolio_Simple = {
-
-    third_party_tag: {
-        Selector: constants.PortfolioSmp_BDImport,
-        inputType: "Dropdown",
-        AccordianSelector: constants.PortfolioSmp_ACBasicDetails,
-        AccordianName: "Basic Details",
-      },  
+//Basic Details
+    // third_party_tag: { //NEEDS a better selector
+    //     Selector: constants.PortfolioSmp_BDImport,
+    //     inputType: "Dropdown",
+    //     AccordianSelector: constants.PortfolioSmp_ACBasicDetails,
+    //     AccordianName: "Basic Details",
+    //   },  
     ExternalKey: {
         Selector: constants.PortfolioSmp_BDXplanID,
         inputType: "String",
@@ -55,12 +55,14 @@ Portfolio_Simple = {
         AccordianSelector: constants.PortfolioSmp_ACBasicDetails,
         AccordianName: "Basic Details",
       },  
+//Current Value 
     CurrentValue: {
         Selector: constants.PortfolioSmp_CVCurrentValue,
         inputType: "Value",
         AccordianSelector: constants.PortfolioSmp_ACCurrentValue,
         AccordianName: "Current Value",
       },  
+//Ongoing Contribution
     OngoingContsPremium: {
         Selector: constants.PortfolioSmp_OCGrossPremium,
         inputType: "Value",
@@ -109,6 +111,7 @@ Portfolio_Simple = {
         AccordianSelector: constants.PortfolioSmp_ACOngoingContributions,
         AccordianName: "Ongoing Contributions",
       },  
+//Holdings
     FundName: {
         Selector: constants.PortfolioSmp_HDName,
         inputType: "String",
@@ -187,6 +190,7 @@ Portfolio_Simple = {
         AccordianSelector: constants.PortfolioSmp_ACHoldings,
         AccordianName: "Holdings",
       },  
+//Regular Withdrawal
     RegularWithdrawal: {
         Selector: constants.PortfolioSmp_RWRegularWithdrawal,
         inputType: "Dropdown",

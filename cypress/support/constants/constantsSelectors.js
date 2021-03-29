@@ -167,10 +167,10 @@ Client_IsSharedWithCompany = '#ClientDetailsPopup_ShareClient',
 //PORTFOLIO SIMPLE EDITOR
        //Accordions
        PortfolioSmp_ACBasicDetails = '#PortfolioSimpleEditor_BasicDetails ',
-       PortfolioSmp_ACCurrentValue = 'PortfolioSimpleEditor_CurrentValue',
-       PortfolioSmp_ACOngoingContributions = 'PortfolioSimpleEditor_OngoingContributions',
-       PortfolioSmp_ACHoldings = 'PortfolioSimpleEditor_Holdings',
-       PortfolioSmp_ACRegularWithdrawals = 'PortfolioSimpleEditor_RegularWithdrawals',
+       PortfolioSmp_ACCurrentValue = '#PortfolioSimpleEditor_CurrentValue',
+       PortfolioSmp_ACOngoingContributions = '#PortfolioSimpleEditor_OngoingContributions',
+       PortfolioSmp_ACHoldings = '#PortfolioSimpleEditor_Holdings',
+       PortfolioSmp_ACRegularWithdrawals = '#PortfolioSimpleEditor_RegularWithdrawals',
        //Inputs
        PortfolioSmp_BDImport = '.basic_details_table > tbody > :nth-child(1) > td > .wijmo-wijcombobox > .wijmo-wijcombobox-wrapper > .wijmo-wijcombobox-input',
        PortfolioSmp_BDXplanID = '.IRESSKey_tooltip',
