@@ -108,6 +108,15 @@ Cypress.Commands.add('clickAccordion', (editor, accordion) => {
     cy.get(editor).children().contains(accordion).click({force:true});   
 })
 
+
+Cypress.Commands.add("clickAccordion_PreCheck",(accordionSelector,editor, accordion) => {
+    cy.get(accordionSelector).then(function ($AccordianDiv) {
+      if(!$AccordianDiv.hasClass('wijmo-wijaccordion-content-active')){   //only click the accoredian if its not open  
+        cy.clickAccordion(editor, accordion);
+      }          
+    });
+})
+
 //Click Thumbnail
 Cypress.Commands.add('clickThumbnail', (thumbnailName) => {
     cy.get('[data-u="thumbnavigator"]').children().contains(thumbnailName).click({force:true});

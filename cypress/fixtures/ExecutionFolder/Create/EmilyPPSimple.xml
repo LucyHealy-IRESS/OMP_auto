@@ -65,23 +65,25 @@
 							</Status>
 						</PortfolioInvestment>
 						<PortfolioInvestment>
-							<FundID />
+							<FundID>
+								GB00B3CGHN82
+							</FundID>
 							<FundName>
-								CreatingPP02 Holdings
+								Aviva Investors Strategic Bd 2 GBP Inc
 							</FundName>
 							<Units>
-								1256000.000
+								285463.8764
 							</Units>
 							<TotalValue>
-								1256000.000000000
+								316436.71
 							</TotalValue>
 							<InvestmentType>
 								Fund
 							</InvestmentType>
 							<Status>
-								Previous
+								Current
 							</Status>
-						</PortfolioInvestment>
+					</PortfolioInvestment>					
 					</Investments>
 					<RetirementAge>
 						0
