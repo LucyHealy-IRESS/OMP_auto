@@ -1,5 +1,6 @@
 import * as PortfolioConstants from "../../constants/portfolio.js";
 import * as Portfolio_Adv_Constants from "../../constants/portfolio_Advanced.js";
+import * as Portfolio_Smp_Constants from "../../constants/portfolio_Simple.js";
 import * as Constants from "../../constants/Core.js";
 
 Cypress.Commands.add("Portfolio_Create_1", (EntityData) => {
@@ -8,8 +9,8 @@ Cypress.Commands.add("Portfolio_Create_1", (EntityData) => {
 
     //Portfolio Editor simple mode
     cy.clickButtonInPopup(PortfolioConstants.ClientPortfoliosSelector,"Add New Portfolio");
-    cy.PopulateEditor(PortfolioConstants.PortfoliosQuickEditorSelector,PortfolioConstants.AllPortfolioSimpleInputs,EntityData);
-    cy.wait(Timeout_EditorWait);
+    cy.PopulateEditor(PortfolioConstants.PortfoliosQuickEditorSelector, Portfolio_Smp_Constants.Portfolio_Simple, EntityData);
+    cy.wait(12000);
     cy.get('[aria-describedby="PortfolioAddPopUp"] > .ui-dialog-buttonpane > .ui-dialog-buttonset > .ui-button > .ui-button-text').click();
 
 
