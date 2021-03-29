@@ -161,7 +161,53 @@ Client_IsSharedWithCompany = '#ClientDetailsPopup_ShareClient',
        
 //search
 
-        searchTextMatch = '.TextMatch'
+        searchTextMatch = '.TextMatch',
+
+
+//PORTFOLIO SIMPLE EDITOR
+       //Accordions
+       PortfolioSmp_ACBasicDetails = '#PortfolioSimpleEditor_BasicDetails ',
+       PortfolioSmp_ACCurrentValue = 'PortfolioSimpleEditor_CurrentValue',
+       PortfolioSmp_ACOngoingContributions = 'PortfolioSimpleEditor_OngoingContributions',
+       PortfolioSmp_ACHoldings = 'PortfolioSimpleEditor_Holdings',
+       PortfolioSmp_ACRegularWithdrawals = 'PortfolioSimpleEditor_RegularWithdrawals',
+       //Inputs
+       PortfolioSmp_BDImport = '.basic_details_table > tbody > :nth-child(1) > td > .wijmo-wijcombobox > .wijmo-wijcombobox-wrapper > .wijmo-wijcombobox-input',
+       PortfolioSmp_BDXplanID = '.IRESSKey_tooltip',
+       PortfolioSmp_BDTransactKey = '.TransactKey_tooltip',
+       PortfolioSmp_BDFNAccountNumber = '.FundsNetworkAccountNumber_tooltip',
+       PortfolioSmp_BDProduct = '.productCombo',
+       PortfolioSmp_BDProvider = '.portProvider',
+       PortfolioSmp_BDReference = '.ProductName_tooltip',
+       PortfolioSmp_BDWorkplacePension = '[data-bind="if: ShowIsWorkplacePension"] > td > .wijmo-checkbox > .wijmo-checkbox-box',
+       PortfolioSmp_CVCurrentValue = '.CurrentValue_tooltip',
+       PortfolioSmp_OCGrossPremium = '.OngoingContsPremium_tooltip',
+       PortfolioSmp_OCFrequency = '.portOngoingContsType',
+       PortfolioSmp_OCEscalation = '.portOngoingContsEscalationRate',
+       PortfolioSmp_OCEscalationOther = '.OngoingContsEscalationRateOther_tooltip',
+       PortfolioSmp_OCIncreasingEvery = '.portOngoingContsIncreasingEvery',
+       PortfolioSmp_OCContributionStop = '.ContributionsStop_tooltip',
+       PortfolioSmp_OCStopAge = '.StopAge_tooltip',
+       PortfolioSmp_OCClientExpenses = '.ClientExpenses_tooltip',
+       PortfolioSmp_HDName = '.PotfolioBasic_EditRowPopup_Name',
+       PortfolioSmp_HDAssetType = '.PotfolioBasic_EditRowPopup_AssetType',
+       PortfolioSmp_HDUnits = '.RowEditUnits',
+       PortfolioSmp_HDCurrentPrice = '.PotfolioBasic_EditRowPopup_CurrentPrice',
+       PortfolioSmp_HDStatus = '.NewInvestmentStatus',
+       PortfolioSmp_HDAmountInvested = '.PotfolioBasic_EditHoldingUnits_InvestedAmount',
+       PortfolioSmp_HDCashValue = '[data-bind="visible:IsPercentageVisible() == false"] > :nth-child(2) > .wijmo-wijinput > .wijmo-wijinput-wrapper > .editHoldingsUnitInput',
+       PortfolioSmp_HDPercentage = ':nth-child(3) > :nth-child(2) > .wijmo-wijinput > .wijmo-wijinput-wrapper > .editHoldingsUnitInput',
+       PortfolioSmp_HDOfTotalPlan = ':nth-child(4) > :nth-child(2) > .wijmo-wijinput > .wijmo-wijinput-wrapper > .editHoldingsUnitInput',
+       PortfolioSmp_HDEnableCustomFund = '.paddingLeft > .wijmo-checkbox > .wijmo-checkbox-box > .wijmo-checkbox-icon',
+       PortfolioSmp_HDCustomFundPrice = '[width="80"] > .wijmo-wijinput > .wijmo-wijinput-wrapper',
+       PortfolioSmp_HDFundName = '.quickAddFund_ComboBox',
+       PortfolioSmp_RWRegularWithdrawal = '.PotfolioBasic_RG_RegWithdrawal',
+       PortfolioSmp_RWAmount = '.PotfolioBasic_RG_RegWithdrawalAmount',
+       PortfolioSmp_RWPercentage = '.PotfolioBasic_RG_RegWithdrawalPercentage',
+       PortfolioSmp_RWFrequency = '.RegularWithdrawl_Fequency',
+       PortfolioSmp_RWPaidIn = '.RegularWithdrawl_PaidIn',
+       PortfolioSmp_RWEscalation = '.RegularWithdrawl_Escalation',
+       PortfolioSmp_RWEscalationOther = '.PotfolioBasic_RG_Other'
 
 
 

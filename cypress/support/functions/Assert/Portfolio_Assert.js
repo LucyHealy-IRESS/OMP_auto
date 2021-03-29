@@ -8,7 +8,7 @@ Cypress.Commands.add("Portfolio_Assert_1", (EntityData) => {
         cy.wait(1000)
         cy.get('#Client_ViewPortfolios > .gridContainer', {timeout:16000}).find('tr', {timeout:16000}).find('td').contains(entity).dblclick().then(function () {   
             cy.wait(12000);
-            cy.AssertEditor(PortfolioConstants.PortfoliosQuickEditorSelector,PortfolioConstants.PortfolioAccordioansSimple,EntityData);   
+            cy.AssertEditor(PortfolioConstants.PortfoliosQuickEditorSelector,PortfolioConstants.PortfolioAccordioansSimple,EntityData);   //failing on the mapping portfolioID, not sure why
             debugger;
         });     
         }
