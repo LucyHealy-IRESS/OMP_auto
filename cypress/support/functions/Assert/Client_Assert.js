@@ -15,6 +15,7 @@ Cypress.Commands.add("Client_Assert_1", (EntityData) => {
         timeout: Constants.Timeout_EditorWait,
       }).then(function () {        
         cy.AssertEditor(ClientConstants.ClientEditorSelector,ClientConstants.AllClientInputs,EntityData);   
+        cy.get('.btn-viewportfolios-action > .ui-button-text').click();
       });     
     }
 

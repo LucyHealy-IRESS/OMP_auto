@@ -4,7 +4,7 @@ import * as constantsSelectors from "../constants/constantsSelectors.js";
 //Iterate through the recieved folder, taking each file and passing it to the ProcessXMLFile function
 Cypress.Commands.add("ProcessFile", (ExecutiionFolderLocation,fileName) => {
 
-      var NoOfActionFiles = 1;
+      var NoOfActionFiles = 2;
       for (var ActionFileNo = 1; ActionFileNo < NoOfActionFiles+1; ActionFileNo++) {    
       
       var fileLocation = ExecutiionFolderLocation + "/" + fileName;

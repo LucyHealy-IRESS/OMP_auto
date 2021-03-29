@@ -4,7 +4,7 @@ import * as Portfolio_Smp_Constants from "../../constants/portfolio_Simple.js";
 import * as Constants from "../../constants/Core.js";
 
 //Portfolio Editor simple mode
-Cypress.Commands.add("Portfolio_Create_1", (EntityData) => {
+Cypress.Commands.add("Portfolio_Create_2", (EntityData) => {
     
     var Element = Cypress.$("[aria-describedby='" + Portfolio_Smp_Constants.PortfoliosQuickEditorSelector.replace("#","") + "']");
     if(Element && Element.length > 0 ){
@@ -20,7 +20,7 @@ Cypress.Commands.add("Portfolio_Create_1", (EntityData) => {
 });
 
 //Portfolio Editor Advanced mode
-Cypress.Commands.add("Portfolio_Create_2", (EntityData) => {
+Cypress.Commands.add("Portfolio_Create_1", (EntityData) => {
     
     cy.clickButtonInPopup(PortfolioConstants.ClientPortfoliosSelector,"Add New Portfolio");
     cy.get("[aria-describedby='" + PortfolioConstants.PortfoliosQuickEditorSelector.replace("#","") + "'] #btn-advancedDetails-action").click();
