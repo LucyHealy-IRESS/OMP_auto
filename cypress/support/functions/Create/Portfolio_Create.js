@@ -9,6 +9,9 @@ Cypress.Commands.add("Portfolio_Create_1", (EntityData) => {
     //Portfolio Editor simple mode
     cy.clickButtonInPopup(PortfolioConstants.ClientPortfoliosSelector,"Add New Portfolio");
     cy.PopulateEditor(PortfolioConstants.PortfoliosQuickEditorSelector,PortfolioConstants.AllPortfolioSimpleInputs,EntityData);
+    cy.wait(Timeout_EditorWait);
+    cy.get('[aria-describedby="PortfolioAddPopUp"] > .ui-dialog-buttonpane > .ui-dialog-buttonset > .ui-button > .ui-button-text').click();
+
 
 });
 
