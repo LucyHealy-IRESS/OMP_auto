@@ -44,6 +44,12 @@ Cypress.Commands.add("ProcessCreate_UI", (xmlObject, xmlInput, xmlMappings) => {
           cy.SetDropdown_ByIndex(XmlInputObject.Selector,textInput);
          }
        }
+       else if (XmlInputObject.inputType == "Dropdown_ReadOnly") {      //e.g. value is 1 so select 2nd dropdown input (0 based)    
+        var textInput = xmlObject[xmlInput.toString()];
+         if (textInput) {
+          cy.SetDropdown_OpenDropdown(XmlInputObject.Selector,textInput);
+         }
+       }
        else if (XmlInputObject.inputType == "Checkbox") {      //e.g. value is 1 so select 2nd dropdown input (0 based)    
         var textInput = xmlObject[xmlInput.toString()];
         if (textInput) {

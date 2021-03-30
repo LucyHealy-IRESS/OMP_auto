@@ -72,7 +72,7 @@ Portfolio_OngoingContribution_Advanced = {
       },
     OngoingContsEscalationRate: {
         Selector: constants.Portfolio_Escalation,
-        inputType: "Dropdown",
+        inputType: "Dropdown_ReadOnly",
         AccordianSelector: constants.PortfolioAdv_ACOngoingContributions,
         AccordianName: 'Ongoing Contributions', 
       },
@@ -84,13 +84,13 @@ Portfolio_OngoingContribution_Advanced = {
       },
     OngoingContsIncreasingEvery: {
         Selector: constants.Portfolio_IncreasingEvery,
-        inputType: "Dropdown",
+        inputType: "Dropdown_ReadOnly",
         AccordianSelector: constants.PortfolioAdv_ACOngoingContributions,
         AccordianName: 'Ongoing Contributions', 
       },
     ContributionsStop: {
         Selector: constants.Portfolio_ContributionStop,
-        inputType: "Integer",
+        inputType: "Dropdown",
         AccordianSelector: constants.PortfolioAdv_ACOngoingContributions,
         AccordianName: 'Ongoing Contributions', 
       },

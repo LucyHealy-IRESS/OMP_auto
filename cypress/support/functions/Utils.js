@@ -6,6 +6,11 @@ Cypress.Commands.add('SetDropdown',(Selector,Value) => {
     cy.get(".wijmo-wijlist-item ").filter(':visible').contains(new RegExp(Value, "g")).click();  //regex to say we want exact match!
 })
 
+Cypress.Commands.add('SetDropdown_OpenDropdown',(Selector,Value) => { 
+    cy.get(Selector).click();
+    cy.get(".wijmo-wijlist-item ").filter(':visible').contains(new RegExp(Value, "g")).click();  //regex to say we want exact match!
+})
+
 Cypress.Commands.add('SetDropdown_ByIndex',(Selector,Value) => { 
     cy.get(Selector).closest(".wijmo-wijcombobox").find(".wijmo-wijcombobox-trigger").click(); //to open dropdown
     cy.get(".wijmo-wijlist-item ").filter(':visible') //.contains(new RegExp(Value, "g")).click();  //regex to say we want exact match!
