@@ -15,8 +15,6 @@ Cypress.Commands.add("Portfolio_Create_1", (EntityData) => {
     cy.clickButtonInPopup(Portfolio_Smp_Constants.ClientPortfoliosSelector,"Add New Portfolio");
     cy.PopulateEditor(Portfolio_Smp_Constants.PortfoliosQuickEditorSelector,Portfolio_Smp_Constants.Portfolio_Simple,EntityData);
 
-    //if we contain investments then dont close 
-    //if we have no investments then we can close the editor
 });
 
 //Portfolio Editor Advanced mode
@@ -28,8 +26,7 @@ Cypress.Commands.add("Portfolio_Create_2", (EntityData) => {
     cy.get(PortfolioConstants.PortfoliosAdvancedEditorSelector + " .AccordianContainer", {  //ensure portfolio adv editor is there and has loaded
         timeout: Constants.Timeout_EditorWait,
       }).then(function () {         
-          cy.PopulateEditor(PortfolioConstants.PortfoliosAdvancedEditorSelector,Portfolio_Adv_Constants.AllPortfolioAdvancedInputs,EntityData); 
-          cy.get('[aria-describedby="EditPortfolioAdvancedPopup"] > .ui-dialog-buttonpane > .ui-dialog-buttonset > .ui-button > .ui-button-text').click();      
+          cy.PopulateEditor(PortfolioConstants.PortfoliosAdvancedEditorSelector,Portfolio_Adv_Constants.AllPortfolioAdvancedInputs,EntityData);     
       });
     
 });
@@ -44,5 +41,6 @@ Cypress.Commands.add("Portfolio_Tidy", (ActionFileNo) => {
             cy.get('[aria-describedby="PortfolioAddPopUp"] > .ui-dialog-buttonpane > .ui-dialog-buttonset > .ui-button > .ui-button-text').click();
             cy.wait(1000); //allow for save
         }
-    }  
+    } else if(ActionFileNo == 2){
+    }
 })

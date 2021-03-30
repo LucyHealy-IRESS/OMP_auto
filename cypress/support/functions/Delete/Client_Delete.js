@@ -16,7 +16,7 @@ Cypress.Commands.add("Client_Delete_1", (EntityData) => {
         cy.get("#DeleteMenu a").click({force:true}); //Click delete button  
         cy.get("[aria-describedby='Client_Delete_Confirm']").then(function($Container){
           cy.wrap($Container).find("button").contains("Yes").click();
-          cy.wait(2000);
+          cy.wait(4000);
         })
       });
   }

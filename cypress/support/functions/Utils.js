@@ -105,7 +105,7 @@ cy.randomID = function(){
 
 //Click Accordion
 Cypress.Commands.add('clickAccordion', (editor, accordion) => {
-    cy.get(editor).children().contains(accordion).click({force:true});   
+    cy.get(editor + " h3").contains(accordion).click({force:true});   
 })
 
 
