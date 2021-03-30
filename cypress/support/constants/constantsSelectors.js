@@ -64,7 +64,15 @@ Client_Status = '#ClientDetailsPopup_ClientStatus',
 Client_IsSharedWithCompany = '#ClientDetailsPopup_ShareClient',
   
 
-//Portfolios
+//PORTFOLIO ADVANCED EDITOR
+       //Accordions
+       PortfolioAdv_ACBasicDetails = ".PA_Details_Accordian",
+       PortfolioAdv_ACOngoingContributions = '.PA_Ongoing_Accordian',
+       PortfolioAdv_ACPurpose = '.PA_Purpose_Accordian',
+       PortfolioAdv_ACProductCharges = '.PA_Charges_Accordian', // not there yet
+       PortfolioAdv_ACGrowthRates = '#.PA_GrowthRates_Accordian',
+       
+
 //Portfolio_BasicDetailsInputs	
        Portfolio_Import = '.basic_details_table > tbody > :nth-child(1) > td > .wijmo-wijcombobox > .wijmo-wijcombobox-wrapper > .wijmo-wijcombobox-input', //needs renaming
        Portfolio_XplanID = '.IRESSKey_tooltip',
@@ -161,7 +169,7 @@ Client_IsSharedWithCompany = '#ClientDetailsPopup_ShareClient',
        
 //search
 
-        searchTextMatch = '.TextMatch',
+       searchTextMatch = '.TextMatch',
 
 
 //PORTFOLIO SIMPLE EDITOR
