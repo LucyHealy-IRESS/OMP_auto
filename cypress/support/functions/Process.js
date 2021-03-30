@@ -9,15 +9,15 @@ Cypress.Commands.add("ProcessFile", (ExecutiionFolderLocation,fileName) => {
       
       var fileLocation = ExecutiionFolderLocation + "/" + fileName;
       //1 Creation Pass
-      cy.ProcessXMLFile(fileLocation, constants.RunType_Create, ActionFileNo);
+      cy.ProcessXMLFile(fileLocation, constants.RunType_Create, 2);
 
       //2 Assert Pass
-      cy.wait(3000);
-      cy.ProcessXMLFile(fileLocation, constants.RunType_Assert,ActionFileNo);
+      //cy.wait(3000);
+      cy.ProcessXMLFile(fileLocation, constants.RunType_Assert,2);
       
        //3 Roll off what we have created
-      cy.wait(3000);
-      cy.ProcessXMLFile(fileLocation,constants.RunType_Delete, ActionFileNo);
+     cy.wait(3000);
+     cy.ProcessXMLFile(fileLocation,constants.RunType_Delete, 2);
       
       if(ActionFileNo < NoOfActionFiles-1){ //Dont reload if on last iteration
         cy.reload();
