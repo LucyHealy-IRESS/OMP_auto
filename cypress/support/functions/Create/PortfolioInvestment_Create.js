@@ -9,6 +9,8 @@ Cypress.Commands.add("PortfolioInvestment_Create_1", (EntityData) => {
 
 Cypress.Commands.add("PortfolioInvestment_Create_2", (EntityData) => {
     //From Advanced Editor
+    cy.clickButtonInPopup(PortfolioConstants.PortfoliosAdvancedEditorSelector,"Pick funds from shortlist using fund name or ISIN");
+    cy.ProcessAddHoldingQuick(EntityData);
 });
 
 Cypress.Commands.add("PortfolioInvestment_Create_3", (EntityData) => {});
