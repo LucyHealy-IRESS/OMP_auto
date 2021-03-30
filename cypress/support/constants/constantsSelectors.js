@@ -94,14 +94,14 @@ Client_IsSharedWithCompany = '#ClientDetailsPopup_ShareClient',
        Portfolio_CurrentValue = '.CurrentValue_tooltip',
 
 //Portfolio_OngoingContributions	
-       Portfolio_GrossPremium = '.PotfolioBasic_Ongoing_GrossPrem',
-       Portfolio_Frequency = '.portOngoingContsType',
-       Portfolio_Escalation = '.portOngoingContsEscalationRate',
-       Portfolio_EscalationOther = '.OngoingContsEscalationRateOther_tooltip ',
-       Portfolio_IncreasingEvery = '.portOngoingContsIncreasingEvery',
-       Portfolio_ContributionStop = '.ContributionsStop_tooltip',
-       Portfolio_StopAge = '.StopAge_tooltip',
-       Portfolio_ClientExpenses = '.PotfolioBasic_Ongoing_ClientExpense',
+       Portfolio_GrossPremium = '.portfolio_Adv_Ongoing_GrossPrem',
+       Portfolio_Frequency = '.portfolio_Adv_Ongoing_Frequency',
+       Portfolio_Escalation = '..portfolio_Adv_Ongoing_Escalation',
+       Portfolio_EscalationOther = '.portfolio_Adv_Ongoing_OtherEsc',
+       Portfolio_IncreasingEvery = '.portfolio_Adv_Ongoing_IncreasingEvery',
+       Portfolio_ContributionStop = '.portfolio_Adv_Ongoing_ContsStop',
+       Portfolio_StopAge = '.portfolio_Adv_Ongoing_StopAge',
+       Portfolio_ClientExpenses = '.portfolio_Adv_Ongoing_ClientExpenses',
 
 
 //Portfolio_Holdings	

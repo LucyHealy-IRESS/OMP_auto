@@ -29,7 +29,7 @@ Cypress.Commands.add("ProcessCreate_UI", (xmlObject, xmlInput, xmlMappings) => {
          cy.wait(100); //Auto gen value is entered
           var textInput = xmlObject[xmlInput.toString()];
           if (textInput) {
-            cy.get(XmlInputObject.Selector).clear().type(textInput);
+            cy.get(XmlInputObject.Selector).clear({force: true}).type(textInput);
           }      
        }
        else if (XmlInputObject.inputType == "ProductDropdown") {         
@@ -68,15 +68,20 @@ Cypress.Commands.add("ProcessCreate_UI", (xmlObject, xmlInput, xmlMappings) => {
          if (XmlInputObject.inputType == "String") {
            var textInput = xmlObject[xmlInput.toString()];
            if (textInput) {
-             cy.get(XmlInputObject.Selector).should('have.value', textInput)
+             cy.get(XmlInputObject.Selector).should('have.value', textInput);
            }
          } else if (XmlInputObject.inputType == "Integer") {
            var textInput = xmlObject[xmlInput];
            var textInput = Number(textInput);
            if (textInput) {
-             cy.get(XmlInputObject.Selector).should('contain.value', textInput)
+             cy.get(XmlInputObject.Selector).should('contain.value', textInput);
            }
-         } else if (XmlInputObject.inputType == "Date") {
+         } else if (XmlInputObject.inputType == "Dropdown") {
+          var textInput = xmlObject[xmlInput.toString()];
+          if (textInput) {
+           cy.get(XmlInputObject.Selector).should('have.value', textInput);
+          }
+        } else if (XmlInputObject.inputType == "Date") {
  
          } else if (XmlInputObject.inputType == "Dropdown") {
  

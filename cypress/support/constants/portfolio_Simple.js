@@ -107,7 +107,7 @@ Portfolio_Simple = {
       },  
     ClientExpenses: {
         Selector: constants.PortfolioSmp_OCClientExpenses,
-        inputType: "Dropdown",
+        inputType: "DropdownIndex",
         AccordianSelector: constants.PortfolioSmp_ACOngoingContributions,
         AccordianName: "Ongoing Contributions",
       },  

@@ -102,7 +102,7 @@ Portfolio_OngoingContribution_Advanced = {
       }, 
     ClientExpenses: {
         Selector: constants.Portfolio_ClientExpenses,
-        inputType: "Dropdown",
+        inputType: "DropdownIndex",
         AccordianSelector: constants.PortfolioAdv_ACOngoingContributions,
         AccordianName: 'Ongoing Contributions', 
       }, 
