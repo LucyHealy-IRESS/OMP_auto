@@ -5,6 +5,14 @@ ClientPortfoliosSelector = "#Client_ViewPortfolios",
 PortfoliosQuickEditorSelector = "#PortfolioAddPopUp",
 PortfolioQuickAddFundSelector = "PortfolioSimpleEditor_QuickAddFundPopup",
 
+
+Portfolio_Holdings_Editor = {
+  Units:{
+    Selector: ".editRowPopup .RowEditUnits",
+    inputType: "Integer"
+  }
+},
+
 Portfolio_Simple = {
 //Basic Details
     // third_party_tag: { //NEEDS a better selector
