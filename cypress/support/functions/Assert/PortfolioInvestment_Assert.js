@@ -21,25 +21,28 @@ Cypress.Commands.add("PortfolioInvestment_Assert_1", (EntityData) => {
 
 Cypress.Commands.add("PortfolioInvestment_Assert_2", (EntityData) => {
 
-    // var UnitsCalculatorSelctor = ".portfolio_Adv_CHoldings_editHoldingUnitPopup";
-    // var Element = Cypress.$(UnitsCalculatorSelctor);
+    var UnitsCalculatorSelctor = ".portfolio_Adv_CHoldings_editHoldingUnitPopup";
+   
     
-    // if(Element && Element.length > 0 ){
-    //   cy.get(UnitsCalculatorSelctor + " + .ui-dialog-buttonpane .ui-button span").contains("OK").click();
-    //   cy.wait(1000); //allow for save
-    // }
+    var FundName = EntityData["FundName"];
 
-    // var FundName = EntityData["FundName"];
+    cy.clickAccordion_PreCheck(".PA_ClientHoldings_Accordian",PortfolioConstants.PortfoliosAdvancedEditorSelector,"Holdings");
+    cy.wait(2000);
+    cy.get('.CurrentHoldings_table').find('tr', {timeout:Constants.Timeout_Medium}).find('td').contains(FundName).dblclick().then(function () {   
+        cy.get("[aria-describedby='" + PortfolioConstants.PortfoliosAdvancedEditorSelector.replace("#","") + "']",{timeout:Constants.Timeout_Medium}).then(function(){
 
-    // cy.clickAccordion_PreCheck(".PA_ClientHoldings_Accordian",PortfolioConstants.PortfoliosAdvancedEditorSelector,"Holdings");
-    // cy.wait(2000);
-    // cy.get('.CurrentHoldings_table').find('tr', {timeout:Constants.Timeout_Medium}).find('td').contains(FundName).dblclick().then(function () {   
-    //     cy.get("[aria-describedby='" + PortfolioConstants.PortfoliosAdvancedEditorSelector.replace("#","") + "']",{timeout:Constants.Timeout_Medium}).then(function(){
-    //        cy.AssertEditor(PortfolioConstants.PortfoliosAdvancedEditorSelector,Portfolio_Smp_Constants.Portfolio_Holdings_Editor, EntityData);    
-    //        var editRowButtonSelector = ".portfolio_Adv_CHoldings_editRowPopup + .ui-dialog-buttonpane .ui-button span";
-    //        cy.get(editRowButtonSelector).contains("OK").click();      
-    //     })
-    // });     
+            cy.wait(1000);
+            var UnitsCalculatorElement = Cypress.$(UnitsCalculatorSelctor);
+            if(UnitsCalculatorElement && UnitsCalculatorElement.length > 0 ){
+                cy.get(UnitsCalculatorSelctor + " + .ui-dialog-buttonpane .ui-button span").contains("Cancel").click();
+                cy.wait(1000); //allow for close
+              }
+
+           cy.AssertEditor(PortfolioConstants.PortfoliosAdvancedEditorSelector,Portfolio_Smp_Constants.Portfolio_Holdings_Editor, EntityData);    
+           var editRowButtonSelector = ".portfolio_Adv_CHoldings_editRowPopup + .ui-dialog-buttonpane .ui-button span";
+           cy.get(editRowButtonSelector).contains("OK").click();      
+        })
+    });     
     
 });
 

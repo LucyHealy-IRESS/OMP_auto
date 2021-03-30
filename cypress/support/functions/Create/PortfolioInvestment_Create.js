@@ -72,7 +72,7 @@ Cypress.Commands.add("ProcessAddHoldingQuick_EditUnit_Advanced", (Entity, PopupS
   var Element = Cypress.$(UnitsCalculatorSelctor);
   
   if(Element && Element.length > 0 ){
-    cy.get(UnitsCalculatorSelctor + " + .ui-dialog-buttonpane .ui-button span").contains("OK").click();
+    cy.get(UnitsCalculatorSelctor + " + .ui-dialog-buttonpane .ui-button span").contains("Cancel").click();
     cy.wait(1000); //allow for save
   }
 
