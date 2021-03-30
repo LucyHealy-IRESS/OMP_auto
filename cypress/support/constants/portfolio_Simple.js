@@ -103,7 +103,7 @@ Portfolio_Simple = {
       },  
     ContributionsStop: {
         Selector: constants.PortfolioSmp_OCContributionStop,
-        inputType: "Integer",
+        inputType: "Dropdown",
         AccordianSelector: constants.PortfolioSmp_ACOngoingContributions,
         AccordianName: "Ongoing Contributions",
       },  
