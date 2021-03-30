@@ -96,7 +96,7 @@ Client_IsSharedWithCompany = '#ClientDetailsPopup_ShareClient',
 //Portfolio_OngoingContributions	
        Portfolio_GrossPremium = '.portfolio_Adv_Ongoing_GrossPrem',
        Portfolio_Frequency = '.portfolio_Adv_Ongoing_Frequency',
-       Portfolio_Escalation = '..portfolio_Adv_Ongoing_Escalation',
+       Portfolio_Escalation = '.portfolio_Adv_Ongoing_Escalation',
        Portfolio_EscalationOther = '.portfolio_Adv_Ongoing_OtherEsc',
        Portfolio_IncreasingEvery = '.portfolio_Adv_Ongoing_IncreasingEvery',
        Portfolio_ContributionStop = '.portfolio_Adv_Ongoing_ContsStop',
