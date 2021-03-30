@@ -70,6 +70,12 @@ Cypress.Commands.add("ProcessCreate_UI", (xmlObject, xmlInput, xmlMappings) => {
            if (textInput) {
              cy.get(XmlInputObject.Selector).should('have.value', textInput)
            }
+         } else if (XmlInputObject.inputType == "Integer") {
+           var textInput = xmlObject[xmlInput];
+           var textInput = Number(textInput);
+           if (textInput) {
+             cy.get(XmlInputObject.Selector).should('contain.value', textInput)
+           }
          } else if (XmlInputObject.inputType == "Date") {
  
          } else if (XmlInputObject.inputType == "Dropdown") {
