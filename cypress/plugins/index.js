@@ -34,6 +34,14 @@ module.exports = (on, config) => {
       // }      
       return files; 
     }
+   }),
+   on("task", {
+    CreateFile({filePath,content}){
+      var fs = require('fs');
+      var file = fs.appendFile(filePath, content);  
+      return 1
+      
+    }
    })
   )
 }
