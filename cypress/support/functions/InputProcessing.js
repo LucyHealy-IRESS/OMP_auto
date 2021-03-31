@@ -69,29 +69,32 @@ Cypress.Commands.add("ProcessCreate_UI", (xmlObject, xmlInput, xmlMappings) => {
  
  Cypress.Commands.add("ProcessAssert_UI", (xmlObject, xmlInput, xmlMappings) => {
    
+  var useCypressStictAsserts = Cypress.env("useCypressStrictAsserts");
        var XmlInputObject = xmlMappings[xmlInput]; //match the xml tag with the object in Client Inputs, if that xml tag has been passed in we can go ahead and assert it
        if (XmlInputObject) {
-         if (XmlInputObject.inputType == "String") {
+         var InputType = XmlInputObject.inputType;
+         if (InputType == "String" || InputType == "Integer" || InputType == "Dropdown") {
            var textInput = xmlObject[xmlInput.toString()];
            if (textInput) {
-             cy.get(XmlInputObject.Selector).should('have.value', textInput);
+             if(useCypressStictAsserts) {
+              cy.get(XmlInputObject.Selector).should('have.value', textInput); 
+             }
+             else{           
+              cy.get(XmlInputObject.Selector).then(function($input){
+                var value = $input.val();
+                if(value == textInput){
+                  cy.log('**Assert '+ InputType + " :" +  xmlInput + ' : Pass**');
+                }
+                else{
+                  cy.log('**Assert '+ InputType + " :" +  xmlInput + ' : Fail**');
+                }
+              });
+            }
            }
-         } else if (XmlInputObject.inputType == "Integer") {
-           var textInput = xmlObject[xmlInput];
-           var textInput = Number(textInput);
-           if (textInput) {
-             cy.get(XmlInputObject.Selector).should('contain.value', textInput);
-           }
-         } else if (XmlInputObject.inputType == "Dropdown") {
-          var textInput = xmlObject[xmlInput.toString()];
-          if (textInput) {
-           cy.get(XmlInputObject.Selector).should('have.value', textInput);
-          }
-        } else if (XmlInputObject.inputType == "Date") {
+         }      
+        else if (InputType == "Date") {
  
-         } else if (XmlInputObject.inputType == "Dropdown") {
- 
-         } else if (XmlInputObject.inputType == "ValueOrClick") {
+        } else if (InputType == "ValueOrClick") {
  
          }
        }
