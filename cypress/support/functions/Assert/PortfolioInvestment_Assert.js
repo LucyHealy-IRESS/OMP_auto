@@ -10,7 +10,7 @@ Cypress.Commands.add("PortfolioInvestment_Assert_1", (EntityData) => {
         cy.wait(2000);
         cy.get('.CurrentHoldings_table').find('tr', {timeout:Constants.Timeout_Medium}).find('td').contains(FundName).dblclick().then(function () {   
             cy.get("[aria-describedby='" + Portfolio_Smp_Constants.PortfoliosQuickEditorSelector.replace("#","") + "']",{timeout:Constants.Timeout_Medium}).then(function(){
-               cy.AssertEditor(Portfolio_Smp_Constants.PortfoliosQuickEditorSelector,Portfolio_Smp_Constants.Portfolio_Holdings_Editor, EntityData);    
+               cy.AssertEditor(Portfolio_Smp_Constants.PortfoliosQuickEditorSelector,Portfolio_Smp_Constants.Portfolio_Holdings_Editor, EntityData, "Holding");    
                var editRowButtonSelector = "[aria-describedby='PortfolioSimpleEditor_editRowPopup']" + " .ui-dialog-buttonpane .ui-button span";
                cy.get(editRowButtonSelector).contains("OK").click();      
             })
@@ -38,7 +38,7 @@ Cypress.Commands.add("PortfolioInvestment_Assert_2", (EntityData) => {
                 cy.wait(1000); //allow for close
               }
 
-           cy.AssertEditor(PortfolioConstants.PortfoliosAdvancedEditorSelector,Portfolio_Smp_Constants.Portfolio_Holdings_Editor, EntityData);    
+           cy.AssertEditor(PortfolioConstants.PortfoliosAdvancedEditorSelector,Portfolio_Smp_Constants.Portfolio_Holdings_Editor, EntityData, "Holding");    
            var editRowButtonSelector = ".portfolio_Adv_CHoldings_editRowPopup + .ui-dialog-buttonpane .ui-button span";
            cy.get(editRowButtonSelector).contains("OK").click();      
         })

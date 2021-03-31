@@ -1,7 +1,7 @@
 import * as constants from "../constants/constantsSelectors.js";
 
 //This function takes the client object and creates it using the UI of the client editor
-Cypress.Commands.add("ProcessCreate_UI", (xmlObject, xmlInput, xmlMappings) => {
+Cypress.Commands.add("ProcessCreate_UI", (xmlObject, xmlInput, xmlMappings,EditorName) => {
   var XmlInputObject = xmlMappings[xmlInput]; //match the xml tag with the object in Client Inputs,if that xml tag has been passed in we can go ahead and create it
   if (XmlInputObject) {
     if (XmlInputObject.inputType == "String") {
@@ -59,40 +59,44 @@ Cypress.Commands.add("ProcessCreate_UI", (xmlObject, xmlInput, xmlMappings) => {
   }
 });
 
-Cypress.Commands.add("PushToLogArray",function(attributeType,attributeName,Pass) { //needs to be a cypress command to access this
+Cypress.Commands.add("PushToLogArray",function(attributeType,attributeName,Pass,EditorName) { //needs to be a cypress command to access this
   var WorkingLogArray = this.LogArray;
-  WorkingLogArray.push({AttributeType: attributeType, AttributeName:attributeName, Pass: Pass.toString()});
+  WorkingLogArray.push({AttributeType: attributeType, AttributeName:attributeName, Location:EditorName, Pass: Pass.toString()});
   cy.wrap(WorkingLogArray).as('LogArray');
 })
 
-cy.ProcessAssert_JqueryValCheck = function (Selector,textInput,InputType,xmlInput) {
-  cy.get(Selector).then(function ($input) {
+cy.ProcessAssert_JqueryValCheck = function (Selector,textInput,InputType,xmlInput,EditorName) {
+  cy.get(Selector).then(function ($input) {    
     var value = $input.val();
+    if(InputType == "Integer"){
+      value =value.replace("£",""); //remove pound sign from jQuery get
+      debugger;
+    }
     if (value == textInput) {
       cy.log("**Assert " + InputType + " :" + xmlInput + " : Pass**");
-      cy.PushToLogArray(InputType, xmlInput,true);
+      cy.PushToLogArray(InputType, xmlInput,true,EditorName);
     } else {
       cy.log("**Assert " + InputType + " :" + xmlInput + " : Fail**");
-      cy.PushToLogArray(InputType, xmlInput,false);
+      cy.PushToLogArray(InputType, xmlInput,false,EditorName);
     }
   });
 };
 
 
-cy.ProcessAssert_JqueryValCheck_bool = function (Selector,textInput,InputType,xmlInput) {
+cy.ProcessAssert_JqueryValCheck_bool = function (Selector,textInput,InputType,xmlInput,EditorName) {
   cy.get(Selector).then(function ($input) {
     var value = $input.val();
     if (Boolean(value) == Boolean(textInput)) {
       cy.log("**Assert " + InputType + " :" + xmlInput + " : Pass**");
-      cy.PushToLogArray(InputType, xmlInput,true);
+      cy.PushToLogArray(InputType, xmlInput,true,EditorName);
     } else {
       cy.log("**Assert " + InputType + " :" + xmlInput + " : Fail**");
-      cy.PushToLogArray(InputType, xmlInput,false);
+      cy.PushToLogArray(InputType, xmlInput,false,EditorName);
     }
   });
 };
 
-Cypress.Commands.add("ProcessAssert_UI", (xmlObject, xmlInput, xmlMappings) => {
+Cypress.Commands.add("ProcessAssert_UI", (xmlObject, xmlInput, xmlMappings,EditorName) => {
   var useCypressStictAsserts = Cypress.env("useCypressStrictAsserts");
   var XmlInputObject = xmlMappings[xmlInput]; //match the xml tag with the object in Client Inputs, if that xml tag has been passed in we can go ahead and assert it
   if (XmlInputObject) {
@@ -103,7 +107,7 @@ Cypress.Commands.add("ProcessAssert_UI", (xmlObject, xmlInput, xmlMappings) => {
         if (useCypressStictAsserts) {
           cy.get(XmlInputObject.Selector).should("have.value", textInput);
         } else {
-          cy.ProcessAssert_JqueryValCheck(XmlInputObject.Selector,textInput,InputType,xmlInput);
+          cy.ProcessAssert_JqueryValCheck(XmlInputObject.Selector,textInput,InputType,xmlInput,EditorName);
         }
       }
     } 
@@ -121,9 +125,9 @@ Cypress.Commands.add("ProcessAssert_UI", (xmlObject, xmlInput, xmlMappings) => {
           cy.get(XmlInputObject.mmSelector).should("have.value", mm);
           cy.get(XmlInputObject.yyyySelector).should("have.value", yyyy);
         } else {
-          cy.ProcessAssert_JqueryValCheck(XmlInputObject.ddSelector,dd,InputType + " Day", xmlInput);
-          cy.ProcessAssert_JqueryValCheck( XmlInputObject.mmSelector,mm,InputType + " Month",xmlInput);
-          cy.ProcessAssert_JqueryValCheck(XmlInputObject.yyyySelector,yyyy,InputType + " Year",xmlInput);
+          cy.ProcessAssert_JqueryValCheck(XmlInputObject.ddSelector,dd,InputType + " Day", xmlInput,EditorName);
+          cy.ProcessAssert_JqueryValCheck( XmlInputObject.mmSelector,mm,InputType + " Month",xmlInput,EditorName);
+          cy.ProcessAssert_JqueryValCheck(XmlInputObject.yyyySelector,yyyy,InputType + " Year",xmlInput,EditorName);
         }
       }
     } else if (InputType == "Checkbox") {
@@ -138,7 +142,7 @@ Cypress.Commands.add("ProcessAssert_UI", (xmlObject, xmlInput, xmlMappings) => {
           }
         }
         else{
-          cy.ProcessAssert_JqueryValCheck_bool(XmlInputObject.Selector,textInput,InputType,xmlInput)
+          cy.ProcessAssert_JqueryValCheck_bool(XmlInputObject.Selector,textInput,InputType,xmlInput,EditorName)
         }
         
       }

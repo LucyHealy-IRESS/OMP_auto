@@ -11,19 +11,18 @@ Cypress.Commands.add("ProcessFile", (ExecutiionFolderLocation,fileName,ActionFil
   cy.task("Create_Append_File", {filePath:LogPath,content:""}).then(() => {
     cy.log("Created Log File:" + LogPath);
   })
-  //cy.task("Create_Append_File", {filePath:LogPath,content:"Hello World"}).then(() => {});
-
+  
   var fileLocation = ExecutiionFolderLocation + "/" + fileName;
   //1 Creation Pass
-  //cy.ProcessXMLFile(fileLocation, constants.RunType_Create, ActionFileNo);
+  cy.ProcessXMLFile(fileLocation, constants.RunType_Create, ActionFileNo);
 
   //2 Assert Pass
-  //cy.wait(3000);
+  cy.wait(3000);
   cy.ProcessXMLFile(fileLocation, constants.RunType_Assert,ActionFileNo);
       
   //3 Roll off what we have created
-  //cy.wait(3000);
-  //cy.ProcessXMLFile(fileLocation,constants.RunType_Delete, ActionFileNo);
+  cy.wait(3000);
+  cy.ProcessXMLFile(fileLocation,constants.RunType_Delete, ActionFileNo);
       
   if(reloadBetweenTests){ //Dont reload if on last iteration
      cy.reload();
@@ -90,63 +89,52 @@ Cypress.Commands.add("ProcessXMLFile", function(fileLocation, Type,ActionFileNo)
   });
 });
 
+//Takes the content of arra -  LogArray - and prints it to a csv file
 Cypress.Commands.add("UpdateAssertLogFile",function() {
   var LogPath = this.LogPath;
   var LogArray = this.LogArray;
-  var csvContent = "Input Type, Input Name, Pass/Fail" +  "\n";  
+  var csvContent = "Input Type, Input Name, Pass/Fail, Location" +  "\n";  
   for (var x = 0; x < LogArray.length; x++) {   //Each column is separated by "," and new line "\n" for next row  
-    csvContent += LogArray[x].AttributeType + "," +LogArray[x].AttributeName  + "," + LogArray[x].Pass  +  "\n"; //\r
+    csvContent += LogArray[x].AttributeType + "," +LogArray[x].AttributeName  + "," + LogArray[x].Pass  + "," + LogArray[x].Location+   "\n";
   }
   cy.task("Create_Append_File", {filePath:LogPath,content:csvContent}).then(() => {
     cy.log("Written to Log File:" + LogPath);
   })
 })
 
-Cypress.Commands.add("ProcesssInput",(XMLDataObject,xmlInput,mapping, isCreate) => {
+//Determines if we are creating new inputs or asserting existing ones
+Cypress.Commands.add("ProcesssInput",(XMLDataObject,xmlInput,mapping, isCreate,EditorName) => {
   if(isCreate){
-    cy.ProcessCreate_UI(XMLDataObject,xmlInput,mapping);
+    cy.ProcessCreate_UI(XMLDataObject,xmlInput,mapping,EditorName);
   }
   else{
-    cy.ProcessAssert_UI(XMLDataObject,xmlInput,mapping);
+    cy.ProcessAssert_UI(XMLDataObject,xmlInput,mapping,EditorName);
   }
 })
 
-Cypress.Commands.add("ProcessAccordian",(EditorSelector,mapping,xmlInput,XMLDataObject,InputMappings,isCreate) => {
-  cy.get(mapping.AccordianSelector).then(function ($AccordianSelector) {
-    if($AccordianSelector.hasClass('wijmo-wijaccordion-content-active')){
-      cy.ProcesssInput(XMLDataObject,xmlInput,InputMappings,isCreate);
-    }
-    else {
-      cy.clickAccordion(EditorSelector, mapping.AccordianName);
-      cy.get(mapping.AccordianSelector + ".wijmo-wijaccordion-content-active").then(function () {
-        cy.ProcesssInput(XMLDataObject,xmlInput,InputMappings,isCreate);
-      });
-    }          
-  });
-})
-
-Cypress.Commands.add("EditorProcesssor",(EditorSelector, InputMappings, XMLDataObject, isCreate) => {
+//Ierate the inputs of an editor. They are either to be created or asserted
+Cypress.Commands.add("EditorProcesssor",(EditorSelector, InputMappings, XMLDataObject, isCreate, EditorName) => {
   cy.get(EditorSelector, { timeout: constants.Timeout_EditorWait}).then(function () {
     for (let xmlInput in XMLDataObject) { //for each xml tag
       if(InputMappings[xmlInput]) { //if we have a mapping for this input
         var mapping = InputMappings[xmlInput];
         if(mapping.hasOwnProperty('AccordianSelector')){ //if this input is inside an accordian
-          cy.ProcessAccordian(EditorSelector,mapping,xmlInput,XMLDataObject,InputMappings,isCreate);
+          cy.ProcessAccordian(EditorSelector,mapping,xmlInput,XMLDataObject,InputMappings,isCreate,EditorName);
         }
         else{
-          cy.ProcesssInput(XMLDataObject,xmlInput,InputMappings,isCreate);
+          cy.ProcesssInput(XMLDataObject,xmlInput,InputMappings,isCreate,EditorName);
         }
       }
     }
     });
 })
 
-Cypress.Commands.add("PopulateEditor",(EditorSelector, InputMappings, XMLDataObject) => {
-  cy.EditorProcesssor(EditorSelector, InputMappings, XMLDataObject, true);
+Cypress.Commands.add("PopulateEditor",(EditorSelector, InputMappings, XMLDataObject, EditorName) => {
+  cy.EditorProcesssor(EditorSelector, InputMappings, XMLDataObject, true, EditorName);
 });
 
-Cypress.Commands.add("AssertEditor",(EditorSelector, InputMappings, XMLDataObject) => {
-  cy.EditorProcesssor(EditorSelector, InputMappings, XMLDataObject,false);
+Cypress.Commands.add("AssertEditor",(EditorSelector, InputMappings, XMLDataObject, EditorName) => {
+  cy.EditorProcesssor(EditorSelector, InputMappings, XMLDataObject,false, EditorName);
 });
 
 Cypress.Commands.add("RunSearch", (SearchOptions, EntityData) => {

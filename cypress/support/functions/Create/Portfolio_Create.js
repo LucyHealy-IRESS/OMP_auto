@@ -4,17 +4,17 @@ import * as Portfolio_Smp_Constants from "../../constants/portfolio_Simple.js";
 import * as Constants from "../../constants/Core.js";
 
 //Portfolio Editor simple mode
-Cypress.Commands.add("Portfolio_Create_2", (EntityData) => {
+Cypress.Commands.add("Portfolio_Create_1", (EntityData) => {
     
     cy.ClosePortfolioEditor(Portfolio_Smp_Constants.PortfoliosQuickEditorSelector);
         
     cy.clickButtonInPopup(Portfolio_Smp_Constants.ClientPortfoliosSelector,"Add New Portfolio");
-    cy.PopulateEditor(Portfolio_Smp_Constants.PortfoliosQuickEditorSelector,Portfolio_Smp_Constants.Portfolio_Simple,EntityData);
+    cy.PopulateEditor(Portfolio_Smp_Constants.PortfoliosQuickEditorSelector,Portfolio_Smp_Constants.Portfolio_Simple,EntityData, "Portfolio Simple");
 
 });
 
 //Portfolio Editor Advanced mode
-Cypress.Commands.add("Portfolio_Create_1", (EntityData) => {
+Cypress.Commands.add("Portfolio_Create_2", (EntityData) => {
 
     cy.ClosePortfolioEditor(PortfolioConstants.PortfoliosAdvancedEditorSelector);
     
@@ -24,7 +24,7 @@ Cypress.Commands.add("Portfolio_Create_1", (EntityData) => {
     cy.get(PortfolioConstants.PortfoliosAdvancedEditorSelector + " .AccordianContainer", {  //ensure portfolio adv editor is there and has loaded
         timeout: Constants.Timeout_EditorWait,
       }).then(function () {         
-          cy.PopulateEditor(PortfolioConstants.PortfoliosAdvancedEditorSelector,Portfolio_Adv_Constants.AllPortfolioAdvancedInputs,EntityData);     
+          cy.PopulateEditor(PortfolioConstants.PortfoliosAdvancedEditorSelector,Portfolio_Adv_Constants.AllPortfolioAdvancedInputs,EntityData, "Portfolio Advanced");     
       });
     
 });

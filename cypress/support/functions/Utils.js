@@ -48,6 +48,22 @@ Cypress.Commands.add("TranslateProductID", (Portfolio, XmlInputObject) => {
     cy.SetDropdown(XmlInputObject.Selector, portfolioMapping[ProviderID]);
   });
 
+//Open an accordian, check first if accordian is already open, else a click will close it
+Cypress.Commands.add("ProcessAccordian",(EditorSelector,mapping,xmlInput,XMLDataObject,InputMappings,isCreate,EditorName) => {
+    cy.get(mapping.AccordianSelector).then(function ($AccordianSelector) {
+      if($AccordianSelector.hasClass('wijmo-wijaccordion-content-active')){
+        cy.ProcesssInput(XMLDataObject,xmlInput,InputMappings,isCreate,EditorName);
+      }
+      else {
+        cy.clickAccordion(EditorSelector, mapping.AccordianName);
+        cy.get(mapping.AccordianSelector + ".wijmo-wijaccordion-content-active").then(function () {
+          cy.ProcesssInput(XMLDataObject,xmlInput,InputMappings,isCreate,EditorName);
+        });
+      }          
+    });
+  })
+
+
 //DATE UTILITIES
 Cypress.Commands.add('RandomDate',(start, end) => { 
     return new Date(start + Math.random() * ('10/10/2000' - '01/01/1945')); 

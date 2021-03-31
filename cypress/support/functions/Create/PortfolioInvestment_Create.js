@@ -41,8 +41,8 @@ Cypress.Commands.add("ProcessAddHoldingQuick", (Entity, PopupSelector, HoldingsA
         cy.get(PopupSelector).contains("Close").click();           
         if(Entity.Units){
           cy.clickAccordion_PreCheck(HoldingsAccordianSelector,editorSelector,"Holdings");
-          cy.wait(2000); //Allow for new fund to be added
-          cy.get('.CurrentHoldings_table tbody tr td').contains(SelectedFund).then(function($td){ //find the added fund in the holdings table
+          cy.wait(3000); //Allow for new fund to be added
+          cy.get('.CurrentHoldings_table tbody tr td',{timeout:Constants.Timeout_HoldingSearch}).contains(SelectedFund).then(function($td){ //find the added fund in the holdings table
             cy.wrap($td).closest("tr").find("button").find(".ui-icon-pencil").click().then(function(){ //click the associated edit icon
               if(actionNo == 1){
                 cy.ProcessAddHoldingQuick_EditUnit_Simple(Entity, PopupSelector, HoldingsAccordianSelector, editorSelector, editRowSelector,editRowButtonSelector);

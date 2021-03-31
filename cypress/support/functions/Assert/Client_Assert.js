@@ -14,7 +14,7 @@ Cypress.Commands.add("Client_Assert_1", (EntityData) => {
       cy.get("#EditClientPopup .client_info_table", {  //ensure client editor is there and client info section has loaded
         timeout: Constants.Timeout_EditorWait,
       }).then(function () {        
-        cy.AssertEditor(ClientConstants.ClientEditorSelector,ClientConstants.AllClientInputs,EntityData);   
+        cy.AssertEditor(ClientConstants.ClientEditorSelector,ClientConstants.AllClientInputs,EntityData, "Client");   
         cy.get('.btn-viewportfolios-action > .ui-button-text').click();
       });     
     }
