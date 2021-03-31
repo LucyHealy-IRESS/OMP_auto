@@ -39,7 +39,7 @@ PersonalDetails = {
   },
   PlannedRetirementAge: {
     Selector: constants.Client_PlannedRetirementAge,
-    inputType: "ValueOrClick",
+    inputType: "ClickThenValue",
     AccordianSelector:"#PersonalDetails",
     AccordianName: 'Personal Details', 
   },
