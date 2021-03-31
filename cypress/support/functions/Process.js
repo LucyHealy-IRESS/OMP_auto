@@ -2,34 +2,32 @@ import * as constants from "../constants/Core.js";
 import * as constantsSelectors from "../constants/constantsSelectors.js";
 
 //Iterate through the recieved folder, taking each file and passing it to the ProcessXMLFile function
-Cypress.Commands.add("ProcessFile", (ExecutiionFolderLocation,fileName) => {
-
-      var NoOfActionFiles = 2;
-      for (var ActionFileNo = 1; ActionFileNo < NoOfActionFiles+1; ActionFileNo++) {    
+Cypress.Commands.add("ProcessFile", (ExecutiionFolderLocation,fileName,ActionFileNo, reloadBetweenTests) => {
       
-      var fileLocation = ExecutiionFolderLocation + "/" + fileName;
-      //1 Creation Pass
-      cy.ProcessXMLFile(fileLocation, constants.RunType_Create, ActionFileNo);
+  var LogPath = "cypress/RunLogs/"+fileName.replace(".xml","")+"_"+ ActionFileNo+ ".csv";
+  var content = "testContent"
+  
+  cy.task("CreateFile", {filePath:LogPath,content:content}).then(() => {
+    cy.log("Created Log File:" + LogPath);
+  })
 
-      //2 Assert Pass
-      //cy.wait(3000);
-      cy.ProcessXMLFile(fileLocation, constants.RunType_Assert,ActionFileNo);
+  var fileLocation = ExecutiionFolderLocation + "/" + fileName;
+  //1 Creation Pass
+  //cy.ProcessXMLFile(fileLocation, constants.RunType_Create, ActionFileNo);
+
+  //2 Assert Pass
+ // cy.wait(3000);
+  //cy.ProcessXMLFile(fileLocation, constants.RunType_Assert,ActionFileNo);
       
-       //3 Roll off what we have created
+  //3 Roll off what we have created
+  //cy.wait(3000);
+  //cy.ProcessXMLFile(fileLocation,constants.RunType_Delete, ActionFileNo);
+      
+  if(reloadBetweenTests){ //Dont reload if on last iteration
+     cy.reload();
      cy.wait(3000);
-     cy.ProcessXMLFile(fileLocation,constants.RunType_Delete, ActionFileNo);
-      
-      if(ActionFileNo < NoOfActionFiles-1){ //Dont reload if on last iteration
-        cy.reload();
-        cy.wait(3000);
-      }      
-    }
+  }      
 });
-
-
-
-
-
 
 //Receiving the filename and decoding it in order to call the correct create/assert/delete functions
 //Type = Create or Assert or Delete
