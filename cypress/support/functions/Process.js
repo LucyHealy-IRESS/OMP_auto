@@ -5,19 +5,21 @@ import * as constantsSelectors from "../constants/constantsSelectors.js";
 Cypress.Commands.add("ProcessFile", (ExecutiionFolderLocation,fileName,ActionFileNo, reloadBetweenTests) => {
       
   var LogPath = "cypress/RunLogs/"+fileName.replace(".xml","")+"_"+ ActionFileNo+ ".csv";
-  var content = "testContent"
+  cy.wrap(LogPath).as('LogPath');
+  cy.wrap([]).as('LogArray');
   
-  cy.task("CreateFile", {filePath:LogPath,content:content}).then(() => {
+  cy.task("Create_Append_File", {filePath:LogPath,content:""}).then(() => {
     cy.log("Created Log File:" + LogPath);
   })
+  //cy.task("Create_Append_File", {filePath:LogPath,content:"Hello World"}).then(() => {});
 
   var fileLocation = ExecutiionFolderLocation + "/" + fileName;
   //1 Creation Pass
   //cy.ProcessXMLFile(fileLocation, constants.RunType_Create, ActionFileNo);
 
   //2 Assert Pass
- // cy.wait(3000);
-  //cy.ProcessXMLFile(fileLocation, constants.RunType_Assert,ActionFileNo);
+  //cy.wait(3000);
+  cy.ProcessXMLFile(fileLocation, constants.RunType_Assert,ActionFileNo);
       
   //3 Roll off what we have created
   //cy.wait(3000);
@@ -31,7 +33,7 @@ Cypress.Commands.add("ProcessFile", (ExecutiionFolderLocation,fileName,ActionFil
 
 //Receiving the filename and decoding it in order to call the correct create/assert/delete functions
 //Type = Create or Assert or Delete
-Cypress.Commands.add("ProcessXMLFile", (fileLocation, Type,ActionFileNo) => {
+Cypress.Commands.add("ProcessXMLFile", function(fileLocation, Type,ActionFileNo) {
   cy.login();
 
   cy.get("#StoryCarousel1 .additionalInfo").then(function () {
@@ -80,10 +82,25 @@ Cypress.Commands.add("ProcessXMLFile", (fileLocation, Type,ActionFileNo) => {
         }
         //iterte and call
       }
+      else if(Type==constants.RunType_Assert){
+        cy.UpdateAssertLogFile();
+      }
       
     }); //end readFile
   });
 });
+
+Cypress.Commands.add("UpdateAssertLogFile",function() {
+  var LogPath = this.LogPath;
+  var LogArray = this.LogArray;
+  var csvContent = "Input Type, Input Name, Pass/Fail" +  "\n";  
+  for (var x = 0; x < LogArray.length; x++) {   //Each column is separated by "," and new line "\n" for next row  
+    csvContent += LogArray[x].AttributeType + "," +LogArray[x].AttributeName  + "," + LogArray[x].Pass  +  "\n"; //\r
+  }
+  cy.task("Create_Append_File", {filePath:LogPath,content:csvContent}).then(() => {
+    cy.log("Written to Log File:" + LogPath);
+  })
+})
 
 Cypress.Commands.add("ProcesssInput",(XMLDataObject,xmlInput,mapping, isCreate) => {
   if(isCreate){

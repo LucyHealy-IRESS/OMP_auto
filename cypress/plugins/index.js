@@ -33,11 +33,10 @@ module.exports = (on, config) => {
     }
    }),
    on("task", {
-    CreateFile({filePath,content}){
+    Create_Append_File({filePath,content}){
       var fs = require('fs');
       var file = fs.appendFile(filePath, content);  
-      return 1
-      
+      return 1      
     }
    })
   )

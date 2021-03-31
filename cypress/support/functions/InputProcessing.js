@@ -59,24 +59,35 @@ Cypress.Commands.add("ProcessCreate_UI", (xmlObject, xmlInput, xmlMappings) => {
   }
 });
 
+Cypress.Commands.add("PushToLogArray",function(attributeType,attributeName,Pass) { //needs to be a cypress command to access this
+  var WorkingLogArray = this.LogArray;
+  WorkingLogArray.push({AttributeType: attributeType, AttributeName:attributeName, Pass: Pass.toString()});
+  cy.wrap(WorkingLogArray).as('LogArray');
+})
+
 cy.ProcessAssert_JqueryValCheck = function (Selector,textInput,InputType,xmlInput) {
   cy.get(Selector).then(function ($input) {
     var value = $input.val();
     if (value == textInput) {
       cy.log("**Assert " + InputType + " :" + xmlInput + " : Pass**");
+      cy.PushToLogArray(InputType, xmlInput,true);
     } else {
       cy.log("**Assert " + InputType + " :" + xmlInput + " : Fail**");
+      cy.PushToLogArray(InputType, xmlInput,false);
     }
   });
 };
+
 
 cy.ProcessAssert_JqueryValCheck_bool = function (Selector,textInput,InputType,xmlInput) {
   cy.get(Selector).then(function ($input) {
     var value = $input.val();
     if (Boolean(value) == Boolean(textInput)) {
       cy.log("**Assert " + InputType + " :" + xmlInput + " : Pass**");
+      cy.PushToLogArray(InputType, xmlInput,true);
     } else {
       cy.log("**Assert " + InputType + " :" + xmlInput + " : Fail**");
+      cy.PushToLogArray(InputType, xmlInput,false);
     }
   });
 };
