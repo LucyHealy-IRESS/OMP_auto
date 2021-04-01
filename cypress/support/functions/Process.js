@@ -13,16 +13,16 @@ Cypress.Commands.add("ProcessFile", (ExecutiionFolderLocation,fileName,ActionFil
   })
   
   var fileLocation = ExecutiionFolderLocation + "/" + fileName;
-  //1 Creation Pass
-  cy.ProcessXMLFile(fileLocation, constants.RunType_Create, ActionFileNo);
+  // //1 Creation Pass
+  // cy.ProcessXMLFile(fileLocation, constants.RunType_Create, ActionFileNo);
 
   //2 Assert Pass
   cy.wait(3000);
   cy.ProcessXMLFile(fileLocation, constants.RunType_Assert,ActionFileNo);
       
   //3 Roll off what we have created
-  cy.wait(3000);
-  cy.ProcessXMLFile(fileLocation,constants.RunType_Delete, ActionFileNo);
+  // cy.wait(3000);
+  // cy.ProcessXMLFile(fileLocation,constants.RunType_Delete, ActionFileNo);
       
   if(reloadBetweenTests){ //Dont reload if on last iteration
      cy.reload();
@@ -93,9 +93,9 @@ Cypress.Commands.add("ProcessXMLFile", function(fileLocation, Type,ActionFileNo)
 Cypress.Commands.add("UpdateAssertLogFile",function() {
   var LogPath = this.LogPath;
   var LogArray = this.LogArray;
-  var csvContent = "Input Type, Input Name, Pass/Fail, Location" +  "\n";  
+  var csvContent = "Input Type, Input Name, Pass/Fail, Location, Expected Value, Actual Value" +  "\n";  
   for (var x = 0; x < LogArray.length; x++) {   //Each column is separated by "," and new line "\n" for next row  
-    csvContent += LogArray[x].AttributeType + "," +LogArray[x].AttributeName  + "," + LogArray[x].Pass  + "," + LogArray[x].Location+   "\n";
+    csvContent += LogArray[x].AttributeType + "," +LogArray[x].AttributeName  + "," + LogArray[x].Pass  + "," + LogArray[x].Location  + "," + LogArray[x].xmlValue  + "," + LogArray[x].uiValue+   "\n";
   }
   cy.task("Create_Append_File", {filePath:LogPath,content:csvContent}).then(() => {
     cy.log("Written to Log File:" + LogPath);

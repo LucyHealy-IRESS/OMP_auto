@@ -59,24 +59,25 @@ Cypress.Commands.add("ProcessCreate_UI", (xmlObject, xmlInput, xmlMappings,Edito
   }
 });
 
-Cypress.Commands.add("PushToLogArray",function(attributeType,attributeName,Pass,EditorName) { //needs to be a cypress command to access this
+Cypress.Commands.add("PushToLogArray",function(attributeType,attributeName,Pass,EditorName,textInput,value) { //needs to be a cypress command to access this
   var WorkingLogArray = this.LogArray;
-  WorkingLogArray.push({AttributeType: attributeType, AttributeName:attributeName, Location:EditorName, Pass: Pass.toString()});
+  WorkingLogArray.push({AttributeType: attributeType, AttributeName:attributeName, Location:EditorName, Pass: Pass.toString(), xmlValue:textInput, uiValue:value});
   cy.wrap(WorkingLogArray).as('LogArray');
 })
 
 cy.ProcessAssert_JqueryValCheck = function (Selector,textInput,InputType,xmlInput,EditorName) {
-  cy.get(Selector).then(function ($input) {    
+  cy.get(Selector).then(function ($input) {  
+    debugger; 
     var value = $input.val();
     if(InputType == "Integer"){
       value =value.replace("£",""); //remove pound sign from jQuery get
     }
     if (value == textInput) {
       cy.log("**Assert " + InputType + " :" + xmlInput + " : Pass**");
-      cy.PushToLogArray(InputType, xmlInput,true,EditorName);
+      cy.PushToLogArray(InputType, xmlInput,true,EditorName,textInput,value);
     } else {
       cy.log("**Assert " + InputType + " :" + xmlInput + " : Fail**");
-      cy.PushToLogArray(InputType, xmlInput,false,EditorName);
+      cy.PushToLogArray(InputType, xmlInput,false,EditorName,textInput,value);
     }
   });
 };
@@ -87,10 +88,10 @@ cy.ProcessAssert_JqueryValCheck_bool = function (Selector,textInput,InputType,xm
     var value = $input.val();
     if (Boolean(value) == Boolean(textInput)) {
       cy.log("**Assert " + InputType + " :" + xmlInput + " : Pass**");
-      cy.PushToLogArray(InputType, xmlInput,true,EditorName);
+      cy.PushToLogArray(InputType, xmlInput,true,EditorName,textInput,value);
     } else {
       cy.log("**Assert " + InputType + " :" + xmlInput + " : Fail**");
-      cy.PushToLogArray(InputType, xmlInput,false,EditorName);
+      cy.PushToLogArray(InputType, xmlInput,false,EditorName,textInput,value);
     }
   });
 };
