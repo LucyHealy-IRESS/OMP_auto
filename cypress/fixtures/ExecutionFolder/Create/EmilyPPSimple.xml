@@ -52,10 +52,10 @@
 								The Blu-Frog Investment Net Inc
 							</FundName>
 							<Units>
-								5000.000
+								5000.00
 							</Units>
 							<TotalValue>
-								92100.000000000
+								92100.00
 							</TotalValue>
 							<InvestmentType>
 								Fund
@@ -63,27 +63,7 @@
 							<Status>
 								Current
 							</Status>
-						</PortfolioInvestment>
-						<PortfolioInvestment>
-							<FundID>
-								GB00B3CGHN82
-							</FundID>
-							<FundName>
-								Aviva Investors Strategic Bd 2 GBP Inc
-							</FundName>
-							<Units>
-								285463.876
-							</Units>
-							<TotalValue>
-								316436.71
-							</TotalValue>
-							<InvestmentType>
-								Fund
-							</InvestmentType>
-							<Status>
-								Current
-							</Status>
-					</PortfolioInvestment>					
+						</PortfolioInvestment>							
 					</Investments>
 					<RetirementAge>
 						0
@@ -92,7 +72,7 @@
 						2021-03-29T13:23:22
 					</CreationDate>
 					<OngoingContsPremium>
-						500.0000
+						500.00
 					</OngoingContsPremium>
 					<OngoingContsType>
 						Annually
