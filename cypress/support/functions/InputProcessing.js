@@ -78,7 +78,7 @@ cy.ProcessAssert_JqueryValCheck = function (Selector,textInput,InputType,xmlInpu
   cy.get(Selector).then(function ($input) {  
     var value = $input.val();
     if(InputType == "Integer"){
-      value =value.replace("£","").value.replace("%",""); //remove pound sign from jQuery get
+      value =value.replace("£","").replace("%",""); //remove pound sign from jQuery get
     }
     if (value == textInput) {
       cy.log("**Assert " + InputType + " :" + xmlInput + " : Pass**");
