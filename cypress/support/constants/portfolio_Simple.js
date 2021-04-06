@@ -126,6 +126,24 @@ Portfolio_Simple = {
       AccordianSelector: "#PortfolioSimpleEditor_ProductCharges",
       AccordianName: "Product Charges"
     },      
+    ProductChargePlanCharge: {
+      Selector: ".PotfolioBasic_PC_PlanCharge",
+      inputType: "Integer",
+      AccordianSelector: "#PortfolioSimpleEditor_ProductCharges",
+      AccordianName: "Product Charges",
+    },   
+    ProductChargePolicyFee: {
+      Selector: ".PolicyFeeInput",
+      inputType: "Integer",
+      AccordianSelector: "#PortfolioSimpleEditor_ProductCharges",
+      AccordianName: "Product Charges",
+    },   
+    ProductChargeAdviserCharge: {
+      Selector: ".PotfolioBasic_PC_AdviserCharge",
+      inputType: "Integer",
+      AccordianSelector: "#PortfolioSimpleEditor_ProductCharges",
+      AccordianName: "Product Charges",
+    },  
 //Holdings
     FundName: {
         Selector: constants.PortfolioSmp_HDName,

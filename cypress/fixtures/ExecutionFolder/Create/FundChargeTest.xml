@@ -49,6 +49,15 @@
 					<ProductChargeFundCharge>
 					    9.99
 					</ProductChargeFundCharge>
+					<ProductChargePlanCharge>
+					    2.22
+					</ProductChargePlanCharge>
+					<ProductChargePolicyFee>
+					    299.99
+					</ProductChargePolicyFee>
+					<ProductChargeAdviserCharge>
+					    1.50
+					</ProductChargeAdviserCharge>
 				</Portfolio>
 			</Portfolios>
 		</Client>
