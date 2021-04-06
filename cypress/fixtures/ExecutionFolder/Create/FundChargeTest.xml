@@ -43,52 +43,12 @@
 					<ProviderID>
 						bbbbbbbb-5555-0000-0000-000000000229
 					</ProviderID>
-					<Investments>
-						<PortfolioInvestment>
-							<FundID>
-								GB00B5Q2M757
-							</FundID>
-							<FundName>
-								The Blu-Frog Investment Net Inc
-							</FundName>
-							<Units>
-								5000.00
-							</Units>
-							<TotalValue>
-								92100.00
-							</TotalValue>
-							<InvestmentType>
-								Fund
-							</InvestmentType>
-							<Status>
-								Current
-							</Status>
-						</PortfolioInvestment>							
-					</Investments>
-					<RetirementAge>
-						0
-					</RetirementAge>
-					<CreationDate>
-						2021-03-29T13:23:22
-					</CreationDate>
-					<OngoingContsPremium>
-						500.00
-					</OngoingContsPremium>
-					<OngoingContsType>
-						Annually
-					</OngoingContsType>
-					<OngoingContsEscalationRate>
-						0%
-					</OngoingContsEscalationRate>
-					<OngoingContsIncreasingEvery>
-						January
-					</OngoingContsIncreasingEvery>
-					<ContributionsStop>
-						At Retirement Age
-					</ContributionsStop>
-					<ClientExpenses>
-						1
-					</ClientExpenses>
+					<IsWorkplacePension>
+					    True
+					</IsWorkplacePension>
+					<ProductChargeFundCharge>
+					    9.99
+					</ProductChargeFundCharge>
 				</Portfolio>
 			</Portfolios>
 		</Client>

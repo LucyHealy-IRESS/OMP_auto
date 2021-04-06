@@ -119,6 +119,13 @@ Portfolio_Simple = {
         AccordianSelector: constants.PortfolioSmp_ACOngoingContributions,
         AccordianName: "Ongoing Contributions",
       },  
+//Product Charges
+    ProductChargeFundCharge: {
+      Selector: ".PotfolioBasic_PC_FundCharge",
+      inputType: "Integer",
+      AccordianSelector: "#PortfolioSimpleEditor_ProductCharges",
+      AccordianName: "Product Charges"
+    },      
 //Holdings
     FundName: {
         Selector: constants.PortfolioSmp_HDName,
