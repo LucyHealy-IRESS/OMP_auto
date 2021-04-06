@@ -11,8 +11,14 @@ export const ClientPortfoliosSelector = "#Client_ViewPortfolios",
   },
 
   Portfolio_BasicDetails_Simple = {
-    ExternalKey: {
-      Selector: constants.PortfolioSmp_BDXplanID,
+    Import: {
+      Selector: ".PotfolioBasic_Import",
+      inputType: "Dropdown",
+      AccordianSelector: constants.PortfolioSmp_ACBasicDetails,
+      AccordianName: "Basic Details",
+    },
+    XplanID: {
+      Selector: ".PotfolioBasic_XplanID",
       inputType: "String",
       AccordianSelector: constants.PortfolioSmp_ACBasicDetails,
       AccordianName: "Basic Details",
@@ -53,8 +59,15 @@ export const ClientPortfoliosSelector = "#Client_ViewPortfolios",
       AccordianSelector: constants.PortfolioSmp_ACBasicDetails,
       AccordianName: "Basic Details",
     },
+    SharePortfolio: {
+      Selector: "PotfolioBasic_ShareThisPortfolio",
+      inputType: "Checkbox",
+      AccordianSelector: constants.PortfolioSmp_ACBasicDetails,
+      AccordianName: "Basic Details",
+    },
   },
   
+  //Wrap Current Values
   Portfolio_BasicDetails_CurrentValue = {
     CurrentValue: {
       Selector: constants.PortfolioSmp_CVCurrentValue,
@@ -64,6 +77,7 @@ export const ClientPortfoliosSelector = "#Client_ViewPortfolios",
     },
   },
  
+  //Missing Wrap Inputs
   Portfolio_BasicDetails_OngoingContributions = {
     OngoingContsPremium: {
       Selector: constants.PortfolioSmp_OCGrossPremium,
@@ -273,7 +287,13 @@ export const ClientPortfoliosSelector = "#Client_ViewPortfolios",
       AccordianName: "Regular Withdrawals",
     },
   },
+
+  Portfolio_BasicDetails_DefinedIncome = {
+
+  }
  
+//TransferDetails?
+
   Portfolio_Simple = {
     ...Portfolio_BasicDetails_Simple,
     ...Portfolio_BasicDetails_CurrentValue,
