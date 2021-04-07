@@ -153,10 +153,77 @@ export const ClientPortfoliosSelector = "#Client_ViewPortfolios",
       inputType: "Integer",
       AccordianSelector: "#PortfolioSimpleEditor_ProductCharges",
       AccordianName: "Product Charges",
+<<<<<<< Updated upstream
     },
   },
   
   Portfolio_BasicDetails_Holdings = {
+=======
+    },  
+//Defined Income
+    SafeguardedBenefits: {
+      Selector: ".PotfolioBasic_DI_SafeguardedBenefits",
+      inputType: "Dropdown",
+      AccordianSelector: "#PortfolioSimpleEditor_DefinedIncome",
+      AccordianName: "Defined Income"
+    },  
+    DefinedIncomeAnnualIncome: {
+      Selector: ".PotfolioBasic_DI_AnnualIncome",
+      inputType: "Integer",
+      AccordianSelector: "#PortfolioSimpleEditor_DefinedIncome",
+      AccordianName: "Defined Income"
+    },  
+    DefinedIncomeEscalationRate: {
+      Selector: ".PotfolioBasic_DI_IncomeEscalation",
+      inputType: "Dropdown",
+      AccordianSelector: "#PortfolioSimpleEditor_DefinedIncome",
+      AccordianName: "Defined Income"
+    }, 
+    DefinedIncomeEscalationRateOther: {
+      Selector: ".PotfolioBasic_DI_Other",
+      inputType: "Integer",
+      AccordianSelector: "#PortfolioSimpleEditor_DefinedIncome",
+      AccordianName: "Defined Income"
+    },   
+    DefinedIncomeStarting: {
+      Selector: ".PotfolioBasic_DI_Starting",
+      inputType: "Dropdown",
+      AccordianSelector: "#PortfolioSimpleEditor_DefinedIncome",
+      AccordianName: "Defined Income"
+    }, 
+    DefinedIncomeStartingAge: {
+      Selector: ".PotfolioBasic_DI_StartingAge",
+      inputType: "Integer",
+      AccordianSelector: "#PortfolioSimpleEditor_DefinedIncome",
+      AccordianName: "Defined Income"
+    }, 
+    DefinedIncomeEnding: {
+      Selector: ".PotfolioBasic_DI_Ending",
+      inputType: "Dropdown",
+      AccordianSelector: "#PortfolioSimpleEditor_DefinedIncome",
+      AccordianName: "Defined Income"
+    }, 
+    DefinedIncomeEndingAge: {
+      Selector: ".PotfolioBasic_DI_EndingAge",
+      inputType: "Integer",
+      AccordianSelector: "#PortfolioSimpleEditor_DefinedIncome",
+      AccordianName: "Defined Income"
+    }, 
+//Transfer Details    
+    TransferValue: {
+      Selector: ".PotfolioBasic_Transfer_TransferValue",
+      inputType: "Integer",
+      AccordianSelector: "#Transfer Details",
+      AccordianName: "Transfer Details",
+    },   
+     TransferValueAsAt: {
+      Selector: ".TransferValueAsAt",
+      inputType: "Integer",
+      AccordianSelector: "#Transfer Details",
+      AccordianName: "Transfer Details",
+    },      
+//Holdings
+>>>>>>> Stashed changes
     FundName: {
       Selector: constants.PortfolioSmp_HDName,
       inputType: "String",

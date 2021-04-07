@@ -198,37 +198,37 @@ Portfolio_GrowthRates_Advanced = {
       AccordianSelector: constants.PortfolioAdv_ACGrowthRates,
       AccordianName: 'Growth Rates', 
     },
-  GrowthRateLow: {
+  GrowthRateLow_Nominal: {
       Selector: constants.Portfolio_ISLow,
       inputType: "Integer",
       AccordianSelector: constants.PortfolioAdv_ACGrowthRates,
       AccordianName: 'Growth Rates', 
     },
-  GrowthRateMid: {
+  GrowthRateMid_Nominal: {
       Selector: constants.Portfolio_ISMid,
       inputType: "Integer",
       AccordianSelector: constants.PortfolioAdv_ACGrowthRates,
       AccordianName: 'Growth Rates', 
     },
-  GrowthRateHigh: {
+  GrowthRateHigh_Nominal: {
       Selector: constants.Portfolio_ISHigh,
       inputType: "Integer",
       AccordianSelector: constants.PortfolioAdv_ACGrowthRates,
       AccordianName: 'Growth Rates', 
     },
-  GrowthRateLow: {
+  GrowthRateLow_InflationAdjusted: {
       Selector: constants.Portfolio_IALow,
       inputType: "Integer",
       AccordianSelector: constants.PortfolioAdv_ACGrowthRates,
       AccordianName: 'Growth Rates', 
     },
-  GrowthRateMid: {
+  GrowthRateMid_InflationAdjusted: {
       Selector: constants.Portfolio_IAMid,
       inputType: "Integer",
       AccordianSelector: constants.PortfolioAdv_ACGrowthRates,
       AccordianName: 'Growth Rates', 
     },
-  GrowthRateHigh: {
+  GrowthRateHigh_InflationAdjusted: {
       Selector: constants.Portfolio_IAHigh,
       inputType: "Integer",
             AccordianSelector: constants.PortfolioAdv_ACGrowthRates,
@@ -237,12 +237,144 @@ Portfolio_GrowthRates_Advanced = {
 },
 
 
+Portfolio_RegularWithdrawals_Advanced = {
+  RegularWithdrawal: {
+      Selector: ".portfolio_Adv_RW_RegWithdrawal",
+      inputType: "Dropdown",
+      AccordianSelector: "#PA_RegWithdrawals_Accordian",
+      AccordianName: 'Regular Withdrawals', 
+    },
+  RegularWithdrawalAmount: {
+      Selector: ".portfolio_Adv_RW_Amount",
+      inputType: "Integer",
+      AccordianSelector: "#PA_RegWithdrawals_Accordian",
+      AccordianName: 'Regular Withdrawals', 
+    },
+  RegularWithdrawalPercentage: {
+      Selector: ".portfolio_Adv_RW_Percentage",
+      inputType: "Integer",
+      AccordianSelector: "#PA_RegWithdrawals_Accordian",
+      AccordianName: 'Regular Withdrawals', 
+    },
+  RegularWithdrawalFrequency: {
+      Selector: ".portfolio_Adv_RW_Frequency",
+      inputType: "Dropdown",
+      AccordianSelector: "#PA_RegWithdrawals_Accordian",
+      AccordianName: 'Regular Withdrawals', 
+    },
+  RegularWithdrawalPaidIn: {
+      Selector: ".portfolio_Adv_RW_PaidIn",
+      inputType: "Dropdown",
+      AccordianSelector: "#PA_RegWithdrawals_Accordian",
+      AccordianName: 'Regular Withdrawals', 
+    },
+  RegularWithdrawalEscalationRate: {
+      Selector: ".portfolio_Adv_RW_Escalation",
+      inputType: "Dropdown",
+      AccordianSelector: "#PA_RegWithdrawals_Accordian",
+      AccordianName: 'Regular Withdrawals', 
+    },
+  RegularWithdrawalEscalationRateOther: {
+      Selector: ".portfolio_Adv_RW_EscOther",
+      inputType: "Integer",
+      AccordianSelector: "#PA_RegWithdrawals_Accordian",
+      AccordianName: 'Regular Withdrawals', 
+    },
+ },
+
+
+Portfolio_DefinedIncome_Advanced = {
+  DefinedIncomeSafeguardedBenefits: {
+      Selector: ".portfolio_Adv_DI_SafeguardedBenefits",
+      inputType: "Dropdown",
+      AccordianSelector: "#PA_DefinedIncome_Accordian",
+      AccordianName: 'Defined Income', 
+    },
+  DefinedIncomeAnnualIncome: {
+      Selector: ".portfolio_Adv_DI_AnnualIncome",
+      inputType: "Integer",
+      AccordianSelector: "#PA_DefinedIncome_Accordian",
+      AccordianName: 'Defined Income', 
+    },
+  DefinedIncomeEscalationRate: {
+      Selector: ".portfolio_Adv_DI_IncomeEsc",
+      inputType: "Dropdown",
+      AccordianSelector: "#PA_DefinedIncome_Accordian",
+      AccordianName: 'Defined Income', 
+    },  
+  DefinedIncomeEscalationRateOther: {
+      Selector: ".portfolio_Adv_DI_IncomeEscOthe",
+      inputType: "Integer",
+      AccordianSelector: "#PA_DefinedIncome_Accordian",
+      AccordianName: 'Defined Income', 
+    },
+  DefinedIncomeStarting: {
+      Selector: ".portfolio_Adv_DI_Starting",
+      inputType: "Dropdown",
+      AccordianSelector: "#PA_DefinedIncome_Accordian",
+      AccordianName: 'Defined Income', 
+    },   
+  DefinedIncomeStartingAge: {
+      Selector: ".portfolio_Adv_DI_StartingAge",
+      inputType: "Integer",
+      AccordianSelector: "#PA_DefinedIncome_Accordian",
+      AccordianName: 'Defined Income', 
+    },
+    DefinedIncomeEnding: {
+      Selector: ".portfolio_Adv_DI_Ending",
+      inputType: "Dropdown",
+      AccordianSelector: "#PA_DefinedIncome_Accordian",
+      AccordianName: 'Defined Income', 
+    },   
+    DefinedIncomeEndingAge: {
+      Selector: ".portfolio_Adv_DI_EndingAge",
+      inputType: "Integer",
+      AccordianSelector: "#PA_DefinedIncome_Accordian",
+      AccordianName: 'Defined Income', 
+    },
+},
+
+
+Portfolio_SchemeAndTransferDetails_Advanced = {
+  TransferValue: {
+      Selector: "",
+      inputType: "Integer",
+      AccordianSelector: "",
+      AccordianName: 'Scheme And Transfer Details', 
+    },
+
+
+Portfolio_RetirementIncome_Advanced = {
+  RI_RetirementIncome: {
+      Selector: ".portfolio_Adv_RI_RetirementIncome",
+      inputType: "Dropdown",
+      AccordianSelector: "#PA_RetirementIncome_Accordian",
+      AccordianName: 'Retirement Income', 
+    },
+  RI_AvailableFrom: {
+      Selector: ".portfolio_Adv_RI_AvailableFrom",
+      inputType: "Dropdown",
+      AccordianSelector: "#PA_RetirementIncome_Accordian",
+      AccordianName: 'Retirement Income', 
+    },
+    ExcludeFromLifetimeAllowanceCalculations: {
+      Selector: ".ExcludeFromLifetimeAllowanceCalculations",
+      inputType: "Checkbox",
+      AccordianSelector: "#PA_RetirementIncome_Accordian",
+      AccordianName: 'Retirement Income', 
+    },
+},
+
 AllPortfolioAdvancedInputs = {
 ...Portfolio_BasicDetails_Advanced,
 ...Portfolio_OngoingContribution_Advanced,
 ...Portfolio_Purpose_Advanced,
 ...Portfolio_RiskProfile_Advanced,
 ...Portfolio_ProductCharges_Advanced,
-...Portfolio_GrowthRates_Advanced
+...Portfolio_GrowthRates_Advanced,
+...Portfolio_RegularWithdrawals_Advanced,
+...Portfolio_DefinedIncome_Advanced,
+...Portfolio_SchemeAndTransferDetails_Advanced,
+...Portfolio_RetirementIncome_Advanced
 }
-
+}
