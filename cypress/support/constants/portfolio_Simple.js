@@ -2,14 +2,12 @@ import * as constants from "./constantsSelectors.js";
 export const ClientPortfoliosSelector = "#Client_ViewPortfolios",
   PortfoliosQuickEditorSelector = "#PortfolioAddPopUp",
   PortfolioQuickAddFundSelector = "PortfolioSimpleEditor_QuickAddFundPopup",
- 
   Portfolio_Holdings_Editor = {
     Units: {
       Selector: ".editRowPopup .RowEditUnits",
       inputType: "Integer",
     },
   },
-
   Portfolio_BasicDetails_Simple = {
     Import: {
       Selector: ".PotfolioBasic_Import",
@@ -66,7 +64,6 @@ export const ClientPortfoliosSelector = "#Client_ViewPortfolios",
       AccordianName: "Basic Details",
     },
   },
-  
   //Wrap Current Values
   Portfolio_BasicDetails_CurrentValue = {
     CurrentValue: {
@@ -76,7 +73,6 @@ export const ClientPortfoliosSelector = "#Client_ViewPortfolios",
       AccordianName: "Current Value",
     },
   },
- 
   //Missing Wrap Inputs
   Portfolio_BasicDetails_OngoingContributions = {
     OngoingContsPremium: {
@@ -128,7 +124,6 @@ export const ClientPortfoliosSelector = "#Client_ViewPortfolios",
       AccordianName: "Ongoing Contributions",
     },
   },
-  
   Portfolio_BasicDetails_ProductCharges = {
     ProductChargeFundCharge: {
       Selector: ".PotfolioBasic_PC_FundCharge",
@@ -153,77 +148,9 @@ export const ClientPortfoliosSelector = "#Client_ViewPortfolios",
       inputType: "Integer",
       AccordianSelector: "#PortfolioSimpleEditor_ProductCharges",
       AccordianName: "Product Charges",
-<<<<<<< Updated upstream
     },
   },
-  
   Portfolio_BasicDetails_Holdings = {
-=======
-    },  
-//Defined Income
-    SafeguardedBenefits: {
-      Selector: ".PotfolioBasic_DI_SafeguardedBenefits",
-      inputType: "Dropdown",
-      AccordianSelector: "#PortfolioSimpleEditor_DefinedIncome",
-      AccordianName: "Defined Income"
-    },  
-    DefinedIncomeAnnualIncome: {
-      Selector: ".PotfolioBasic_DI_AnnualIncome",
-      inputType: "Integer",
-      AccordianSelector: "#PortfolioSimpleEditor_DefinedIncome",
-      AccordianName: "Defined Income"
-    },  
-    DefinedIncomeEscalationRate: {
-      Selector: ".PotfolioBasic_DI_IncomeEscalation",
-      inputType: "Dropdown",
-      AccordianSelector: "#PortfolioSimpleEditor_DefinedIncome",
-      AccordianName: "Defined Income"
-    }, 
-    DefinedIncomeEscalationRateOther: {
-      Selector: ".PotfolioBasic_DI_Other",
-      inputType: "Integer",
-      AccordianSelector: "#PortfolioSimpleEditor_DefinedIncome",
-      AccordianName: "Defined Income"
-    },   
-    DefinedIncomeStarting: {
-      Selector: ".PotfolioBasic_DI_Starting",
-      inputType: "Dropdown",
-      AccordianSelector: "#PortfolioSimpleEditor_DefinedIncome",
-      AccordianName: "Defined Income"
-    }, 
-    DefinedIncomeStartingAge: {
-      Selector: ".PotfolioBasic_DI_StartingAge",
-      inputType: "Integer",
-      AccordianSelector: "#PortfolioSimpleEditor_DefinedIncome",
-      AccordianName: "Defined Income"
-    }, 
-    DefinedIncomeEnding: {
-      Selector: ".PotfolioBasic_DI_Ending",
-      inputType: "Dropdown",
-      AccordianSelector: "#PortfolioSimpleEditor_DefinedIncome",
-      AccordianName: "Defined Income"
-    }, 
-    DefinedIncomeEndingAge: {
-      Selector: ".PotfolioBasic_DI_EndingAge",
-      inputType: "Integer",
-      AccordianSelector: "#PortfolioSimpleEditor_DefinedIncome",
-      AccordianName: "Defined Income"
-    }, 
-//Transfer Details    
-    TransferValue: {
-      Selector: ".PotfolioBasic_Transfer_TransferValue",
-      inputType: "Integer",
-      AccordianSelector: "#Transfer Details",
-      AccordianName: "Transfer Details",
-    },   
-     TransferValueAsAt: {
-      Selector: ".TransferValueAsAt",
-      inputType: "Integer",
-      AccordianSelector: "#Transfer Details",
-      AccordianName: "Transfer Details",
-    },      
-//Holdings
->>>>>>> Stashed changes
     FundName: {
       Selector: constants.PortfolioSmp_HDName,
       inputType: "String",
@@ -309,7 +236,6 @@ export const ClientPortfoliosSelector = "#Client_ViewPortfolios",
     //     AccordianName: "Holdings",
     //   },
   },
-  
   Portfolio_BasicDetails_RegWithdrawal = {
     RegularWithdrawal: {
       Selector: constants.PortfolioSmp_RWRegularWithdrawal,
@@ -354,12 +280,72 @@ export const ClientPortfoliosSelector = "#Client_ViewPortfolios",
       AccordianName: "Regular Withdrawals",
     },
   },
-
   Portfolio_BasicDetails_DefinedIncome = {
-
-  }
- 
-//TransferDetails?
+    SafeguardedBenefits: {
+      Selector: ".PotfolioBasic_DI_SafeguardedBenefits",
+      inputType: "Dropdown",
+      AccordianSelector: "#PortfolioSimpleEditor_DefinedIncome",
+      AccordianName: "Defined Income",
+    },
+    DefinedIncomeAnnualIncome: {
+      Selector: ".PotfolioBasic_DI_AnnualIncome",
+      inputType: "Integer",
+      AccordianSelector: "#PortfolioSimpleEditor_DefinedIncome",
+      AccordianName: "Defined Income",
+    },
+    DefinedIncomeEscalationRate: {
+      Selector: ".PotfolioBasic_DI_IncomeEscalation",
+      inputType: "Dropdown",
+      AccordianSelector: "#PortfolioSimpleEditor_DefinedIncome",
+      AccordianName: "Defined Income",
+    },
+    DefinedIncomeEscalationRateOther: {
+      Selector: ".PotfolioBasic_DI_Other",
+      inputType: "Integer",
+      AccordianSelector: "#PortfolioSimpleEditor_DefinedIncome",
+      AccordianName: "Defined Income",
+    },
+    DefinedIncomeStarting: {
+      Selector: ".PotfolioBasic_DI_Starting",
+      inputType: "Dropdown",
+      AccordianSelector: "#PortfolioSimpleEditor_DefinedIncome",
+      AccordianName: "Defined Income",
+    },
+    DefinedIncomeStartingAge: {
+      Selector: ".PotfolioBasic_DI_StartingAge",
+      inputType: "Integer",
+      AccordianSelector: "#PortfolioSimpleEditor_DefinedIncome",
+      AccordianName: "Defined Income",
+    },
+    DefinedIncomeEnding: {
+      Selector: ".PotfolioBasic_DI_Ending",
+      inputType: "Dropdown",
+      AccordianSelector: "#PortfolioSimpleEditor_DefinedIncome",
+      AccordianName: "Defined Income",
+    },
+    DefinedIncomeEndingAge: {
+      Selector: ".PotfolioBasic_DI_EndingAge",
+      inputType: "Integer",
+      AccordianSelector: "#PortfolioSimpleEditor_DefinedIncome",
+      AccordianName: "Defined Income",
+    },
+  },
+  Portfolio_BasicDetails_TransferDetails = {
+    //Transfer Details
+    TransferValue: {
+      Selector: ".PotfolioBasic_Transfer_TransferValue",
+      inputType: "Integer",
+      AccordianSelector: "#Transfer Details",
+      AccordianName: "Transfer Details",
+    },
+    TransferValueAsAt: {
+      Selector: ".TransferValueAsAt",
+      inputType: "Integer",
+      AccordianSelector: "#Transfer Details",
+      AccordianName: "Transfer Details",
+    },
+  },
+  //TransferDetails?
 
   Portfolio_Simple = {
     ...Portfolio_BasicDetails_Simple,
@@ -368,4 +354,6 @@ export const ClientPortfoliosSelector = "#Client_ViewPortfolios",
     ...Portfolio_BasicDetails_ProductCharges,
     ...Portfolio_BasicDetails_Holdings,
     ...Portfolio_BasicDetails_RegWithdrawal,
+    ...Portfolio_BasicDetails_DefinedIncome,
+    ...Portfolio_BasicDetails_TransferDetails,
   };
