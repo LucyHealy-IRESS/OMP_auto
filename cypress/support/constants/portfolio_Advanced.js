@@ -336,13 +336,303 @@ Portfolio_DefinedIncome_Advanced = {
 
 
 Portfolio_SchemeAndTransferDetails_Advanced = {
-  TransferValue: {
-      Selector: "",
+    TransferValue: {
+      Selector: ".portfolio_Adv_SchemeDetails_TransferValue",
       inputType: "Integer",
-      AccordianSelector: "",
-      AccordianName: 'Scheme And Transfer Details', 
+      AccordianSelector: "#PA_TransferDetails_Accordian",
+      AccordianName: 'Scheme & Transfer Details', 
     },
 
+    TransferValueAsAt: {
+      Selector: ".TransferValueAsAt NonWijmoDatePickerElement day",
+      inputType: "Integer",
+      AccordianSelector: "#PA_TransferDetails_Accordian",
+      AccordianName: 'Scheme & Transfer Details', 
+    },
+
+    TransferValueAsAt: {
+      Selector: ".TransferValueAsAt NonWijmoDatePickerElement month",
+      inputType: "Integer",
+      AccordianSelector: "#PA_TransferDetails_Accordian",
+      AccordianName: 'Scheme & Transfer Details', 
+    },
+
+    TransferValueAsAt: {
+      Selector: ".TransferValueAsAt NonWijmoDatePickerElement year",
+      inputType: "Integer",
+      AccordianSelector: "#PA_TransferDetails_Accordian",
+      AccordianName: 'Scheme & Transfer Details', 
+    },
+
+    RefinePCLSCommutationDetails: {
+      Selector: ".wijmo-checkbox-box",
+      inputType: "Checkbox",
+      AccordianSelector: "#PA_TransferDetails_Accordian",
+      AccordianName: 'Scheme & Transfer Details', 
+    },
+
+    PCLSByCommutationNotAvailable: {
+      Selector: ".wijmo-checkbox-box",
+      inputType: "Checkbox",
+      AccordianSelector: "#PA_TransferDetails_Accordian",
+      AccordianName: 'Scheme & Transfer Details', 
+    },
+
+    CommutationFactor: {
+      Selector: ".portfolio_Adv_SchemeDetails_CommutationFactor",
+      inputType: "Integer",
+      AccordianSelector: "#PA_TransferDetails_Accordian",
+      AccordianName: 'Scheme & Transfer Details', 
+    },
+
+    PCLSToTake: {
+      Selector: ".portfolio_Adv_SchemeDetails_PCLSTake",
+      inputType: "Dropdown",
+      AccordianSelector: "#PA_TransferDetails_Accordian",
+      AccordianName: 'Scheme & Transfer Details', 
+    },
+
+    PCLSToTakeAmount: {
+      Selector: ".portfolio_Adv_SchemeDetails_AmountToday",
+      inputType: "Integer",
+      AccordianSelector: "#PA_TransferDetails_Accordian",
+      AccordianName: 'Scheme & Transfer Details', 
+    },
+
+    Include_Additional_Voluntary_Contributions: {
+      Selector: ".wijmo-checkbox-box",
+      inputType: "Checkbox",
+      AccordianSelector: "#PA_TransferDetails_Accordian",
+      AccordianName: 'Scheme & Transfer Details', 
+    },
+
+    AVCValue: {
+      Selector: ".portfolio_Adv_SchemeDetails_AMCValue",
+      inputType: "Integer",
+      AccordianSelector: "#PA_TransferDetails_Accordian",
+      AccordianName: 'Scheme & Transfer Details', 
+    },
+
+    AVCValueAsAt: {
+      Selector: ".AVCValueAsAt NonWijmoDatePickerElement day",
+      inputType: "Integer",
+      AccordianSelector: "#PA_TransferDetails_Accordian",
+      AccordianName: 'Scheme & Transfer Details', 
+    },
+
+
+    AVCValueAsAt: {
+      Selector: ".AVCValueAsAt NonWijmoDatePickerElement month",
+      inputType: "Integer",
+      AccordianSelector: "#PA_TransferDetails_Accordian",
+      AccordianName: 'Scheme & Transfer Details', 
+    },
+
+    AVCValueAsAt: {
+      Selector: ".AVCValueAsAt NonWijmoDatePickerElement year",
+      inputType: "Integer",
+      AccordianSelector: "#PA_TransferDetails_Accordian",
+      AccordianName: 'Scheme & Transfer Details', 
+    },
+
+    Refine_Dependants_Details: {
+      Selector: ".wijmo-checkbox-box",
+      inputType: "Checkbox",
+      AccordianSelector: "#PA_TransferDetails_Accordian",
+      AccordianName: 'Scheme & Transfer Details', 
+    },
+
+    DependantsGender: {
+      Selector: ".portfolio_Adv_SchemeDetails_DepsGender",
+      inputType: "Dropdown",
+      AccordianSelector: "#PA_TransferDetails_Accordian",
+      AccordianName: 'Scheme & Transfer Details', 
+    },
+
+    DependantsDOB: {
+      Selector: ".DependantsDOB NonWijmoDatePickerElement day",
+      inputType: "Integer",
+      AccordianSelector: "#PA_TransferDetails_Accordian",
+      AccordianName: 'Scheme & Transfer Details', 
+    },
+
+    DependantsDOB: {
+      Selector: ".DependantsDOB NonWijmoDatePickerElement month",
+      inputType: "Integer",
+      AccordianSelector: "#PA_TransferDetails_Accordian",
+      AccordianName: 'Scheme & Transfer Details', 
+    },
+
+    DependantsDOB: {
+      Selector: ".DependantsDOB NonWijmoDatePickerElement year",
+      inputType: "Integer",
+      AccordianSelector: "#PA_TransferDetails_Accordian",
+      AccordianName: 'Scheme & Transfer Details', 
+    },
+
+    DependantsPensionPreNRA: {
+      Selector: ".portfolio_Adv_SchemeDetails_PreRetirement",
+      inputType: "Integer",
+      AccordianSelector: "#PA_TransferDetails_Accordian",
+      AccordianName: 'Scheme & Transfer Details', 
+    },
+
+    DependantsPensionPostNRA: {
+      Selector: ".portfolio_Adv_SchemeDetails_PostRetirement",
+      inputType: "Integer",
+      AccordianSelector: "#PA_TransferDetails_Accordian",
+      AccordianName: 'Scheme & Transfer Details', 
+    },
+
+    SpousesPensionBasedOn: {
+      Selector: ".portfolio_Adv_SchemeDetails_BasedOn",
+      inputType: "Dropdown",
+      AccordianSelector: "#PA_TransferDetails_Accordian",
+      AccordianName: 'Scheme & Transfer Details', 
+    },
+
+    Refund_of_contributions_for_Death_Benefits: {
+      Selector: ".wijmo-checkbox-box",
+      inputType: "Checkbox",
+      AccordianSelector: "#PA_TransferDetails_Accordian",
+      AccordianName: 'Scheme & Transfer Details', 
+    },
+
+    TotalMemberContributionsToScheme: {
+      Selector: ".portfolio_Adv_SchemeDetails_TotalMemberConts",
+      inputType: "Integer",
+      AccordianSelector: "#PA_TransferDetails_Accordian",
+      AccordianName: 'Scheme & Transfer Details', 
+    },
+
+    RefundOfContributionsInterestRate: {
+      Selector: ".portfolio_Adv_SchemeDetails_RefundContsIntRate",
+      inputType: "Integer",
+      AccordianSelector: "#PA_TransferDetails_Accordian",
+      AccordianName: 'Scheme & Transfer Details', 
+    },
+  },
+
+  Portfolio_AssumptionsUsed_Advanced = {
+    ReceivingPlanName: {
+      Selector: ".portfolio_Adv_AU_ReceivingPlanName",
+      inputType: "String",
+      AccordianSelector: "#PA_AssumptionsUsed_Accordian",
+      AccordianName: 'Assumptions Used', 
+    },
+
+    ReceivingFundCharge: {
+      Selector: ".portfolio_Adv_AU_ReceivingFundCharge",
+      inputType: "Integer",
+      AccordianSelector: "#PA_AssumptionsUsed_Accordian",
+      AccordianName: 'Assumptions Used', 
+    },
+
+    ReceivingPlanCharge: {
+      Selector: ".portfolio_Adv_AU_ReceivingPlanCharge",
+      inputType: "Integer",
+      AccordianSelector: "#PA_AssumptionsUsed_Accordian",
+      AccordianName: 'Assumptions Used', 
+    },
+
+    ReceivingPolicyFee: {
+      Selector: ".portfolio_Adv_AU_PolicyFee",
+      inputType: "Integer",
+      AccordianSelector: "#PA_AssumptionsUsed_Accordian",
+      AccordianName: 'Assumptions Used', 
+    },
+
+    ReceivingAdviserCharge: {
+      Selector: ".portfolio_Adv_AU_AdviserCharge",
+      inputType: "Integer",
+      AccordianSelector: "#PA_AssumptionsUsed_Accordian",
+      AccordianName: 'Assumptions Used', 
+    },
+
+    GrowthRateType: {
+      Selector: ".portfolio_Adv_AU_GrowthRates",
+      inputType: "Dropdown",
+      AccordianSelector: "#PA_AssumptionsUsed_Accordian",
+      AccordianName: 'Assumptions Used', 
+    },
+
+    NominalLow: {
+      Selector: ".portfolio_Adv_AU_Low",
+      inputType: "Integer",
+      AccordianSelector: "#PA_AssumptionsUsed_Accordian",
+      AccordianName: 'Assumptions Used', 
+    },
+
+    NominalMid: {
+      Selector: ".portfolio_Adv_AU_Mid",
+      inputType: "Integer",
+      AccordianSelector: "#PA_AssumptionsUsed_Accordian",
+      AccordianName: 'Assumptions Used', 
+    },
+
+    NominalHigh: {
+      Selector: ".portfolio_Adv_AU_High",
+      inputType: "Integer",
+      AccordianSelector: "#PA_AssumptionsUsed_Accordian",
+      AccordianName: 'Assumptions Used', 
+    },
+
+    InflationAdjustedLow: {
+      Selector: ".portfolio_Adv_AU_Low_InflAdj",
+      inputType: "Integer",
+      AccordianSelector: "#PA_AssumptionsUsed_Accordian",
+      AccordianName: 'Assumptions Used', 
+    },
+
+    InflationAdjustedMid: {
+      Selector: ".portfolio_Adv_AU_Mid_InflAdj",
+      inputType: "Integer",
+      AccordianSelector: "#PA_AssumptionsUsed_Accordian",
+      AccordianName: 'Assumptions Used', 
+    },
+
+    InflationAdjustedHigh: {
+      Selector: ".portfolio_Adv_AU_High_InflAdj",
+      inputType: "Integer",
+      AccordianSelector: "#PA_AssumptionsUsed_Accordian",
+      AccordianName: 'Assumptions Used', 
+    },
+
+    DateCeasedContractingOut: {
+      Selector: ".DateCeasedContractingOut NonWijmoDatePickerElement day",
+      inputType: "Integer",
+      AccordianSelector: "#PA_AssumptionsUsed_Accordian",
+      AccordianName: 'Assumptions Used', 
+    },
+
+    DateCeasedContractingOut: {
+      Selector: ".DateCeasedContractingOut NonWijmoDatePickerElement month",
+      inputType: "Integer",
+      AccordianSelector: "#PA_AssumptionsUsed_Accordian",
+      AccordianName: 'Assumptions Used', 
+    },
+
+    DateCeasedContractingOut: {
+      Selector: ".DateCeasedContractingOut NonWijmoDatePickerElement year",
+      inputType: "Integer",
+      AccordianSelector: "#PA_AssumptionsUsed_Accordian",
+      AccordianName: 'Assumptions Used', 
+    },
+
+    IndexMonthForRevaluation: {
+      Selector: ".portfolio_Adv_AU_IndexMonth",
+      inputType: "Dropdown",
+      AccordianSelector: "#PA_AssumptionsUsed_Accordian",
+      AccordianName: 'Assumptions Used', 
+    },
+
+    ERFAppliedToBenefitsRevaluedTo: {
+      Selector: ".portfolio_Adv_AU_ERFApplied",
+      inputType: "Dropdown",
+      AccordianSelector: "#PA_AssumptionsUsed_Accordian",
+      AccordianName: 'Assumptions Used', 
+    },
+  },    
 
 Portfolio_RetirementIncome_Advanced = {
   RI_RetirementIncome: {
@@ -375,6 +665,7 @@ AllPortfolioAdvancedInputs = {
 ...Portfolio_RegularWithdrawals_Advanced,
 ...Portfolio_DefinedIncome_Advanced,
 ...Portfolio_SchemeAndTransferDetails_Advanced,
+...Portfolio_AssumptionsUsed_Advanced,
 ...Portfolio_RetirementIncome_Advanced
 }
-}
+
