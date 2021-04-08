@@ -6,6 +6,7 @@ var filenameArray = Array(8).fill().map((_, i) => i); //Due to Cypress limitatio
 describe('API - Engine Iteration', () => {
 
   var filenames;
+  var ExecutiionFolderLocation = "cypress/fixtures/ExecutionFolder/Create";
 
   before(() => {   
     cy.task("ReadFolderDirectory", {path:ExecutiionFolderLocation}).then((filenamesArray) => {
