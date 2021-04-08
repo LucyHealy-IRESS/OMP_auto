@@ -47,3 +47,17 @@ Cypress.Commands.add("ClosePortfolioEditor", (PortfolioEditorID, ButtonText) => 
         cy.wait(1000); //allow for save
     }
 });
+
+
+Cypress.Commands.add("Portfolio_Create_API", (Portfolio) => {  
+    //xml2js library is going to take our xml object and turn it back into a string for the API to receive
+    var xml2js = require("xml2js");
+    var builder = new xml2js.Builder({headless: true,explicitRoot: false,rootName: "ClientPortfolio"}); //replace <Portfolio> with <ClientPortfolio> - required by the Web service
+    var xml = builder.buildObject(Portfolio);
+    xml = xml.replace(
+      "<ClientPortfolio>",
+      '<ClientPortfolio xmlns="http://api.omsystems.co.uk">'
+    ); //Adding back in the namespace
+  
+    cy.API_Call(xml, Constants.API_Create);
+});

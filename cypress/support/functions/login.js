@@ -9,7 +9,7 @@ Cypress.Commands.add("login", () => {
     var password = "LoginPassword";
 
     if (url=='Dev') {
-        cy.visit('http://localhost:57204/index.html',{ timeout: constants.Timeout_Login });
+        cy.visit('http://localhost:57583/index.html',{ timeout: constants.Timeout_Login });
     }
     else if (url=='testProfiler') {
         cy.visit('http://testomprofiler/',{ timeout: constants.Timeout_Login });

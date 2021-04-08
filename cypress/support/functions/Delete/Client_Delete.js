@@ -37,3 +37,14 @@ Cypress.Commands.add("Client_Delete_2", (EntityData) => {
 });
 
 Cypress.Commands.add("Client_Delete_3", (EntityData) => {});
+
+
+Cypress.Commands.add("Client_Delete_API", (Client) => {
+
+  var xml_Payload = `<Client xmlns="http://api.omsystems.co.uk">
+      <ClientID>[CLIENT_ID]</ClientID>
+      </Client>`;
+  xml_Payload = xml_Payload.replace("[CLIENT_ID]", Client.ClientID);
+
+  cy.API_Call(xml_Payload, Constants.API_Delete);
+})

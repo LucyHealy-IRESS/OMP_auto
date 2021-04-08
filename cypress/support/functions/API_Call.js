@@ -1,33 +1,80 @@
-//This function uses the xml2js library, it receives xml as a string and converts it into an object
-cy.xml2JS_parseString = function (responseXML, callback) {
-  var retValue = "";
-  var parseString = require("xml2js").parseString; //npm install xml2js
-  var stripNS = require("xml2js").processors.stripPrefix;
+import * as constants from "../constants/Core.js";
+import * as constantsSelectors from "../constants/constantsSelectors.js";
 
-  const options = {
-    tagNameProcessors: [stripNS], //removce namespaces
-    explicitArray: false,
-    preserveChildrenOrder:true,
-  };
+//Iterate through the recieved folder, taking each file and passing it to the ProcessXMLFile function
+Cypress.Commands.add("ProcessFile_API", (ExecutiionFolderLocation,fileName) => {
+      
+  var LogPath = "cypress/RunLogs/"+fileName.replace(".xml","")+"_API.csv";
+  cy.wrap(LogPath).as('LogPath');
+  cy.wrap([]).as('LogArray');
+  
+  cy.task("Create_Append_File", {filePath:LogPath,content:""}).then(() => {
+    cy.log("Created Log File:" + LogPath);
+  })
+  
+  var fileLocation = ExecutiionFolderLocation + "/" + fileName;
+  //1 Creation Pass
+  cy.ProcessXMLFile_API(fileLocation, constants.RunType_Create,"API_ActionRequired_Create");
 
-  parseString(responseXML, options, function (err, result) {
-    callback(err, result);
-  });
+  //2 Assert Pass
+  cy.wait(1000);
+  cy.ProcessXMLFile_API(fileLocation, constants.RunType_Assert,"API_ActionRequired_Assert");
+      
+  //3 Roll off what we have created
+  cy.wait(1000);
+  cy.ProcessXMLFile_API(fileLocation,constants.RunType_Delete,"API_ActionRequired_Delete");
+         
+});
 
-  return retValue;
-};
+//Receiving the filename and decoding it in order to call the correct create/assert/delete functions
+//Type = Create or Assert or Delete
+Cypress.Commands.add("ProcessXMLFile_API", function(fileLocation, Type,ActionRequiredProperty) {
 
-cy.getRequestXML = function (responseXML) {
-  var retValue = "";
+    cy.readFile(fileLocation).then(function (fileContents) {
+      fileContents = fileContents.replace(/[\t\n\r]/gm, ""); //remove new lines and tabs
 
-  var callback = function (err, result) {
-    retValue = result.Root; //results from the function is the whole object - we want whats inside the root node
-  };
-
-  cy.xml2JS_parseString(responseXML, callback);
-
-  return retValue;
-};
+      var API_Requests = cy.getRequestXML(fileContents); //translates are string of xml into an object we can work with
+      var XMLtoArray = Object.keys(API_Requests);
+      function traverse(XMLtoArray, Data) {
+        if (XMLtoArray !== null) {
+          //Do We have something to process?
+          for (var x = 0; x < XMLtoArray.length; x++) {
+            var Entity = XMLtoArray[x]; //e.g. string Clients
+            var CoreEntityType = constants.EntityTypes[Entity];
+            if (CoreEntityType) {
+              //e.g. is Clients one or our tags we have to process or could it Firstname which we dont care about
+              var EntityData = Data[Entity]; //Grab Clients from the data
+              if (Array.isArray(EntityData)) {
+                //We could have multiple clients to create in which case they would be in an array
+                for (var x = 0; x < EntityData.length; x++) {
+                  // For each client......
+                  cy.log(Entity + " " + Type);
+                  if(CoreEntityType[ActionRequiredProperty]){
+                    eval("cy." + Entity + "_" + Type + "_API(EntityData[x]);");
+                  }                 
+                  var XMLtoArraySub = Object.keys(EntityData[x]); //Get the specific client from the array       
+                  traverse(XMLtoArraySub, EntityData[x]); //and start processing that down...
+                }
+                
+              } else {
+                cy.log(Entity + " " + Type);
+                if(CoreEntityType[ActionRequiredProperty]){
+                  eval("cy." + Entity + "_" + Type + "_API(EntityData);");
+                }
+                var XMLtoArraySub = Object.keys(EntityData);
+                traverse(XMLtoArraySub, EntityData);
+              }
+            }
+          }
+        }
+      }
+      traverse(XMLtoArray, API_Requests); //e,g, clients|| Clients Data
+      if(Type==constants.RunType_Assert){
+        cy.UpdateAssertLogFile();
+      }
+      
+    }); //end readFile
+});
 
 Cypress.Commands.add("API_Call", (fileContents, Type) => {
   //These will be read in from elsewhere
@@ -113,80 +160,6 @@ Cypress.Commands.add("API_Call", (fileContents, Type) => {
   }); //end then
 });
 
-Cypress.Commands.add("ProcessClientPortfolio_API", (Portfolio) => {
-  //xml2js library is going to take our xml object and turn it back into a string for the API to receive
-  var xml2js = require("xml2js");
-  var builder = new xml2js.Builder({headless: true,explicitRoot: false,rootName: "ClientPortfolio"}); //replace <Portfolio> with <ClientPortfolio> - required by the Web service
-  var xml = builder.buildObject(Portfolio);
-  xml = xml.replace(
-    "<ClientPortfolio>",
-    '<ClientPortfolio xmlns="http://api.omsystems.co.uk">'
-  ); //Adding back in the namespace
-
-  cy.API_Call(xml, "Create");
-});
-
-Cypress.Commands.add("ProcessClient_API", (Client) => {
-  var Portfolios = null; //Portfolios to the API are a seperate call, they API will not accept in the client xml, so we wil take it from the client xml and store here for later
-  if (Client.Portfolios) {
-    Portfolios = Client.Portfolios;
-    delete Client.Portfolios; //remove so we dont pass to the API from the client
-  }
-
-  //xml2js library is going to take our xml object and turn it back into a string for the API to receive
-  var xml2js = require("xml2js");
-  var builder = new xml2js.Builder({headless: true,explicitRoot: false,rootName: "Client"});
-  var xml = builder.buildObject(Client);
-  xml = xml.replace("<Client>", '<Client xmlns="http://api.omsystems.co.uk">'); //Add the namespace back in
-
-  cy.API_Call(xml, "Create");
-
-  if (Portfolios && Portfolios.Portfolio) {
-    if (Array.isArray(Portfolios.Portfolio)) { //The API can only create one portfolio at a time, 1 per request
-      for (var x = 0; x < Portfolios.Portfolio.length; x++) {
-        var Portfolio = Portfolios.Portfolio[x];
-        cy.ProcessClientPortfolio_API(Portfolio);
-      }
-    } else {
-      var Portfolio = Portfolios.Portfolio;
-      cy.ProcessClientPortfolio_API(Portfolio);
-    }
-  }
-});
-
-Cypress.Commands.add("Create_Client_API", (xmlFilePath) => {
-  cy.readFile(xmlFilePath).then(function (fileContents) {
-    fileContents = fileContents.replace(/[\t\n\r]/gm, ""); //remove new lines and tabs
-
-    var API_Requests = cy.getRequestXML(fileContents); //translates are string of xml into an object we can work with
-    var Clients = API_Requests["Clients"]; //get the <Clients> section of the xml
-    var Client = null; // this will contain the client we want to process
-    if (Array.isArray(Clients.Client)) {
-      //multiple clients to create
-      for (var x = 0; x < Clients.Client.length; x++) {
-        Client = Clients.Client[x];
-        cy.ProcessClient_API(Client);
-      }
-    } else {
-      //One client to create
-      Client = API_Requests["Clients"]["Client"]; // same as <root><clients><client>
-      cy.ProcessClient_API(Client);
-    }
-  });
-});
-
-
-Cypress.Commands.add("RetreiveClient_API", (clientID) => {
-
-  var xml_Payload = `<Client xmlns="http://api.omsystems.co.uk">
-  <ClientID>[CLIENT_ID]</ClientID>
-</Client>`;
-xml_Payload = xml_Payload.replace("[CLIENT_ID]", clientID);
-
-  return cy.API_Call(xml_Payload,"Retrieve");
-});
-
-
 Cypress.Commands.add("getResponseXMLData", (responseXML, attibute) => {
 
   var retValue = "";
@@ -214,3 +187,35 @@ Cypress.Commands.add("getResponseXMLData_ClientRetreive", (responseXML, attibute
   return retValue;
 });
 
+
+cy.getRequestXML = function (responseXML) {
+  var retValue = "";
+
+  var callback = function (err, result) {
+    retValue = result.Root; //results from the function is the whole object - we want whats inside the root node
+  };
+
+  cy.xml2JS_parseString(responseXML, callback);
+
+  return retValue;
+};
+
+
+//This function uses the xml2js library, it receives xml as a string and converts it into an object
+cy.xml2JS_parseString = function (responseXML, callback) {
+  var retValue = "";
+  var parseString = require("xml2js").parseString; //npm install xml2js
+  var stripNS = require("xml2js").processors.stripPrefix;
+
+  const options = {
+    tagNameProcessors: [stripNS], //removce namespaces
+    explicitArray: false,
+    preserveChildrenOrder:true,
+  };
+
+  parseString(responseXML, options, function (err, result) {
+    callback(err, result);
+  });
+
+  return retValue;
+};
