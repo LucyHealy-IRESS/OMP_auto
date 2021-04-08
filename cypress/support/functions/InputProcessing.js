@@ -9,6 +9,15 @@ cy.GetTextInput = function(xmlObject,xmlInput) {
   return retValue;
 };
 
+
+cy.GetTextInput_mapping = function(xmlObject,xmlInput,mapping) {
+  var inputName = xmlInput.toString();
+  if(mapping.hasOwnProperty("XMLOverride")){
+    inputName = mapping.XMLOverride;
+  }
+  return cy.GetTextInput(xmlObject,inputName);
+};
+
 //This function takes the client object and creates it using the UI of the client editor
 Cypress.Commands.add("ProcessCreate_UI", (xmlObject, xmlInput, xmlMappings,EditorName) => {
   var XmlInputObject = xmlMappings[xmlInput]; //match the xml tag with the object in Client Inputs,if that xml tag has been passed in we can go ahead and create it
@@ -165,17 +174,21 @@ Cypress.Commands.add("ProcessAssert_API", (xmlMappings, originalXML, ResponseXML
     var mapping = xmlMappings[xmlInput];
       if(mapping){
         var InputType = mapping.inputType;
-        var originalXMLValue = cy.GetTextInput(originalXML,xmlInput);
-        var ResponseXMLValue = cy.GetTextInput(ResponseXML,xmlInput);
+        var originalXMLValue = cy.GetTextInput(originalXML,xmlInput,mapping);
+        var ResponseXMLValue = cy.GetTextInput_mapping(ResponseXML,xmlInput,mapping); //we may need to use the XMLOverride value to get the data from the response e.g. GrowthRateLow_Nominal is just GrowthRateLow to the api
         if(originalXMLValue && ResponseXMLValue && originalXMLValue == ResponseXMLValue){ //match!         
           cy.PushToLogArray(InputType, xmlInput,true,"",originalXMLValue,ResponseXMLValue);
         }
         else{
-          cy.PushToLogArray(InputType, xmlInput,true,"",originalXMLValue,ResponseXMLValue);
+          cy.PushToLogArray(InputType, xmlInput,false,"",originalXMLValue,ResponseXMLValue);
         }
       }
       else{
-        cy.PushToLogArray("", xmlInput,false,"","Automation Mapping Doesnt Exist",ResponseXML[xmlInput.toString()]);
+        var responseXML = ResponseXML[xmlInput.toString()];
+        if(!responseXML){
+          responseXML = "Not Returned from API";
+        }
+        cy.PushToLogArray("", xmlInput,false,"","Automation Mapping Doesnt Exist",responseXML);
       }
     } 
     cy.PushToLogArray("", "","","","","");

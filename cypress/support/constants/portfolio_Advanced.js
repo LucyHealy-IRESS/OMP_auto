@@ -203,36 +203,42 @@ Portfolio_GrowthRates_Advanced = {
       inputType: "Integer",
       AccordianSelector: constants.PortfolioAdv_ACGrowthRates,
       AccordianName: 'Growth Rates', 
+      XMLOverride: "GrowthRateLow"
     },
   GrowthRateMid_Nominal: {
       Selector: constants.Portfolio_ISMid,
       inputType: "Integer",
       AccordianSelector: constants.PortfolioAdv_ACGrowthRates,
       AccordianName: 'Growth Rates', 
+      XMLOverride: "GrowthRateMid"
     },
   GrowthRateHigh_Nominal: {
       Selector: constants.Portfolio_ISHigh,
       inputType: "Integer",
       AccordianSelector: constants.PortfolioAdv_ACGrowthRates,
       AccordianName: 'Growth Rates', 
+      XMLOverride: "GrowthRateHigh"
     },
   GrowthRateLow_InflationAdjusted: {
       Selector: constants.Portfolio_IALow,
       inputType: "Integer",
       AccordianSelector: constants.PortfolioAdv_ACGrowthRates,
       AccordianName: 'Growth Rates', 
+      XMLOverride: "GrowthRateLow"
     },
   GrowthRateMid_InflationAdjusted: {
       Selector: constants.Portfolio_IAMid,
       inputType: "Integer",
       AccordianSelector: constants.PortfolioAdv_ACGrowthRates,
       AccordianName: 'Growth Rates', 
+      XMLOverride: "GrowthRateMid"
     },
   GrowthRateHigh_InflationAdjusted: {
       Selector: constants.Portfolio_IAHigh,
       inputType: "Integer",
-            AccordianSelector: constants.PortfolioAdv_ACGrowthRates,
+      AccordianSelector: constants.PortfolioAdv_ACGrowthRates,
       AccordianName: 'Growth Rates', 
+      XMLOverride: "GrowthRateHigh"
     },
 },
 

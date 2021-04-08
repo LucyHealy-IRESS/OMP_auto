@@ -33,6 +33,7 @@ Cypress.Commands.add("Client_Create_API", (Client) => {
     var xml2js = require("xml2js");
     var builder = new xml2js.Builder({headless: true,explicitRoot: false,rootName: "Client"});
     var xml = builder.buildObject(Client);
+    xml = cy.ReplaceAutomationMappingOverrides(ClientConstants.AllClientInputs,xml);
     xml = xml.replace("<Client>", '<Client xmlns="http://api.omsystems.co.uk">'); //Add the namespace back in
     cy.API_Call(xml, Constants.API_Create);
 })
