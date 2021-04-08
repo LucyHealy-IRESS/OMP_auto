@@ -50,7 +50,7 @@ Cypress.Commands.add("Client_Assert_API", (EntityData) => {
       if (EntityData.Portfolios) {
         delete EntityData.Portfolios; //Portfolios to the API are a seperate call, they API will not return portfoliots in the client xml
       }
-      cy.ProcessAssert_API(ClientConstants.AllClientInputs,EntityData,ResponseXMLObject.Client);
+      cy.ProcessAssert_API(ClientConstants.AllClientInputs,EntityData,ResponseXMLObject.Client, "Client");
     }   
   });
 });

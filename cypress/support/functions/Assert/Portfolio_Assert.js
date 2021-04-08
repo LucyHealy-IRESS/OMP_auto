@@ -45,3 +45,25 @@ Cypress.Commands.add("ClientPortfoliosListReturned", (callback) => {
       })
     })
   })
+
+
+
+  Cypress.Commands.add("Portfolio_Assert_API", (EntityData) => {
+
+    var xml_Payload = `<ClientPortfolio xmlns="http://api.omsystems.co.uk">
+    <PortfolioID>[PF_ID]</PortfolioID>
+    <ClientID>[CLIENT_ID]</ClientID>
+    </ClientPortfolio>`;
+    xml_Payload = xml_Payload.replace("[CLIENT_ID]", EntityData.ClientID).replace("[PF_ID]", EntityData.PortfolioID);
+    cy.API_Retreive(xml_Payload).then(function(ResponseXMLString){ 
+      var ResponseXMLObject = cy.getResponseXML(ResponseXMLString); //translates are string of xml into an object we can work with
+      if(ResponseXMLObject){
+        var EntityDataInvestments = EntityData.Investments;
+          if(EntityDataInvestments){
+           delete EntityData.Investments; //Portfolios to the API are a seperate call, they API will not return portfoliots in the client xml
+           cy.PortfolioInvestment_Assert_API(EntityDataInvestments,ResponseXMLObject.ClientPortfolio.Investments)
+          }
+        cy.ProcessAssert_API(Portfolio_Adv_Constants.AllPortfolioAdvancedInputs,EntityData,ResponseXMLObject.ClientPortfolio,"Portfolio");
+      }   
+    });
+  });

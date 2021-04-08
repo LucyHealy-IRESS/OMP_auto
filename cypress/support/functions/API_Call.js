@@ -22,7 +22,7 @@ Cypress.Commands.add("ProcessFile_API", (ExecutiionFolderLocation,fileName) => {
       
   //3 Roll off what we have created
   cy.wait(1000);
-  cy.ProcessXMLFile_API(fileLocation,constants.RunType_Delete,"API_ActionRequired_Delete");
+  //cy.ProcessXMLFile_API(fileLocation,constants.RunType_Delete,"API_ActionRequired_Delete");
          
 });
 

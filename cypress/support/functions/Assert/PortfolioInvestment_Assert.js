@@ -47,3 +47,9 @@ Cypress.Commands.add("PortfolioInvestment_Assert_2", (EntityData) => {
 });
 
 Cypress.Commands.add("PortfolioInvestment_Assert_3", (EntityData) => {});
+
+
+
+Cypress.Commands.add("PortfolioInvestment_Assert_API", (EntityData, ResponseData) => {
+
+});

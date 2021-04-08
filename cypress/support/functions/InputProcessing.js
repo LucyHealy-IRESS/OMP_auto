@@ -159,8 +159,8 @@ Cypress.Commands.add("ProcessAssert_UI", (xmlObject, xmlInput, xmlMappings,Edito
 });
 
 
-Cypress.Commands.add("ProcessAssert_API", (xmlMappings, originalXML, ResponseXML) => {
-
+Cypress.Commands.add("ProcessAssert_API", (xmlMappings, originalXML, ResponseXML,EntityType) => {
+  cy.PushToLogArray(EntityType, "","","","","");
   for (let xmlInput in originalXML) { //for each xml tag
     var mapping = xmlMappings[xmlInput];
       if(mapping){
@@ -175,7 +175,7 @@ Cypress.Commands.add("ProcessAssert_API", (xmlMappings, originalXML, ResponseXML
         }
       }
       else{
-        cy.PushToLogArray("", xmlInput,false,"","Automation Mapping Doesnt Exist","-");
+        cy.PushToLogArray("", xmlInput,false,"","Automation Mapping Doesnt Exist",ResponseXML[xmlInput.toString()]);
       }
     } 
     cy.PushToLogArray("", "","","","","");
@@ -183,5 +183,6 @@ Cypress.Commands.add("ProcessAssert_API", (xmlMappings, originalXML, ResponseXML
     for (let xmlInput in ResponseXML) {
       cy.PushToLogArray("", xmlInput,ResponseXML[xmlInput.toString()],"","","");
     }
+    cy.PushToLogArray("", "","","","","");
 
 });
