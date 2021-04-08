@@ -36,3 +36,22 @@ Cypress.Commands.add("Client_Assert_2", (EntityData) => {
 
 Cypress.Commands.add("Client_Assert_3", (EntityData) => {});
 
+
+Cypress.Commands.add("Client_Assert_API", (EntityData) => {
+
+  var xml_Payload = `<Client xmlns="http://api.omsystems.co.uk">
+  <ClientID>[CLIENT_ID]</ClientID>
+  </Client>`;
+  xml_Payload = xml_Payload.replace("[CLIENT_ID]", EntityData.ClientID);
+  
+  cy.API_Retreive(xml_Payload).then(function(ResponseXMLString){ 
+    var ResponseXMLObject = cy.getResponseXML(ResponseXMLString); //translates are string of xml into an object we can work with
+    if(ResponseXMLObject){
+      if (EntityData.Portfolios) {
+        delete EntityData.Portfolios; //Portfolios to the API are a seperate call, they API will not return portfoliots in the client xml
+      }
+      cy.ProcessAssert_API(ClientConstants.AllClientInputs,EntityData,ResponseXMLObject.Client);
+    }   
+  });
+});
+

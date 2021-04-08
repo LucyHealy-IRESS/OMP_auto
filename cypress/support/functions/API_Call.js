@@ -160,46 +160,51 @@ Cypress.Commands.add("API_Call", (fileContents, Type) => {
   }); //end then
 });
 
-Cypress.Commands.add("getResponseXMLData", (responseXML, attibute) => {
+
+Cypress.Commands.add("API_Retreive", (xml_Payload) => {
 
   var retValue = "";
 
-  var callback = function (err, result) {
+  cy.API_Call(xml_Payload,constants.API_Retrieve).then(function(ApiCallResponse){
+   var callback = function (err, result) {
     retValue = result.Envelope.Body.ProfilerResponse.ProfilerResult.ResponseXMLData;
-  };
+   };
 
-  cy.xml2JS_parseString(responseXML, callback);
+  cy.xml2JS_parseString(ApiCallResponse.body, callback);
 
   return retValue;
+
 });
 
-Cypress.Commands.add("getResponseXMLData_ClientRetreive", (responseXML, attibute) => {
-
-  var retValue = "";
-
-  var callback = function (err, result) {
-    var clientData = result.Response.Client;
-    retValue = clientData[attibute];
-  };
-
-  cy.xml2JS_parseString(responseXML, callback);
-
-  return retValue;
 });
 
 
-cy.getRequestXML = function (responseXML) {
-  var retValue = "";
+// Cypress.Commands.add("getResponseXMLData", (responseXML, attibute) => {
 
-  var callback = function (err, result) {
-    retValue = result.Root; //results from the function is the whole object - we want whats inside the root node
-  };
+//   var retValue = "";
 
-  cy.xml2JS_parseString(responseXML, callback);
+//   var callback = function (err, result) {
+//     retValue = result.Envelope.Body.ProfilerResponse.ProfilerResult.ResponseXMLData;
+//   };
 
-  return retValue;
-};
+//   cy.xml2JS_parseString(responseXML, callback);
 
+//   return retValue;
+// });
+
+// Cypress.Commands.add("getResponseXMLData_ClientRetreive", (responseXML, attibute) => {
+
+//   var retValue = "";
+
+//   var callback = function (err, result) {
+//     var clientData = result.Response.Client;
+//     retValue = clientData[attibute];
+//   };
+
+//   cy.xml2JS_parseString(responseXML, callback);
+
+//   return retValue;
+// });
 
 //This function uses the xml2js library, it receives xml as a string and converts it into an object
 cy.xml2JS_parseString = function (responseXML, callback) {
@@ -218,4 +223,25 @@ cy.xml2JS_parseString = function (responseXML, callback) {
   });
 
   return retValue;
+};
+
+
+cy.getRequestResponseXML = function (responseXML, PropertyName) {
+  var retValue = "";
+
+  var callback = function (err, result) {
+    retValue = result[PropertyName]; //results from the function is the whole object - we want whats inside the root node
+  };
+
+  cy.xml2JS_parseString(responseXML, callback);
+
+  return retValue;
+};
+
+cy.getRequestXML = function (responseXML) {  
+  return cy.getRequestResponseXML(responseXML,"Root");
+};
+
+cy.getResponseXML = function (responseXML) {
+  return cy.getRequestResponseXML(responseXML,"Response");
 };
