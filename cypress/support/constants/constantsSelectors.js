@@ -191,9 +191,9 @@ Client_IsSharedWithCompany = '#ClientDetailsPopup_ShareClient',
        Portfolio_RIPCLSTaken = '.portfolio_Adv_RI_PCLSTaken',
        Portfolio_RIAnnualAmountTodaysTerms = '.portfolio_Adv_RI_AnualAmountToday',
        Portfolio_RIPCLSStarting = '.portfolio_Adv_RI_PCLSStarting',
-       Portfolio_RIStartingAge = '.portfolio_Adv_RI_Age',
+       Portfolio_RIPCLSStartingAge = '.portfolio_Adv_RI_Age',
        Portfolio_RIWithdrawalEscalation = '.portfolio_Adv_RI_WithdrawalEsc',
-       Portfolio_RIOtherEscalation = '.portfolio_Adv_RI_WithdrawalEscOther',
+       Portfolio_RIWithdrawalOtherEscalation = '.portfolio_Adv_RI_WithdrawalEscOther',
        Portfolio_RIExcludeFromLTCalcs = '.portfolio_Adv_RI_ExcludeFromLifetimeCalculations',
 
 

@@ -759,7 +759,7 @@ Portfolio_SchemeAndTransferDetails_Advanced = {
         AccordianName: "Retirement Income",
       },
     RI_PCLSAge: {
-        Selector: constants.Portfolio_RIStartingAge,
+        Selector: constants.Portfolio_RIPCLSStartingAge,
         inputType: "Integer",
         AccordianSelector: constants.PortfolioAdv_ACRetirementIncome,
         AccordianName: "Retirement Income",
@@ -771,7 +771,7 @@ Portfolio_SchemeAndTransferDetails_Advanced = {
         AccordianName: "Retirement Income",
       },
     RI_PCLSOtherEscalation: {
-        Selector: constants.Portfolio_RIOtherEscalation,
+        Selector: constants.Portfolio_RIWithdrawalOtherEscalation,
         inputType: "Integer",
         AccordianSelector: constants.PortfolioAdv_ACRetirementIncome,
         AccordianName: "Retirement Income",
@@ -876,7 +876,7 @@ Portfolio_DrawdownIncome_Advanced = {
     AccordianSelector: constants.PortfolioAdv_DrawdownIncome,
     AccordianName: "Drawdown Income"
   }
-}
+},
 
 AllPortfolioAdvancedInputs = {
 ...Portfolio_BasicDetails_Advanced,
