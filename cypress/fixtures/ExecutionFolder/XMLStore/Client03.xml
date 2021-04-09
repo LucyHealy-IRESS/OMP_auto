@@ -1,0 +1,45 @@
+<Root>
+<Clients>
+	<Client>
+			<ClientID>Client03</ClientID>
+			<Title>Mrs</Title>
+			<Firstname>Tanya</Firstname>
+			<Surname>White-Smith</Surname>
+			<DateOfBirth>1965-03-23</DateOfBirth>
+			<Status>Current</Status>			
+			<Gender>Female</Gender>
+			<EmploymentStatus>Employed</EmploymentStatus>
+			<Address1>11 Henry Laver</Address1>
+			<City>Colchester</City>
+			<County>Essex</County>
+			<Postcode>CO3 3AF</Postcode>
+			<CurrentSalary>45000</CurrentSalary>
+			<StatePension>9110.40</StatePension>
+			<Portfolios>
+				<Portfolio>
+					<PortfolioID>Portfolio01</PortfolioID>
+					<ClientID>Client03</ClientID>
+					<Reference>Aegon Pension Plan</Reference>
+					<Status>Current</Status>
+					<ProductID>1</ProductID>
+					<ProviderID>BBBBBBBB-5555-0000-0000-000000000061</ProviderID>
+					<Investments>
+						<PortfolioInvestment>
+							<FundID>GB00B8D0SR58</FundID>
+							<FundName>BlackRock Consensus 85 D Acc</FundName>
+							<Units>9999.081</Units>
+							<TotalValue>10000.00</TotalValue>
+							<InvestmentType>Fund</InvestmentType>
+							<Status>Current</Status>
+						</PortfolioInvestment>
+					</Investments>
+					<RetirementAge>65</RetirementAge>
+					<GrowthRateBasis>Industry Standard Growth Rates</GrowthRateBasis>
+					<OngoingContsPremium>5445.00</OngoingContsPremium>
+					<OngoingContsType>Annually</OngoingContsType>
+					<OngoingContsEscalationRate>0</OngoingContsEscalationRate>
+				</Portfolio>
+			</Portfolios>
+	</Client>
+</Clients>
+</Root>
