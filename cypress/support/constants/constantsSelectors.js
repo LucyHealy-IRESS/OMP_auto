@@ -74,6 +74,8 @@ Client_IsSharedWithCompany = '#ClientDetailsPopup_ShareClient',
        PortfolioAdv_ACRiskProfile = '.PA_RiskProfile_Accordian',
        PortfolioAdv_ACRetirementIncome = '.PA_RetirementIncome_Accordian',
        PortfolioAdv_ACAssetAllocation = '.PA_AssetAllocations_Accordian',
+       PortfolioAdv_ACHoldings = '.PA_ClientHoldings_Accordian',
+       PortfolioAdv_DrawdownIncome = '.PA_DrawdownIncome_Accordian',
        
 
 //Portfolio_BasicDetailsInputs	
@@ -160,8 +162,8 @@ Client_IsSharedWithCompany = '#ClientDetailsPopup_ShareClient',
        Portfolio_AAAllocation = '[style="position: relative; float: left; width: 18%; padding: 0; margin: 0; text-align: center; height: 40px"] > .wijmo-wijinput > .wijmo-wijinput-wrapper > .wijmo-wijinput-input',
        
 //Portfolio_DrawdownIncome	
-       Portfolio_CurrentAnnualPension = '#drawdownIncomeTable > :nth-child(1) > :nth-child(1) > td > .wijmo-wijinput > .wijmo-wijinput-wrapper > .wijmo-wijinput-input',
-       Portfolio_IncomeType = '#drawdownIncomeTable > :nth-child(1) > :nth-child(2) > td > .wijmo-wijcombobox > .wijmo-wijcombobox-wrapper > .wijmo-wijcombobox-input',
+       Portfolio_CurrentAnnualPension = '.portfolio_Adv_DrawInc_CurrentAnnualPensionIncome',
+       Portfolio_IncomeType = '.portfolio_Adv_DrawInc_IncomeType',
        Portfolio_Date = '.segment-table > tbody > :nth-child(2) > td > .wijmo-wijinput > .wijmo-wijinput-wrapper > .wijmo-wijinput-input',
        Portfolio_DrawdownFundValue = '.segment-table > tbody > :nth-child(3) > td > .wijmo-wijinput > .wijmo-wijinput-wrapper > .wijmo-wijinput-input',
        Portfolio_IncomeTypeFromDate = '.segment-table > tbody > :nth-child(5) > td > .wijmo-wijinput > .wijmo-wijinput-wrapper > .wijmo-wijinput-input',
@@ -195,7 +197,19 @@ Client_IsSharedWithCompany = '#ClientDetailsPopup_ShareClient',
        Portfolio_RIExcludeFromLTCalcs = '.portfolio_Adv_RI_ExcludeFromLifetimeCalculations',
 
 
-
+//Holdings
+       Portfolio_HDHistorical = '.portfolio_Adv_CHoldings_Historical',
+       Portfolio_HDFundName = '.FundName',
+       Portfolio_HDAssetType = '.AssetType',
+       Portfolio_HDUnits = '.RowEditUnits',
+       Portfolio_HDCurrentPrice = '.CurrentPrice',
+       Portfolio_HDStatus = '.NewInvestmentStatus',
+       Portfolio_HDAmountInvested = '.AmountInvested',
+       Portfolio_HDCashValue = '.editHoldingsUnitInput',
+       Portfolio_HDPercentage = '.editHoldingsUnitInput',
+       Portfolio_HDOfTotalPlan = '.editHoldingsUnitInput',
+       Portfolio_HDEnableCustomFund = '.editHoldingsPriceInput',
+       Portfolio_HDCustomFundPrice = '.customprice',
 
 //search
 

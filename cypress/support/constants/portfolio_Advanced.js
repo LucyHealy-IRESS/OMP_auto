@@ -1,5 +1,5 @@
 import * as constants from "./constantsSelectors.js";
-import { Portfolio_AssetAllocation } from "./portfolio.js";
+
 export const
 
 //ToDo
@@ -351,6 +351,8 @@ Portfolio_DefinedIncome_Advanced = {
       AccordianSelector: "#PA_DefinedIncome_Accordian",
       AccordianName: 'Defined Income', 
     },
+
+
 },
 
 
@@ -810,6 +812,72 @@ Portfolio_AssetAllocation_Advanced = {
     },
   },
 
+Portfolio_Holdings_Advanced = {
+  FundName: {
+    Selector: constants.Portfolio_HDName,
+    inputType: "FundPicker",
+    AccordianSelector: constants.PortfolioAdv_ACHoldings,
+    AccordianName: "Holdings",
+  },
+  Investment: {
+    Selector: constants.Portfolio_HDAssetType,
+    inputType: "Dropdown",
+    AccordianSelector: constants.PortfolioAdv_ACHoldings,
+    AccordianName: "Holdings",
+  },
+  Units: {
+    Selector: constants.Portfolio_HDUnits,
+    inputType: "Integer",
+    AccordianSelector: constants.PortfolioAdv_ACHoldings,
+    AccordianName: "Holdings",
+  },
+  CurrentPrice: {
+    Selector: constants.Portfolio_HDCurrentPrice,
+    inputType: "Integer",
+    AccordianSelector: constants.PortfolioAdv_ACHoldings,
+    AccordianName: "Holdings",
+  },
+  InvestmentStatus: {
+    Selector: constants.Portfolio_HDStatus,
+    inputType: "Dropdown",
+    AccordianSelector: constants.PortfolioAdv_ACHoldings,
+    AccordianName: "Holdings",
+  },
+  UseCustomFundPrice: {
+    Selector: constants.Portfolio_HDEnableCustomFund,
+    inputType: "Checkbox",
+    AccordianSelector: constants.PortfolioAdv_ACHoldings,
+    AccordianName: "Holdings",
+  },
+  CustomFundPrice: {
+    Selector: constants.Portfolio_HDCustomFundPrice,
+    inputType: "Integer",
+    AccordianSelector: constants.PortfolioAdv_ACHoldings,
+    AccordianName: "Holdings",
+  },
+  FundPicker: {
+    Selector: constants.Portfolio_HDFundName,
+    inputType: "FundPicker",
+    AccordianSelector: constants.PortfolioAdv_ACHoldings,
+    AccordianName: "Holdings",
+  },
+},
+
+Portfolio_DrawdownIncome_Advanced = {
+  AnnualIncome: {
+    Selector: constants.Portfolio_CurrentAnnualPension,
+    inputType: "Integer",
+    AccordianSelector: constants.PortfolioAdv_DrawdownIncome,
+    AccordianName: "Drawdown Income"
+  },
+  IncomeType: {
+    Selector: constants.Portfolio_IncomeType,
+    inputType: "Dropdown",
+    AccordianSelector: constants.PortfolioAdv_DrawdownIncome,
+    AccordianName: "Drawdown Income"
+  }
+}
+
 AllPortfolioAdvancedInputs = {
 ...Portfolio_BasicDetails_Advanced,
 ...Portfolio_OngoingContribution_Advanced,
@@ -822,6 +890,8 @@ AllPortfolioAdvancedInputs = {
 ...Portfolio_SchemeAndTransferDetails_Advanced,
 ...Portfolio_AssumptionsUsed_Advanced,
 ...Portfolio_RetirementIncome_Advanced,
-...Portfolio_AssetAllocation_Advanced
+...Portfolio_AssetAllocation_Advanced,
+...Portfolio_Holdings_Advanced,
+...Portfolio_DrawdownIncome_Advanced
 }
 
