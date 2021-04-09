@@ -4,8 +4,28 @@ cy.GetTextInput = function(xmlObject,xmlInput) {
   var retValue = null;
   var textInput =xmlObject[xmlInput.toString()];
   if (textInput) {
-    retValue = textInput.trim();    
+    retValue = textInput;
+    if(typeof textInput === 'string'){
+      retValue = textInput.trim();   
+    }    
+    else{     
+      retValue = "";
+      function iterateObjectFunc(input) { //we could have a object returned by the API so we can iterate through and grab all the values it contains
+        if(typeof input ==="object"){
+          for (let [key, value] of Object.entries(input)) {
+            retValue += " " + key;
+            if(typeof value ==="object"){
+              iterateObjectFunc(value,retValue)
+            }else{
+              retValue += " " + value;
+            }
+          }
+        }
+      }
+      iterateObjectFunc(textInput);       
+    }
   }
+
   return retValue;
 };
 
@@ -21,7 +41,7 @@ cy.GetTextInput_mapping = function(xmlObject,xmlInput,mapping) {
 //This function takes the client object and creates it using the UI of the client editor
 Cypress.Commands.add("ProcessCreate_UI", (xmlObject, xmlInput, xmlMappings,EditorName) => {
   var XmlInputObject = xmlMappings[xmlInput]; //match the xml tag with the object in Client Inputs,if that xml tag has been passed in we can go ahead and create it
-  if (XmlInputObject) {
+  if (XmlInputObject && XmlInputObject.hasOwnProperty("Selector")) { //if we dont have a selector then we dont need to use as part of the UI testing
     if (XmlInputObject.inputType == "String") {
       var textInput = cy.GetTextInput(xmlObject,xmlInput);
       if (textInput) {
@@ -116,7 +136,7 @@ cy.ProcessAssert_JqueryValCheck_bool = function (Selector,textInput,InputType,xm
 Cypress.Commands.add("ProcessAssert_UI", (xmlObject, xmlInput, xmlMappings,EditorName) => {
   var useCypressStictAsserts = Cypress.env("useCypressStrictAsserts");
   var XmlInputObject = xmlMappings[xmlInput]; //match the xml tag with the object in Client Inputs, if that xml tag has been passed in we can go ahead and assert it
-  if (XmlInputObject) {
+  if (XmlInputObject && XmlInputObject.hasOwnProperty("Selector")) {//if we dont have a selector then we dont need to use as part of the UI testing
     var InputType = XmlInputObject.inputType;
     if ( InputType == "String" || InputType == "Integer" ||InputType == "Dropdown" || InputType == "ClickThenValue") {
       var textInput = cy.GetTextInput(xmlObject,xmlInput);
@@ -173,7 +193,7 @@ Cypress.Commands.add("ProcessAssert_API", (xmlMappings, originalXML, ResponseXML
   for (let xmlInput in originalXML) { //for each xml tag
     var mapping = xmlMappings[xmlInput];
       if(mapping){
-        var InputType = mapping.inputType;
+        var InputType = mapping.inputType;      
         var originalXMLValue = cy.GetTextInput(originalXML,xmlInput,mapping);
         var ResponseXMLValue = cy.GetTextInput_mapping(ResponseXML,xmlInput,mapping); //we may need to use the XMLOverride value to get the data from the response e.g. GrowthRateLow_Nominal is just GrowthRateLow to the api
         if(originalXMLValue && ResponseXMLValue && originalXMLValue == ResponseXMLValue){ //match!         
@@ -194,7 +214,8 @@ Cypress.Commands.add("ProcessAssert_API", (xmlMappings, originalXML, ResponseXML
     cy.PushToLogArray("", "","","","","");
     cy.PushToLogArray("XML returned from Response", "","","","","");
     for (let xmlInput in ResponseXML) {
-      cy.PushToLogArray("", xmlInput,ResponseXML[xmlInput.toString()],"","","");
+      var XMLValue = cy.GetTextInput(ResponseXML,xmlInput);
+      cy.PushToLogArray("", xmlInput,"",XMLValue,"","");
     }
     cy.PushToLogArray("", "","","","","");
 
