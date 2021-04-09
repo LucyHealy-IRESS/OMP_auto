@@ -26,7 +26,7 @@ describe('Engine Iteration', () => {
         if(filenameNo < filenames.length ){ //index check
          var fileNameToProcess = filenames[filenameNo];
           cy.log(fileNameToProcess);
-          cy.ProcessFile_API(ExecutiionFolderLocation,fileNameToProcess,ActionFileNo,reloadBetweenTests);
+          cy.ProcessFile(ExecutiionFolderLocation,fileNameToProcess,ActionFileNo,reloadBetweenTests);
         }      
       });
     });
