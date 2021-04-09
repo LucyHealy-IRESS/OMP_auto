@@ -1,5 +1,6 @@
 import * as Constants from "../../constants/Core.js";
 import * as Portfolio_Smp_Constants from "../../constants/portfolio_Simple.js";
+import * as Portfolio_Adv_Constants from "../../constants/portfolio_Advanced.js";
 import * as PortfolioConstants from "../../constants/portfolio.js";
 
 Cypress.Commands.add("PortfolioInvestment_Assert_1", (EntityData) => {
@@ -51,5 +52,5 @@ Cypress.Commands.add("PortfolioInvestment_Assert_3", (EntityData) => {});
 
 
 Cypress.Commands.add("PortfolioInvestment_Assert_API", (EntityData, ResponseData) => {
-
+    cy.ProcessAssert_API(Portfolio_Adv_Constants.Portfolio_Holdings_Advanced,EntityData,ResponseData,"Holding");
 });

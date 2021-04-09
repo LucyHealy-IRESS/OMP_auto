@@ -207,7 +207,7 @@ Portfolio_ProductCharges_Advanced = {
 Portfolio_GrowthRates_Advanced = {
   GrowthRateBasis: {
       Selector: constants.Portfolio_GrowthRates,
-      inputType: "Dropdown",
+      inputType: "Dropdown_ReadOnly",
       AccordianSelector: constants.PortfolioAdv_ACGrowthRates,
       AccordianName: 'Growth Rates', 
     },
@@ -813,6 +813,7 @@ Portfolio_AssetAllocation_Advanced = {
   },
 
 Portfolio_Holdings_Advanced = {
+  FundID: {}, //only needed by the API
   FundName: {
     Selector: constants.Portfolio_HDName,
     inputType: "FundPicker",

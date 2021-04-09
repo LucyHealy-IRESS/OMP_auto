@@ -21,7 +21,7 @@ cy.GetTextInput_mapping = function(xmlObject,xmlInput,mapping) {
 //This function takes the client object and creates it using the UI of the client editor
 Cypress.Commands.add("ProcessCreate_UI", (xmlObject, xmlInput, xmlMappings,EditorName) => {
   var XmlInputObject = xmlMappings[xmlInput]; //match the xml tag with the object in Client Inputs,if that xml tag has been passed in we can go ahead and create it
-  if (XmlInputObject) {
+  if (XmlInputObject && XmlInputObject.hasOwnProperty("Selector")) { //if we dont have a selector then we dont need to use as part of the UI testing
     if (XmlInputObject.inputType == "String") {
       var textInput = cy.GetTextInput(xmlObject,xmlInput);
       if (textInput) {
@@ -116,7 +116,7 @@ cy.ProcessAssert_JqueryValCheck_bool = function (Selector,textInput,InputType,xm
 Cypress.Commands.add("ProcessAssert_UI", (xmlObject, xmlInput, xmlMappings,EditorName) => {
   var useCypressStictAsserts = Cypress.env("useCypressStrictAsserts");
   var XmlInputObject = xmlMappings[xmlInput]; //match the xml tag with the object in Client Inputs, if that xml tag has been passed in we can go ahead and assert it
-  if (XmlInputObject) {
+  if (XmlInputObject && XmlInputObject.hasOwnProperty("Selector")) {//if we dont have a selector then we dont need to use as part of the UI testing
     var InputType = XmlInputObject.inputType;
     if ( InputType == "String" || InputType == "Integer" ||InputType == "Dropdown" || InputType == "ClickThenValue") {
       var textInput = cy.GetTextInput(xmlObject,xmlInput);
