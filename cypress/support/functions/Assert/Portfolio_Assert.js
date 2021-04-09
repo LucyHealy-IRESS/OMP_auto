@@ -59,11 +59,40 @@ Cypress.Commands.add("ClientPortfoliosListReturned", (callback) => {
       var ResponseXMLObject = cy.getResponseXML(ResponseXMLString); //translates are string of xml into an object we can work with
       if(ResponseXMLObject){
         var EntityDataInvestments = EntityData.Investments;
-          if(EntityDataInvestments){
+          if(EntityDataInvestments){                    
+            var Investments = EntityDataInvestments.PortfolioInvestment;              
+            if (Array.isArray(Investments)) {
+              if(Investments.length == ResponseXMLObject.ClientPortfolio.Investments.PortfolioInvestment.length){
+                Investments = Investments.sort(InvestmentCompare);
+                var responseInvestments = ResponseXMLObject.ClientPortfolio.Investments.PortfolioInvestment.sort(InvestmentCompare);
+                for (var x = 0; x < Investments.length; x++) {
+                  cy.PortfolioInvestment_Assert_API(Investments[x],responseInvestments[x]);
+                }
+              }
+              else{
+                cy.PushToLogArray("Fail - Different no. of holdings", "","","","","");
+              }
+            } else {
+              cy.PortfolioInvestment_Assert_API(Investments,ResponseXMLObject.ClientPortfolio.Investments.PortfolioInvestment);
+            }
            delete EntityData.Investments; //Portfolios to the API are a seperate call, they API will not return portfoliots in the client xml
-           cy.PortfolioInvestment_Assert_API(EntityDataInvestments,ResponseXMLObject.ClientPortfolio.Investments)
           }
         cy.ProcessAssert_API(Portfolio_Adv_Constants.AllPortfolioAdvancedInputs,EntityData,ResponseXMLObject.ClientPortfolio,"Portfolio");
       }   
     });
   });
+
+
+  function InvestmentCompare(a, b) {
+    // Use toUpperCase() to ignore character casing
+    var FundId_A = a.FundID.toUpperCase();
+    var FundId_B = b.FundID.toUpperCase();
+  
+    let comparison = 0;
+    if (FundId_A > FundId_B) {
+      comparison = 1;
+    } else if (FundId_A < FundId_B) {
+      comparison = -1;
+    }
+    return comparison;
+  }

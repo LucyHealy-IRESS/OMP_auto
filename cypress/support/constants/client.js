@@ -4,6 +4,11 @@ export const
 ClientEditorSelector = '#EditClientPopup',
 
 PersonalDetails = {
+  ClientID: {},
+  Status: {},
+  EmploymentStatus:{},
+  CurrentSalary:{},
+  StatePension:{},
   Title: {
     Selector: constants.Client_Title,
     inputType: "String",
