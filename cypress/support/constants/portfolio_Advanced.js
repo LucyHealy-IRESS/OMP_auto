@@ -1,4 +1,5 @@
 import * as constants from "./constantsSelectors.js";
+
 export const
 
 //ToDo
@@ -152,14 +153,26 @@ Portfolio_RiskProfile_Advanced = {
     Risk: {
         Selector: ".TargetRiskProfile",
         inputType: "DropdownIndex",
-        AccordianSelector:".PA_RiskProfile_Accordian",
+        AccordianSelector: constants.PortfolioAdv_ACRiskProfile,
         AccordianName: 'Risk Profile', 
       },
     RiskEstBy: {
         Selector: ".EstablishedBy",
         inputType: "DropdownIndex",
-        AccordianSelector:".PA_RiskProfile_Accordian",
+         AccordianSelector: constants.PortfolioAdv_ACRiskProfile,
         AccordianName: 'Risk Profile', 
+    },
+    RiskCategory: {
+      Selector: ".CurrentRisk ",
+      inputType: "DropdownIndex",
+       AccordianSelector: constants.PortfolioAdv_ACRiskProfile,
+      AccordianName: 'Risk Profile', 
+    },
+    RiskMorningstar: {
+      Selector: ".TargetRiskProfileRA",
+      inputType: "DropdownIndex",
+       AccordianSelector: constants.PortfolioAdv_ACRiskProfile,
+      AccordianName: 'Risk Profile', 
     }
 },
 
@@ -338,6 +351,8 @@ Portfolio_DefinedIncome_Advanced = {
       AccordianSelector: "#PA_DefinedIncome_Accordian",
       AccordianName: 'Defined Income', 
     },
+
+
 },
 
 
@@ -640,25 +655,227 @@ Portfolio_SchemeAndTransferDetails_Advanced = {
     },
   },    
 
-Portfolio_RetirementIncome_Advanced = {
-  RI_RetirementIncome: {
-      Selector: ".portfolio_Adv_RI_RetirementIncome",
-      inputType: "Dropdown",
-      AccordianSelector: "#PA_RetirementIncome_Accordian",
-      AccordianName: 'Retirement Income', 
-    },
-  RI_AvailableFrom: {
-      Selector: ".portfolio_Adv_RI_AvailableFrom",
-      inputType: "Dropdown",
-      AccordianSelector: "#PA_RetirementIncome_Accordian",
-      AccordianName: 'Retirement Income', 
-    },
+  Portfolio_RetirementIncome_Advanced = {
+    RI_RetirementIncome: {
+        Selector: constants.Portfolio_RIRetirementIncome,
+        inputType: "Dropdown",
+        AccordianSelector: constants.PortfolioAdv_ACRetirementIncome,
+        AccordianName: "Retirement Income",
+      },
+    RI_PensionIncomeType: {
+        Selector: constants.Portfolio_RIPensionIncomeType,
+        inputType: "Dropdown",
+        AccordianSelector: constants.PortfolioAdv_ACRetirementIncome,
+        AccordianName: "Retirement Income",
+      },
+    RI_Product: {
+        Selector: constants.Portfolio_RINewProductToUse,
+        inputType: "Dropdown",
+        AccordianSelector: constants.PortfolioAdv_ACRetirementIncome,
+        AccordianName: "Retirement Income",
+      },
+    RI_AnnualIncome: {
+        Selector: constants.Portfolio_RIAnnualIncome,
+        inputType: "Dropdown",
+        AccordianSelector: constants.PortfolioAdv_ACRetirementIncome,
+        AccordianName: "Retirement Income",
+      },
+    RI_AnnualAmountInTodaysTerms: {
+        Selector: constants.Portfolio_RIAnnualIncomeInTodaysTerms,
+        inputType: "Integer",
+        AccordianSelector: constants.PortfolioAdv_ACRetirementIncome,
+        AccordianName: "Retirement Income",
+      },
+    RI_AnnualPercentage: {
+        Selector: constants.Portfolio_RIAnnualPercentage,
+        inputType: "Integer",
+        AccordianSelector: constants.PortfolioAdv_ACRetirementIncome,
+        AccordianName: "Retirement Income",
+      },
+    RI_IncomeEscalation: {
+        Selector: constants.Portfolio_RIIncomeEscalation,
+        inputType: "Dropdown",
+        AccordianSelector: constants.PortfolioAdv_ACRetirementIncome,
+        AccordianName: "Retirement Income",
+      },
+    RI_IncomeEscalationOther: {
+        Selector: constants.Portfolio_RIOtherEscalation,
+        inputType: "Integer",
+        AccordianSelector: constants.PortfolioAdv_ACRetirementIncome,
+        AccordianName: "Retirement Income",
+      },
+    RI_PCLSStarting: {
+        Selector: constants.Portfolio_RIStarting,
+        inputType: "Dropdown",
+        AccordianSelector: constants.PortfolioAdv_ACRetirementIncome,
+        AccordianName: "Retirement Income",
+      },
+    RI_PCLSAge: {
+        Selector: constants.Portfolio_RIStartingAge,
+        inputType: "Integer",
+        AccordianSelector: constants.PortfolioAdv_ACRetirementIncome,
+        AccordianName: "Retirement Income",
+      },
+    RI_AvailableFrom: {
+        Selector: constants.Portfolio_RIAvailableFrom,
+        inputType: "Dropdown",
+        AccordianSelector: constants.PortfolioAdv_ACRetirementIncome,
+        AccordianName: "Retirement Income",
+      },
+    RI_AvailableFromAge: {
+        Selector: constants.Portfolio_RIAvailableFromAge,
+        inputType: "Integer",
+        AccordianSelector: constants.PortfolioAdv_ACRetirementIncome,
+        AccordianName: "Retirement Income",
+      },
+    RI_PCLSAvailable: {
+        Selector: constants.Portfolio_RIPCLSAvailable,
+        inputType: "Dropdown",
+        AccordianSelector: constants.PortfolioAdv_ACRetirementIncome,
+        AccordianName: "Retirement Income",
+      },
+    RI_PCLSAvailableOther: {
+        Selector: constants.Portfolio_RIOtherPercentage,
+        inputType: "Integer",
+        AccordianSelector: constants.PortfolioAdv_ACRetirementIncome,
+        AccordianName: "Retirement Income",
+      },
+    RI_PCLSTaken: {
+        Selector: constants.Portfolio_RIPCLSTaken,
+        inputType: "Dropdown",
+        AccordianSelector: constants.PortfolioAdv_ACRetirementIncome,
+        AccordianName: "Retirement Income",
+      },
+    RI_PCLSAmountInTodaysTerms: {
+        Selector: constants.Portfolio_RIAnnualAmountTodaysTerms,
+        inputType: "Integer",
+        AccordianSelector: constants.PortfolioAdv_ACRetirementIncome,
+        AccordianName: "Retirement Income",
+      },
+    RI_PCLSStarting: {
+        Selector: constants.Portfolio_RIPCLSStarting,
+        inputType: "Dropdown",
+        AccordianSelector: constants.PortfolioAdv_ACRetirementIncome,
+        AccordianName: "Retirement Income",
+      },
+    RI_PCLSAge: {
+        Selector: constants.Portfolio_RIPCLSStartingAge,
+        inputType: "Integer",
+        AccordianSelector: constants.PortfolioAdv_ACRetirementIncome,
+        AccordianName: "Retirement Income",
+      },
+    RI_PCLSWithdrawalEscalation: {
+        Selector: constants.Portfolio_RIWithdrawalEscalation,
+        inputType: "Dropdown",
+        AccordianSelector: constants.PortfolioAdv_ACRetirementIncome,
+        AccordianName: "Retirement Income",
+      },
+    RI_PCLSOtherEscalation: {
+        Selector: constants.Portfolio_RIWithdrawalOtherEscalation,
+        inputType: "Integer",
+        AccordianSelector: constants.PortfolioAdv_ACRetirementIncome,
+        AccordianName: "Retirement Income",
+      },
     ExcludeFromLifetimeAllowanceCalculations: {
-      Selector: ".ExcludeFromLifetimeAllowanceCalculations",
-      inputType: "Checkbox",
-      AccordianSelector: "#PA_RetirementIncome_Accordian",
-      AccordianName: 'Retirement Income', 
+        Selector: constants.Portfolio_RIExcludeFromLTCalcs,
+        inputType: "Checkbox",
+        AccordianSelector: constants.PortfolioAdv_ACRetirementIncome,
+        AccordianName: "Retirement Income",
+      },
     },
+
+    
+Portfolio_AssetAllocation_Advanced = {
+  Category_Name: {
+      Selector: constants.Portfolio_AATier1,
+      inputType: "Dropdown",
+      AccordianSelector: constants.PortfolioAdv_ACAssetAllocation,
+      AccordianName: "Asset Allocation",
+    },
+  Subcategory_Name: {
+      Selector: constants.Portfolio_AATier2,
+      inputType: "Dropdown",
+      AccordianSelector: constants.PortfolioAdv_ACAssetAllocation,
+      AccordianName: "Asset Allocation",
+    },
+  Subcategory_Two_Name: {
+      Selector: constants.Portfolio_AATier3,
+      inputType: "Dropdown",
+      AccordianSelector: constants.PortfolioAdv_ACAssetAllocation,
+      AccordianName: "Asset Allocation",
+    },
+  Value: {
+      Selector: constants.Portfolio_AAAllocation,
+      inputType: "Integer",
+      AccordianSelector: constants.PortfolioAdv_ACAssetAllocation,
+      AccordianName: "Asset Allocation",
+    },
+  },
+
+Portfolio_Holdings_Advanced = {
+  FundName: {
+    Selector: constants.Portfolio_HDName,
+    inputType: "FundPicker",
+    AccordianSelector: constants.PortfolioAdv_ACHoldings,
+    AccordianName: "Holdings",
+  },
+  Investment: {
+    Selector: constants.Portfolio_HDAssetType,
+    inputType: "Dropdown",
+    AccordianSelector: constants.PortfolioAdv_ACHoldings,
+    AccordianName: "Holdings",
+  },
+  Units: {
+    Selector: constants.Portfolio_HDUnits,
+    inputType: "Integer",
+    AccordianSelector: constants.PortfolioAdv_ACHoldings,
+    AccordianName: "Holdings",
+  },
+  CurrentPrice: {
+    Selector: constants.Portfolio_HDCurrentPrice,
+    inputType: "Integer",
+    AccordianSelector: constants.PortfolioAdv_ACHoldings,
+    AccordianName: "Holdings",
+  },
+  InvestmentStatus: {
+    Selector: constants.Portfolio_HDStatus,
+    inputType: "Dropdown",
+    AccordianSelector: constants.PortfolioAdv_ACHoldings,
+    AccordianName: "Holdings",
+  },
+  UseCustomFundPrice: {
+    Selector: constants.Portfolio_HDEnableCustomFund,
+    inputType: "Checkbox",
+    AccordianSelector: constants.PortfolioAdv_ACHoldings,
+    AccordianName: "Holdings",
+  },
+  CustomFundPrice: {
+    Selector: constants.Portfolio_HDCustomFundPrice,
+    inputType: "Integer",
+    AccordianSelector: constants.PortfolioAdv_ACHoldings,
+    AccordianName: "Holdings",
+  },
+  FundPicker: {
+    Selector: constants.Portfolio_HDFundName,
+    inputType: "FundPicker",
+    AccordianSelector: constants.PortfolioAdv_ACHoldings,
+    AccordianName: "Holdings",
+  },
+},
+
+Portfolio_DrawdownIncome_Advanced = {
+  AnnualIncome: {
+    Selector: constants.Portfolio_CurrentAnnualPension,
+    inputType: "Integer",
+    AccordianSelector: constants.PortfolioAdv_DrawdownIncome,
+    AccordianName: "Drawdown Income"
+  },
+  IncomeType: {
+    Selector: constants.Portfolio_IncomeType,
+    inputType: "Dropdown",
+    AccordianSelector: constants.PortfolioAdv_DrawdownIncome,
+    AccordianName: "Drawdown Income"
+  }
 },
 
 AllPortfolioAdvancedInputs = {
@@ -672,6 +889,9 @@ AllPortfolioAdvancedInputs = {
 ...Portfolio_DefinedIncome_Advanced,
 ...Portfolio_SchemeAndTransferDetails_Advanced,
 ...Portfolio_AssumptionsUsed_Advanced,
-...Portfolio_RetirementIncome_Advanced
+...Portfolio_RetirementIncome_Advanced,
+...Portfolio_AssetAllocation_Advanced,
+...Portfolio_Holdings_Advanced,
+...Portfolio_DrawdownIncome_Advanced
 }
 

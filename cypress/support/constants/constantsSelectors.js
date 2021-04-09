@@ -70,7 +70,12 @@ Client_IsSharedWithCompany = '#ClientDetailsPopup_ShareClient',
        PortfolioAdv_ACOngoingContributions = '.PA_Ongoing_Accordian',
        PortfolioAdv_ACPurpose = '.PA_Purpose_Accordian',
        PortfolioAdv_ACProductCharges = '.PA_Charges_Accordian', // not there yet
-       PortfolioAdv_ACGrowthRates = '#.PA_GrowthRates_Accordian',
+       PortfolioAdv_ACGrowthRates = '.PA_GrowthRates_Accordian',
+       PortfolioAdv_ACRiskProfile = '.PA_RiskProfile_Accordian',
+       PortfolioAdv_ACRetirementIncome = '.PA_RetirementIncome_Accordian',
+       PortfolioAdv_ACAssetAllocation = '.PA_AssetAllocations_Accordian',
+       PortfolioAdv_ACHoldings = '.PA_ClientHoldings_Accordian',
+       PortfolioAdv_DrawdownIncome = '.PA_DrawdownIncome_Accordian',
        
 
 //Portfolio_BasicDetailsInputs	
@@ -151,14 +156,14 @@ Client_IsSharedWithCompany = '#ClientDetailsPopup_ShareClient',
        Portfolio_AdviserCharge = '.wijmo-wijaccordion-content-active > [style="height:300px"] > #portfolio_info_table > tbody > :nth-child(4) > td > .wijmo-wijinput > .wijmo-wijinput-wrapper > .wijmo-wijinput-input',
        
 //Portfolio_AssetAllocation	
-       Portfolio_Tier1 = '.AssetAllocation1',
-       Portfolio_Tier2 = '.AssetAllocation2',
-       Portfolio_Tier3 = '.AssetAllocation3',
-       Portfolio_Allocation = '[style="position: relative; float: left; width: 18%; padding: 0; margin: 0; text-align: center; height: 40px"] > .wijmo-wijinput > .wijmo-wijinput-wrapper > .wijmo-wijinput-input',
+       Portfolio_AATier1 = '.AssetAllocation1',
+       Portfolio_AATier2 = '.AssetAllocation2',
+       Portfolio_AATier3 = '.AssetAllocation3',
+       Portfolio_AAAllocation = '[style="position: relative; float: left; width: 18%; padding: 0; margin: 0; text-align: center; height: 40px"] > .wijmo-wijinput > .wijmo-wijinput-wrapper > .wijmo-wijinput-input',
        
 //Portfolio_DrawdownIncome	
-       Portfolio_CurrentAnnualPension = '#drawdownIncomeTable > :nth-child(1) > :nth-child(1) > td > .wijmo-wijinput > .wijmo-wijinput-wrapper > .wijmo-wijinput-input',
-       Portfolio_IncomeType = '#drawdownIncomeTable > :nth-child(1) > :nth-child(2) > td > .wijmo-wijcombobox > .wijmo-wijcombobox-wrapper > .wijmo-wijcombobox-input',
+       Portfolio_CurrentAnnualPension = '.portfolio_Adv_DrawInc_CurrentAnnualPensionIncome',
+       Portfolio_IncomeType = '.portfolio_Adv_DrawInc_IncomeType',
        Portfolio_Date = '.segment-table > tbody > :nth-child(2) > td > .wijmo-wijinput > .wijmo-wijinput-wrapper > .wijmo-wijinput-input',
        Portfolio_DrawdownFundValue = '.segment-table > tbody > :nth-child(3) > td > .wijmo-wijinput > .wijmo-wijinput-wrapper > .wijmo-wijinput-input',
        Portfolio_IncomeTypeFromDate = '.segment-table > tbody > :nth-child(5) > td > .wijmo-wijinput > .wijmo-wijinput-wrapper > .wijmo-wijinput-input',
@@ -166,7 +171,46 @@ Client_IsSharedWithCompany = '#ClientDetailsPopup_ShareClient',
        Portfolio_Paid = '.segment-table > tbody > :nth-child(6) > td > .wijmo-wijinput > .wijmo-wijinput-wrapper > .wijmo-wijinput-input',
        Portfolio_LumpSumType = ':nth-child(7) > td > .wijmo-wijcombobox > .wijmo-wijcombobox-wrapper > .wijmo-wijcombobox-input',
        Portfolio_LumpSumAmount = '.segment-table > tbody > :nth-child(8) > td > .wijmo-wijinput > .wijmo-wijinput-wrapper > .wijmo-wijinput-input',
-       
+
+
+//Retirement Income
+       Portfolio_RIRetirementIncome = '.portfolio_Adv_RI_RetirementIncome',
+       Portfolio_RIPensionIncomeType = '.portfolio_Adv_RI_PensionIncomeType',
+       Portfolio_RINewProductToUse = '.portfolio_Adv_RI_NewProductToUse',
+       Portfolio_RIAnnualIncome = '.portfolio_Adv_RI_AnnualIncome',
+       Portfolio_RIAnnualIncomeInTodaysTerms = '.portfolio_Adv_RI_AnnualAmountInTodaysTerms',
+       Portfolio_RIAnnualPercentage = '.portfolio_Adv_RI_AnnualPercentage',
+       Portfolio_RIIncomeEscalation = '.portfolio_Adv_RI_IncomeEscalation',
+       Portfolio_RIOtherEscalation = '.portfolio_Adv_RI_EscalationOther',
+       Portfolio_RIStarting = '.portfolio_Adv_RI_Starting',
+       Portfolio_RIStartingAge = '.portfolio_Adv_RI_StartingAge',
+       Portfolio_RIAvailableFrom = '.portfolio_Adv_RI_AvailableFrom',
+       Portfolio_RIAvailableFromAge = '.RI_AvailableFromAge_tooltip',
+       Portfolio_RIPCLSAvailable = '.portfolio_Adv_RI_PCLSAvailable',
+       Portfolio_RIOtherPercentage = '.portfolio_Adv_RI_Other',
+       Portfolio_RIPCLSTaken = '.portfolio_Adv_RI_PCLSTaken',
+       Portfolio_RIAnnualAmountTodaysTerms = '.portfolio_Adv_RI_AnualAmountToday',
+       Portfolio_RIPCLSStarting = '.portfolio_Adv_RI_PCLSStarting',
+       Portfolio_RIPCLSStartingAge = '.portfolio_Adv_RI_Age',
+       Portfolio_RIWithdrawalEscalation = '.portfolio_Adv_RI_WithdrawalEsc',
+       Portfolio_RIWithdrawalOtherEscalation = '.portfolio_Adv_RI_WithdrawalEscOther',
+       Portfolio_RIExcludeFromLTCalcs = '.portfolio_Adv_RI_ExcludeFromLifetimeCalculations',
+
+
+//Holdings
+       Portfolio_HDHistorical = '.portfolio_Adv_CHoldings_Historical',
+       Portfolio_HDFundName = '.FundName',
+       Portfolio_HDAssetType = '.AssetType',
+       Portfolio_HDUnits = '.RowEditUnits',
+       Portfolio_HDCurrentPrice = '.CurrentPrice',
+       Portfolio_HDStatus = '.NewInvestmentStatus',
+       Portfolio_HDAmountInvested = '.AmountInvested',
+       Portfolio_HDCashValue = '.editHoldingsUnitInput',
+       Portfolio_HDPercentage = '.editHoldingsUnitInput',
+       Portfolio_HDOfTotalPlan = '.editHoldingsUnitInput',
+       Portfolio_HDEnableCustomFund = '.editHoldingsPriceInput',
+       Portfolio_HDCustomFundPrice = '.customprice',
+
 //search
 
        searchTextMatch = '.TextMatch',
