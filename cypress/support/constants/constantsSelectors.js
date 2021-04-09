@@ -24,7 +24,6 @@ Client_StatePension = '',
 Client_Address1 = '#ClientDetailsPopup_Address1',
 Client_City = '#ClientDetailsPopup_Town',
 Client_County = '#ClientDetailsPopup_County',
-Client_Postcode = '#ClientDetailsPopup_Postcode',
 Client_Address2 = '#ClientDetailsPopup_Address2',
 Client_Address3 = '#ClientDetailsPopup_Address3',
 Client_Email = '#ClientDetailsPopup_Email',
@@ -42,6 +41,7 @@ Client_Siblings = '#ClientDetailsPopup_Siblings',
 //ClientHealth	
 Client_HealthStatus = '#ClientDetailsPopup_HealthIssues',
 Client_SmokerStatus = '#ClientDetailsPopup_Smoker',
+Client_Postcode = '#ClientDetailsPopup_Health_Postcode',
 
 //Tax	
 Client_TaxRegion = '#ClientDetailsPopup_TaxRegion',

@@ -1,0 +1,34 @@
+<Root>
+<Clients>
+	<Client>
+			<ClientID>Client23</ClientID>
+			<Title>Mr</Title>
+			<Firstname>Tim</Firstname>
+			<Surname>Thompson-Three</Surname>
+			<DateOfBirth>1981-03-23</DateOfBirth>
+			<Status>Current</Status>			
+			<Gender>Male</Gender>
+			<EmploymentStatus>Employed</EmploymentStatus>
+			<Address1>11 Henry Laver</Address1>
+			<City>Colchester</City>
+			<County>Essex</County>
+			<Postcode>CO3 3AF</Postcode>
+			<Portfolios>
+				<Portfolio>
+					<PortfolioID>Portfolio01</PortfolioID>
+					<ClientID>Client23</ClientID>
+					<Reference>Portfolio01</Reference>
+					<Status>Previous</Status>
+					<ProductID>15</ProductID>
+					<ProviderID>BBBBBBBB-5555-0000-0000-000000000013</ProviderID>
+					<DefinedIncomeAnnualIncome>15000</DefinedIncomeAnnualIncome>
+					<DefinedIncomeEscalationRate>0</DefinedIncomeEscalationRate>
+					<DefinedIncomeStarting>At Age</DefinedIncomeStarting>
+					<DefinedIncomeStartingAge>68</DefinedIncomeStartingAge>
+					<DefinedIncomeEnding>At Age</DefinedIncomeEnding>
+					<DefinedIncomeEndingAge>80</DefinedIncomeEndingAge>
+				</Portfolio>
+			</Portfolios>
+	</Client>
+</Clients>
+</Root>
