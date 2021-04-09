@@ -5,6 +5,10 @@ export const
 //ToDo
 //Import,Intelligent Office ID,Xplan ID,Transact Key,Drawdown Type,Account Number
 Portfolio_BasicDetails_Advanced = {
+  PortfolioID:{},
+  ClientID:{},
+  third_party_tag: {},
+  RetirementAge:{},
     ProductID: {
         Selector: ".ProductDrpDwn",
         inputType: "ProductDropdown",
@@ -814,6 +818,9 @@ Portfolio_AssetAllocation_Advanced = {
 
 Portfolio_Holdings_Advanced = {
   FundID: {}, //only needed by the API
+  TotalValue:{},
+  InvestmentType:{},
+  Status:{},
   FundName: {
     Selector: constants.Portfolio_HDName,
     inputType: "FundPicker",

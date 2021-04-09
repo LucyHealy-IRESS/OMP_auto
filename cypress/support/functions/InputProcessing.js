@@ -4,8 +4,28 @@ cy.GetTextInput = function(xmlObject,xmlInput) {
   var retValue = null;
   var textInput =xmlObject[xmlInput.toString()];
   if (textInput) {
-    retValue = textInput.trim();    
+    retValue = textInput;
+    if(typeof textInput === 'string'){
+      retValue = textInput.trim();   
+    }    
+    else{     
+      retValue = "";
+      function iterateObjectFunc(input) { //we could have a object returned by the API so we can iterate through and grab all the values it contains
+        if(typeof input ==="object"){
+          for (let [key, value] of Object.entries(input)) {
+            retValue += " " + key;
+            if(typeof value ==="object"){
+              iterateObjectFunc(value,retValue)
+            }else{
+              retValue += " " + value;
+            }
+          }
+        }
+      }
+      iterateObjectFunc(textInput);       
+    }
   }
+
   return retValue;
 };
 
@@ -173,7 +193,7 @@ Cypress.Commands.add("ProcessAssert_API", (xmlMappings, originalXML, ResponseXML
   for (let xmlInput in originalXML) { //for each xml tag
     var mapping = xmlMappings[xmlInput];
       if(mapping){
-        var InputType = mapping.inputType;
+        var InputType = mapping.inputType;      
         var originalXMLValue = cy.GetTextInput(originalXML,xmlInput,mapping);
         var ResponseXMLValue = cy.GetTextInput_mapping(ResponseXML,xmlInput,mapping); //we may need to use the XMLOverride value to get the data from the response e.g. GrowthRateLow_Nominal is just GrowthRateLow to the api
         if(originalXMLValue && ResponseXMLValue && originalXMLValue == ResponseXMLValue){ //match!         
@@ -194,7 +214,8 @@ Cypress.Commands.add("ProcessAssert_API", (xmlMappings, originalXML, ResponseXML
     cy.PushToLogArray("", "","","","","");
     cy.PushToLogArray("XML returned from Response", "","","","","");
     for (let xmlInput in ResponseXML) {
-      cy.PushToLogArray("", xmlInput,ResponseXML[xmlInput.toString()],"","","");
+      var XMLValue = cy.GetTextInput(ResponseXML,xmlInput);
+      cy.PushToLogArray("", xmlInput,"",XMLValue,"","");
     }
     cy.PushToLogArray("", "","","","","");
 
