@@ -1,0 +1,141 @@
+<Root>
+<Clients>
+	<Client>
+			<ClientID>
+				CLIENT_VV05
+			</ClientID>
+			<Title>
+				Mrs
+			</Title>
+			<Firstname>
+				NewClientSIPPPlan
+			</Firstname>
+			<Surname>
+				SharesPlan VV05
+			</Surname>
+			<DateOfBirth>
+				1950-04-30
+			</DateOfBirth>
+			<Status>
+				Current
+			</Status>
+			<Gender>
+				FeMale
+			</Gender>
+			<EmploymentStatus>
+				UnEmployed
+			</EmploymentStatus>
+			<Address1>
+				30 Brickmakers Lane
+			</Address1>
+			<City>
+				Colchester
+			</City>
+			<County>
+				Essex
+			</County>
+			<Postcode>
+				CO4 3EA
+			</Postcode>
+			<CurrentSalary>
+				30446
+			</CurrentSalary>
+			<StatePension>
+				9339.20
+			</StatePension>
+			
+			<Portfolios>
+				<Portfolio>
+					<PortfolioID>
+						CLIENT_VV05_SIPPVS05
+					</PortfolioID>
+					<ClientID>
+						CLIENT_VV05
+					</ClientID>
+					<Reference>
+						SIPP
+					</Reference>
+					<third_party_tag>
+						T4A
+					</third_party_tag>
+					<Status>
+						Current
+					</Status>
+					<ProductID>
+						2
+					</ProductID>
+					<ProviderID>
+						BBBBBBBB-5555-0000-0000-000000000046
+					</ProviderID>
+					<Investments>
+						<PortfolioInvestment>
+							<FundID>
+								IE00B53SZB19
+							</FundID>
+							<FundName>
+								iShares NASDAQ 100 ETF USD Acc
+							</FundName>
+							<Units>
+								98.733
+							</Units>
+							<TotalValue>
+								55000.00
+							</TotalValue>
+							<InvestmentType>
+								Fund
+							</InvestmentType>
+							<Status>
+								Current
+							</Status>
+						</PortfolioInvestment>
+						<PortfolioInvestment>
+							<FundID>
+								
+							</FundID>
+							<FundName>
+								Generic Cash Fund
+							</FundName>
+							<Units>
+								10000.000
+							</Units>
+							<TotalValue>
+								10000.00
+							</TotalValue>
+							<InvestmentType>
+								Fund
+							</InvestmentType>
+							<Status>
+								Current
+							</Status>
+						</PortfolioInvestment>
+					</Investments>
+					<RetirementAge>
+						67
+					</RetirementAge>
+					<GrowthRateBasis>
+						Industry Standard Growth Rates
+					</GrowthRateBasis>
+					<OngoingContsPremium>
+						5000.00
+					</OngoingContsPremium>
+					<OngoingContsType>
+						Annually
+					</OngoingContsType>
+					<MaturityValueLow>
+						0
+					</MaturityValueLow>
+					<MaturityValueMid>
+						0
+					</MaturityValueMid>
+					<MaturityValueHigh>
+						0
+					</MaturityValueHigh>
+					<TotalMemberContributionsToScheme>
+						10000
+					</TotalMemberContributionsToScheme>
+				</Portfolio>
+				
+		 </Portfolios>
+	</Client>
+</Clients>
+</Root>

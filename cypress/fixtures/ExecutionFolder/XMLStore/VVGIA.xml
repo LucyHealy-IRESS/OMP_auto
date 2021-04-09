@@ -1,0 +1,141 @@
+<Root>
+<Clients>
+	<Client>
+			<ClientID>
+				CLIENT_VV03
+			</ClientID>
+			<Title>
+				Mrs
+			</Title>
+			<Firstname>
+				NewClientGIAPlan
+			</Firstname>
+			<Surname>
+				GIAPlan VV03
+			</Surname>
+			<DateOfBirth>
+				1980-02-29
+			</DateOfBirth>
+			<Status>
+				Current
+			</Status>
+			<Gender>
+				FeMale
+			</Gender>
+			<EmploymentStatus>
+				Employed
+			</EmploymentStatus>
+			<Address1>
+				21 Brickmakers Lane
+			</Address1>
+			<City>
+				Chelmsford
+			</City>
+			<County>
+				Essex
+			</County>
+			<Postcode>
+				CH1 4CE
+			</Postcode>
+			<CurrentSalary>
+				66123.45
+			</CurrentSalary>
+			<StatePension>
+				9339.20
+			</StatePension>
+			
+			<Portfolios>
+				<Portfolio>
+					<PortfolioID>
+						CLIENT_VV03_GIAVS03
+					</PortfolioID>
+					<ClientID>
+						CLIENT_VV03
+					</ClientID>
+					<Reference>
+						AJbell GIA
+					</Reference>
+					<third_party_tag>
+						T4A
+					</third_party_tag>
+					<Status>
+						Current
+					</Status>
+					<ProductID>
+						12
+					</ProductID>
+					<ProviderID>
+						BBBBBBBB-5555-0000-0000-000000000046
+					</ProviderID>
+					<Investments>
+						<PortfolioInvestment>
+							<FundID>
+								GB00BJ04JQ34
+							</FundID>
+							<FundName>
+								Invesco Managed Income UK Y Acc
+							</FundName>
+							<Units>
+								23487.492
+							</Units>
+							<TotalValue>
+								67899.99
+							</TotalValue>
+							<InvestmentType>
+								Fund
+							</InvestmentType>
+							<Status>
+								Current
+							</Status>
+						</PortfolioInvestment>
+						<PortfolioInvestment>
+							<FundID>
+								GB00BJ04H147
+							</FundID>
+							<FundName>
+								Invesco Global Equity Inc UK Y Acc
+							</FundName>
+							<Units>
+								9217.738
+							</Units>
+							<TotalValue>
+								34000.55
+							</TotalValue>
+							<InvestmentType>
+								Fund
+							</InvestmentType>
+							<Status>
+								Current
+							</Status>
+						</PortfolioInvestment>
+					</Investments>
+					<RetirementAge>
+						65
+					</RetirementAge>
+					<GrowthRateBasis>
+						Industry Standard Growth Rates
+					</GrowthRateBasis>
+					<OngoingContsPremium>
+						5000.00
+					</OngoingContsPremium>
+					<OngoingContsType>
+						Annually
+					</OngoingContsType>
+					<MaturityValueLow>
+						0
+					</MaturityValueLow>
+					<MaturityValueMid>
+						0
+					</MaturityValueMid>
+					<MaturityValueHigh>
+						0
+					</MaturityValueHigh>
+					<TotalMemberContributionsToScheme>
+						10000
+					</TotalMemberContributionsToScheme>
+				</Portfolio>
+				
+		 </Portfolios>
+	</Client>
+</Clients>
+</Root>
