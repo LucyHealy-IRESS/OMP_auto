@@ -22,7 +22,7 @@ Cypress.Commands.add("ProcessFile_API", (ExecutiionFolderLocation,fileName) => {
       
   //3 Roll off what we have created
   cy.wait(1000);
-  //cy.ProcessXMLFile_API(fileLocation,constants.RunType_Delete,"API_ActionRequired_Delete");
+  cy.ProcessXMLFile_API(fileLocation,constants.RunType_Delete,"API_ActionRequired_Delete");
          
 });
 
@@ -178,34 +178,6 @@ Cypress.Commands.add("API_Retreive", (xml_Payload) => {
 
 });
 
-
-// Cypress.Commands.add("getResponseXMLData", (responseXML, attibute) => {
-
-//   var retValue = "";
-
-//   var callback = function (err, result) {
-//     retValue = result.Envelope.Body.ProfilerResponse.ProfilerResult.ResponseXMLData;
-//   };
-
-//   cy.xml2JS_parseString(responseXML, callback);
-
-//   return retValue;
-// });
-
-// Cypress.Commands.add("getResponseXMLData_ClientRetreive", (responseXML, attibute) => {
-
-//   var retValue = "";
-
-//   var callback = function (err, result) {
-//     var clientData = result.Response.Client;
-//     retValue = clientData[attibute];
-//   };
-
-//   cy.xml2JS_parseString(responseXML, callback);
-
-//   return retValue;
-// });
-
 //This function uses the xml2js library, it receives xml as a string and converts it into an object
 cy.xml2JS_parseString = function (responseXML, callback) {
   var retValue = "";
@@ -225,6 +197,29 @@ cy.xml2JS_parseString = function (responseXML, callback) {
   return retValue;
 };
 
+cy.ReplaceAutomationMappingOverrides = function(mappings,xml){
+  for (let mapping in mappings) { //for each xml tag
+    var mappingData = mappings[mapping];
+    if(mappingData.hasOwnProperty("XMLOverride")){      
+       xml =  xml.replace(new RegExp(mapping, 'g'),mappingData.XMLOverride);// xml.replace(mapping,mappingData.XMLOverride);
+    }
+  }
+  return xml;
+}
+
+// cy.RepaceAutomationMappingOverrides_Object = function(mappings,ObjectData){
+//     for (let mapping in mappings) { //for each xml tag
+//       var mappingData = mappings[mapping];
+//       if(ObjectData[mapping]){
+//         if(mappingData.hasOwnProperty("XMLOverride")){
+//           var EntityValue = ObjectData[mapping];
+//           ObjectData[mappingData.XMLOverride] = EntityValue; 
+//           delete ObjectData[mapping];
+//         }
+//       }     
+//     }
+//     return ObjectData;
+// }
 
 cy.getRequestResponseXML = function (responseXML, PropertyName) {
   var retValue = "";
