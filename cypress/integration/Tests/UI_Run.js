@@ -1,7 +1,7 @@
 import * as constants from "../../support/constants/Core.js";
 
 var NoOfActionFiles = Array(1).fill().map((_, i) => i);// Array(2).fill().map((_, i) => i);
-var filenameArray = Array(36).fill().map((_, i) => i); //Due to Cypress limitations we can get the files in the folder and iterate that number of times. 
+var filenameArray = Array(1).fill().map((_, i) => i); //Due to Cypress limitations we can get the files in the folder and iterate that number of times. 
 //Instead we put a number here we know is greater than the number of xml files. Only tests will run that have an associated xml file, it wont crash!
 
 describe('Engine Iteration', () => {
