@@ -31,6 +31,16 @@
 				    <OngoingContsEscalationRate>Other</OngoingContsEscalationRate>
 				    <OngoingContsEscalationOther>1.50</OngoingContsEscalationOther>
 				    <OngoingContsIncreasingEvery>April</OngoingContsIncreasingEvery>
+					<Investments>
+						<PortfolioInvestment>
+							<FundID>GB00BJ04HS18</FundID>
+							<FundName>Invesco China Equity Fund UK Y Acc</FundName>
+							<Units>9999.081</Units>
+							<TotalValue>10000.00</TotalValue>
+							<InvestmentType>Fund</InvestmentType>
+							<Status>Current</Status>
+						</PortfolioInvestment>
+					</Investments>
 			</Portfolio>
             <Portfolio>
 				<PortfolioID>SecurityClient06_Portfolio02</PortfolioID>

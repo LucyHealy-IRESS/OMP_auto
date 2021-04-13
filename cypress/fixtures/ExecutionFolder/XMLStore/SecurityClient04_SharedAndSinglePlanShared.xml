@@ -40,6 +40,16 @@
 					<Reference>CompanyASecurityClientFourPortfolio02</Reference>
 					<ProductID>5</ProductID>
 					<IsSharedWithCompany>False</IsSharedWithCompany>
+					<Investments>
+						<PortfolioInvestment>
+							<FundID>GB00B8D7RH96</FundID>
+							<FundName>BlackRock Consensus 85 A Acc</FundName>
+							<Units>9999.081</Units>
+							<TotalValue>10000.00</TotalValue>
+							<InvestmentType>Fund</InvestmentType>
+							<Status>Current</Status>
+						</PortfolioInvestment>
+					</Investments>
 			</Portfolio>
 		</Portfolios>
 		<Expenses>

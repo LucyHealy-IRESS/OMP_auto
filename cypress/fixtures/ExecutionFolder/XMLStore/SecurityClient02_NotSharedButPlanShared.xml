@@ -40,6 +40,16 @@
                        <Value>100</Value>
 					   </AssetAllocation>
 					</Asset> 
+					<Investments>
+						<PortfolioInvestment>
+							<FundID></FundID>
+							<FundName>Generic Cash Fund</FundName>
+							<Units>20000.00</Units>
+							<TotalValue>20000.00</TotalValue>
+							<InvestmentType>Fund</InvestmentType>
+							<Status>Current</Status>
+						</PortfolioInvestment>
+					</Investments>
 			</Portfolio>
 		</Portfolios>
 		</Client>

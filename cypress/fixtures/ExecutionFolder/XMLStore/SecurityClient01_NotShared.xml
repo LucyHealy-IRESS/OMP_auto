@@ -38,6 +38,16 @@
 				    <PlanCharge>0.50</PlanCharge>
 				    <PolicyFee>15</PolicyFee>
 				    <AdviserCharge>1</AdviserCharge>
+					<Investments>
+						<PortfolioInvestment>
+							<FundID>GB00BJ04HS18</FundID>
+							<FundName>Invesco China Equity Fund UK Y Acc</FundName>
+							<Units>9999.081</Units>
+							<TotalValue>10000.00</TotalValue>
+							<InvestmentType>Fund</InvestmentType>
+							<Status>Current</Status>
+						</PortfolioInvestment>
+					</Investments>
 			</Portfolio>
 		</Portfolios>
 		<Expenses>
