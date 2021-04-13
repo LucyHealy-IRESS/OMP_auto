@@ -1,0 +1,149 @@
+<Root>
+<Clients>
+	<Client>
+			<ClientID>
+				CLIENT_VV20
+			</ClientID>
+			<Title>
+				Mr
+			</Title>
+			<Firstname>
+				NewClientPensionPlan
+			</Firstname>
+			<Surname>
+				PensionPlan VV20
+			</Surname>
+			<DateOfBirth>
+				1980-01-01
+			</DateOfBirth>
+			<Status>
+				Current
+			</Status>
+			<Gender>
+				Male
+			</Gender>
+			<EmploymentStatus>
+				Employed
+			</EmploymentStatus>
+			<Address1>
+				21 Harwich Road
+			</Address1>
+			<City>
+				Redbridge
+			</City>
+			<County>
+				
+			</County>
+			<Postcode>
+				IG1 4BT
+			</Postcode>
+			<CurrentSalary>
+				30446
+			</CurrentSalary>
+			<StatePension>
+				9339.20
+			</StatePension>
+			
+			<Portfolios>
+				<Portfolio>
+					<PortfolioID>
+						CLIENT_VV20_PensionVS20
+					</PortfolioID>
+					<ClientID>
+						CLIENT_VV20
+					</ClientID>
+					<Reference>
+						AJbell Pension
+					</Reference>
+					<third_party_tag>
+						T4A
+					</third_party_tag>
+					<Status>
+						Current
+					</Status>
+					<ProductID>
+						1
+					</ProductID>
+					<ProviderID>
+						BBBBBBBB-5555-0000-0000-000000000046
+					</ProviderID>
+					<Investments>
+						<PortfolioInvestment>
+							<FundID>
+								GB00BJ04JQ34
+							</FundID>
+							<FundName>
+								Invesco Managed Income UK Y Acc
+							</FundName>
+							<Units>
+								15,566.398
+							</Units>
+							<TotalValue>
+								45000.90
+							</TotalValue>
+							<InvestmentType>
+								Fund
+							</InvestmentType>
+							<Status>
+								Current
+							</Status>
+						</PortfolioInvestment>
+						<PortfolioInvestment>
+							<FundID>
+								GB00BJ04H147
+							</FundID>
+							<FundName>
+								Invesco Global Equity Inc UK Y Acc
+							</FundName>
+							<Units>
+								9217.738
+							</Units>
+							<TotalValue>
+								34000.55
+							</TotalValue>
+							<InvestmentType>
+								Fund
+							</InvestmentType>
+							<Status>
+								Current
+							</Status>
+						</PortfolioInvestment>
+					</Investments>
+					<Asset>
+					<AssetAllocation>
+					        <Category_Name> Equity</Category_Name>
+							<SubCategory_Name> Uk Equity</SubCategory_Name>
+							<SubCategory_Name>Uk Large Cap Equity </SubCategory_Name>
+							<Value> 100.00 </Value>
+				    </AssetAllocation>
+					  </Asset>
+					<RetirementAge>
+						65
+					</RetirementAge>
+					<GrowthRateBasis>
+						Industry Standard Growth Rates
+					</GrowthRateBasis>
+					<OngoingContsPremium>
+						500.00
+					</OngoingContsPremium>
+					<OngoingContsType>
+						Monthly
+					</OngoingContsType>
+					<MaturityValueLow>
+						0
+					</MaturityValueLow>
+					<MaturityValueMid>
+						0
+					</MaturityValueMid>
+					<MaturityValueHigh>
+						0
+					</MaturityValueHigh>
+					<TotalMemberContributionsToScheme>
+						10000
+					</TotalMemberContributionsToScheme>
+				</Portfolio>
+				
+		 </Portfolios>
+	</Client>
+</Clients>
+</Root>
