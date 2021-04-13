@@ -1,0 +1,40 @@
+<Root>
+	<Clients>
+		<Client>
+			<ClientID>SecurityClient08</ClientID>
+			<Title>Mrs</Title>
+			<Firstname>CompanyB</Firstname>
+			<Surname>SecurityClientEight</Surname>
+			<DateOfBirth>1988-02-29T00:00:00</DateOfBirth>
+			<Gender>Female</Gender>
+			<MaritalStatus>Divorced</MaritalStatus>
+			<Address1>95 Eastern Ave</Address1>
+		    <City>East Hame</City>
+		    <County>London</County>
+		    <PostCode>EN1 1LP</PostCode>
+		    <MobileNumber>07000 111222</MobileNumber>
+			<PayingFee>No</PayingFee>
+			<ClientStatus>Previous</ClientStatus>
+			<IsSharedWithCompany>True</IsSharedWithCompany>
+			<TargetRiskProfile>CompanyB Security Target</TargetRiskProfile>
+			<EstablishBy>CompanyB Security Established By</EstablishBy>
+			<CurrentRiskProfile>CompanyB Security Target</CurrentRiskProfile>
+		<Portfolios>
+			<Portfolio>
+				<PortfolioID>SecurityClient08_Portfolio01</PortfolioID>
+					<ClientID>SecurityClient08</ClientID>
+					<Reference>CompanyASecurityClientEightPortfolio01</Reference>
+					<ProductID>13</ProductID>
+					<IsSharedWithCompany>False</IsSharedWithCompany>
+				    <AnnualIncome>210</AnnualIncome>
+				    <IncomeEscalationRate>Other</IncomeEscalationRate>
+                    <IncomeEscalationRateOther>2</IncomeEscalationRateOther>
+				    <Starting>At Age</Starting>
+                    <StartingAge>65</StartingAge>
+				    <Ending>Does Not End (Until Death)</Ending>
+			</Portfolio>
+		</Portfolios>
+		</Client>
+	</Clients>
+</Root>
+
