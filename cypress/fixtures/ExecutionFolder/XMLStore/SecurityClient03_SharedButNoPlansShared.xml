@@ -1,0 +1,43 @@
+<Root>
+	<Clients>
+		<Client>
+			<ClientID>SecurityClient03</ClientID>
+			<Title>Mrs</Title>
+			<Firstname>CompanyA</Firstname>
+			<Surname>SecurityClientThree</Surname>
+			<DateOfBirth>1988-02-29T00:00:00</DateOfBirth>
+			<Gender>Female</Gender>
+			<Address1>11 Bridgewater Ave</Address1>
+		    <City>Brentwood</City>
+		    <County>Essex</County>
+		    <PostCode>SS1 2AA</PostCode>
+		    <ContactNumber>01245 112233</ContactNumber>
+		    <EveningContactNumber>01245 445566</EveningContactNumber>
+			<PayingFee>Yes</PayingFee>
+			<ClientStatus>Proposed</ClientStatus>
+			<IsSharedWithCompany>True</IsSharedWithCompany>
+		<Portfolios>
+			<Portfolio>
+				<PortfolioID>SecurityClient03_Portfolio01</PortfolioID>
+					<ClientID>SecurityClient03</ClientID>
+					<Reference>CompanyASecurityClientThreePortfolio01</Reference>
+					<ProductID>3</ProductID>
+					<IsSharedWithCompany>False</IsSharedWithCompany>
+					<RiskObj>0</RiskObj>
+				    <RiskTargetAmount>5000</RiskTargetAmount>
+				    <InceptionDate>2020-05-05T00:00:00</InceptionDate>
+				    <RiskTermYear>10</RiskTermYear>
+				    <MaturityAge>60</MaturityAge>
+				    <Risk>1</Risk>
+				    <RiskEstBy>1</RiskEstBy>
+					<OngoingContsPremium>4000</OngoingContsPremium>
+				    <OngoingContsType>Annually</OngoingContsType>
+				    <OngoingContsEscalationRate>Other</OngoingContsEscalationRate>
+				    <OngoingContsEscalationOther>2.75</OngoingContsEscalationOther>
+				    <OngoingContsIncreasingEvery>September</OngoingContsIncreasingEvery>
+			</Portfolio>
+		</Portfolios>
+		</Client>
+	</Clients>
+</Root>
+
