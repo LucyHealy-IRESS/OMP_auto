@@ -32,6 +32,7 @@ Cypress.Commands.add("ProcessXMLFile_API", function(fileLocation, Type,ActionReq
 
     cy.readFile(fileLocation).then(function (fileContents) {
       fileContents = fileContents.replace(/[\t\n\r]/gm, ""); //remove new lines and tabs
+      var fileContents = fileContents.replace(/\s+/g,"");
 
       var API_Requests = cy.getRequestXML(fileContents); //translates are string of xml into an object we can work with
       var XMLtoArray = Object.keys(API_Requests);
@@ -77,6 +78,7 @@ Cypress.Commands.add("ProcessXMLFile_API", function(fileLocation, Type,ActionReq
 });
 
 Cypress.Commands.add("API_Call", (fileContents, Type) => {
+
   //These will be read in from elsewhere
   var username = Cypress.env("usernameAPI");
   var password = Cypress.env("passwordAPI");
@@ -166,6 +168,7 @@ Cypress.Commands.add("API_Retreive", (xml_Payload) => {
   var retValue = "";
 
   cy.API_Call(xml_Payload,constants.API_Retrieve).then(function(ApiCallResponse){
+   
    var callback = function (err, result) {
     retValue = result.Envelope.Body.ProfilerResponse.ProfilerResult.ResponseXMLData;
    };
