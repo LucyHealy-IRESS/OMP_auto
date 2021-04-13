@@ -16,6 +16,9 @@
 			<PayingFee>No</PayingFee>
 			<ClientStatus>Previous</ClientStatus>
 			<IsSharedWithCompany>True</IsSharedWithCompany>
+			<TargetRiskProfile>CompanyB Security Target</TargetRiskProfile>
+			<EstablishBy>CompanyB Security Established By</EstablishBy>
+			<CurrentRiskProfile>CompanyB Security Target</CurrentRiskProfile>
 		<Portfolios>
 			<Portfolio>
 				<PortfolioID>SecurityClient08_Portfolio01</PortfolioID>

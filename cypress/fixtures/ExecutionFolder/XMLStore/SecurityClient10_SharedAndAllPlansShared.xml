@@ -21,6 +21,12 @@
 					<Reference>CompanyBSecurityClientTenPortfolio01</Reference>
 					<ProductID>12</ProductID>
 					<IsSharedWithCompany>True</IsSharedWithCompany>
+					<TargetRiskProfile>CompanyB Security Target</TargetRiskProfile>
+			        <EstablishBy>CompanyB Security Established By</EstablishBy>
+			        <CurrentRiskProfile>CompanyB Security Target</CurrentRiskProfile>
+					<RegularWithdrawal>Percentage of Fund Value</RegularWithdrawal>
+					<RegularWithdrawalAmount>0.50</RegularWithdrawalAmount>
+					<RegularWithdrawalFrequency>Monthly</RegularWithdrawalFrequency>
 			</Portfolio>
 			<Portfolio>
 				<PortfolioID>SecurityClient10_Portfolio02</PortfolioID>
@@ -40,14 +46,7 @@
 				<PortfolioID>SecurityClient10_Portfolio04</PortfolioID>
 					<ClientID>SecurityClient10</ClientID>
 					<Reference>CompanyBSecurityClientTenPortfolio04</Reference>
-					<ProductID>17</ProductID>
-					<IsSharedWithCompany>True</IsSharedWithCompany>
-			</Portfolio>
-            <Portfolio>
-				<PortfolioID>SecurityClient10_Portfolio05</PortfolioID>
-					<ClientID>SecurityClient10</ClientID>
-					<Reference>CompanyBSecurityClientTenPortfolio05</Reference>
-					<ProductID>18</ProductID>
+					<ProductID>20</ProductID>
 					<IsSharedWithCompany>True</IsSharedWithCompany>
 			</Portfolio>
 		</Portfolios>
