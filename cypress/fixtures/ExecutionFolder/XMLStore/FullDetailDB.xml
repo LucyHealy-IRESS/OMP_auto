@@ -1,0 +1,64 @@
+<Root>
+	<Clients>
+		<Client>
+			<ClientID>DBClient01</ClientID>
+			<Title>Mr</Title>
+			<Firstname>Scott</Firstname>
+			<Surname>Arkham</Surname>
+			<DateOfBirth>1979-08-10T00:00:00</DateOfBirth>
+			<Gender>Male</Gender>
+		<Portfolios>
+            <Portfolio>
+				<PortfolioID>FullDetailDB01</PortfolioID>
+					<ClientID>DBClient01</ClientID>
+					<Reference>Mr S Akham DB Scheme</Reference>
+					<ProductID>14</ProductID>
+				    <SafeguardedBenefitDetails>Full Details</SafeguardedBenefitDetails>
+				    <SchemeNRA>66</SchemeNRA>
+				    <BenefitsStartingAge>62</BenefitsStartingAge>
+				    <DateLeftScheme>2021-03-01T00:00:00</DateLeftScheme>
+					<Segments>
+					    <Segment>
+						<IncomeType>Excess Over GMP Pre 1997</IncomeType>
+						<Name>Segment 1</Name>
+						<SchemeNRA>70</SchemeNRA>
+						<Amount>4000</Amount>
+						<AnnualLateRetirementFactor>3.33</AnnualLateRetirementFactor>
+						<AsAtDate>2021-03-01T00:00:00</AsAtDate>
+						<SpecificSegmentCommutation>True</SpecificSegmentCommutation>
+						<SegmentCommutationFactor>9.999</SegmentCommutationFactor>
+						<IncomeStops>At Other Age</IncomeStops>
+						<OtherAge>80</OtherAge>
+						<RevaluationRate>Scheme Defined</RevaluationRate>
+						<CustomRevaluationRate>1.75</CustomRevaluationRate>
+						<EscalationRate>Scheme Defined</EscalationRate>
+						<CustomEscalationRate>4</CustomEscalationRate>
+						</Segment>
+					    <Segment>
+						<IncomeType>GMP Pre 1988</IncomeType>
+						<Name>Segment 2</Name>
+						<Amount>2000</Amount>
+						<AsAtDate>2021-03-01T00:00:00</AsAtDate>
+						<RevaluationRate>Section 148 Orders</RevaluationRate>
+						<EscalationRate>CPI</EscalationRate>
+						<MinEscalationRate>2</MinEscalationRate>
+						<MaxEscalationRate>4</MaxEscalationRate>
+						</Segment>
+						<Segment>
+						<IncomeType>Excess Over GMP Post 1997</IncomeType>
+						<Name>Segment 3</Name>
+						<Amount>6000</Amount>
+						<AsAtDate>2021-03-01T00:00:00</AsAtDate>
+						<RevaluationRate>RPI</RevaluationRate>
+						<MinRevaluationRate>1.50</MinRevaluationRate>
+						<MaxRevaluationRate>7.50</MaxRevaluationRate>
+						<EscalationRate>Zero</EscalationRate>
+						</Segment>
+					</Segments>
+				    <TransferValue>250000</TransferValue>
+				    <TransferValueAsAtDate>2021-03-01T00:00:00</TransferValueAsAtDate>
+			</Portfolio>
+		</Portfolios>	
+		</Client>
+	</Clients>
+</Root>

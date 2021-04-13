@@ -51,6 +51,44 @@
 				    <SchemeNRA>68</SchemeNRA>
 				    <BenefitsStartingAge>64</BenefitsStartingAge>
 				    <DateLeftScheme>2021-03-01T00:00:00</DateLeftScheme>
+					<Segments>
+					    <Segment>
+						<IncomeType>Excess Over GMP Pre 1997</IncomeType>
+						<Name>CompanyBSecurityClientSixPortfolio02 Segment 1</Name>
+						<SchemeNRA>70</SchemeNRA>
+						<Amount>4000</Amount>
+						<AnnualLateRetirementFactor>3.33</AnnualLateRetirementFactor>
+						<AsAtDate>2021-03-01T00:00:00</AsAtDate>
+						<SpecificSegmentCommutation>True</SpecificSegmentCommutation>
+						<SegmentCommutationFactor>10.999</SegmentCommutationFactor>
+						<IncomeStops>At Other Age</IncomeStops>
+						<OtherAge>80</OtherAge>
+						<RevaluationRate>Scheme Defined</RevaluationRate>
+						<CustomRevaluationRate>1.50</CustomRevaluationRate>
+						<EscalationRate>Scheme Defined</EscalationRate>
+						<CustomEscalationRate>4</CustomEscalationRate>
+						</Segment>
+					    <Segment>
+						<IncomeType>GMP Pre 1988</IncomeType>
+						<Name>CompanyBSecurityClientSixPortfolio02 Segment 2</Name>
+						<Amount>2000</Amount>
+						<AsAtDate>2021-03-01T00:00:00</AsAtDate>
+						<RevaluationRate>Section 148 Orders</RevaluationRate>
+						<EscalationRate>CPI</EscalationRate>
+						<MinEscalationRate>2</MinEscalationRate>
+						<MaxEscalationRate>4</MaxEscalationRate>
+						</Segment>
+						<Segment>
+						<IncomeType>Excess Over GMP Post 1997</IncomeType>
+						<Name>CompanyBSecurityClientSixPortfolio02 Segment 3</Name>
+						<Amount>6000</Amount>
+						<AsAtDate>2021-03-01T00:00:00</AsAtDate>
+						<RevaluationRate>RPI</RevaluationRate>
+						<MinRevaluationRate>1.50</MinRevaluationRate>
+						<MaxRevaluationRate>7.50</MaxRevaluationRate>
+						<EscalationRate>Zero</EscalationRate>
+						</Segment>
+					</Segments>
 				    <TransferValue>150000</TransferValue>
 				    <TransferValueAsAtDate>2021-03-01T00:00:00</TransferValueAsAtDate>
 				    <RefinePCLSCommutationDetails>True</RefinePCLSCommutationDetails>
