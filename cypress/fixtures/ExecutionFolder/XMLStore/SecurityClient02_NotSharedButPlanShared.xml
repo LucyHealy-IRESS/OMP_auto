@@ -1,0 +1,57 @@
+<Root>
+	<Clients>
+		<Client>
+			<ClientID>SecurityClient02</ClientID>
+			<Title>Mrs</Title>
+			<Firstname>CompanyA</Firstname>
+			<Surname>SecurityClientTwo</Surname>
+			<DateOfBirth>1950-12-02T00:00:00</DateOfBirth>
+			<Gender>Female</Gender>
+			<MaritalStatus>Living With Partner (Not Spouse)</MaritalStatus>
+			<Partner>Mr CompanyA SecurityClientOne</Partner>
+			<DependantChildren>2</DependantChildren>
+		    <IndependantChildren>1</IndependantChildren>
+		    <Siblings>4</Siblings>
+			<IsSharedWithCompany>False</IsSharedWithCompany>
+		<Portfolios>
+			<Portfolio>
+				<PortfolioID>SecurityClient02_Portfolio01</PortfolioID>
+					<ClientID>SecurityClient02</ClientID>
+					<Reference>CompanyASecurityClientTwoPortfolio01</Reference>
+					<ProductID>4</ProductID>
+					<Drawdown_DrawdownType>Capped Drawdown</Drawdown_DrawdownType>
+					<ProviderID>BBBBBBBB-5555-0000-0000-000000000046</ProviderID>
+					<Status>Proposed</Status>
+				    <NextReviewDate>2021-11-05T00:00:00</NextReviewDate>
+					<IsSharedWithCompany>True</IsSharedWithCompany>
+					<GrowthRateBasis>Fund Specific Growth Rates</GrowthRateBasis>
+				    <GrowthRateLow>5</GrowthRateLow>
+				    <GrowthRateMid>7</GrowthRateMid>
+				    <GrowthRateHigh>9</GrowthRateHigh>
+					<OngoingContsPremium>500</OngoingContsPremium>
+				    <OngoingContsType>Monthly</OngoingContsType>
+				    <OngoingContsEscalationRate>5</OngoingContsEscalationRate>
+				    <OngoingContsIncreasingEvery>May</OngoingContsIncreasingEvery>
+					<Asset>
+                       <AssetAllocation>
+                       <Category_Name>Equity</Category_Name>
+                       <Subcategory_Name>UK Equity</Subcategory_Name>
+                       <Subcategory_Two_Name>UK Mid Cap Equity</Subcategory_Two_Name>
+                       <Value>100</Value>
+					   </AssetAllocation>
+					</Asset> 
+					<Investments>
+						<PortfolioInvestment>
+							<FundID></FundID>
+							<FundName>Generic Cash Fund</FundName>
+							<Units>20000.00</Units>
+							<TotalValue>20000.00</TotalValue>
+							<InvestmentType>Fund</InvestmentType>
+							<Status>Current</Status>
+						</PortfolioInvestment>
+					</Investments>
+			</Portfolio>
+		</Portfolios>
+		</Client>
+	</Clients>
+</Root>

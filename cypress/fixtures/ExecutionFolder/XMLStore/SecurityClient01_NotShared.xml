@@ -1,0 +1,63 @@
+<Root>
+	<Clients>
+		<Client>
+			<ClientID>SecurityClient01</ClientID>
+			<Title>Mr</Title>
+			<Firstname>CompanyA</Firstname>
+			<Surname>SecurityClientOne</Surname>
+			<DateOfBirth>1959-12-02T00:00:00</DateOfBirth>
+			<Gender>Male</Gender>
+			<MaritalStatus>Living With Partner (Not Spouse)</MaritalStatus>
+			<Partner>Mrs CompanyA SecurityClientTwo</Partner>
+			<DependantChildren>2</DependantChildren>
+		    <IndependantChildren>1</IndependantChildren>
+		    <Siblings>1</Siblings>
+			<ServiceBasis>CompanyA Security Service Basis</ServiceBasis>
+			<EthicalInvestment>CompanyA Security Ethical Investment</EthicalInvestment>
+			<NextReviewDate>2022-01-01T00:00:00</NextReviewDate>
+			<IsSharedWithCompany>False</IsSharedWithCompany>
+		<Portfolios>
+			<Portfolio>
+				<PortfolioID>SecurityClient01_Portfolio01</PortfolioID>
+					<ClientID>SecurityClient01</ClientID>
+					<Reference>CompanyASecurityClientOnePortfolio01</Reference>
+					<ProductID>1</ProductID>
+					<Benchmark>CompanyA Security Benchmark</Benchmark>
+					<NextReviewDate>2022-01-01T00:00:00</NextReviewDate>
+					<IsWorkplacePension>True</IsWorkplacePension>
+					<IsSharedWithCompany>False</IsSharedWithCompany>
+					<InvestmentObjective>CompanyA Security Investment Objective</InvestmentObjective>
+					<OngoingContsPremium>400</OngoingContsPremium>
+				    <OngoingContsType>Monthly</OngoingContsType>
+				    <OngoingContsEscalationRate>Other</OngoingContsEscalationRate>
+				    <OngoingContsEscalationOther>2</OngoingContsEscalationOther>
+				    <OngoingContsIncreasingEvery>April</OngoingContsIncreasingEvery>
+				    <ContributionsStop>At Other Age</ContributionsStop>
+				    <StopAge>75</StopAge>
+				    <FundCharge>0.45</FundCharge>
+				    <PlanCharge>0.50</PlanCharge>
+				    <PolicyFee>15</PolicyFee>
+				    <AdviserCharge>1</AdviserCharge>
+					<Investments>
+						<PortfolioInvestment>
+							<FundID>GB00BJ04HS18</FundID>
+							<FundName>Invesco China Equity Fund UK Y Acc</FundName>
+							<Units>9999.081</Units>
+							<TotalValue>10000.00</TotalValue>
+							<InvestmentType>Fund</InvestmentType>
+							<Status>Current</Status>
+						</PortfolioInvestment>
+					</Investments>
+			</Portfolio>
+		</Portfolios>
+		<Expenses>
+			<Expense>
+				<Name>CompanyASecurityClientOneExpense01</Name>
+				<Amount>10000</Amount>
+				<Starts>At Retirement Age</Starts>
+				<Ends>At Mortality</Ends>
+			</Expense>
+		</Expenses>		
+		</Client>
+	</Clients>
+</Root>

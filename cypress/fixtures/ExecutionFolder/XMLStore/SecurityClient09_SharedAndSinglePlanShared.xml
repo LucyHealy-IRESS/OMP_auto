@@ -1,0 +1,80 @@
+<Root>
+	<Clients>
+		<Client>
+			<ClientID>SecurityClient09</ClientID>
+			<Title>Mrs</Title>
+			<Firstname>CompanyB</Firstname>
+			<Surname>SecurityClientNine</Surname>
+			<DateOfBirth>1954-05-01T00:00:00</DateOfBirth>
+			<Gender>Female</Gender>
+			<MaritalStatus>Married</MaritalStatus>
+			<Partner>Mr CompanyB SecurityClientTen</Partner>
+			<Address1>30 Trent Close</Address1>
+		    <City>Wickford</City>
+		    <County>Essex</County>
+		    <PostCode>SS14 1MK</PostCode>
+			<IsSharedWithCompany>True</IsSharedWithCompany>
+		<Portfolios>
+			<Portfolio>
+				<PortfolioID>SecurityClient09_Portfolio01</PortfolioID>
+					<ClientID>SecurityClient09</ClientID>
+					<Reference>CompanyBSecurityClientNinePortfolio01</Reference>
+					<ProductID>9</ProductID>
+					<IsSharedWithCompany>True</IsSharedWithCompany>
+					<Investments>
+						<PortfolioInvestment>
+							<FundID></FundID>
+							<FundName>Generic Cash Fund</FundName>
+							<Units>80000.00</Units>
+							<TotalValue>80000.00</TotalValue>
+							<InvestmentType>Fund</InvestmentType>
+							<Status>Current</Status>
+						</PortfolioInvestment>
+					</Investments>
+			</Portfolio>
+			<Portfolio>
+				<PortfolioID>SecurityClient09_Portfolio02</PortfolioID>
+					<ClientID>SecurityClient09</ClientID>
+					<Reference>CompanyBSecurityClientNinePortfolio02</Reference>
+					<ProductID>10</ProductID>
+					<IsSharedWithCompany>False</IsSharedWithCompany>
+					<Investments>
+						<PortfolioInvestment>
+							<FundID>GB00BJ04HS18</FundID>
+							<FundName>Invesco China Equity Fund UK Y Acc</FundName>
+							<Units>9999.081</Units>
+							<TotalValue>10000.00</TotalValue>
+							<InvestmentType>Fund</InvestmentType>
+							<Status>Current</Status>
+						</PortfolioInvestment>
+					</Investments>
+			</Portfolio>
+            <Portfolio>
+				<PortfolioID>SecurityClient09_Portfolio03</PortfolioID>
+					<ClientID>SecurityClient09</ClientID>
+					<Reference>CompanyBSecurityClientNinePortfolio03</Reference>
+					<ProductID>11</ProductID>
+					<IsSharedWithCompany>False</IsSharedWithCompany>
+					<Investments>
+						<PortfolioInvestment>
+							<FundID>GB00B8D7RH96</FundID>
+							<FundName>BlackRock Consensus 85 A Acc</FundName>
+							<Units>9999.081</Units>
+							<TotalValue>10000.00</TotalValue>
+							<InvestmentType>Fund</InvestmentType>
+							<Status>Current</Status>
+						</PortfolioInvestment>
+					</Investments>
+			</Portfolio>
+		</Portfolios>
+		<Expenses>
+			<Expense>
+				<Name>CompanyBSecurityClientNineExpense01</Name>
+				<Amount>15000</Amount>
+				<Starts>At Retirement Age</Starts>
+				<Ends>One off</Ends>
+			</Expense>
+		</Expenses>	
+		</Client>
+	</Clients>
+</Root>

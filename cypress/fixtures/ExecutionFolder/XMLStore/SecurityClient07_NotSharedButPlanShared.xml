@@ -1,0 +1,89 @@
+<Root>
+	<Clients>
+		<Client>
+			<ClientID>SecurityClient07</ClientID>
+			<Title>Mrs</Title>
+			<Firstname>CompanyB</Firstname>
+			<Surname>SecurityClientSeven</Surname>
+			<DateOfBirth>1977-10-01T00:00:00</DateOfBirth>
+			<Gender>Female</Gender>
+			<MaritalStatus>Living With Partner (Not Spouse)</MaritalStatus>
+			<Partner>Mr CompanyB SecurityClientSix</Partner>
+			<DependantChildren>3</DependantChildren>
+		    <Siblings>5</Siblings>
+			<IsSharedWithCompany>False</IsSharedWithCompany>
+		<Portfolios>
+			<Portfolio>
+				<PortfolioID>SecurityClient07_Portfolio01</PortfolioID>
+					<ClientID>SecurityClient07</ClientID>
+					<Reference>CompanyBSecurityClientSevenPortfolio01</Reference>
+					<ProductID>7</ProductID>
+					<Status>Proposed</Status>
+				    <NextReviewDate>2021-11-05T00:00:00</NextReviewDate>
+					<IsSharedWithCompany>True</IsSharedWithCompany>
+					<GrowthRateBasis>Inflation Adjusted Growth Rates</GrowthRateBasis>
+				    <GrowthRateLow>1.11</GrowthRateLow>
+				    <GrowthRateMid>3.33</GrowthRateMid>
+				    <GrowthRateHigh>5.55</GrowthRateHigh>
+					<OngoingContsPremium>500</OngoingContsPremium>
+				    <OngoingContsType>Monthly</OngoingContsType>
+				    <OngoingContsEscalationRate>AEI</OngoingContsEscalationRate>
+				    <OngoingContsIncreasingEvery>March</OngoingContsIncreasingEvery>
+                    <ContributionsStop>When Income Starts</ContributionsStop>
+					<Investments>
+						<PortfolioInvestment>
+							<FundID>GB00B8D0SR58</FundID>
+							<FundName>BlackRock Consensus 85 D Acc</FundName>
+							<Units>9999.081</Units>
+							<TotalValue>10000.00</TotalValue>
+							<InvestmentType>Fund</InvestmentType>
+							<Status>Current</Status>
+						</PortfolioInvestment>
+						<PortfolioInvestment>
+							<FundID>IE00BDZQRG89</FundID>
+							<FundName>Comgest Growth Latin America EUR Z Acc</FundName>
+							<Units>8130.081</Units>
+							<TotalValue>10000.00</TotalValue>
+							<InvestmentType>Fund</InvestmentType>
+							<Status>Current</Status>
+						</PortfolioInvestment>
+					</Investments>
+			</Portfolio>
+            <Portfolio>
+				<PortfolioID>SecurityClient07_Portfolio02</PortfolioID>
+					<ClientID>SecurityClient07</ClientID>
+					<Reference>CompanyBSecurityClientSevenPortfolio02</Reference>
+					<ProductID>8</ProductID>
+                    <Benchmark>UK RPI + 5%</Benchmark>
+					<Status>Previous</Status>
+					<IsSharedWithCompany>True</IsSharedWithCompany>
+					<OngoingContsPremium>420</OngoingContsPremium>
+				    <OngoingContsType>Monthly</OngoingContsType>
+				    <OngoingContsEscalationRate>0</OngoingContsEscalationRate>
+					<Investments>
+						<PortfolioInvestment>
+							<FundID></FundID>
+							<FundName>Generic Cash Fund</FundName>
+							<Units>20000.00</Units>
+							<TotalValue>20000.00</TotalValue>
+							<InvestmentType>Fund</InvestmentType>
+							<Status>Current</Status>
+						</PortfolioInvestment>
+					</Investments>
+			</Portfolio>
+            <Portfolio>
+				<PortfolioID>SecurityClient07_Portfolio03</PortfolioID>
+					<ClientID>SecurityClient07</ClientID>
+					<Reference>CompanyBSecurityClientSevenPortfolio03</Reference>
+					<ProductID>14</ProductID>
+					<IsSharedWithCompany>True</IsSharedWithCompany>
+				    <AnnualIncome>210</AnnualIncome>
+				    <IncomeEscalationRate>Other</IncomeEscalationRate>
+                    <IncomeEscalationRateOther>4</IncomeEscalationRateOther>
+				    <Starting>Already in Payment</Starting>
+				    <Ending>Does Not End (Until Death)</Ending>
+			</Portfolio>
+		</Portfolios>
+		</Client>
+	</Clients>
+</Root>

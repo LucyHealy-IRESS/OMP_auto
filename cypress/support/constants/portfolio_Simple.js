@@ -1,5 +1,7 @@
 import * as constants from "./constantsSelectors.js";
-export const ClientPortfoliosSelector = "#Client_ViewPortfolios",
+export const 
+
+  ClientPortfoliosSelector = "#Client_ViewPortfolios",
   PortfoliosQuickEditorSelector = "#PortfolioAddPopUp",
   PortfolioQuickAddFundSelector = "PortfolioSimpleEditor_QuickAddFundPopup",
   Portfolio_Holdings_Editor = {
@@ -345,7 +347,7 @@ export const ClientPortfoliosSelector = "#Client_ViewPortfolios",
       AccordianName: "Transfer Details",
     },
   },
-  //TransferDetails?
+  
 
   Portfolio_Simple = {
     ...Portfolio_BasicDetails_Simple,

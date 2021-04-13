@@ -3,7 +3,7 @@ import * as constants from "./constantsSelectors.js";
 export const
 
 //ToDo
-//Import,Intelligent Office ID,Xplan ID,Transact Key,Drawdown Type,Account Number
+//Import,Intelligent Office ID,Xplan ID,Transact Key,Drawdown Type,Account Number, Current salary amount and state pension amount
 Portfolio_BasicDetails_Advanced = {
   PortfolioID:{},
   ClientID:{},

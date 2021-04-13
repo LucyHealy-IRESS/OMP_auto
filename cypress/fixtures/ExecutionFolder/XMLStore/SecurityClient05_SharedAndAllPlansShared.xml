@@ -1,0 +1,70 @@
+<Root>
+	<Clients>
+		<Client>
+			<ClientID>SecurityClient05</ClientID>
+			<Title>Mr</Title>
+			<Firstname>CompanyA</Firstname>
+			<Surname>SecurityClientFive</Surname>
+			<DateOfBirth>1963-12-07T00:00:00</DateOfBirth>
+			<Gender>Male</Gender>
+			<MaritalStatus>Married</MaritalStatus>
+			<Partner>Mrs CompanyA SecurityClientFour</Partner>
+			<HealthStatus>Yes</HealthStatus>
+		    <SmokerStatus>No</SmokerStatus>
+		    <PostCode>CM4 1PK</PostCode>
+			<TaxRegion>Scotland</TaxRegion>
+		    <LifetimeAllowanceType>Standard Lifetime Allowance</LifetimeAllowanceType>
+		    <LifetimeAllowancePreviouslyUsed>25</LifetimeAllowancePreviouslyUsed>
+			<IsSharedWithCompany>True</IsSharedWithCompany>
+		<Portfolios>
+			<Portfolio>
+				<PortfolioID>SecurityClient05_Portfolio01</PortfolioID>
+					<ClientID>SecurityClient05</ClientID>
+					<Reference>CompanyASecurityClientFivePortfolio01</Reference>
+					<ProductID>6</ProductID>
+					<IsSharedWithCompany>True</IsSharedWithCompany>
+					<Investments>
+						<PortfolioInvestment>
+							<FundID>GB00B8D7RH96</FundID>
+							<FundName>BlackRock Consensus 85 A Acc</FundName>
+							<Units>9999.081</Units>
+							<TotalValue>10000.00</TotalValue>
+							<InvestmentType>Fund</InvestmentType>
+							<Status>Current</Status>
+						</PortfolioInvestment>
+					</Investments>
+			</Portfolio>
+			<Portfolio>
+				<PortfolioID>SecurityClient05_Portfolio02</PortfolioID>
+					<ClientID>SecurityClient05</ClientID>
+					<Reference>CompanyASecurityClientFivePortfolio02</Reference>
+					<ProductID>7</ProductID>
+					<IsSharedWithCompany>True</IsSharedWithCompany>
+					<Investments>
+						<PortfolioInvestment>
+							<FundID>GB00B8D0SR58</FundID>
+							<FundName>BlackRock Consensus 85 D Acc</FundName>
+							<Units>9999.081</Units>
+							<TotalValue>10000.00</TotalValue>
+							<InvestmentType>Fund</InvestmentType>
+							<Status>Current</Status>
+						</PortfolioInvestment>
+						<PortfolioInvestment>
+							<FundID>IE00BDZQRG89</FundID>
+							<FundName>Comgest Growth Latin America EUR Z Acc</FundName>
+							<Units>8130.081</Units>
+							<TotalValue>10000.00</TotalValue>
+							<InvestmentType>Fund</InvestmentType>
+							<Status>Current</Status>
+						</PortfolioInvestment>
+					</Investments>
+					<RegularWithdrawal>Amount</RegularWithdrawal>
+					<RegularWithdrawalAmount>1500</RegularWithdrawalAmount>
+					<RegularWithdrawalFrequency>Annually</RegularWithdrawalFrequency>
+					<RegularWithdrawalPaidIn>Advance</RegularWithdrawalPaidIn>
+					<RegularWithdrawalEscalationRate>0</RegularWithdrawalEscalationRate>
+			</Portfolio>
+		</Portfolios>
+		</Client>
+	</Clients>
+</Root>
