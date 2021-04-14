@@ -55,5 +55,15 @@ EntityTypes = {
         API_ActionRequired_Create: true,
         API_ActionRequired_Assert: true,
         API_ActionRequired_Delete: false
-    }
+    },
+    SafeguardedBenefitsSegments: {
+        API_ActionRequired_Create: false,
+        API_ActionRequired_Assert: false,
+        API_ActionRequired_Delete: false
+    },
+    SafeguardedBenefitsSegment: {
+        API_ActionRequired_Create: true,
+        API_ActionRequired_Assert: true,
+        API_ActionRequired_Delete: false
+    },
 }
