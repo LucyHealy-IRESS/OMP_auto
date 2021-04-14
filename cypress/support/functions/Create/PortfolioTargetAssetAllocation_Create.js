@@ -1,10 +1,7 @@
 import * as PortfolioAdvConstants from "../../constants/portfolio_Advanced.js"
 import * as Constants from "../../constants/constantsSelectors.js"
 
-Cypress.Commands.add("PortfolioTargetAssetAllocation_Create_1", (EntityData) => {
-    //cy.clickAccordion_PreCheck(Constants.PortfolioAdv_ACAssetAllocation,PortfolioAdvConstants.PortfoliosAdvancedEditorSelector,"Asset Allocations")
-    //cy.PopulateEditor(PortfolioAdvConstants.PortfoliosAdvancedEditorSelector,PortfolioAdvConstants.Portfolio_AssetAllocation_Advanced, EntityData, "Portfolio Advanced");
-});  
+Cypress.Commands.add("PortfolioTargetAssetAllocation_Create_1", (EntityData) => {});  
 
 Cypress.Commands.add("PortfolioTargetAssetAllocation_Create_2", (EntityData) => {
 

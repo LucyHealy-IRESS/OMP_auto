@@ -356,7 +356,24 @@ Portfolio_DefinedIncome_Advanced = {
       AccordianSelector: "#PA_DefinedIncome_Accordian",
       AccordianName: 'Defined Income', 
     },
-
+    IncomeType: {
+      Selector: ".BasicDetails_tooltip > .wijmo-wijcombobox > .wijmo-wijcombobox-wrapper > .wijmo-wijcombobox-input",
+      inputType: "Dropdown_ReadOnly",
+      AccordianSelector: "#SafeguardedBenefitsSegmentEditorAccordian > .ui-corner-bottom",
+      AccordianName: 'Defined Income', 
+    },
+    Name: {
+      Selector: ".Name_tooltip",
+      inputType: "String",
+      AccordianSelector: "#SafeguardedBenefitsSegmentEditorAccordian > .ui-corner-bottom",
+      AccordianName: 'Defined Income', 
+    },
+    IncomeAmount: {
+      Selector: ".IncomeAmount_tooltip",
+      inputType: "Integer",
+      AccordianSelector: "#SafeguardedBenefitsSegmentEditorAccordian > .ui-corner-bottom",
+      AccordianName: 'Defined Income', 
+    },
 
 },
 
