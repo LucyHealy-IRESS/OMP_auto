@@ -885,7 +885,60 @@ Portfolio_DrawdownIncome_Advanced = {
     AccordianSelector: constants.PortfolioAdv_DrawdownIncome,
     AccordianName: "Drawdown Income"
   },
-  
+  Date: {
+    Selector: ".DrwDwnInc_Day Date NonWijmoDatePickerElement day",
+    inputType: "Integer",
+    AccordianSelector: "#EditDrawdownIncomeEntityPopup",
+    AccordianName: "Drawdown Income Editor"
+  },
+  Date: {
+    Selector: ".DrwDwnInc_Day Date NonWijmoDatePickerElement month",
+    inputType: "Integer",
+    AccordianSelector: "#EditDrawdownIncomeEntityPopup",
+    AccordianName: "Drawdown Income Editor"
+  },
+  Date: {
+    Selector: ".DrwDwnInc_Day Date NonWijmoDatePickerElement year",
+    inputType: "Integer",
+    AccordianSelector: "#EditDrawdownIncomeEntityPopup",
+    AccordianName: "Drawdown Income Editor"
+  },
+  DrawdownFundValueatDate: {
+    Selector: ".DrwDwnInc_FundValueAtDate",
+    inputType: "Integer",
+    AccordianSelector: "#EditDrawdownIncomeEntityPopup",
+    AccordianName: "Drawdown Income Editor"
+  },
+  IncomeTypeFromDate: {
+    Selector: ".DrwDwnInc_IncomeTypeFromDate",
+    inputType: "Dropdown",
+    AccordianSelector: "#EditDrawdownIncomeEntityPopup",
+    AccordianName: "Drawdown Income Editor"
+  },
+  AnnualIncomeFromDate: {
+    Selector: ".DrwDwnInc_AnnualIncomeFromDate",
+    inputType: "Integer",
+    AccordianSelector: "#EditDrawdownIncomeEntityPopup",
+    AccordianName: "Drawdown Income Editor"
+  },
+  Paid: {
+    Selector: ".DrwDwnInc_Paid",
+    inputType: "Dropdown",
+    AccordianSelector: "#EditDrawdownIncomeEntityPopup",
+    AccordianName: "Drawdown Income Editor"
+  },
+  LumpSumType: {
+    Selector: ".DrwDwnInc_LumpSumType",
+    inputType: "Dropdown",
+    AccordianSelector: "#EditDrawdownIncomeEntityPopup",
+    AccordianName: "Drawdown Income Editor"
+  },
+  LumpSumAmount: {
+    Selector: ".DrwDwnInc_LumpSumAmount",
+    inputType: "Integer",
+    AccordianSelector: "#EditDrawdownIncomeEntityPopup",
+    AccordianName: "Drawdown Income Editor"
+  },
 
 },
 
