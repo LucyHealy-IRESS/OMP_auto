@@ -884,7 +884,9 @@ Portfolio_DrawdownIncome_Advanced = {
     inputType: "Dropdown",
     AccordianSelector: constants.PortfolioAdv_DrawdownIncome,
     AccordianName: "Drawdown Income"
-  }
+  },
+  
+
 },
 
 AllPortfolioAdvancedInputs = {

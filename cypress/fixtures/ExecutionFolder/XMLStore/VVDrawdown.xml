@@ -1,141 +1,53 @@
 <Root>
-<Clients>
-	<Client>
-			<ClientID>
-				CLIENT_VV02
-			</ClientID>
-			<Title>
-				Mr
-			</Title>
-			<Firstname>
-				NewClientDrawdownPlan
-			</Firstname>
-			<Surname>
-				DrawdownPlan VV02
-			</Surname>
-			<DateOfBirth>
-				1980-01-01
-			</DateOfBirth>
-			<Status>
-				Current
-			</Status>
-			<Gender>
-				Male
-			</Gender>
-			<EmploymentStatus>
-				Employed
-			</EmploymentStatus>
-			<Address1>
-				21 Harwich Road
-			</Address1>
-			<City>
-				Redbridge
-			</City>
-			<County>
-				
-			</County>
-			<Postcode>
-				IG1 4BT
-			</Postcode>
-			<CurrentSalary>
-				30446
-			</CurrentSalary>
-			<StatePension>
-				9339.20
-			</StatePension>
-			
-			<Portfolios>
-				<Portfolio>
-					<PortfolioID>
-						CLIENT_VV02_DrawdownVS02
-					</PortfolioID>
-					<ClientID>
-						CLIENT_VV02
-					</ClientID>
-					<Reference>
-						AJbell drawdown
-					</Reference>
-					<third_party_tag>
-						T4A
-					</third_party_tag>
-					<Status>
-						Current
-					</Status>
-					<ProductID>
-						4
-					</ProductID>
-					<ProviderID>
-						BBBBBBBB-5555-0000-0000-000000000046
-					</ProviderID>
-					<Investments>
-						<PortfolioInvestment>
-							<FundID>
-								GB00BJ04JQ34
-							</FundID>
-							<FundName>
-								Invesco Managed Income UK Y Acc
-							</FundName>
-							<Units>
-								15,566.398
-							</Units>
-							<TotalValue>
-								45000.90
-							</TotalValue>
-							<InvestmentType>
-								Fund
-							</InvestmentType>
-							<Status>
-								Current
-							</Status>
-						</PortfolioInvestment>
-						<PortfolioInvestment>
-							<FundID>
-								GB00BJ04H147
-							</FundID>
-							<FundName>
-								Invesco Global Equity Inc UK Y Acc
-							</FundName>
-							<Units>
-								9217.738
-							</Units>
-							<TotalValue>
-								34000.55
-							</TotalValue>
-							<InvestmentType>
-								Fund
-							</InvestmentType>
-							<Status>
-								Current
-							</Status>
-						</PortfolioInvestment>
-					</Investments>
-					<RetirementAge>
-						65
-					</RetirementAge>
-					<GrowthRateBasis>
-						Industry Standard Growth Rates
-					</GrowthRateBasis>
-					<OngoingContsPremium>
-						500.00
-					</OngoingContsPremium>
-					<OngoingContsType>
-						Monthly
-					</OngoingContsType>
-					<MaturityValueLow>
-						0
-					</MaturityValueLow>
-					<MaturityValueMid>
-						0
-					</MaturityValueMid>
-					<MaturityValueHigh>
-						0
-					</MaturityValueHigh>
-					<TotalMemberContributionsToScheme>
-						10000
-					</TotalMemberContributionsToScheme>
-				</Portfolio>
-				
-		 </Portfolios>
-	</Client>
-</Clients>
+	<Clients>
+		<Client>
+			<ClientID>VVClientDrawdown</ClientID>
+			<Title>Mr</Title>
+			<Firstname>VVCompany</Firstname>
+			<Surname>ClientDrawdown01</Surname>
+			<DateOfBirth>1979-12-02T00:00:00</DateOfBirth>
+			<Gender>Male</Gender>
+			<MaritalStatus>Married</MaritalStatus>
+			<Partner>Mrs VVCompany ClientDrawdown02</Partner>
+			<DependantChildren>2</DependantChildren>
+		    <IndependantChildren>1</IndependantChildren>
+		    <Siblings>1</Siblings>
+			<ServiceBasis>1</ServiceBasis>
+			<EthicalInvestment>1</EthicalInvestment>
+			<NextReviewDate>2021-10-01T00:00:00</NextReviewDate>
+			<IsSharedWithCompany>False</IsSharedWithCompany>
+		<Portfolios>
+			<Portfolio>
+				<PortfolioID>VVCompany_Drawdown01</PortfolioID>
+					<ClientID>VVClientDrawdown</ClientID>
+					<Reference>VVCompany Drawdown Portfolio 01</Reference>
+					<ProductID>4</ProductID>
+					<Benchmark>FTSE ALLSH TR GBP</Benchmark>
+					<NextReviewDate>2021-10-01T00:00:00</NextReviewDate>
+					<IsWorkplacePension>Yes</IsWorkplacePension>
+					<IsSharedWithCompany>No</IsSharedWithCompany>
+					<InvestmentObjective>Mortgage</InvestmentObjective>
+					<OngoingContsPremium>8000</OngoingContsPremium>
+				    <OngoingContsType>Annually</OngoingContsType>
+				    <OngoingContsEscalationRate>Other</OngoingContsEscalationRate>
+				    <OngoingContsEscalationRateOther>2.5</OngoingContsEscalationRateOther>
+				    <OngoingContsIncreasingEvery>January</OngoingContsIncreasingEvery>
+				    <ContributionsStop>At Other Age</ContributionsStop>
+				    <StopAge>75</StopAge>
+				    <FundCharge>0.45</FundCharge>
+				    <PlanCharge>0.50</PlanCharge>
+				    <PolicyFee>15</PolicyFee>
+				    <AdviserCharge>1</AdviserCharge>
+			</Portfolio>
+		</Portfolios>
+		<Expenses>
+			<Expense>
+				<Name>VVCompanyLivingCost</Name>
+				<Amount>9000</Amount>
+				<Starts>At Retirement Age</Starts>
+				<Ends>At Mortality</Ends>
+			</Expense>
+		</Expenses>		
+		</Client>
+	</Clients>
 </Root>
