@@ -28,6 +28,8 @@ import './functions/Create/Portfolios_Create.js'
 import './functions/Create/Portfolio_Create.js'
 import './functions/Create/PortfolioInvestment_Create.js'
 import './functions/Create/Investments_Create.js'
+import './functions/Create/PortfolioTargetAssetAllocation_Create.js'
+import './functions/Create/TargetAssetAllocations_Create.js'
 
 import './functions/Assert/Clients_Assert.js'
 import './functions/Assert/Client_Assert.js'
@@ -35,6 +37,8 @@ import './functions/Assert/Portfolios_Assert.js'
 import './functions/Assert/Portfolio_Assert.js'
 import './functions/Assert/PortfolioInvestment_Assert.js'
 import './functions/Assert/Investments_Assert.js'
+import './functions/Assert/PortfolioTargetAssetAllocation_Assert.js'
+import './functions/Assert/TargetAssetAllocations_Assert.js'
 
 import './functions/Delete/Clients_Delete.js'
 import './functions/Delete/Client_Delete.js'
@@ -42,6 +46,8 @@ import './functions/Delete/Portfolio_Delete.js'
 import './functions/Delete/Portfolios_Delete.js'
 import './functions/Delete/Investments_Delete.js'
 import './functions/Delete/PortfolioInvestment_Delete.js'
+import './functions/Delete/PortfolioTargetAssetAllocation_Delete.js'
+import './functions/Delete/TargetAssetAllocations_Delete.js'
 
 
 

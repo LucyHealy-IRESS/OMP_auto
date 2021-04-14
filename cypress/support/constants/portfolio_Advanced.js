@@ -2,6 +2,7 @@ import * as constants from "./constantsSelectors.js";
 
 export const
 
+PortfoliosAdvancedEditorSelector = '#EditPortfolioAdvancedPopup',
 //ToDo
 //Import,Intelligent Office ID,Xplan ID,Transact Key,Drawdown Type,Account Number, Current salary amount and state pension amount
 Portfolio_BasicDetails_Advanced = {
@@ -790,19 +791,19 @@ Portfolio_SchemeAndTransferDetails_Advanced = {
 
     
 Portfolio_AssetAllocation_Advanced = {
-  Category_Name: {
+  Tier1ID: {
       Selector: constants.Portfolio_AATier1,
       inputType: "Dropdown",
       AccordianSelector: constants.PortfolioAdv_ACAssetAllocation,
       AccordianName: "Asset Allocation",
     },
-  Subcategory_Name: {
+  Tier2ID: {
       Selector: constants.Portfolio_AATier2,
       inputType: "Dropdown",
       AccordianSelector: constants.PortfolioAdv_ACAssetAllocation,
       AccordianName: "Asset Allocation",
     },
-  Subcategory_Two_Name: {
+  Tier3ID: {
       Selector: constants.Portfolio_AATier3,
       inputType: "Dropdown",
       AccordianSelector: constants.PortfolioAdv_ACAssetAllocation,
