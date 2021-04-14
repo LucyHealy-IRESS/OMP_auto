@@ -942,6 +942,148 @@ Portfolio_DrawdownIncome_Advanced = {
 
 },
 
+Portfolio_SafeguardedBenefitsSegmentEditor_BasicDetails_Advanced = {
+  IncomeType: {
+    Selector: ".BasicDetails_tooltip input",
+    inputType: "Dropdown",
+    AccordianSelector: "#Basic Details",
+    AccordianName: "Basic Details",
+  },
+  Name: {
+    Selector: ".Name_tooltip input",
+    inputType: "String",
+    AccordianSelector: "#Basic Details",
+    AccordianName: "Basic Details",
+  },
+  NRA: {
+    Selector: ".NRA_tooltip input",
+    inputType: "Integer",
+    AccordianSelector: "#Basic Details",
+    AccordianName: "Basic Details",
+  },
+},  
+
+Portfolio_SafeguardedBenefitsSegmentEditor_IncomeDetails_Advanced = {
+
+  IncomeAmount: {
+    Selector: ".IncomeAmount_tooltip input",
+    inputType: "Integer",
+    AccordianSelector: "#Income Details",
+    AccordianName: "Income Details",
+  },
+  IncomeAsAt: {
+    Selector: ".IncomeAsAt NonWijmoDatePickerElement day",
+    inputType: "Integer",
+    AccordianSelector: "#Income Details",
+    AccordianName: "Income Details",
+  },
+  IncomeAsAt: {
+    Selector: ".IncomeAsAt NonWijmoDatePickerElement month",
+    inputType: "Integer",
+    AccordianSelector: "#Income Details",
+    AccordianName: "Income Details",
+  },
+  IncomeAsAt: {
+    Selector: ".IncomeAsAt NonWijmoDatePickerElement year",
+    inputType: "Integer",
+    AccordianSelector: "#Income Details",
+    AccordianName: "Income Details",
+  },
+  ERAFactor: {
+    Selector: ".ERAFactor_tooltip input",
+    inputType: "Integer",
+    AccordianSelector: "#Income Details",
+    AccordianName: "Income Details",
+  },
+  ALRFactor: {
+    Selector: ".ALRFactor_tooltip input",
+    inputType: "Integer",
+    AccordianSelector: "#Income Details",
+    AccordianName: "Income Details",
+  },
+  SegmentSpecificCommutation: {
+    Selector: ".wijmo-checkbox-box",
+    inputType: "Checkbox",
+    AccordianSelector: "#Income Details",
+    AccordianName: "Income Details",
+  },
+  SegmentCommutationFactor: {
+    Selector: ".SegmentCommutationFactor_tooltip input",
+    inputType: "Integer",
+    AccordianSelector: "#Income Details",
+    AccordianName: "Income Details",
+  },
+  IncomeStops: {
+    Selector: ".IncomeStops_tooltip input",
+    inputType: "Dropdown",
+    AccordianSelector: "#Income Details",
+    AccordianName: "Income Details",
+  },
+  OtherAge: {
+    Selector: ".OtherAge_tooltip input",
+    inputType: "Integer",
+    AccordianSelector: "#Income Details",
+    AccordianName: "Income Details",
+  },
+},  
+
+Portfolio_SafeguardedBenefitsSegmentEditor_RevaluationAndEscalation_Advanced = {
+  RevaluationRate: {
+    Selector: ".RevaluationRaye_tooltip input",
+    inputType: "Dropdown",
+    AccordianSelector: "#Revaluation and Escalation",
+    AccordianName: "Revaluation and Escalation",
+  },
+  CustomRevaluationRate: {
+    Selector: ".CustomRevaluationRate_tooltip input",
+    inputType: "Integer",
+    AccordianSelector: "#Revaluation and Escalation",
+    AccordianName: "Revaluation and Escalation",
+  },
+  MinRevaluationRate: {
+    Selector: ".MinRevaluationRate_tooltip input",
+    inputType: "Integer",
+    AccordianSelector: "#Revaluation and Escalation",
+    AccordianName: "Revaluation and Escalation",
+  },
+  MaxRevaluationRate: {
+    Selector: ".MaxRevaluationRate_tooltip input",
+    inputType: "Integer",
+    AccordianSelector: "#Revaluation and Escalation",
+    AccordianName: "Revaluation and Escalation",
+  },
+  RevaluationBasis: {
+    Selector: ".RevaluationBasis_tooltip input",
+    inputType: "Dropdown",
+    AccordianSelector: "#Revaluation and Escalation",
+    AccordianName: "Revaluation and Escalation",
+  },
+  EscalationRate: {
+    Selector: ".EscalationRate_tooltip input",
+    inputType: "Dropdown",
+    AccordianSelector: "#Revaluation and Escalation",
+    AccordianName: "Revaluation and Escalation",
+  },
+  CustomEscalationRate: {
+    Selector: ".CustomEscalationRate_tooltip input",
+    inputType: "Integer",
+    AccordianSelector: "#Revaluation and Escalation",
+    AccordianName: "Revaluation and Escalation",
+  },
+  MinEscalationRate: {
+    Selector: ".MinEscalationRate_tooltip input",
+    inputType: "Integer",
+    AccordianSelector: "#Revaluation and Escalation",
+    AccordianName: "Revaluation and Escalation",
+  },
+  MaxEscalationRate: {
+    Selector: ".MaxEscalationRate_tooltip input",
+    inputType: "Integer",
+    AccordianSelector: "#Revaluation and Escalation",
+    AccordianName: "Revaluation and Escalation",
+  },
+},   
+
 AllPortfolioAdvancedInputs = {
 ...Portfolio_BasicDetails_Advanced,
 ...Portfolio_OngoingContribution_Advanced,
@@ -956,6 +1098,9 @@ AllPortfolioAdvancedInputs = {
 ...Portfolio_RetirementIncome_Advanced,
 ...Portfolio_AssetAllocation_Advanced,
 ...Portfolio_Holdings_Advanced,
-...Portfolio_DrawdownIncome_Advanced
+...Portfolio_DrawdownIncome_Advanced,
+...Portfolio_SafeguardedBenefitsSegmentEditor_BasicDetails_Advanced,
+...Portfolio_SafeguardedBenefitsSegmentEditor_IncomeDetails_Advanced,
+...Portfolio_SafeguardedBenefitsSegmentEditor_RevaluationAndEscalation_Advanced, 
 }
 
