@@ -21,11 +21,11 @@
 					    <Segment>
 						<IncomeType>Excess Over GMP Pre 1997</IncomeType>
 						<Name>Segment 1</Name>
-						<SchemeNRA>70</SchemeNRA>
-						<Amount>4000</Amount>
-						<AnnualLateRetirementFactor>3.33</AnnualLateRetirementFactor>
-						<AsAtDate>2021-03-01T00:00:00</AsAtDate>
-						<SpecificSegmentCommutation>True</SpecificSegmentCommutation>
+						<NRA>70</NRA>
+						<IncomeAmount>4000</IncomeAmount>
+						<ALRFactor>3.33</ALRFactor>
+						<IncomeAsAt>2021-03-01T00:00:00</IncomeAsAt>
+						<SegmentSpecificCommutation>True</SpecificSegmentCommutation>
 						<SegmentCommutationFactor>9.999</SegmentCommutationFactor>
 						<IncomeStops>At Other Age</IncomeStops>
 						<OtherAge>80</OtherAge>
@@ -37,8 +37,8 @@
 					    <Segment>
 						<IncomeType>GMP Pre 1988</IncomeType>
 						<Name>Segment 2</Name>
-						<Amount>2000</Amount>
-						<AsAtDate>2021-03-01T00:00:00</AsAtDate>
+						<IncomeAmount>2000</IncomeAmount>
+						<IncomeAsAt>2021-03-01T00:00:00</IncomeAsAt>
 						<RevaluationRate>Section 148 Orders</RevaluationRate>
 						<EscalationRate>CPI</EscalationRate>
 						<MinEscalationRate>2</MinEscalationRate>
@@ -47,11 +47,14 @@
 						<Segment>
 						<IncomeType>Excess Over GMP Post 1997</IncomeType>
 						<Name>Segment 3</Name>
-						<Amount>6000</Amount>
-						<AsAtDate>2021-03-01T00:00:00</AsAtDate>
+						<NRA>50</NRA>
+						<IncomeAmount>6000</IncomeAmount>
+						<ERAFactor>2.22</ERAFactor>
+						<IncomeAsAt>2021-03-01T00:00:00</IncomeAsAt>
 						<RevaluationRate>RPI</RevaluationRate>
 						<MinRevaluationRate>1.50</MinRevaluationRate>
 						<MaxRevaluationRate>7.50</MaxRevaluationRate>
+						<RevaluationBasis>Annual</RevaluationBasis>
 						<EscalationRate>Zero</EscalationRate>
 						</Segment>
 					</Segments>
