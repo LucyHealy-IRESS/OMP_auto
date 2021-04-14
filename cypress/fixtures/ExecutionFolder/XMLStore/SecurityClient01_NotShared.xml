@@ -30,7 +30,7 @@
 					<OngoingContsPremium>400</OngoingContsPremium>
 				    <OngoingContsType>Monthly</OngoingContsType>
 				    <OngoingContsEscalationRate>Other</OngoingContsEscalationRate>
-				    <OngoingContsEscalationOther>2</OngoingContsEscalationOther>
+				    <OngoingContsEscalationRateOther>2</OngoingContsEscalationRateOther>
 				    <OngoingContsIncreasingEvery>April</OngoingContsIncreasingEvery>
 				    <ContributionsStop>At Other Age</ContributionsStop>
 				    <StopAge>75</StopAge>
