@@ -19,7 +19,7 @@ Cypress.Commands.add("Portfolio_Create_2", (EntityData) => {
     cy.ClosePortfolioEditor(PortfolioConstants.PortfoliosAdvancedEditorSelector);
     
     cy.clickButtonInPopup(PortfolioConstants.ClientPortfoliosSelector,"Add New Portfolio");
-    cy.get("[aria-describedby='" + PortfolioConstants.PortfoliosQuickEditorSelector.replace("#","") + "'] #btn-advancedDetails-action").click();
+    cy.get("[aria-describedby='" + PortfolioConstants.PortfoliosQuickEditorSelector.replace("#","") + "'] #btn-advancedDetails-action", {timeout:Constants.Timeout_Medium}).click();
 
     cy.get(PortfolioConstants.PortfoliosAdvancedEditorSelector + " .AccordianContainer", {  //ensure portfolio adv editor is there and has loaded
         timeout: Constants.Timeout_EditorWait,

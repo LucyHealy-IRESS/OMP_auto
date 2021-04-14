@@ -2,6 +2,7 @@ import * as constants from "./constantsSelectors.js";
 
 export const
 
+PortfoliosAdvancedEditorSelector = '#EditPortfolioAdvancedPopup',
 //ToDo
 //Import,Intelligent Office ID,Xplan ID,Transact Key,Drawdown Type,Account Number, Current salary amount and state pension amount
 Portfolio_BasicDetails_Advanced = {
@@ -790,19 +791,19 @@ Portfolio_SchemeAndTransferDetails_Advanced = {
 
     
 Portfolio_AssetAllocation_Advanced = {
-  Category_Name: {
+  Tier1ID: {
       Selector: constants.Portfolio_AATier1,
       inputType: "Dropdown",
       AccordianSelector: constants.PortfolioAdv_ACAssetAllocation,
       AccordianName: "Asset Allocation",
     },
-  Subcategory_Name: {
+  Tier2ID: {
       Selector: constants.Portfolio_AATier2,
       inputType: "Dropdown",
       AccordianSelector: constants.PortfolioAdv_ACAssetAllocation,
       AccordianName: "Asset Allocation",
     },
-  Subcategory_Two_Name: {
+  Tier3ID: {
       Selector: constants.Portfolio_AATier3,
       inputType: "Dropdown",
       AccordianSelector: constants.PortfolioAdv_ACAssetAllocation,
@@ -883,7 +884,62 @@ Portfolio_DrawdownIncome_Advanced = {
     inputType: "Dropdown",
     AccordianSelector: constants.PortfolioAdv_DrawdownIncome,
     AccordianName: "Drawdown Income"
-  }
+  },
+  Date: {
+    Selector: ".DrwDwnInc_Day Date NonWijmoDatePickerElement day",
+    inputType: "Integer",
+    AccordianSelector: "#EditDrawdownIncomeEntityPopup",
+    AccordianName: "Drawdown Income Editor"
+  },
+  Date: {
+    Selector: ".DrwDwnInc_Day Date NonWijmoDatePickerElement month",
+    inputType: "Integer",
+    AccordianSelector: "#EditDrawdownIncomeEntityPopup",
+    AccordianName: "Drawdown Income Editor"
+  },
+  Date: {
+    Selector: ".DrwDwnInc_Day Date NonWijmoDatePickerElement year",
+    inputType: "Integer",
+    AccordianSelector: "#EditDrawdownIncomeEntityPopup",
+    AccordianName: "Drawdown Income Editor"
+  },
+  DrawdownFundValueatDate: {
+    Selector: ".DrwDwnInc_FundValueAtDate",
+    inputType: "Integer",
+    AccordianSelector: "#EditDrawdownIncomeEntityPopup",
+    AccordianName: "Drawdown Income Editor"
+  },
+  IncomeTypeFromDate: {
+    Selector: ".DrwDwnInc_IncomeTypeFromDate",
+    inputType: "Dropdown",
+    AccordianSelector: "#EditDrawdownIncomeEntityPopup",
+    AccordianName: "Drawdown Income Editor"
+  },
+  AnnualIncomeFromDate: {
+    Selector: ".DrwDwnInc_AnnualIncomeFromDate",
+    inputType: "Integer",
+    AccordianSelector: "#EditDrawdownIncomeEntityPopup",
+    AccordianName: "Drawdown Income Editor"
+  },
+  Paid: {
+    Selector: ".DrwDwnInc_Paid",
+    inputType: "Dropdown",
+    AccordianSelector: "#EditDrawdownIncomeEntityPopup",
+    AccordianName: "Drawdown Income Editor"
+  },
+  LumpSumType: {
+    Selector: ".DrwDwnInc_LumpSumType",
+    inputType: "Dropdown",
+    AccordianSelector: "#EditDrawdownIncomeEntityPopup",
+    AccordianName: "Drawdown Income Editor"
+  },
+  LumpSumAmount: {
+    Selector: ".DrwDwnInc_LumpSumAmount",
+    inputType: "Integer",
+    AccordianSelector: "#EditDrawdownIncomeEntityPopup",
+    AccordianName: "Drawdown Income Editor"
+  },
+
 },
 
 AllPortfolioAdvancedInputs = {
