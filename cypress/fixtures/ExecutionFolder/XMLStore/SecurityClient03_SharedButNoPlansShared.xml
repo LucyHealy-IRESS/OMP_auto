@@ -10,7 +10,7 @@
 			<Address1>11 Bridgewater Ave</Address1>
 		    <City>Brentwood</City>
 		    <County>Essex</County>
-		    <PostCode>SS1 2AA</PostCode>
+		    <Postcode>SS1 2AA</Postcode>
 		    <ContactNumber>01245 112233</ContactNumber>
 		    <EveningContactNumber>01245 445566</EveningContactNumber>
 			<PayingFee>Yes</PayingFee>
@@ -33,7 +33,7 @@
 					<OngoingContsPremium>4000</OngoingContsPremium>
 				    <OngoingContsType>Annually</OngoingContsType>
 				    <OngoingContsEscalationRate>Other</OngoingContsEscalationRate>
-				    <OngoingContsEscalationOther>2.75</OngoingContsEscalationOther>
+				    <OngoingContsEscalationRateOther>2.75</OngoingContsEscalationRateOther>
 				    <OngoingContsIncreasingEvery>September</OngoingContsIncreasingEvery>
 					<Investments>
 						<PortfolioInvestment>

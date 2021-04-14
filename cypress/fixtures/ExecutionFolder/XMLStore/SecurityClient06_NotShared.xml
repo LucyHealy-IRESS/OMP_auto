@@ -29,7 +29,7 @@
 					<OngoingContsPremium>999.99</OngoingContsPremium>
 				    <OngoingContsType>Monthly</OngoingContsType>
 				    <OngoingContsEscalationRate>Other</OngoingContsEscalationRate>
-				    <OngoingContsEscalationOther>1.50</OngoingContsEscalationOther>
+				    <OngoingContsEscalationRateOther>1.50</OngoingContsEscalationRateOther>
 				    <OngoingContsIncreasingEvery>April</OngoingContsIncreasingEvery>
 					<Investments>
 						<PortfolioInvestment>
