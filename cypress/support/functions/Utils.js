@@ -48,14 +48,14 @@ Cypress.Commands.add("TranslateProductID", (Portfolio, XmlInputObject) => {
     cy.SetDropdown(XmlInputObject.Selector, portfolioMapping[ProviderID]);
   });
 
-  Cypress.Commands.add('ProductIdType', () =>{
-    var ProductID = EntityData["ProductID"].trim();
-    ProductID = ["PD", ProductID];
-    ProductID = ProductID.join("_");
-    //var obj = {};
+  // Cypress.Commands.add('ProductIdType', () =>{
+  //   var ProductID = EntityData["ProductID"].trim();
+  //   ProductID = ["PD", ProductID];
+  //   ProductID = ProductID.join("_");
+  //   //var obj = {};
     
-    return portfolioMapping.ProductIDs.[ProductID].pType;
-  })
+  //   return portfolioMapping.ProductIDs.[ProductID].pType;
+  // })
 
 
 //Open an accordian, check first if accordian is already open, else a click will close it

@@ -13,9 +13,7 @@ Cypress.Commands.add("Portfolio_Assert_1", (EntityData) => {
       cy.ClosePortfolioEditor(Portfolio_Smp_Constants.PortfoliosQuickEditorSelector).then(function(){
         cy.wait(2000); //2 second ui catchup to prevent any detatching from async refreshes 
 
-
-
-        if (PortfolioConstants.ProductIDs.[ProductID].pType == 'Income'){
+        if (PortfolioConstants.ProductIDs[ProductID].pType == 'Income'){
           cy.menuClick('Client Summary', '#ClientSummaryIncomes');
           cy.wait(2000)
           cy.get('#Client_ViewIncomes > .gridContainer tr td', {timeout:Constants.Timeout_Medium}).contains(entity).dblclick().then(function () {             
@@ -47,7 +45,7 @@ Cypress.Commands.add("Portfolio_Assert_2", (EntityData) => {
   cy.wait(2000).then(function(){  //2 second ui catchup to prevent any detatching from async refreshes 
 
       //if (cy.ProductIdType() == 'Income'){
-      if (PortfolioConstants.ProductIDs.[ProductID].pType == 'Income'){
+      if (PortfolioConstants.ProductIDs[ProductID].pType == 'Income'){
         cy.menuClick('Client Summary', '#ClientSummaryIncomes');
         cy.wait(2000)
         cy.get('#Client_ViewIncomes > .gridContainer tr td', {timeout:Constants.Timeout_Medium}).contains(entity).dblclick().then(function () {      

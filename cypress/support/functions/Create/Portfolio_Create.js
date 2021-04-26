@@ -6,17 +6,24 @@ import * as Constants from "../../constants/Core.js";
 //Portfolio Editor simple mode
 Cypress.Commands.add("Portfolio_Create_1", (EntityData) => {
 
+    var ProductID = EntityData["ProductID"].trim();
+    ProductID = ["PD", ProductID];
+    ProductID = ProductID.join("_");
+
     var ProductId = EntityData["ProductID"]
     cy.ClosePortfolioEditor(Portfolio_Smp_Constants.PortfoliosQuickEditorSelector).then(function(){
     
-    if (ProductId =='1'){
-        cy.menuClick('Client Summary', '#ClientSummaryPortfolios')
-        cy.clickButtonInPopup(Portfolio_Smp_Constants.ClientPortfoliosSelector,"Add New Portfolio");
-    }
-    else if(ProductId == 14){
+
+    if (PortfolioConstants.ProductIDs[ProductID].pType == 'Income'){
         cy.menuClick('Client Summary', '#ClientSummaryIncomes')
         cy.clickButtonInPopup(Portfolio_Smp_Constants.ClientIncomesSelector,"Add New Income");
     }
+
+    else {
+        cy.menuClick('Client Summary', '#ClientSummaryPortfolios')
+        cy.clickButtonInPopup(Portfolio_Smp_Constants.ClientPortfoliosSelector,"Add New Portfolio");
+    }
+
     }).then(function(){
         cy.PopulateEditor(Portfolio_Smp_Constants.PortfoliosQuickEditorSelector,Portfolio_Smp_Constants.Portfolio_Simple,EntityData, "Portfolio Simple");
     })
