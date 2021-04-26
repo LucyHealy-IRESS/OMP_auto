@@ -8,24 +8,14 @@ Cypress.Commands.add("PortfolioTargetAssetAllocation_Assert_1", (EntityData) => 
 
 Cypress.Commands.add("PortfolioTargetAssetAllocation_Assert_2", (EntityData) => {
 
-    var Tier1 = EntityData["Category_Name"];
-    var Tier2 = EntityData["Subcategory_Name"];
-    var Tier3 = EntityData["Subcategory_Two_Name"];
-    var Amount = EntityData["Value"];
+    const AssetOutput = [EntityData["Tier1ID"], EntityData["Tier2ID"], EntityData["Tier3ID"], EntityData["Value"]];
+    const process = AssetOutput.values();
 
+    for (const value of process) {
     cy.clickAccordion_PreCheck(Constants.PortfolioAdv_ACAssetAllocation,PortfolioAdvConstants.PortfoliosAdvancedEditorSelector,"Asset Allocations")
     cy.get('.AssetAllocation_table').find('tbody')
-        .contains(Tier1);
-
-    cy.get('.AssetAllocation_table').find('tbody')
-        .contains(Tier2);
-
-    cy.get('.AssetAllocation_table').find('tbody')
-        .contains(Tier2);
-        
-    cy.get('.AssetAllocation_table').find('tbody')
-        .contains(Amount);
-
+        .contains(value);
+    }
 });
 
 Cypress.Commands.add("PortfolioTargetAssetAllocation_Assert_3", (EntityData) => {});

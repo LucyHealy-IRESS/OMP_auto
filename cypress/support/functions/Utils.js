@@ -48,6 +48,16 @@ Cypress.Commands.add("TranslateProductID", (Portfolio, XmlInputObject) => {
     cy.SetDropdown(XmlInputObject.Selector, portfolioMapping[ProviderID]);
   });
 
+  Cypress.Commands.add('ProductIdType', () =>{
+    var ProductID = EntityData["ProductID"].trim();
+    ProductID = ["PD", ProductID];
+    ProductID = ProductID.join("_");
+    //var obj = {};
+    
+    return portfolioMapping.ProductIDs.[ProductID].pType;
+  })
+
+
 //Open an accordian, check first if accordian is already open, else a click will close it
 Cypress.Commands.add("ProcessAccordian",(EditorSelector,mapping,xmlInput,XMLDataObject,InputMappings,isCreate,EditorName) => {
     cy.get(mapping.AccordianSelector).then(function ($AccordianSelector) {
@@ -142,6 +152,13 @@ Cypress.Commands.add("clickAccordion_PreCheck",(accordionSelector,editor, accord
 Cypress.Commands.add('clickThumbnail', (thumbnailName) => {
     cy.get('[data-u="thumbnavigator"]').children().contains(thumbnailName).click({force:true});
 })
+
+//Click Menu Button
+Cypress.Commands.add('menuClick', (thumbnailName, button) => {
+  cy.clickThumbnail(thumbnailName);
+  cy.get(button).click();
+})
+
 
 Cypress.Commands.add('clickButtonInPopup', (PopupID, ButtonText) => {
     cy.get("[aria-describedby='" + PopupID.replace("#","") + "']").contains(ButtonText).click({force:true});

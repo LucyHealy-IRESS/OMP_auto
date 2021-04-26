@@ -4,34 +4,70 @@ import * as Portfolio_Adv_Constants from "../../constants/portfolio_Advanced.js"
 import * as Constants from "../../constants/Core.js";
 
 Cypress.Commands.add("Portfolio_Assert_1", (EntityData) => {
+    var ProductID = EntityData["ProductID"].trim();
+    ProductID = ["PD", ProductID];
+    ProductID = ProductID.join("_");
 
     var entity = EntityData["Reference"];
-    var ClientPortfolios = function(){
+    //var ClientPortfolios = function(){
+      cy.ClosePortfolioEditor(Portfolio_Smp_Constants.PortfoliosQuickEditorSelector).then(function(){
         cy.wait(2000); //2 second ui catchup to prevent any detatching from async refreshes 
+
+
+
+        if (PortfolioConstants.ProductIDs.[ProductID].pType == 'Income'){
+          cy.menuClick('Client Summary', '#ClientSummaryIncomes');
+          cy.wait(2000)
+          cy.get('#Client_ViewIncomes > .gridContainer tr td', {timeout:Constants.Timeout_Medium}).contains(entity).dblclick().then(function () {             
+            cy.get("[aria-describedby='" + Portfolio_Smp_Constants.PortfoliosQuickEditorSelector.replace("#","") + "']",{timeout:Constants.Timeout_Medium})
+          })
+        }
+
+        else {
+          cy.menuClick('Client Summary', '#ClientSummaryPortfolios')
+          cy.wait(2000)
           cy.get('#Client_ViewPortfolios > .gridContainer tr td', {timeout:Constants.Timeout_Medium}).contains(entity).dblclick().then(function () {             
-            cy.get("[aria-describedby='" + Portfolio_Smp_Constants.PortfoliosQuickEditorSelector.replace("#","") + "']",{timeout:Constants.Timeout_Medium}).then(function(){
-               cy.AssertEditor(Portfolio_Smp_Constants.PortfoliosQuickEditorSelector,Portfolio_Smp_Constants.Portfolio_Simple, EntityData, "Portfolio Simple");        
-            })
+            cy.get("[aria-describedby='" + Portfolio_Smp_Constants.PortfoliosQuickEditorSelector.replace("#","") + "']",{timeout:Constants.Timeout_Medium})
           });     
         }
-    cy.ClientPortfoliosListReturned(ClientPortfolios);
-
+      }).then(function(){
+      cy.AssertEditor(Portfolio_Smp_Constants.PortfoliosQuickEditorSelector,Portfolio_Smp_Constants.Portfolio_Simple, EntityData, "Portfolio Simple");
+      })
+    // }
+    // cy.ClientPortfoliosListReturned(ClientPortfolios);
 });
 
-Cypress.Commands.add("Portfolio_Assert_2", (EntityData) => {;
+Cypress.Commands.add("Portfolio_Assert_2", (EntityData) => {
+  var ProductID = EntityData["ProductID"].trim();
+  ProductID = ["PD", ProductID];
+  ProductID = ProductID.join("_");
+  
   var entity = EntityData["Reference"];
-  var ClientPortfolios = function(){
-      cy.wait(2000); //2 second ui catchup to prevent any detatching from async refreshes 
-      cy.get('#Client_ViewPortfolios > .gridContainer', {timeout:Constants.Timeout_Medium}).find('tr', {timeout:Constants.Timeout_Medium}).find('td').contains(entity).dblclick().then(function () {   
-          cy.get("[aria-describedby='" + PortfolioConstants.PortfoliosQuickEditorSelector.replace("#","") + "'] #btn-advancedDetails-action").click().then(function(){
-            cy.AssertEditor(PortfolioConstants.PortfoliosAdvancedEditorSelector,Portfolio_Adv_Constants.AllPortfolioAdvancedInputs, EntityData, "Portfolio Advanced");            
+
+  cy.wait(2000).then(function(){  //2 second ui catchup to prevent any detatching from async refreshes 
+
+      //if (cy.ProductIdType() == 'Income'){
+      if (PortfolioConstants.ProductIDs.[ProductID].pType == 'Income'){
+        cy.menuClick('Client Summary', '#ClientSummaryIncomes');
+        cy.wait(2000)
+        cy.get('#Client_ViewIncomes > .gridContainer tr td', {timeout:Constants.Timeout_Medium}).contains(entity).dblclick().then(function () {      
+          cy.get('.QuickEditPortfolioSuperpanel').then(function(){ //function to correct assyncronous call
+            cy.contains('Advanced Details').click() 
           })
-      });     
+        })
       }
-  cy.ClientPortfoliosListReturned(ClientPortfolios);
 
+      else {
+        cy.menuClick('Client Summary', '#ClientSummaryPortfolios')
+        cy.wait(2000)
+        cy.get('#Client_ViewPortfolios > .gridContainer', {timeout:Constants.Timeout_Medium}).find('tr', {timeout:Constants.Timeout_Medium}).find('td').contains(entity).dblclick().then(function () {   
+            cy.get("[aria-describedby='" + PortfolioConstants.PortfoliosQuickEditorSelector.replace("#","") + "'] #btn-advancedDetails-action").click();  
+        })
+      }     
+    }).then(function(){
+      cy.AssertEditor(PortfolioConstants.PortfoliosAdvancedEditorSelector,Portfolio_Adv_Constants.AllPortfolioAdvancedInputs, EntityData, "Portfolio Advanced");
+    })
   });
-
 
 
 Cypress.Commands.add("Portfolio_Assert_3", (EntityData) => {});

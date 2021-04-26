@@ -519,8 +519,95 @@ BBBBBBBB555500000000000000000227 = "Homeowners Friendly",
 BBBBBBBB555500000000000000000228 = "Nucleus",
 BBBBBBBB555500000000000000000229 = "AJ Bell",
 BBBBBBBB555500000000000000000230 = "AXA Life Europe",
-BBBBBBBB555500000000000000000328 = "Non Pension Funds"
+BBBBBBBB555500000000000000000328 = "Non Pension Funds",
 
+
+ProductIDs = {
+  PD_1: {
+      label: "Personal Pension",
+      pType: "Pension",
+  },
+  PD_2: {
+      label: "SIPP",
+      pType: "Pension",
+  },
+  PD_3: {
+    label: "SSAS",
+    pType: "Pension",
+  },
+  PD_4: {
+    label: "Drawdown",
+    pType: "Pension",
+  },
+  PD_5: {
+    label: "InvestmentBond Onshore",
+    pType: "Investment",
+  },
+  PD_6: {
+    label: "InvestmentBond Offshore",
+    pType: "Investment",
+  },
+  PD_7: {
+    label: "Stocks and Shares ISA",
+    pType: "Investment",
+  },
+  PD_8: {
+    label: "Bank Account",
+    pType: "Investment",
+  },
+  PD_9: {
+    label: "Property",
+    pType: "Investment",
+  },
+  PD_10: {
+    label: "Structured Product",
+    pType: "Investment",
+  },
+  PD_11: {
+    label: "Shares",
+    pType: "Investment",
+  },
+  PD_12: {
+    label: "General Investment Account (GIA)",
+    pType: "Investment",
+  },
+  PD_13: {
+    label: "Annuity in Payment",
+    pType: "Income",
+  },
+  PD_14: {
+    label: "Defined Benefit Pension",
+    pType: "Income",
+  },
+  PD_15: {
+    label: "Earned Income",
+    pType: "Income",
+  },
+  PD_16: {
+    label: "Other Defined Contribution Pension",
+    pType: "Pension",
+  },
+  PD_17: {
+    label: "Current Salary",
+    pType: "Income",
+  },
+  PD_18: {
+    label: "State Pension",
+    pType: "Income",
+  },
+  PD_19: {
+    label: "Tax Free Income",
+    pType: "Income",
+  },
+  PD_20: {
+    label: "Cash ISA",
+    pType: "Income",
+  },
+  PD_21: {
+    label: "Wrap Account",
+    pType: "Wrap",
+  }
+}
 
 
 

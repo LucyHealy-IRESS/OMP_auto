@@ -76,6 +76,11 @@ Client_IsSharedWithCompany = '#ClientDetailsPopup_ShareClient',
        PortfolioAdv_ACAssetAllocation = '.PA_AssetAllocations_Accordian',
        PortfolioAdv_ACHoldings = '.PA_ClientHoldings_Accordian',
        PortfolioAdv_DrawdownIncome = '.PA_DrawdownIncome_Accordian',
+       PortfolioAdv_DefinedIncome = '.PA_DefinedIncome_Accordian',
+       PortfolioAdv_ACSegmentEditorBasicDetails = '#SafeguardedBenefitsSegmentEditorAccordian > .ui-corner-bottom',
+       PortfolioAdv_ACSegmentEditorIncomeDetails = '#SafeguardedBenefitsSegmentEditorAccordian > .ui-corner-bottom',
+       PortfolioAdv_ACSegmentEditorRevaluationEscalation = '#SafeguardedBenefitsSegmentEditorAccordian > .ui-corner-bottom',
+   
        
 
 //Portfolio_BasicDetailsInputs	
@@ -211,6 +216,10 @@ Client_IsSharedWithCompany = '#ClientDetailsPopup_ShareClient',
        Portfolio_HDEnableCustomFund = '.editHoldingsPriceInput',
        Portfolio_HDCustomFundPrice = '.customprice',
 
+//Defined Income
+       //Segment Editor
+       
+
 //search
 
        searchTextMatch = '.TextMatch',
@@ -223,6 +232,11 @@ Client_IsSharedWithCompany = '#ClientDetailsPopup_ShareClient',
        PortfolioSmp_ACOngoingContributions = '#PortfolioSimpleEditor_OngoingContributions',
        PortfolioSmp_ACHoldings = '#PortfolioSimpleEditor_Holdings',
        PortfolioSmp_ACRegularWithdrawals = '#PortfolioSimpleEditor_RegularWithdrawals',
+       PortfolioSmp_DefinedIncome = '#PortfolioSimpleEditor_DefinedIncome',
+       PortfolioSmp_ACSegmentEditorBasicDetails = '#SafeguardedBenefitsSegmentEditorAccordian > .ui-corner-bottom',
+       PortfolioSmp_ACSegmentEditorIncomeDetails = '#SafeguardedBenefitsSegmentEditorAccordian > .ui-corner-bottom',
+       PortfolioSmp_ACSegmentEditorRevaluationEscalation = '#SafeguardedBenefitsSegmentEditorAccordian > .ui-corner-bottom',
+
        //Inputs
        PortfolioSmp_BDImport = '.basic_details_table > tbody > :nth-child(1) > td > .wijmo-wijcombobox > .wijmo-wijcombobox-wrapper > .wijmo-wijcombobox-input',
        PortfolioSmp_BDXplanID = '.IRESSKey_tooltip',

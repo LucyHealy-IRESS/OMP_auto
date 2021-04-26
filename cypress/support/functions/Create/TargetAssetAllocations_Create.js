@@ -1,8 +1,8 @@
 
-Cypress.Commands.add("TargetAssetAllocations_1", (EntityData) => {});
+Cypress.Commands.add("TargetAssetAllocations_Create_1", (EntityData) => {});
 
-Cypress.Commands.add("TargetAssetAllocations_2", (EntityData) => {});
+Cypress.Commands.add("TargetAssetAllocations_Create_2", (EntityData) => {});
 
-Cypress.Commands.add("TargetAssetAllocations_3", (EntityData) => {});
+Cypress.Commands.add("TargetAssetAllocations_Create_3", (EntityData) => {});
 
-Cypress.Commands.add("TargetAssetAllocations_Tidy", (ActionFileNo) => {});
+Cypress.Commands.add("TargetAssetAllocations_Tidy", (ActionFileNo) => {})
