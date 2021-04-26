@@ -12,8 +12,8 @@
 			<DependantChildren>2</DependantChildren>
 		    <IndependantChildren>1</IndependantChildren>
 		    <Siblings>1</Siblings>
-			<ServiceBasis>CompanyA Security Service Basis</ServiceBasis>
-			<EthicalInvestment>CompanyA Security Ethical Investment</EthicalInvestment>
+			<ServiceBasis>6</ServiceBasis>
+			<EthicalInvestment>8</EthicalInvestment>
 			<NextReviewDate>2022-01-01T00:00:00</NextReviewDate>
 			<IsSharedWithCompany>False</IsSharedWithCompany>
 		<Portfolios>
@@ -26,7 +26,7 @@
 					<NextReviewDate>2022-01-01T00:00:00</NextReviewDate>
 					<IsWorkplacePension>True</IsWorkplacePension>
 					<IsSharedWithCompany>False</IsSharedWithCompany>
-					<InvestmentObjective>CompanyA Security Investment Objective</InvestmentObjective>
+					<InvestmentObjective>6</InvestmentObjective>
 					<OngoingContsPremium>400</OngoingContsPremium>
 				    <OngoingContsType>Monthly</OngoingContsType>
 				    <OngoingContsEscalationRate>Other</OngoingContsEscalationRate>

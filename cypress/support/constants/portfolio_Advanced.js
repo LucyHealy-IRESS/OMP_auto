@@ -17,6 +17,12 @@ Portfolio_BasicDetails_Advanced = {
         AccordianSelector: constants.PortfolioAdv_ACBasicDetails,
         AccordianName: 'Details', 
       }, 
+      DrawdownType: {
+        Selector: ".DrawdownTypeDrpDwn",
+        inputType: "Dropdown",
+        AccordianSelector: constants.PortfolioAdv_ACBasicDetails,
+        AccordianName: 'Details', 
+      }, 
     ProviderID: {
         Selector: ".ProviderDrpDwn",
         inputType: "ProviderDropdown",
