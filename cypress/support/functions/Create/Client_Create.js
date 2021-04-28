@@ -8,7 +8,9 @@ Cypress.Commands.add("Client_Create_1", (EntityData) => {
     cy.get("#EditClientPopup .client_info_table", {  //ensure client editor is there and client info section has loaded
       timeout: Constants.Timeout_EditorWait,
     }).then(function () {         
-        cy.PopulateEditor(ClientConstants.ClientEditorSelector,ClientConstants.AllClientInputs,EntityData,"Client");       
+        cy.PopulateEditor(ClientConstants.ClientEditorSelector,ClientConstants.AllClientInputs,EntityData,"Client");
+        cy.wait(1000);
+        cy.clickButtonInPopup(ClientConstants.ClientEditorSelector,"Ok");       
     });
    
 });

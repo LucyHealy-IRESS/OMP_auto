@@ -66,4 +66,14 @@ EntityTypes = {
         API_ActionRequired_Assert: true,
         API_ActionRequired_Delete: false
     },
+    SwitchingQuotes: {
+        API_ActionRequired_Create: false,
+        API_ActionRequired_Assert: false,
+        API_ActionRequired_Delete: false
+    },
+    SwitchingQuote: {
+        API_ActionRequired_Create: true,
+        API_ActionRequired_Assert: true,
+        API_ActionRequired_Delete: false
+    },
 }

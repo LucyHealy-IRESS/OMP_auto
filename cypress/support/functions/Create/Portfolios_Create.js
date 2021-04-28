@@ -1,10 +1,10 @@
 import * as ClientConstants from "../../constants/client.js";
 
 Cypress.Commands.add("Portfolios_Create_1", (EntityData) => {
-    //click > Portfolios
-    cy.wait(1000);
-    cy.clickButtonInPopup(ClientConstants.ClientEditorSelector,"Ok");
-    //cy.clickButtonInPopup(ClientConstants.ClientEditorSelector,"View Portfolios >");
+    // //click > Portfolios
+    // cy.wait(1000);
+    // cy.clickButtonInPopup(ClientConstants.ClientEditorSelector,"Ok");
+    // //cy.clickButtonInPopup(ClientConstants.ClientEditorSelector,"View Portfolios >");
 });
 
 Cypress.Commands.add("Portfolios_Create_2", (EntityData) => {

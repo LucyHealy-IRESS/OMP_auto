@@ -32,6 +32,8 @@ import './functions/Create/PortfolioTargetAssetAllocation_Create.js'
 import './functions/Create/TargetAssetAllocations_Create.js'
 import './functions/Create/SafeguardedBenefitsSegments_Create.js'
 import './functions/Create/SafeguardedBenefitsSegment_Create.js'
+import './functions/Create/SwitchingQuotes_Create.js'
+import './functions/Create/SwitchingQuote_Create.js'
 
 import './functions/Assert/Clients_Assert.js'
 import './functions/Assert/Client_Assert.js'
