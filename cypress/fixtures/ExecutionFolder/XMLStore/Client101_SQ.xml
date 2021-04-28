@@ -3,26 +3,26 @@
 	<Client>
 		<ClientID>Client01</ClientID>
 		<Title>Mrs</Title>
-		<Firstname>Switching-Pension</Firstname>
-		<Surname>Smith-White-Spider</Surname>
+		<Firstname>Lucy</Firstname>
+		<Surname>Hodge</Surname>
 		<DateOfBirth>1969-11-09T00:00:00</DateOfBirth>				
-		<NextReviewDate>2021-01-01T00:00:00</NextReviewDate>	
-		<IsSharedWithCompany>False</IsSharedWithCompany>	
 		<SwitchingQuotes>
 			<SwitchingQuote>
-                <ProductID>1</ProductID>
-                <Referemce>SQ1</Reference>
-				<CurrentPlans>
-                    <Plan>
-                    </Plan>
-                </CurrentPlans>
-                <NewInvestments>
-                    <Pension>
-                    </Pension>
-                </NewInvestments>
-                <AdviserCharges></AdviserCharges>
+				<Switching_CurrentPlans>
+                	<Switching_CurrentPlan>
+                		<Reference>CurrentPlan1</Reference>
+                	</Switching_CurrentPlan>
+					<Switching_CurrentPlan>
+                		<Reference>CurrentPlan2</Reference>
+                	</Switching_CurrentPlan>
+        		</Switching_CurrentPlans>
 			</SwitchingQuote>
 		</SwitchingQuotes>
 	</Client>
 </Clients>
 </Root>
+
+
+
+
+				

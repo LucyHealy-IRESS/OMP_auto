@@ -34,6 +34,8 @@ import './functions/Create/SafeguardedBenefitsSegments_Create.js'
 import './functions/Create/SafeguardedBenefitsSegment_Create.js'
 import './functions/Create/SwitchingQuotes_Create.js'
 import './functions/Create/SwitchingQuote_Create.js'
+import './functions/Create/Switching_CurrentPlans_Create.js'
+import './functions/Create/Switching_CurrentPlan_Create.js'
 
 import './functions/Assert/Clients_Assert.js'
 import './functions/Assert/Client_Assert.js'
@@ -45,6 +47,8 @@ import './functions/Assert/PortfolioTargetAssetAllocation_Assert.js'
 import './functions/Assert/TargetAssetAllocations_Assert.js'
 import './functions/Assert/SafeguardedBenefitsSegments_Assert.js'
 import './functions/Assert/SafeguardedBenefitsSegment_Assert.js'
+import './functions/Assert/Switching_CurrentPlans_Assert.js'
+import './functions/Assert/Switching_CurrentPlan_Assert.js'
 
 import './functions/Delete/Clients_Delete.js'
 import './functions/Delete/Client_Delete.js'
@@ -56,7 +60,8 @@ import './functions/Delete/PortfolioTargetAssetAllocation_Delete.js'
 import './functions/Delete/TargetAssetAllocations_Delete.js'
 import './functions/Delete/SafeguardedBenefitsSegments_Delete.js'
 import './functions/Delete/SafeguardedBenefitsSegment_Delete.js'
-
+import './functions/Delete/Switching_CurrentPlans_Delete.js'
+import './functions/Delete/Switching_CurrentPlan_Delete.js'
 
 
 import '.'

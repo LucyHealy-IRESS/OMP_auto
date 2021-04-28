@@ -1,20 +1,29 @@
-import * as constants from "../constants/constantsSelectors.js";
+import * as constants from "./constantsSelectors.js";
 export const
 
 CurrentPlanListSelector = "#SwitchingCurrentPlansListPopUp",
 CurrentPlanEditorSelector = '#EditCurrentPlanPopup',
 
-SwitchingCurrentPlan = {
+BasicDetails = {
   ProductID: {
       Selector: '.productCombo',
       inputType: "ProductDropdown",
       AccordianName: 'Basic Details',
-      AccordianSelector: '.wijmo-wijaccordion-content-active',
+      AccordianSelector: '.BasicDetailsAccordian',
     }, 
   Reference: {
-      Selector: '.ProductName_tooltip',
+      Selector: '.ProductName_tooltip input',
       inputType: "String",
       AccordianName: 'Basic Details',
-      AccordianSelector: '.wijmo-wijaccordion-content-active',
+      AccordianSelector: '.BasicDetailsAccordian',
     }
 },
+
+CurrentValue = {
+ 
+},
+
+AllCurrentPlanInputs = {
+  ...BasicDetails,
+  ...CurrentValue
+}

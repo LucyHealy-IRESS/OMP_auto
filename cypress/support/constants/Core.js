@@ -14,6 +14,7 @@ Timeout_EditorWait = 22600,
 Timeout_SearchWait = 32000,
 Timeout_MenuButtonWait = 36000,
 Timeout_HoldingSearch = 100000,
+Timeout_GetQuoteResults = 100000,
 
 EntityTypes = {
     Clients: {
@@ -72,8 +73,18 @@ EntityTypes = {
         API_ActionRequired_Delete: false
     },
     SwitchingQuote: {
-        API_ActionRequired_Create: true,
-        API_ActionRequired_Assert: true,
+        API_ActionRequired_Create: false,
+        API_ActionRequired_Assert: false,
         API_ActionRequired_Delete: false
     },
+    Switching_CurrentPlans: {
+        API_ActionRequired_Create: false,
+        API_ActionRequired_Assert: false,
+        API_ActionRequired_Delete: false
+    },
+    Switching_CurrentPlan: {
+        API_ActionRequired_Create: false,
+        API_ActionRequired_Assert: false,
+        API_ActionRequired_Delete: false
+    }
 }

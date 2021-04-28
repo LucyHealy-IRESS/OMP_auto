@@ -55,7 +55,7 @@ Cypress.Commands.add("ProcessXMLFile", function(fileLocation, Type,ActionFileNo)
                 for (var x = 0; x < EntityData.length; x++) {
                   // For each client......
                   cy.log(Entity + " " + Type + " Action" + ActionFileNo);
-                  eval("cy." + Entity + "_" + Type + "_" + ActionFileNo + "(EntityData[x]);");
+                  eval("cy." + Entity + "_" + Type + "_" + ActionFileNo + "(EntityData[x],"+x+");");
                   var XMLtoArraySub = Object.keys(EntityData[x]); //Get the specific client from the array    
                   ArrayOfFunctionCalls.push(Entity + "_Tidy" );       
                   traverse(XMLtoArraySub, EntityData[x]); //and start processing that down...
@@ -63,7 +63,7 @@ Cypress.Commands.add("ProcessXMLFile", function(fileLocation, Type,ActionFileNo)
                 
               } else {
                 cy.log(Entity + " " + Type + " Action:" + ActionFileNo);
-                eval("cy." + Entity + "_" + Type + "_" + ActionFileNo + "(EntityData);");
+                eval("cy." + Entity + "_" + Type + "_" + ActionFileNo + "(EntityData,0);");
                 var XMLtoArraySub = Object.keys(EntityData);
                 ArrayOfFunctionCalls.push(Entity + "_Tidy" );
                 traverse(XMLtoArraySub, EntityData);
@@ -115,6 +115,7 @@ Cypress.Commands.add("ProcesssInput",(XMLDataObject,xmlInput,mapping, isCreate,E
 //Ierate the inputs of an editor. They are either to be created or asserted
 Cypress.Commands.add("EditorProcesssor",(EditorSelector, InputMappings, XMLDataObject, isCreate, EditorName) => {
   cy.get(EditorSelector, { timeout: constants.Timeout_EditorWait}).then(function () {
+    debugger;
     for (let xmlInput in XMLDataObject) { //for each xml tag
       if(InputMappings[xmlInput]) { //if we have a mapping for this input
         var mapping = InputMappings[xmlInput];
