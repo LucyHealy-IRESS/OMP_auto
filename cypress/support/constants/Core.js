@@ -86,5 +86,30 @@ EntityTypes = {
         API_ActionRequired_Create: false,
         API_ActionRequired_Assert: false,
         API_ActionRequired_Delete: false
+    },
+    Switching_ClientDetails: {
+        API_ActionRequired_Create: false,
+        API_ActionRequired_Assert: false,
+        API_ActionRequired_Delete: false
+    },
+    Switching_NewInvestments: {
+        API_ActionRequired_Create: false,
+        API_ActionRequired_Assert: false,
+        API_ActionRequired_Delete: false
+    },
+    Switching_AdviserCharging: {
+        API_ActionRequired_Create: false,
+        API_ActionRequired_Assert: false,
+        API_ActionRequired_Delete: false
     }
+    // ,Switching_ProductFilters: {
+    //     API_ActionRequired_Create: false,
+    //     API_ActionRequired_Assert: false,
+    //     API_ActionRequired_Delete: false
+    // },
+    // Switching_ProductFeatures: {
+    //     API_ActionRequired_Create: false,
+    //     API_ActionRequired_Assert: false,
+    //     API_ActionRequired_Delete: false
+    // }
 }

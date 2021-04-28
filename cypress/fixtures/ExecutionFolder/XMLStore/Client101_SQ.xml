@@ -11,11 +11,17 @@
 				<Switching_CurrentPlans>
                 	<Switching_CurrentPlan>
                 		<Reference>CurrentPlan1</Reference>
-                	</Switching_CurrentPlan>
-					<Switching_CurrentPlan>
-                		<Reference>CurrentPlan2</Reference>
+						<ProductID>Personal Pension</ProductID>
+						<CurrentValue>5000</CurrentValue>
+						<ProjectedMaturityBasis>Estimated By System</ProjectedMaturityBasis>
+						<RetirementAge>70</RetirementAge>
                 	</Switching_CurrentPlan>
         		</Switching_CurrentPlans>
+				<Switching_ClientDetails>
+				<Reference>New Switching Quote</Reference>
+				</Switching_ClientDetails>
+				<Switching_NewInvestments></Switching_NewInvestments>
+				<Switching_AdviserCharging></Switching_AdviserCharging>
 			</SwitchingQuote>
 		</SwitchingQuotes>
 	</Client>

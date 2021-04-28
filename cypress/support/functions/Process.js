@@ -115,7 +115,6 @@ Cypress.Commands.add("ProcesssInput",(XMLDataObject,xmlInput,mapping, isCreate,E
 //Ierate the inputs of an editor. They are either to be created or asserted
 Cypress.Commands.add("EditorProcesssor",(EditorSelector, InputMappings, XMLDataObject, isCreate, EditorName) => {
   cy.get(EditorSelector, { timeout: constants.Timeout_EditorWait}).then(function () {
-    debugger;
     for (let xmlInput in XMLDataObject) { //for each xml tag
       if(InputMappings[xmlInput]) { //if we have a mapping for this input
         var mapping = InputMappings[xmlInput];

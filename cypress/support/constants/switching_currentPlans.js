@@ -7,7 +7,7 @@ CurrentPlanEditorSelector = '#EditCurrentPlanPopup',
 BasicDetails = {
   ProductID: {
       Selector: '.productCombo',
-      inputType: "ProductDropdown",
+      inputType: "Dropdown_ReadOnly",
       AccordianName: 'Basic Details',
       AccordianSelector: '.BasicDetailsAccordian',
     }, 
@@ -19,11 +19,33 @@ BasicDetails = {
     }
 },
 
-CurrentValue = {
- 
+CurrentValue = { 
+  CurrentValue: {
+    Selector: '.PolicyValuesCurrentValue_tooltip input',
+    inputType: "Integer",
+    AccordianName: 'Current Value',
+    AccordianSelector: '.CurrentValueAccordian',
+  }, 
+},
+
+
+SuppliedMaturityValues = { 
+  ProjectedMaturityBasis: {
+    Selector: '.projectedMaturityBasis ',
+    inputType: "Dropdown_ReadOnly",
+    AccordianName: 'Supplied Maturity Values',
+    AccordianSelector: '.SuppliedMaturityValuesAccordian',
+  }, 
+  RetirementAge: {
+    Selector: '.RetirementAge_tooltip input',
+    inputType: "Integer",
+    AccordianName: 'Supplied Maturity Values',
+    AccordianSelector: '.SuppliedMaturityValuesAccordian',
+  }
 },
 
 AllCurrentPlanInputs = {
   ...BasicDetails,
-  ...CurrentValue
+  ...CurrentValue,
+  ...SuppliedMaturityValues
 }
