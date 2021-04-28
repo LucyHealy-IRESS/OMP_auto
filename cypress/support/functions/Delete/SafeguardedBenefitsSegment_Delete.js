@@ -5,4 +5,3 @@ Cypress.Commands.add("SafeguardedBenefitsSegment_Delete_2", (EntityData) => {});
     
 Cypress.Commands.add("SafeguardedBenefitsSegment_Delete_3", (EntityData) => {});
     
-Cypress.Commands.add("SafeguardedBenefitsSegment_Tidy", (ActionFileNo) => {});
