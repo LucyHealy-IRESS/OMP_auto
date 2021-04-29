@@ -189,7 +189,7 @@ InflationAdjustedHigh: {
     AccordianSelector: "",
     AccordianName: "Growth Rates",
   },
-}
+},
 
 OngoingContributions = {
 
@@ -235,7 +235,7 @@ ClientExpenses: {
     AccordianSelector: "",
     AccordianName: "Ongoing Contributions",
   },
-}
+},
 
 PaidUpMaturityValues = {
 PUPMaturityValueLow: {
@@ -274,7 +274,7 @@ AsAtDate: {
     AccordianSelector: "",
     AccordianName: "Paid Up Maturity Values",
   },
-}
+},
 
 AllCurrentPlanInputs = {
   ...BasicDetails,
