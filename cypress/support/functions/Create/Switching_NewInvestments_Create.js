@@ -9,7 +9,26 @@ Cypress.Commands.add("Switching_NewInvestments_Create_1", (EntityData) => {
 
     if(EntityData){
         //Set New Investment Type Dropdown
-        cy.SetDropdown_OpenDropdown(".NewInvestmentType", EntityData.NewInvestmentType)
+        cy.SetDropdown_ByIndex(".NewInvestmentType", EntityData.NewInvestmentType)
+
+        //if(EntityData.NewInvestmentType == "3"){ //Use a Centralised Investment Proposition (CIP) to set the New Investment
+            // cy.get('.CIPGrid tr td', {timeout:Constants.Timeout_Medium}).contains(EntityData.CIPName).then(function ($row) {             
+            //     cy.wrap($row.parent().siblings().first().find('.wijmo-checkbox-box')).check({ force: true });
+            // }); 
+            
+            // var rowpos = Cypress.$('.CIPGrid tr:last').position();
+            // Cypress.$('.CIPGrid').scrollTop(rowpos.top);
+
+            // rowpos = Cypress.$('.CIPGrid tr:last').position();
+            // Cypress.$('.CIPGrid').scrollTop(rowpos.top);
+
+            // rowpos = Cypress.$('.CIPGrid tr:last').position();
+            // Cypress.$('.CIPGrid').scrollTop(rowpos.top);
+
+            // rowpos = Cypress.$('.CIPGrid tr:last').position();
+            // Cypress.$('.CIPGrid').scrollTop(rowpos.top);
+        //}
+
     }
 
 });
