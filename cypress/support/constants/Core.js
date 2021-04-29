@@ -97,6 +97,16 @@ EntityTypes = {
         API_ActionRequired_Assert: false,
         API_ActionRequired_Delete: false
     },
+    Switching_NewInvestments_ABI_Sectors: {
+        API_ActionRequired_Create: false,
+        API_ActionRequired_Assert: false,
+        API_ActionRequired_Delete: false
+    },
+    Switching_NewInvestments_ABI_SubSectors: {
+        API_ActionRequired_Create: false,
+        API_ActionRequired_Assert: false,
+        API_ActionRequired_Delete: false
+    },
     Switching_AdviserCharges: {
         API_ActionRequired_Create: false,
         API_ActionRequired_Assert: false,

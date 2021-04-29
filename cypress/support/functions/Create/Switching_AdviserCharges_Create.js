@@ -7,4 +7,6 @@ Cypress.Commands.add("Switching_AdviserCharges_Create_2", (EntityData) => {});
     
 Cypress.Commands.add("Switching_AdviserCharges_Create_3", (EntityData) => {});
     
-Cypress.Commands.add("Switching_AdviserCharges_Tidy", (ActionFileNo) => {})
+Cypress.Commands.add("Switching_AdviserCharges_Tidy", (ActionFileNo) => {
+    
+})

@@ -20,7 +20,17 @@
 				<Switching_ClientDetails>
 				<Reference>New Switching Quote</Reference>
 				</Switching_ClientDetails>
-				<Switching_NewInvestments></Switching_NewInvestments>
+				<Switching_NewInvestments>
+					<NewInvestmentType>Use Sector Defaults to set the New Investments</NewInvestmentType>
+					<UsingRule>0</UsingRule>
+						<Switching_NewInvestments_ABI_Sectors>
+							<Name>Mixed Asset</Name>
+							<Switching_NewInvestments_ABI_SubSectors>
+								<Name>Flexible Investment</Name>
+								<Amount>100</Amount>
+							</Switching_NewInvestments_ABI_SubSectors>
+						</Switching_NewInvestments_ABI_Sectors>
+				</Switching_NewInvestments>
 				<Switching_AdviserCharges>
 					<Switching_AdviserCharging>
 						<Type>Pension</Type>
@@ -32,10 +42,6 @@
 </Clients>
 </Root>
 
-
-
-
-				
 
 
 

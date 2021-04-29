@@ -7,14 +7,9 @@ Cypress.Commands.add("Switching_NewInvestments_Create_1", (EntityData) => {
     cy.clickButtonInPopup(swClientContants.ClientEditorSelector,"Current Plans"); 
     cy.clickButtonInPopup(swContants.CurrentPlanListSelector,"New Investments"); 
 
-
     if(EntityData){
-//     cy.get(swClientContants.ClientEditorSelector, {  //ensure client editor is there and client info section has loaded
-//         timeout: Constants.Timeout_EditorWait,
-//       }).then(function () {         
-//           cy.PopulateEditor(swClientContants.ClientEditorSelector,swClientContants.AllClientInputs,EntityData,"Switching Client Details");
-//           cy.wait(1000);    
-//       }); 
+        //Set New Investment Type Dropdown
+        cy.SetDropdown_OpenDropdown(".NewInvestmentType", EntityData.NewInvestmentType)
     }
 
 });
