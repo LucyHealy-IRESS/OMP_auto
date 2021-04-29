@@ -21,13 +21,21 @@
 				<Reference>New Switching Quote</Reference>
 				</Switching_ClientDetails>
 				<Switching_NewInvestments></Switching_NewInvestments>
-				<Switching_AdviserCharging></Switching_AdviserCharging>
+				<Switching_AdviserCharges>
+					<Switching_AdviserCharging>
+						<Type>Pension</Type>
+					</Switching_AdviserCharging>
+				</Switching_AdviserCharges>							
 			</SwitchingQuote>
 		</SwitchingQuotes>
 	</Client>
 </Clients>
 </Root>
 
+
+
+
+				
 
 
 
