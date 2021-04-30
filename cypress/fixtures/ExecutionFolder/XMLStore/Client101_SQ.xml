@@ -13,8 +13,8 @@
                 		<Reference>CurrentPlan1</Reference>
 						<ProductID>Personal Pension</ProductID>
 						<CurrentValue>5000</CurrentValue>
-						<ProjectedMaturityBasis>Estimated By System</ProjectedMaturityBasis>
-						<RetirementAge>70</RetirementAge>
+						<SMV_ProjectedMaturityValueBasis>Estimated By System</SMV_ProjectedMaturityValueBasis>
+						<SMV_RetirementMaturityAge>70</SMV_RetirementMaturityAge>
                 	</Switching_CurrentPlan>
         		</Switching_CurrentPlans>
 				<Switching_ClientDetails>

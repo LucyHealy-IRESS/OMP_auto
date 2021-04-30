@@ -1,4 +1,3 @@
-import * as constants from"./constantsSelectors.js";
 export const
 
 ClientEditorSelector = '#SwitchingClientDetailsPopup',
@@ -6,202 +5,225 @@ ClientEditorSelector = '#SwitchingClientDetailsPopup',
 
 PersonalDetails = {
   Title: {
-    Selector: "wijmo-wijinput-input ui-corner-all",
+    Selector: ".Title_tooltip input",
     inputType: "String",
-    AccordianSelector:"",
-    AccordianName: "Personal  Details",
+    AccordianSelector:"#PersonalDetails",
+    AccordianName: 'Personal Details', 
   },
-  FirstName: {
-      Selector: "wijmo-wijinput-input ui-corner-all",
-      inputType: "String",
-      AccordianSelector:"",
-      AccordianName: "Personal  Details",
-    },
+  Firstname: {
+    Selector: ".FirstName_tooltip input",
+    inputType: "String",
+    AccordianSelector:"#PersonalDetails",
+    AccordianName: 'Personal Details', 
+  },
   Surname: {
-      Selector: "wijmo-wijinput-input ui-corner-all",
-      inputType: "String",
-      AccordianSelector:"",
-      AccordianName: "Personal  Details",
-    },
-  DateOfBirth: {
-      Selector: "SwitchingDOB NonWijmoDatePickerElement day wijmo-wijinput-input ui-corner-all",
-      inputType: "Integer",
-      AccordianSelector:"",
-      AccordianName: "Personal  Details",
-    },
-  DateOfBirth: {
-      Selector: "SwitchingDOB NonWijmoDatePickerElement month wijmo-wijinput-input ui-corner-all",
-      inputType: "Integer",
-      AccordianSelector:"",
-      AccordianName: "Personal  Details",
-    },
-  DateOfBirth: {
-      Selector: "SwitchingDOB NonWijmoDatePickerElement year wijmo-wijinput-input ui-corner-all",
-      inputType: "Integer",
-      AccordianSelector:"",
-      AccordianName: "Personal  Details",
-    },
+    Selector: ".Surname_tooltip input",
+    inputType: "String",
+    AccordianSelector:"#PersonalDetails",
+    AccordianName: 'Personal Details', 
+  },
+  DOB: {
+    Selector: ".DateOfBirth_tooltip input",
+    ddSelector:".SwitchingDOB.day",
+    mmSelector:".SwitchingDOB.month",
+    yyyySelector:".SwitchingDOB.year",
+    inputType: "Date",
+    AccordianSelector:"#PersonalDetails",
+    AccordianName: 'Personal Details', 
+  },
   Gender: {
-      Selector: "combobox wijmo-wijcombobox-input",
-      inputType: "Dropdown",
-      AccordianSelector:"",
-      AccordianName: "Personal  Details",
-    },
+    Selector: ".Reference_tooltip input",
+    inputType: "Dropdown",
+    AccordianSelector:"#PersonalDetails",
+    AccordianName: 'Personal Details', 
+  },
+  PlannedRetirementAge: {
+    Selector: ".PlannedRetirementAge",
+    inputType: "Integer",
+    AccordianSelector:"#PersonalDetails",
+    AccordianName: 'Personal Details', 
+  },
+  LifeExpectancy: {
+    Selector: ".LifeExpectancy_tooltip input",
+    inputType: "Integer",
+    AccordianSelector:"#PersonalDetails",
+    AccordianName: 'Personal Details', 
+  },
   TargetRiskProfile: {
-      Selector: "wijmo-wijcombobox-wrapper ui-state-default ui-corner-all",
-      inputType: "Dropdown",
-      AccordianSelector:"",
-      AccordianName: "Personal  Details",
-    },
+    Selector: ".TargetRiskProfile",
+    inputType: "Dropdown",
+    AccordianSelector:"#PersonalDetails",
+    AccordianName: 'Personal Details', 
+  }
 },
 
 FamilyDetails = {
- MaritalStatus: {
-    Selector: "combobox wijmo-wijcombobox-input",
+  MaritalStatus: {
+    Selector: ".MaritalStatus_tooltip combobox",
     inputType: "Dropdown",
-    AccordianSelector:"",
-    AccordianName: "Family Details",
+    AccordianSelector:"#FamilyDetails",
+    AccordianName: 'Family Details', 
   },
-Partner: {
-    Selector: "combobox wijmo-wijcombobox-input",
+  Partner: {
+    Selector: ".PartnerGuid_tooltip combobox",
     inputType: "Dropdown",
-    AccordianSelector:"",
-    AccordianName: "Family Details",
+    AccordianSelector:"#FamilyDetails",
+    AccordianName: 'Family Details', 
   },
-NumberofDependentChildren: {
-    Selector: "ui-corner-all wijmo-wijinput-numeric wijmo-wijinput-input",
-    inputType: "Integer",
-    AccordianSelector:"",
-    AccordianName: "Family Details",
+  DependantChildren: {
+    Selector: ".NoOfDepChildren",
+    inputType: "String",
+    AccordianSelector:"#FamilyDetails",
+    AccordianName: 'Family Details', 
   },
-NumberofIndpendentChildren: {
-    Selector: "ui-corner-all wijmo-wijinput-numeric wijmo-wijinput-input",
-    inputType: "Integer",
-    AccordianSelector:"",
-    AccordianName: "Family Details",
+  IndependantChildren: {
+    Selector: ".NoOfIndependantChildren",
+    inputType: "String",
+    AccordianSelector:"#FamilyDetails",
+    AccordianName: 'Family Details', 
   },
-NumberofSiblings: {
-    Selector: "ui-corner-all wijmo-wijinput-numeric wijmo-wijinput-input",
-    inputType: "Integer",
-    AccordianSelector:"",
-    AccordianName: "Family Details",
-  },
+  Siblings: {
+    Selector: ".NoOfSiblings",
+    inputType: "String",
+    AccordianSelector:"#FamilyDetails",
+    AccordianName: 'Family Details', 
+  }
 },
 
 ClientHealth = {
   HealthIssues: {
-    Selector: "combobox wijmo-wijcombobox-input",
+    Selector: ".HealthIsues",
     inputType: "Dropdown",
-    AccordianSelector:"",
-    AccordianName: "Health Details",
+    AccordianSelector:"#HealthDetails",
+    AccordianName: 'Health Details', 
   },
   Smoker: {
-      Selector: "combobox wijmo-wijcombobox-input",
-      inputType: "Dropdown",
-      AccordianSelector:"",
-      AccordianName: "Health Details",
-    },
-  Postcode: {
-      Selector: "wijmo-wijinput ui-widget ui-helper-clearfix ui-state-default ui-corner-all",
-      inputType: "String",
-      AccordianSelector:"",
-      AccordianName: "Health Details",
-    },
+    Selector: ".smoker",
+    inputType: "Dropdown",
+    AccordianSelector:"#HealthDetails",
+    AccordianName: 'Health Details', 
+  },
+  Smoker: {
+    Selector: ".Postcode",
+    inputType: "String",
+    AccordianSelector:"#HealthDetails",
+    AccordianName: 'Health Details', 
+  }
 },
 
 Tax = {
   TaxRegion: {
-    Selector: "wijmo-wijcombobox-wrapper ui-state-default ui-corner-all",
+    Selector: ".TaxRegion",
     inputType: "Dropdown",
-    AccordianSelector:"",
-    AccordianName: "Tax and Lifetime Allowance",
+    AccordianSelector:"#TaxDetails",
+    AccordianName: 'Tax and Lifetime Allowance', 
   },
   LifetimeAllowanceType: {
-      Selector: "combobox wijmo-wijcombobox-input",
-      inputType: "Dropdown",
-      AccordianSelector:"",
-      AccordianName: "Tax and Lifetime Allowance",
+    Selector: ".LifetimeAllowanceType_tooltip .combobox",
+    inputType: "Dropdown",
+    AccordianSelector:"#TaxDetails",
+    AccordianName: 'Tax and Lifetime Allowance', 
+  },
+  ProtectedAmount: {
+    Selector: ".ProtectedAmount_tooltip input",
+    inputType: "Integer",
+    AccordianSelector:"#TaxDetails",
+    AccordianName: 'Tax and Lifetime Allowance', 
+  },
+  EnhancementFactor: {
+    Selector: ".LifetimeAllowanceEnhancementFactor_tooltip input",
+    inputType: "Integer",
+    AccordianSelector:"#TaxDetails",
+    AccordianName: 'Tax and Lifetime Allowance', 
+  },
+  CustomLifetimeAllowance: {
+    Selector: ".CustomLifetimeAllowance_tooltip input",
+    inputType: "Integer",
+    AccordianSelector:"#TaxDetails",
+    AccordianName: 'Tax and Lifetime Allowance', 
+  },
+  AllowanceIncreases: {
+    Selector: ".AllowanceIncreases_tooltip input",
+    inputType: "Dropdown",
+    AccordianSelector:"#TaxDetails",
+    AccordianName: 'Tax and Lifetime Allowance', 
   },
   PreviouslyUsed: {
-      Selector: "",
-      inputType: "Integer",
-      AccordianSelector:"",
-      AccordianName: "Tax and Lifetime Allowance",
-  },
+    Selector: ".LifetimeAllowancePreviouslyUsed_tooltip input",
+    inputType: "Integer",
+    AccordianSelector:"#TaxDetails",
+    AccordianName: 'Tax and Lifetime Allowance', 
+  }
 },
 
 ServiceBasis = {
- Autosetservicebasisbasedonassetsundermanagement: {
-    Selector: "wijmo-checkbox-box ui-widget ui-state-default ui-corner-all wijmo-checkbox-relative",
+  AutomaticallySetServiceBasis: {
+    Selector: ".AutoSetServiceBasis",
     inputType: "Checkbox",
-    AccordianSelector:"",
-    AccordianName: "Service Basis",
+    AccordianSelector:"#ServiceBasis",
+    AccordianName: 'Service Basis', 
   },
-ServiceBasis: {
-    Selector: "combobox wijmo-wijcombobox-input",
+  ServiceBasis: {
+    Selector: ".ServiceBasis.combobox",
     inputType: "Dropdown",
-    AccordianSelector:"",
-    AccordianName: "Service Basis",
+    AccordianSelector:"#ServiceBasis",
+    AccordianName: 'Service Basis', 
   },
-EthicalInvestment: {
-    Selector: "combobox wijmo-wijcombobox-input",
+  EthicalInvestment: {
+    Selector: ".EthicalInvestment",
     inputType: "Dropdown",
-    AccordianSelector:"",
-    AccordianName: "Service Basis",
+    AccordianSelector:"#ServiceBasis",
+    AccordianName: 'Service Basis', 
   },
-PayingFee: {
-    Selector: "combobox wijmo-wijcombobox-input",
+  PayingFee: {
+    Selector: ".PayingFee",
     inputType: "Dropdown",
-    AccordianSelector:"",
-    AccordianName: "Service Basis",
+    AccordianSelector:"#ServiceBasis",
+    AccordianName: 'Service Basis', 
   },
-NextReviewVisitDD: {
-    Selector: "ClientNextReview NonWijmoDatePickerElement day ui-corner-all wijmo-wijinput-input",
-    inputType: "Integer",
-    AccordianSelector:"",
-    AccordianName: "Service Basis",
+  NextReviewVisit: {
+    Selector: ".ClientNextReview",
+    ddSelector:".ClientNextReview.day",
+    mmSelector:".ClientNextReview.month",
+    yyyySelector:".ClientNextReview.year",
+    inputType: "Date",
+    AccordianSelector:"#ServiceBasis",
+    AccordianName: 'Service Basis', 
   },
-NextReviewVisitMM: {
-    Selector: "ClientNextReview NonWijmoDatePickerElement month ui-corner-all wijmo-wijinput-input",
-    inputType: "Integer",
-    AccordianSelector:"",
-    AccordianName: "Service Basis",
-  },
-NextReviewVisitYYYY: {
-    Selector: "ClientNextReview NonWijmoDatePickerElement year ui-corner-all wijmo-wijinput-input",
-    inputType: "Integer",
-    AccordianSelector:"",
-    AccordianName: "Service Basis",
-  },
-ClientStatus: {
-    Selector: "combobox wijmo-wijcombobox-input",
+  ClientStatus: {
+    Selector: ".ClientStatus",
     inputType: "Dropdown",
-    AccordianSelector:"",
-    AccordianName: "Service Basis",
+    AccordianSelector:"#ServiceBasis",
+    AccordianName: 'Service Basis', 
   },
-Adviser: {
-    Selector: "combobox wijmo-wijcombobox-input",
+  Adviser: {
+    Selector: ".Adviser",
     inputType: "Dropdown",
-    AccordianSelector:"",
-    AccordianName: "Service Basis",
-  },
-SharethisClient: {
-    Selector: "wijmo-checkbox-box ui-widget ui-state-default ui-corner-all wijmo-checkbox-relative",
-    inputType: "Checkbox",
-    AccordianSelector:"",
-    AccordianName: "Service Basis",
-  },
+    AccordianSelector:"#ServiceBasis",
+    AccordianName: 'Service Basis', 
+  }
 },
 
 QuoteDetails = {
   Reference: {
-    Selector:".Reference_tooltip input",
-    inputType:"String",
+    Selector: ".Reference_tooltip input",
+    inputType: "String",
     AccordianSelector:"#QuoteDetails",
     AccordianName: 'Quote Details', 
   },
+  Status: {
+    Selector: ".Status_tooltip input",
+    inputType: "Dropdown",
+    AccordianSelector:"#QuoteDetails",
+    AccordianName: 'Quote Details', 
+  },
+  Comments: {
+    Selector: ".QuoteComments",
+    inputType: "String",
+    AccordianSelector:"#QuoteDetails",
+    AccordianName: 'Quote Details', 
+  }
 },
-
 
 AllClientInputs = {
   ...PersonalDetails,
@@ -210,4 +232,4 @@ AllClientInputs = {
   ...Tax,
   ...ServiceBasis,
   ...QuoteDetails
-}
+} 
