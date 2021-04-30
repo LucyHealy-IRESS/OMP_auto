@@ -28,6 +28,7 @@
 				<Switching_AdviserCharges>
 					<Switching_AdviserCharging>
 						<Type>Pension</Type>
+						<ToUseInThisQuote>Specific Adviser Charges For This Quote Only</ToUseInThisQuote>
 					</Switching_AdviserCharging>
 				</Switching_AdviserCharges>							
 			</SwitchingQuote>

@@ -1,4 +1,5 @@
 import * as constants from "../constants/constantsSelectors.js";
+import * as InputTypes from "../constants/Core.js";
 export const
 
 ClientPortfoliosSelector = "#Client_ViewPortfolios",
@@ -9,19 +10,19 @@ PortfoliosAdvancedEditorSelector = '#EditPortfolioAdvancedPopup', //depends wher
 Portfolio_BasicDetailsInputs_EmilyBasic = {
   ProductID: {
       Selector: constants.Portfolio_Product,
-      inputType: "ProductDropdown",
+      inputType: InputTypes.Input_ProductDropdown,
       AccordianName: 'Basic Details',
       AccordianSelector: '#PortfolioSimpleEditor_BasicDetails',
     },
   ProviderID: {
       Selector: constants.Portfolio_Provider,
-      inputType: "ProviderDropdown",
+      inputType: InputTypes.Input_ProviderDropdown,
       AccordianName: 'Basic Details',
       AccordianSelector: '#PortfolioSimpleEditor_BasicDetails',
     }, 
   Reference: {
       Selector: constants.Portfolio_Reference,
-      inputType: "String",
+      inputType: InputTypes.Input_String ,
       AccordianName: 'Basic Details',
       AccordianSelector: '#PortfolioSimpleEditor_BasicDetails',
     }
@@ -34,27 +35,27 @@ Portfolio_BasicDetailsAdvanced = {
   //   },
   ExternalKey: {
       Selector: constants.Portfolio_XplanID,
-      inputType: "String",
+      inputType: InputTypes.Input_String,
     },
   TransactKey: {
       Selector: constants.Portfolio_TransactKey,
-      inputType: "String",
+      inputType: InputTypes.Input_String,
     },
   ExternalKey: {
       Selector: constants.Portfolio_FNAccountNumber,
-      inputType: "String",
+      inputType: InputTypes.Input_String,
     },
   ProductID: {
       Selector: constants.Portfolio_AProduct,
-      inputType: "ProductDropdown",
+      inputType: InputTypes.Input_ProductDropdown,
     }, 
   ProviderID: {
       Selector: constants.Portfolio_AProvider,
-      inputType: "ProviderDropdown",
+      inputType: InputTypes.Input_ProviderDropdown,
     }, 
   Reference: {
       Selector: constants.Portfolio_Reference,
-      inputType: "String",
+      inputType: InputTypes.Input_String,
     }, 
   BenchMark: {
       Selector: constants.Portfolio_Benchmark,
@@ -85,15 +86,15 @@ Portfolio_BasicDetailsSimple = {
   //   },
   ExternalKey: {
       Selector: constants.Portfolio_XplanID,
-      inputType: "String",
+      inputType: InputTypes.Input_String,
     },
   TransactKey: {
       Selector: constants.Portfolio_TransactKey,
-      inputType: "String",
+      inputType: InputTypes.Input_String,
     },
   ExternalKey: {
       Selector: constants.Portfolio_FNAccountNumber,
-      inputType: "String",
+      inputType: InputTypes.Input_String,
     },
   ProductID: {
       Selector: constants.Portfolio_Product,
@@ -105,7 +106,7 @@ Portfolio_BasicDetailsSimple = {
     },  
   Reference: {
       Selector: constants.Portfolio_Reference,
-      inputType: "String",
+      inputType: InputTypes.Input_String,
     }, 
   IsWorkplacePension: {
       Selector: constants.Portfolio_WorkplacePension,
@@ -147,7 +148,7 @@ Portfolio_OngoingContribution = {
     },
   StopAge: {
       Selector: constants.Portfolio_StopAge,
-      inputType: "String",
+      inputType: InputTypes.Input_String,
     }, 
   ClientExpenses: {
       Selector: constants.Portfolio_ClientExpenses,
@@ -171,7 +172,7 @@ Portfolio_Purpose = {
   },
   RiskTargetAmount: {
     Selector: constants.Portfolio_TargetAmount,
-    inputType: "String",
+    inputType: InputTypes.Input_String,
   },
   InceptionDate: {
     Selector: constants.Portfolio_InceptionDate,
@@ -179,7 +180,7 @@ Portfolio_Purpose = {
   },
   DN: {
     Selector: constants.Portfolio_OriginalTerm,
-    inputType: "String",
+    inputType: InputTypes.Input_String,
   },
   DN: {
     Selector: constants.Portfolio_MaturityAge,
