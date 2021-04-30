@@ -1,3 +1,4 @@
+import * as InputTypes from "./Core.js";
 export const
 
 ClientEditorSelector = '#SwitchingClientDetailsPopup',
@@ -6,19 +7,19 @@ ClientEditorSelector = '#SwitchingClientDetailsPopup',
 PersonalDetails = {
   Title: {
     Selector: ".Title_tooltip input",
-    inputType: "String",
+    inputType: InputTypes.Input_String,
     AccordianSelector:"#PersonalDetails",
     AccordianName: 'Personal Details', 
   },
   Firstname: {
     Selector: ".FirstName_tooltip input",
-    inputType: "String",
+    inputType: InputTypes.Input_String,
     AccordianSelector:"#PersonalDetails",
     AccordianName: 'Personal Details', 
   },
   Surname: {
     Selector: ".Surname_tooltip input",
-    inputType: "String",
+    inputType: InputTypes.Input_String,
     AccordianSelector:"#PersonalDetails",
     AccordianName: 'Personal Details', 
   },
@@ -27,31 +28,31 @@ PersonalDetails = {
     ddSelector:".SwitchingDOB.day",
     mmSelector:".SwitchingDOB.month",
     yyyySelector:".SwitchingDOB.year",
-    inputType: "Date",
+    inputType: InputTypes.Input_Date ,
     AccordianSelector:"#PersonalDetails",
     AccordianName: 'Personal Details', 
   },
   Gender: {
     Selector: ".Reference_tooltip input",
-    inputType: "Dropdown",
+    inputType: InputTypes.Input_Dropdown,
     AccordianSelector:"#PersonalDetails",
     AccordianName: 'Personal Details', 
   },
   PlannedRetirementAge: {
     Selector: ".PlannedRetirementAge",
-    inputType: "Integer",
+    inputType:  InputTypes.Input_Integer,
     AccordianSelector:"#PersonalDetails",
     AccordianName: 'Personal Details', 
   },
   LifeExpectancy: {
     Selector: ".LifeExpectancy_tooltip input",
-    inputType: "Integer",
+    inputType: InputTypes.Input_Integer,
     AccordianSelector:"#PersonalDetails",
     AccordianName: 'Personal Details', 
   },
   TargetRiskProfile: {
     Selector: ".TargetRiskProfile",
-    inputType: "Dropdown",
+    inputType: InputTypes.Input_Dropdown,
     AccordianSelector:"#PersonalDetails",
     AccordianName: 'Personal Details', 
   }
@@ -60,31 +61,31 @@ PersonalDetails = {
 FamilyDetails = {
   MaritalStatus: {
     Selector: ".MaritalStatus_tooltip combobox",
-    inputType: "Dropdown",
+    inputType: InputTypes.Input_Dropdown,
     AccordianSelector:"#FamilyDetails",
     AccordianName: 'Family Details', 
   },
   Partner: {
     Selector: ".PartnerGuid_tooltip combobox",
-    inputType: "Dropdown",
+    inputType: InputTypes.Input_Dropdown,
     AccordianSelector:"#FamilyDetails",
     AccordianName: 'Family Details', 
   },
   DependantChildren: {
     Selector: ".NoOfDepChildren",
-    inputType: "String",
+    inputType: InputTypes.Input_String,
     AccordianSelector:"#FamilyDetails",
     AccordianName: 'Family Details', 
   },
   IndependantChildren: {
     Selector: ".NoOfIndependantChildren",
-    inputType: "String",
+    inputType: InputTypes.Input_String,
     AccordianSelector:"#FamilyDetails",
     AccordianName: 'Family Details', 
   },
   Siblings: {
     Selector: ".NoOfSiblings",
-    inputType: "String",
+    inputType: InputTypes.Input_String,
     AccordianSelector:"#FamilyDetails",
     AccordianName: 'Family Details', 
   }
@@ -93,19 +94,19 @@ FamilyDetails = {
 ClientHealth = {
   HealthIssues: {
     Selector: ".HealthIsues",
-    inputType: "Dropdown",
+    inputType: InputTypes.Input_Dropdown,
     AccordianSelector:"#HealthDetails",
     AccordianName: 'Health Details', 
   },
   Smoker: {
     Selector: ".smoker",
-    inputType: "Dropdown",
+    inputType: InputTypes.Input_Dropdown,
     AccordianSelector:"#HealthDetails",
     AccordianName: 'Health Details', 
   },
   Smoker: {
     Selector: ".Postcode",
-    inputType: "String",
+    inputType: InputTypes.Input_String,
     AccordianSelector:"#HealthDetails",
     AccordianName: 'Health Details', 
   }
@@ -114,43 +115,43 @@ ClientHealth = {
 Tax = {
   TaxRegion: {
     Selector: ".TaxRegion",
-    inputType: "Dropdown",
+    inputType: InputTypes.Input_Dropdown,
     AccordianSelector:"#TaxDetails",
     AccordianName: 'Tax and Lifetime Allowance', 
   },
   LifetimeAllowanceType: {
     Selector: ".LifetimeAllowanceType_tooltip .combobox",
-    inputType: "Dropdown",
+    inputType: InputTypes.Input_Dropdown,
     AccordianSelector:"#TaxDetails",
     AccordianName: 'Tax and Lifetime Allowance', 
   },
   ProtectedAmount: {
     Selector: ".ProtectedAmount_tooltip input",
-    inputType: "Integer",
+    inputType: InputTypes.Input_Integer,
     AccordianSelector:"#TaxDetails",
     AccordianName: 'Tax and Lifetime Allowance', 
   },
   EnhancementFactor: {
     Selector: ".LifetimeAllowanceEnhancementFactor_tooltip input",
-    inputType: "Integer",
+    inputType: InputTypes.Input_Integer,
     AccordianSelector:"#TaxDetails",
     AccordianName: 'Tax and Lifetime Allowance', 
   },
   CustomLifetimeAllowance: {
     Selector: ".CustomLifetimeAllowance_tooltip input",
-    inputType: "Integer",
+    inputType: InputTypes.Input_Integer,
     AccordianSelector:"#TaxDetails",
     AccordianName: 'Tax and Lifetime Allowance', 
   },
   AllowanceIncreases: {
     Selector: ".AllowanceIncreases_tooltip input",
-    inputType: "Dropdown",
+    inputType: InputTypes.Input_Dropdown,
     AccordianSelector:"#TaxDetails",
     AccordianName: 'Tax and Lifetime Allowance', 
   },
   PreviouslyUsed: {
     Selector: ".LifetimeAllowancePreviouslyUsed_tooltip input",
-    inputType: "Integer",
+    inputType: InputTypes.Input_Integer,
     AccordianSelector:"#TaxDetails",
     AccordianName: 'Tax and Lifetime Allowance', 
   }
@@ -165,19 +166,19 @@ ServiceBasis = {
   },
   ServiceBasis: {
     Selector: ".ServiceBasis.combobox",
-    inputType: "Dropdown",
+    inputType: InputTypes.Input_Dropdown,
     AccordianSelector:"#ServiceBasis",
     AccordianName: 'Service Basis', 
   },
   EthicalInvestment: {
     Selector: ".EthicalInvestment",
-    inputType: "Dropdown",
+    inputType: InputTypes.Input_Dropdown,
     AccordianSelector:"#ServiceBasis",
     AccordianName: 'Service Basis', 
   },
   PayingFee: {
     Selector: ".PayingFee",
-    inputType: "Dropdown",
+    inputType: InputTypes.Input_Dropdown,
     AccordianSelector:"#ServiceBasis",
     AccordianName: 'Service Basis', 
   },
@@ -186,19 +187,19 @@ ServiceBasis = {
     ddSelector:".ClientNextReview.day",
     mmSelector:".ClientNextReview.month",
     yyyySelector:".ClientNextReview.year",
-    inputType: "Date",
+    inputType: InputTypes.Input_Date,
     AccordianSelector:"#ServiceBasis",
     AccordianName: 'Service Basis', 
   },
   ClientStatus: {
     Selector: ".ClientStatus",
-    inputType: "Dropdown",
+    inputType: InputTypes.Input_Dropdown,
     AccordianSelector:"#ServiceBasis",
     AccordianName: 'Service Basis', 
   },
   Adviser: {
     Selector: ".Adviser",
-    inputType: "Dropdown",
+    inputType: InputTypes.Input_Dropdown,
     AccordianSelector:"#ServiceBasis",
     AccordianName: 'Service Basis', 
   }
@@ -207,19 +208,19 @@ ServiceBasis = {
 QuoteDetails = {
   Reference: {
     Selector: ".Reference_tooltip input",
-    inputType: "String",
+    inputType: InputTypes.Input_String,
     AccordianSelector:"#QuoteDetails",
     AccordianName: 'Quote Details', 
   },
   Status: {
     Selector: ".Status_tooltip input",
-    inputType: "Dropdown",
+    inputType: InputTypes.Input_Dropdown,
     AccordianSelector:"#QuoteDetails",
     AccordianName: 'Quote Details', 
   },
   Comments: {
     Selector: ".QuoteComments",
-    inputType: "String",
+    inputType: InputTypes.Input_String,
     AccordianSelector:"#QuoteDetails",
     AccordianName: 'Quote Details', 
   }

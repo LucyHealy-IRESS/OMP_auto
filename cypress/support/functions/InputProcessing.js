@@ -1,4 +1,5 @@
 import * as constants from "../constants/constantsSelectors.js";
+import * as InputTypes from "../constants/Core.js";
 
 cy.GetTextInput = function(xmlObject,xmlInput) {
   var retValue = null;
@@ -42,47 +43,46 @@ cy.GetTextInput_mapping = function(xmlObject,xmlInput,mapping) {
 Cypress.Commands.add("ProcessCreate_UI", (xmlObject, xmlInput, xmlMappings,EditorName) => {
   var XmlInputObject = xmlMappings[xmlInput]; //match the xml tag with the object in Client Inputs,if that xml tag has been passed in we can go ahead and create it
   if (XmlInputObject && XmlInputObject.hasOwnProperty("Selector")) { //if we dont have a selector then we dont need to use as part of the UI testing
-    if (XmlInputObject.inputType == "String") {
+    if (XmlInputObject.inputType == InputTypes.Input_String) { //STRING
       var textInput = cy.GetTextInput(xmlObject,xmlInput);
       if (textInput) {
         cy.get(XmlInputObject.Selector).type(textInput);
       }
-    } else if (XmlInputObject.inputType == "Integer") {
+    } else if (XmlInputObject.inputType ==  InputTypes.Input_Integer) { //INTEGER
       var textInput = cy.GetTextInput(xmlObject,xmlInput);
       if (textInput) {
         cy.get(XmlInputObject.Selector).type(`{selectall}`).type(textInput);
       }
-    } else if (XmlInputObject.inputType == "Date") {
+    } else if (XmlInputObject.inputType ==  InputTypes.Input_Date) { //DATE
       cy.SetSimpleDatefromXMLDateFormat(XmlInputObject.ddSelector,XmlInputObject.mmSelector,XmlInputObject.yyyySelector,cy.GetTextInput(xmlObject,xmlInput));
-    } else if (XmlInputObject.inputType == "Dropdown") {
+    } else if (XmlInputObject.inputType == InputTypes.Input_Dropdown) {
       var textInput = cy.GetTextInput(xmlObject,xmlInput);
       if (textInput) {
         cy.SetDropdown(XmlInputObject.Selector, textInput);
       }
-    } else if (XmlInputObject.inputType == "ClickThenValue") {
+    } else if (XmlInputObject.inputType == InputTypes.Input_ClickThenValue) { //CLICK THEN VALUE
       cy.get(XmlInputObject.Selector).click();
       cy.wait(100); //Auto gen value is entered
       var textInput = cy.GetTextInput(xmlObject,xmlInput);
       if (textInput) {
         cy.get(XmlInputObject.Selector).clear({ force: true }).type(textInput);
       }
-    } else if (XmlInputObject.inputType == "ProductDropdown") {
+    } else if (XmlInputObject.inputType ==  InputTypes.Input_ProductDropdown) { //PRODUCT DROPDOWN
       cy.TranslateProductID(xmlObject, XmlInputObject);
-    } else if (XmlInputObject.inputType == "ProviderDropdown") {
+    } else if (XmlInputObject.inputType ==  InputTypes.Input_ProviderDropdown) { //PROVIDE DROPDOWN
       cy.TranslateProviderID(xmlObject, XmlInputObject);
-    } else if (XmlInputObject.inputType == "DropdownIndex") {
-      //e.g. value is 1 so select 2nd dropdown input (0 based)
+    } else if (XmlInputObject.inputType == InputTypes.Input_DropdownIndex) { //DROPDOWN INDEX
       var textInput = cy.GetTextInput(xmlObject,xmlInput);
       if (textInput) {
         cy.SetDropdown_ByIndex(XmlInputObject.Selector, textInput);
       }
-    } else if (XmlInputObject.inputType == "Dropdown_ReadOnly") {
+    } else if (XmlInputObject.inputType == InputTypes.Input_Dropdown_ReadOnly) { //DROPDOWN READONLY
       //e.g. value is 1 so select 2nd dropdown input (0 based)
       var textInput = cy.GetTextInput(xmlObject,xmlInput);
       if (textInput) {
         cy.SetDropdown_OpenDropdown(XmlInputObject.Selector, textInput);
       }
-    } else if (XmlInputObject.inputType == "Checkbox") {
+    } else if (XmlInputObject.inputType == InputTypes.Input_Checkbox) { //CHECKBOX
       //e.g. value is 1 so select 2nd dropdown input (0 based)
       var textInput = cy.GetTextInput(xmlObject,xmlInput);
       if (textInput) {
@@ -106,7 +106,7 @@ Cypress.Commands.add("PushToLogArray",function(attributeType,attributeName,Pass,
 cy.ProcessAssert_JqueryValCheck = function (Selector,textInput,InputType,xmlInput,EditorName) {
   cy.get(Selector).then(function ($input) {  
     var value = $input.val();
-    if(InputType == "Integer"){
+    if(InputType == InputTypes.Input_Integer){
       value =value.replace("£","").replace("%",""); //remove pound sign from jQuery get
     }
     if (value == textInput) {
@@ -138,7 +138,7 @@ Cypress.Commands.add("ProcessAssert_UI", (xmlObject, xmlInput, xmlMappings,Edito
   var XmlInputObject = xmlMappings[xmlInput]; //match the xml tag with the object in Client Inputs, if that xml tag has been passed in we can go ahead and assert it
   if (XmlInputObject && XmlInputObject.hasOwnProperty("Selector")) {//if we dont have a selector then we dont need to use as part of the UI testing
     var InputType = XmlInputObject.inputType;
-    if ( InputType == "String" || InputType == "Integer" ||InputType == "Dropdown" || InputType == "ClickThenValue") {
+    if ( InputType == InputTypes.Input_String || InputType == InputTypes.Input_Integer ||InputType == InputTypes.Input_Dropdown || InputType == InputTypes.Input_ClickThenValue) {
       var textInput = cy.GetTextInput(xmlObject,xmlInput);
       if (textInput) {
         if (useCypressStictAsserts) {
@@ -148,7 +148,7 @@ Cypress.Commands.add("ProcessAssert_UI", (xmlObject, xmlInput, xmlMappings,Edito
         }
       }
     } 
-    else if (InputType == "Date") {
+    else if (InputType ==InputTypes.Input_Date) {
       var textInput = cy.GetTextInput(xmlObject,xmlInput);
       if (textInput) {
         var date = textInput.split("T");
@@ -167,7 +167,7 @@ Cypress.Commands.add("ProcessAssert_UI", (xmlObject, xmlInput, xmlMappings,Edito
           cy.ProcessAssert_JqueryValCheck(XmlInputObject.yyyySelector,yyyy,InputType + " Year",xmlInput,EditorName);
         }
       }
-    } else if (InputType == "Checkbox") {
+    } else if (InputType == InputTypes.Input_Checkbox) {
       var textInput = cy.GetTextInput(xmlObject,xmlInput);
       if (textInput) {
         if (useCypressStictAsserts) {

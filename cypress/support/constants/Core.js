@@ -4,6 +4,18 @@ RunType_Create = "Create",
 RunType_Assert = "Assert",
 RunType_Delete = "Delete",
 
+//Input types
+Input_Integer = "Integer",
+Input_Dropdown = "Dropdown",
+Input_String = "String",
+Input_Date = "Date",
+Input_ClickThenValue = "ClickThenValue", //Used when there is a value thats auto calcuated when focus is lost, so we can enter a value to override after the click/calc
+Input_ProductDropdown = "ProductDropdown", //Used in client to translate a product ID
+Input_ProviderDropdown = "ProviderDropdown", //Used in client to translate a provider ID
+Input_DropdownIndex = "DropdownIndex", //select a value from the dropdown based on its nth position in the list
+Input_Dropdown_ReadOnly = "Dropdown_ReadOnly", //When a dropdown cant be typed in, cypress actually tells you its readonly
+Input_Checkbox = "Checkbox",
+
 API_Create = "Create",
 API_Retrieve = "Retrieve",
 API_Delete = "Delete",
