@@ -10,7 +10,7 @@ export const CurrentPlanListSelector = "#SwitchingCurrentPlansListPopUp",
     },
     Provider: {
       Selector: ".Provider",
-      inputType: InputTypes.Input_Dropdown,
+      inputType: InputTypes.Input_Dropdown_ReadOnly,
       AccordianName: "Basic Details",
       AccordianSelector: ".BasicDetailsAccordian",
     },
