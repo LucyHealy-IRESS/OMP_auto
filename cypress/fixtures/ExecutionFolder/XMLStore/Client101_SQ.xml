@@ -24,12 +24,16 @@
 					<NewInvestmentType>2</NewInvestmentType>
 					<UsingRule>0</UsingRule>
 						<Switching_NewInvestments_ABI_Sectors>
-							<Name>Mixed Asset</Name>
+                            <Name>Mixed Asset</Name>
+                            <Switching_NewInvestments_ABI_SubSectors>
+                                <Name>Mixed Investment 40%-85% Shares</Name>
+                                <Amount>80</Amount>
+                            </Switching_NewInvestments_ABI_SubSectors>
 							<Switching_NewInvestments_ABI_SubSectors>
-								<Name>Flexible Investment</Name>
-								<Amount>100</Amount>
-							</Switching_NewInvestments_ABI_SubSectors>
-						</Switching_NewInvestments_ABI_Sectors>
+                                <Name>Mixed Investment 20%-60% Shares</Name>
+                                <Amount>20</Amount>
+                            </Switching_NewInvestments_ABI_SubSectors>
+                        </Switching_NewInvestments_ABI_Sectors>
 				</Switching_NewInvestments>
 				<Switching_AdviserCharges>
 					<Switching_AdviserCharging>
