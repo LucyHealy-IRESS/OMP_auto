@@ -4,7 +4,7 @@ export const AdviserChargesListSelector = ".AdvsierChargesListPopup",
   SingleInitial = {
     SIA_SinglePremium: {
       Selector: ".InitialSingleType_tooltip input",
-      inputType:  InputTypes.Input_Dropdown,
+      inputType:  InputTypes.Input_Dropdown_ReadOnly,
       AccordianSelector: ".SingleInitialAccordian",
       AccordianName: "Contribution Based Single Initial",
     },
@@ -24,7 +24,7 @@ export const AdviserChargesListSelector = ".AdvsierChargesListPopup",
   RegularInitial = {
     Reg_RegularPremium: {
       Selector: ".InitialRegularType_tooltip input",
-      inputType: InputTypes.Input_Dropdown,
+      inputType: InputTypes.Input_Dropdown_ReadOnly,
       AccordianSelector: ".RegularInitialAccordian",
       AccordianName: "Contribution Based Regular Initial",
     },

@@ -19,7 +19,7 @@
 					<ClientID>SecurityClient02</ClientID>
 					<Reference>CompanyASecurityClientTwoPortfolio01</Reference>
 					<ProductID>4</ProductID>
-					<Drawdown_DrawdownType>Capped Drawdown</Drawdown_DrawdownType>
+					<DrawdownType>Capped Drawdown</DrawdownType>
 					<ProviderID>BBBBBBBB-5555-0000-0000-000000000046</ProviderID>
 					<Status>Proposed</Status>
 				    <NextReviewDate>2021-11-05T00:00:00</NextReviewDate>
