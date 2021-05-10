@@ -12,6 +12,7 @@
                 	<Switching_CurrentPlan>
                 		<Reference>CurrentPlan1</Reference>
 						<ProductID>Personal Pension</ProductID>
+						<Provider>Abbey Life</Provider>
 						<CurrentValue>5000</CurrentValue>
 						<SMV_ProjectedMaturityValueBasis>Estimated By System</SMV_ProjectedMaturityValueBasis>
 						<SMV_RetirementMaturityAge>70</SMV_RetirementMaturityAge>
