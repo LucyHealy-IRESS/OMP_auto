@@ -51,7 +51,7 @@ Cypress.Commands.add("ProcessCreate_UI", (xmlObject, xmlInput, xmlMappings,Edito
     } else if (XmlInputObject.inputType ==  InputTypes.Input_Integer) { //INTEGER
       var textInput = cy.GetTextInput(xmlObject,xmlInput);
       if (textInput) {
-        cy.get(XmlInputObject.Selector).type(`{selectall}`).type(textInput);
+        cy.get(XmlInputObject.Selector).filter(':visible').type(`{selectall}`).type(textInput);
       }
     } else if (XmlInputObject.inputType ==  InputTypes.Input_Date) { //DATE
       cy.SetSimpleDatefromXMLDateFormat(XmlInputObject.ddSelector,XmlInputObject.mmSelector,XmlInputObject.yyyySelector,cy.GetTextInput(xmlObject,xmlInput));

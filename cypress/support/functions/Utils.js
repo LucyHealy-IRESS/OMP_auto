@@ -7,7 +7,7 @@ Cypress.Commands.add('SetDropdown',(Selector,Value) => {
 })
 
 Cypress.Commands.add('SetDropdown_OpenDropdown',(Selector,Value) => { 
-    cy.get(Selector).click();
+    cy.get(Selector).filter(':visible').click();
     cy.get(".wijmo-wijlist-item ").filter(':visible').contains(new RegExp(Value, "g")).click();  //regex to say we want exact match!
 })
 
