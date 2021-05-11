@@ -62,7 +62,7 @@ export const AdviserChargesListSelector = ".AdvsierChargesListPopup",
   FundBasedOngoing = {
     O_Ongoing: {
       Selector: ".OngoingType_tooltip input",
-      inputType: InputTypes.Input_Dropdown,
+      inputType: InputTypes.Input_Dropdown_ReadOnly,
       AccordianSelector: ".OngoingInitialAccordian",
       AccordianName: "Fund Based On-Going",
     },

@@ -1,0 +1,70 @@
+<Root>
+<Clients>
+	<Client>
+		<ClientID>Client03</ClientID>
+		<Title>Mrs</Title>
+		<Firstname>Pension</Firstname>
+		<Surname>ClientThree</Surname>
+		<DateOfBirth>1969-11-09T00:00:00</DateOfBirth>				
+		<SwitchingQuotes>
+			<SwitchingQuote>
+				<Switching_CurrentPlans>
+                	<Switching_CurrentPlan>
+                		<Reference>CurrentPlan1</Reference>
+						<ProductID>Personal Pension</ProductID>
+						<CurrentPlanName>PP</CurrentPlanName>
+						<CurrentValue>100000</CurrentValue>
+						<SMV_ProjectedMaturityValueBasis>Monetary Rates Supplied</SMV_ProjectedMaturityValueBasis>
+						<SMV_RetirementMaturityAge>70</SMV_RetirementMaturityAge>
+						<SMV_MidRateMaturityValue>250000</SMV_MidRateMaturityValue>
+						<GrossPremium>500</GrossPremium>
+						<GP_Frequency>Monthly</GP_Frequency>
+						<GP_Escalation>0</GP_Escalation>
+                	</Switching_CurrentPlan>
+					<Switching_CurrentPlan>
+                		<Reference>CurrentPlan2</Reference>
+						<ProductID>Personal Pension</ProductID>
+						<CurrentPlanName>PP2</CurrentPlanName>
+						<CurrentValue>50000</CurrentValue>
+						<SMV_ProjectedMaturityValueBasis>Monetary Rates Supplied</SMV_ProjectedMaturityValueBasis>
+						<SMV_RetirementMaturityAge>70</SMV_RetirementMaturityAge>
+						<SMV_MidRateMaturityValue>100000</SMV_MidRateMaturityValue>
+						<GrossPremium>6000</GrossPremium>
+						<GP_Frequency>Annually</GP_Frequency>
+						<GP_Escalation>0</GP_Escalation>
+						<GP_IncreasingEvery>March</GP_IncreasingEvery>
+					</Switching_CurrentPlan>
+        		</Switching_CurrentPlans>
+				<Switching_ClientDetails>
+				<Reference>PSQ003</Reference>
+				</Switching_ClientDetails>
+				<Switching_NewInvestments>
+					<NewInvestmentType>2</NewInvestmentType>
+					<UsingRule>0</UsingRule>
+						<Switching_NewInvestments_ABI_Sectors>
+							<Name>Mixed Asset</Name>
+							<Switching_NewInvestments_ABI_SubSectors>
+								<Name>Mixed Investment 40%-85% Shares</Name>>
+								<Amount>100</Amount>
+							</Switching_NewInvestments_ABI_SubSectors>
+						</Switching_NewInvestments_ABI_Sectors>
+				</Switching_NewInvestments>
+				<Switching_AdviserCharges>
+					<Switching_AdviserCharging>
+						<Type>Pension</Type>
+						<ToUseInThisQuote>Specific Adviser Charges For This Quote Only</ToUseInThisQuote>
+						<Reg_RegularPremium>Initial Regular Premium Amount</Reg_RegularPremium>
+						<Reg_Amount>5</Reg_Amount>
+						<Reg_Continuing>For All Contributions</Reg_Continuing>
+					</Switching_AdviserCharging>
+				</Switching_AdviserCharges>							
+			</SwitchingQuote>
+		</SwitchingQuotes>
+	</Client>
+</Clients>
+</Root>
+
+
+
+
+				

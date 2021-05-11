@@ -1,0 +1,74 @@
+<Root>
+<Clients>
+	<Client>
+		<ClientID>Client05</ClientID>
+		<Title>Mrs</Title>
+		<Firstname>Pension</Firstname>
+		<Surname>ClientFive</Surname>
+		<DateOfBirth>1969-11-09T00:00:00</DateOfBirth>				
+		<SwitchingQuotes>
+			<SwitchingQuote>
+				<Switching_CurrentPlans>
+                	<Switching_CurrentPlan>
+                		<Reference>CurrentPlan1</Reference>
+						<ProductID>Personal Pension</ProductID>
+						<CurrentPlanName>PP</CurrentPlanName>
+						<CurrentValue>100000</CurrentValue>
+						<SMV_ProjectedMaturityValueBasis>Inflation Adjusted Rates Supplied</SMV_ProjectedMaturityValueBasis>
+						<SMV_RetirementMaturityAge>70</SMV_RetirementMaturityAge>
+						<SMV_MidRateMaturityValue>115000</SMV_MidRateMaturityValue>
+						<GrossPremium>500</GrossPremium>
+						<GP_Frequency>Monthly</GP_Frequency>
+						<GP_Escalation>0</GP_Escalation>
+						<PUP_MaturityValueMid>40000</PUP_MaturityValueMid>
+						<PUP_AsAtDate>2021-05-11T00:00:00</PUP_AsAtDate>
+                	</Switching_CurrentPlan>
+					<Switching_CurrentPlan>
+                		<Reference>CurrentPlan2</Reference>
+						<ProductID>Personal Pension</ProductID>
+						<CurrentPlanName>PP2</CurrentPlanName>
+						<CurrentValue>55000</CurrentValue>
+						<SMV_ProjectedMaturityValueBasis>Inflation Adjusted Rates Supplied</SMV_ProjectedMaturityValueBasis>
+						<SMV_RetirementMaturityAge>70</SMV_RetirementMaturityAge>
+						<SMV_MidRateMaturityValue>70000</SMV_MidRateMaturityValue>
+						<GrossPremium>6000</GrossPremium>
+						<GP_Frequency>Annually</GP_Frequency>
+						<GP_Escalation>0</GP_Escalation>
+						<GP_IncreasingEvery>March</GP_IncreasingEvery>
+						<PUP_MaturityValueMid>20000</PUP_MaturityValueMid>
+						<PUP_AsAtDate>2021-05-11T00:00:00</PUP_AsAtDate>
+					</Switching_CurrentPlan>
+        		</Switching_CurrentPlans>
+				<Switching_ClientDetails>
+				<Reference>PSQ005</Reference>
+				</Switching_ClientDetails>
+				<Switching_NewInvestments>
+					<NewInvestmentType>2</NewInvestmentType>
+					<UsingRule>5</UsingRule>
+						<Switching_NewInvestments_ABI_Sectors>
+							<Name>Equity - UK Funds</Name>
+							<Switching_NewInvestments_ABI_SubSectors>
+								<Name>UK All Companies</Name>>
+								<Amount>100</Amount>
+							</Switching_NewInvestments_ABI_SubSectors>
+						</Switching_NewInvestments_ABI_Sectors>
+				</Switching_NewInvestments>
+				<Switching_AdviserCharges>
+					<Switching_AdviserCharging>
+						<Type>Pension</Type>
+						<ToUseInThisQuote>Specific Adviser Charges For This Quote Only</ToUseInThisQuote>
+						<O_Ongoing>On-going Annual Percentage</O_Ongoing>
+						<O_AnnualPercentage>2</O_AnnualPercentage>
+						<O_PercentagePaid>Monthly</O_PercentagePaid>
+					</Switching_AdviserCharging>
+				</Switching_AdviserCharges>							
+			</SwitchingQuote>
+		</SwitchingQuotes>
+	</Client>
+</Clients>
+</Root>
+
+
+
+
+				
