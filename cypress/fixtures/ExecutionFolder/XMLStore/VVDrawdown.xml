@@ -24,8 +24,7 @@
 					<ProductID>4</ProductID>
 					<Benchmark>FTSE ALLSH TR GBP</Benchmark>
 					<NextReviewDate>2021-10-01T00:00:00</NextReviewDate>
-					<IsWorkplacePension>Yes</IsWorkplacePension>
-					<IsSharedWithCompany>No</IsSharedWithCompany>
+					<IsSharedWithCompany>False</IsSharedWithCompany>
 					<InvestmentObjective>Mortgage</InvestmentObjective>
 					<OngoingContsPremium>8000</OngoingContsPremium>
 				    <OngoingContsType>Annually</OngoingContsType>
