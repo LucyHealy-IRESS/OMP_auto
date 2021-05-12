@@ -19,19 +19,19 @@ Cypress.Commands.add("Switching_NewInvestments_Fund_ProcessFund", (EntityData) =
     cy.get(".quickAddFund_ComboBox").clear().type(textInput).type("{enter}").then(function(){       
         cy.wait(1000);        
         cy.get(".wijmo-wijlist-ul").filter(':visible',{timeout:Constants.Timeout_HoldingSearch}).contains(textInput).first().click();      
-        cy.get(this.inputSelector).then(function($SelectedFund){ 
+        cy.get(this.inputSelector).then(function(){ 
             if(EntityData.Percentage == "100"){
                 cy.clickButtonInPopup(PopupSelector,"Add Selected Fund At 100")
                 cy.wait(1000);
             }
             else{
-                cy.clickButtonInPopup(PopupSelector,"Add Selected Fund")
-                cy.get(PopupSelector).contains(/^Add Selected Fund$/).click();
+                cy.get("[aria-describedby='" + PopupSelector.replace("#","") + "']").contains(/^Add Selected Fund$/).click(); //need regex here else will click the other at 100% button
+                cy.clickButtonInPopup(PopupSelector,"Close");
                 cy.wait(1000);
-                //cy.get(PopupSelector).contains("Close").click();     
-
-
                 //then we need to find the fund in the row, double click and add the percentage
+                cy.get('.fundMode tbody tr td',{timeout:Constants.Timeout_HoldingSearch}).contains(EntityData.FundName).then(function($td){
+                    cy.wrap($td.parent().siblings().first().find('.wijmo-wijgrid-innercell')).dblclick().type(EntityData.Percentage).type('{enter}');
+                })
             }
       })
     });
