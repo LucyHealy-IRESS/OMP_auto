@@ -128,6 +128,16 @@ EntityTypes = {
         API_ActionRequired_Create: false,
         API_ActionRequired_Assert: false,
         API_ActionRequired_Delete: false
+    },
+    Switching_SafeguardedBenefitsSegments: {
+        API_ActionRequired_Create: false,
+        API_ActionRequired_Assert: false,
+        API_ActionRequired_Delete: false
+    },
+    Switching_SafeguardedBenefitsSegment: {
+        API_ActionRequired_Create: false,
+        API_ActionRequired_Assert: false,
+        API_ActionRequired_Delete: false
     }
     // ,Switching_ProductFilters: {
     //     API_ActionRequired_Create: false,

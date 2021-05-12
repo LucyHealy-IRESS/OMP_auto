@@ -73,7 +73,7 @@ export const CurrentPlanListSelector = "#SwitchingCurrentPlansListPopUp",
     },
   },
   DrawdownIncome = {
-    DI_NextGadReview: {
+    DDI_NextGadReview: {
       Selector: ".Drawdown_GAD_Date_tooltip input",
       ddSelector: ".Drawdown_GAD_Date.day",
       mmSelector: ".Drawdown_GAD_Date.month",
@@ -82,61 +82,61 @@ export const CurrentPlanListSelector = "#SwitchingCurrentPlansListPopUp",
       AccordianSelector: ".DrawdownIncomeAccordian",
       AccordianName: "Drawdown Income",
     },
-    DI_IncomeBasis: {
+    DDI_IncomeBasis: {
       Selector: ".Drawdown_IncomeType_tooltip input",
       inputType: InputTypes.Input_Dropdown,
       AccordianSelector: ".DrawdownIncomeAccordian",
       AccordianName: "Drawdown Income",
     },
-    DI_IncomeAmount: {
+    DDI_IncomeAmount: {
       Selector: ".Drawdown_IncomeAmount_tooltip input",
       inputType: InputTypes.Input_Integer,
       AccordianSelector: ".DrawdownIncomeAccordian",
       AccordianName: "Drawdown Income",
     },
-    DI_IncomePercentage: {
+    DDI_IncomePercentage: {
       Selector: ".Drawdown_IncomePercentage_tooltip input",
       inputType: InputTypes.Input_Integer,
       AccordianSelector: ".DrawdownIncomeAccordian",
       AccordianName: "Drawdown Income",
     },
-    DI_CurrentIncome: {
+    DDI_CurrentIncome: {
       Selector: ".Drawdown_CurrentIncome_tooltip input",
       inputType: InputTypes.Input_Integer,
       AccordianSelector: ".DrawdownIncomeAccordian",
       AccordianName: "Drawdown Income",
     },
-    DI_IncomeStarting: {
+    DDI_IncomeStarting: {
       Selector: ".Drawdown_IncomeStarting_tooltip input",
       inputType: InputTypes.Input_Dropdown,
       AccordianSelector: ".DrawdownIncomeAccordian",
       AccordianName: "Drawdown Income",
     },
-    DI_IncomeAge: {
+    DDI_IncomeAge: {
       Selector: ".Drawdown_IncomeCommencementAge_tooltip input",
       inputType: InputTypes.Input_Integer,
       AccordianSelector: ".DrawdownIncomeAccordian",
       AccordianName: "Drawdown Income",
     },
-    DI_IncomeStarting: {
+    DDI_IncomeStarting: {
       Selector: ".Drawdown_IncomeFrequency_tooltip input",
       inputType: InputTypes.Input_Dropdown,
       AccordianSelector: ".DrawdownIncomeAccordian",
       AccordianName: "Drawdown Income",
     },
-    DI_IncomeEscalation: {
+    DDI_IncomeEscalation: {
       Selector: ".Drawdown_IncomeEscalation_tooltip input",
       inputType: InputTypes.Input_Dropdown,
       AccordianSelector: ".DrawdownIncomeAccordian",
       AccordianName: "Drawdown Income",
     },
-    DI_IncomeOtherEscalation: {
+    DDI_IncomeOtherEscalation: {
       Selector: ".Drawdown_IncomeEscalationRateMid_tooltip input",
       inputType: InputTypes.Input_Integer,
       AccordianSelector: ".DrawdownIncomeAccordian",
       AccordianName: "Drawdown Income",
     },
-    DI_IncomeAnniversary: {
+    DDI_IncomeAnniversary: {
       Selector: ".Drawdown_IncomeAnniversary_tooltip input",
       inputType: InputTypes.Input_Dropdown,
       AccordianSelector: ".DrawdownIncomeAccordian",
@@ -472,7 +472,7 @@ export const CurrentPlanListSelector = "#SwitchingCurrentPlansListPopUp",
   DefinedIncome = {
     DI_SafeguardedBenefits: {
       Selector: ".SafeguardedBenefits_tooltip input",
-      inputType: InputTypes.Input_Dropdown,
+      inputType: InputTypes.Input_Dropdown_ReadOnly,
       AccordianSelector: ".DefinedIncomeAccordian",
       AccordianName: "Defined Income",
     },
@@ -523,7 +523,7 @@ export const CurrentPlanListSelector = "#SwitchingCurrentPlansListPopUp",
     },
     DI_IncomeEscalationStarting: {
       Selector: ".Starting_tooltip input",
-      inputType: InputTypes.Input_Dropdown,
+      inputType: InputTypes.Input_Dropdown_ReadOnly,
       AccordianSelector: ".DefinedIncomeAccordian",
       AccordianName: "Defined Income",
     },
@@ -535,7 +535,7 @@ export const CurrentPlanListSelector = "#SwitchingCurrentPlansListPopUp",
     },
     DI_IncomeEscalationEnding: {
       Selector: ".Ending_tooltip input",
-      inputType: InputTypes.Input_Dropdown,
+      inputType: InputTypes.Input_Dropdown_ReadOnly,
       AccordianSelector: ".DefinedIncomeAccordian",
       AccordianName: "Defined Income",
     },
@@ -553,7 +553,7 @@ export const CurrentPlanListSelector = "#SwitchingCurrentPlansListPopUp",
     },
     DI_PCLSPaid: {
       Selector: ".PCLSPaid_tooltip input",
-      inputType: InputTypes.Input_Dropdown,
+      inputType: InputTypes.Input_Dropdown_ReadOnly,
       AccordianSelector: ".DefinedIncomeAccordian",
       AccordianName: "Defined Income",
     },
@@ -741,6 +741,7 @@ export const CurrentPlanListSelector = "#SwitchingCurrentPlansListPopUp",
     ...OngoingContributions,
     ...PaidUpMaturityValues,
     ...AdditionalContributions,
+    ...DefinedIncome,
     ...SchemeTransferDetails,
     ...AssumptionsUsed
   };
