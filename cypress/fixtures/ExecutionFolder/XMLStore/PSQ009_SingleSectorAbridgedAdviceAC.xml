@@ -15,7 +15,7 @@
 						<Provider>AJ Bell</Provider>
 						<DI_SafeguardedBenefits>Simple Details</DI_SafeguardedBenefits>
 						<DI_GrossAnnualIncome>200</DI_GrossAnnualIncome>
-						<DI_IncomeEscalation>0</DI_IncomeEscalation>
+						<DI_IncomeEscalation>0</DI_IncomeEscalation>	
                 	</Switching_CurrentPlan>
         		</Switching_CurrentPlans>
 				<Switching_ClientDetails>

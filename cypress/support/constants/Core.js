@@ -138,6 +138,16 @@ EntityTypes = {
         API_ActionRequired_Create: false,
         API_ActionRequired_Assert: false,
         API_ActionRequired_Delete: false
+    },
+    Switching_NewInvestments_Funds: {
+        API_ActionRequired_Create: false,
+        API_ActionRequired_Assert: false,
+        API_ActionRequired_Delete: false
+    },
+    Switching_NewInvestments_Fund: {
+        API_ActionRequired_Create: false,
+        API_ActionRequired_Assert: false,
+        API_ActionRequired_Delete: false
     }
     // ,Switching_ProductFilters: {
     //     API_ActionRequired_Create: false,
