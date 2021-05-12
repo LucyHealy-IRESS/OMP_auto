@@ -48,7 +48,14 @@ Cypress.Commands.add("ProcessCreate_UI", (xmlObject, xmlInput, xmlMappings,Edito
       if (textInput) {
         cy.get(XmlInputObject.Selector).type(textInput);
       }
-    } else if (XmlInputObject.inputType ==  InputTypes.Input_Integer) { //INTEGER
+    } 
+    if (XmlInputObject.inputType == InputTypes.Input_String_Clear) { //STRING
+      var textInput = cy.GetTextInput(xmlObject,xmlInput);
+      if (textInput) {
+        cy.get(XmlInputObject.Selector).type(`{selectall}`).type(textInput);
+      }
+    }  
+    else if (XmlInputObject.inputType ==  InputTypes.Input_Integer) { //INTEGER
       var textInput = cy.GetTextInput(xmlObject,xmlInput);
       if (textInput) {
         cy.get(XmlInputObject.Selector).filter(':visible').type(`{selectall}`).type(textInput);
@@ -138,7 +145,7 @@ Cypress.Commands.add("ProcessAssert_UI", (xmlObject, xmlInput, xmlMappings,Edito
   var XmlInputObject = xmlMappings[xmlInput]; //match the xml tag with the object in Client Inputs, if that xml tag has been passed in we can go ahead and assert it
   if (XmlInputObject && XmlInputObject.hasOwnProperty("Selector")) {//if we dont have a selector then we dont need to use as part of the UI testing
     var InputType = XmlInputObject.inputType;
-    if ( InputType == InputTypes.Input_String || InputType == InputTypes.Input_Integer ||InputType == InputTypes.Input_Dropdown || InputType == InputTypes.Input_ClickThenValue) {
+    if ( InputType == InputTypes.Input_String || inputType == InputTypes.Input_String_Clear || InputType == InputTypes.Input_Integer ||InputType == InputTypes.Input_Dropdown || InputType == InputTypes.Input_ClickThenValue) {
       var textInput = cy.GetTextInput(xmlObject,xmlInput);
       if (textInput) {
         if (useCypressStictAsserts) {

@@ -208,7 +208,7 @@ ServiceBasis = {
 QuoteDetails = {
   Reference: {
     Selector: ".Reference_tooltip input",
-    inputType: InputTypes.Input_String,
+    inputType: InputTypes.Input_String_Clear,
     AccordianSelector:"#QuoteDetails",
     AccordianName: 'Quote Details', 
   },

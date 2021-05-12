@@ -8,6 +8,7 @@ RunType_Delete = "Delete",
 Input_Integer = "Integer",
 Input_Dropdown = "Dropdown",
 Input_String = "String",
+Input_String_Clear = "String_Clear", //select all in string field and then type
 Input_Date = "Date",
 Input_ClickThenValue = "ClickThenValue", //Used when there is a value thats auto calcuated when focus is lost, so we can enter a value to override after the click/calc
 Input_ProductDropdown = "ProductDropdown", //Used in client to translate a product ID
