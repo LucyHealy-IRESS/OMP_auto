@@ -44,7 +44,8 @@
 						<SIA_Percentage>3</SIA_Percentage>
 						<Reg_RegularPremium>Initial Regular Premium Percentage</Reg_RegularPremium>
 						<Reg_Percentage>1</Reg_Percentage>
-						<Reg_Continuing>For All Contributions</Reg_Continuing>
+						<Reg_Continuing>Until Specific Amount Paid</Reg_Continuing>
+						<Reg_StopAfterReceived>1200</Reg_StopAfterReceived>
 						<O_Ongoing>On-going Annual Percentage</O_Ongoing>
 						<O_AnnualPercentage>2</O_AnnualPercentage>
 						<O_PercentagePaid>Monthly</O_PercentagePaid>

@@ -16,6 +16,9 @@
 						<Switching_SafeguardedBenefitsSegments>
 							<Switching_SafeguardedBenefitsSegment>
 								<IncomeType>GMP Pre 1988</IncomeType>
+								<Amount>500</Amount>
+								<RevaluationRate>Fixed Rate</RevaluationRate>
+								<EscalationRate>RPI</EscalationRate>
 							</Switching_SafeguardedBenefitsSegment>
 						</Switching_SafeguardedBenefitsSegments>
                 	</Switching_CurrentPlan>

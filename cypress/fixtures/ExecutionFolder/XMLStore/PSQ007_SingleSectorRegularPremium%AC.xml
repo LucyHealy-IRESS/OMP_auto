@@ -42,7 +42,8 @@
 						<ToUseInThisQuote>Specific Adviser Charges For This Quote Only</ToUseInThisQuote>
 						<Reg_RegularPremium>Initial Regular Premium Percentage</Reg_RegularPremium>
 						<Reg_Percentage>0.5</Reg_Percentage>
-						<Reg_Continuing>For All Contributions</Reg_Continuing>
+						<Reg_Continuing>For Specific Period</Reg_Continuing>
+						<Reg_StopAfterMonth>12</Reg_StopAfterMonth>
 					</Switching_AdviserCharging>
 				</Switching_AdviserCharges>							
 			</SwitchingQuote>
