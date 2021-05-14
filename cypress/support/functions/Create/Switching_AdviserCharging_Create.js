@@ -17,9 +17,10 @@ Cypress.Commands.add("Switching_AdviserCharging_Create_1", (EntityData) => {
         cy.wait(2000); //because selecting from the dropdown refreshes the popup
         cy.get(".AdvsierChargesListPopup .ac-table ." +AdviserChargesType + "_AdviserRow" ).then(function($row){
           cy.wrap($row.find(".ui-icon-pencil")).click();
-            cy.PopulateEditor(AdvChargesConstants.AdviserChargesEditorSelector,AdvChargesConstants.AllAdviserChargesInputs,EntityData,"Switching Adviser Charges - " + AdviserChargesType );
-            cy.wait(1000);    
-            cy.clickButtonInPopup(AdvChargesConstants.AdviserChargesEditorSelector,"OK");    
+          cy.wait(2000);     // the accordians auto open so give them a moment to actually do so
+          cy.PopulateEditor(AdvChargesConstants.AdviserChargesEditorSelector,AdvChargesConstants.AllAdviserChargesInputs,EntityData,"Switching Adviser Charges - " + AdviserChargesType );
+          cy.wait(1000);    
+          cy.clickButtonInPopup(AdvChargesConstants.AdviserChargesEditorSelector,"OK");    
         })       
        }); 
     }

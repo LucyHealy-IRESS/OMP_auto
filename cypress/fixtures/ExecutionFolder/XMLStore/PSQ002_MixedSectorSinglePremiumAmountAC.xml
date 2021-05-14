@@ -1,10 +1,10 @@
 <Root>
 <Clients>
 	<Client>
-		<ClientID>Client01</ClientID>
-		<Title>Mrs</Title>
-		<Firstname>Lucy</Firstname>
-		<Surname>Hodge</Surname>
+		<ClientID>Client02</ClientID>
+		<Title>Mr</Title>
+		<Firstname>Pension</Firstname>
+		<Surname>ClientTwo</Surname>
 		<DateOfBirth>1969-11-09T00:00:00</DateOfBirth>				
 		<SwitchingQuotes>
 			<SwitchingQuote>
@@ -12,14 +12,17 @@
                 	<Switching_CurrentPlan>
                 		<Reference>CurrentPlan1</Reference>
 						<ProductID>Personal Pension</ProductID>
-						<Provider>Abbey Life</Provider>
-						<CurrentValue>5000</CurrentValue>
-						<SMV_ProjectedMaturityValueBasis>Estimated By System</SMV_ProjectedMaturityValueBasis>
+						<CurrentPlanName>PP</CurrentPlanName>
+						<CurrentValue>150000</CurrentValue>
+						<SMV_ProjectedMaturityValueBasis>Inflation Adjusted Rates Supplied</SMV_ProjectedMaturityValueBasis>
 						<SMV_RetirementMaturityAge>70</SMV_RetirementMaturityAge>
+						<SMV_LowRateMaturityValue>160000</SMV_LowRateMaturityValue>
+						<SMV_MidRateMaturityValue>175000</SMV_MidRateMaturityValue>
+						<SMV_HighRateMaturityValue>190000</SMV_HighRateMaturityValue>
                 	</Switching_CurrentPlan>
         		</Switching_CurrentPlans>
 				<Switching_ClientDetails>
-				<Reference>New Switching Quote</Reference>
+				<Reference>PSQ002</Reference>
 				</Switching_ClientDetails>
 				<Switching_NewInvestments>
 					<NewInvestmentType>2</NewInvestmentType>
@@ -40,6 +43,8 @@
 					<Switching_AdviserCharging>
 						<Type>Pension</Type>
 						<ToUseInThisQuote>Specific Adviser Charges For This Quote Only</ToUseInThisQuote>
+						<SIA_SinglePremium>Initial Single Premium Amount</SIA_SinglePremium>
+						<SIA_Amount>250</SIA_Amount>
 					</Switching_AdviserCharging>
 				</Switching_AdviserCharges>							
 			</SwitchingQuote>

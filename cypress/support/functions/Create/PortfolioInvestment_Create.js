@@ -32,7 +32,7 @@ Cypress.Commands.add("ProcessAddHoldingQuick", (Entity, PopupSelector, HoldingsA
    if (textInput) {
    cy.wrap(".quickAddFund_ComboBox").as('inputSelector'); //want access to this later in the then
     cy.get(".quickAddFund_ComboBox").clear().type(textInput).type("{enter}").then(function(){
-      cy.get(".wijmo-wijlist-ul",{timeout:Constants.Timeout_HoldingSearch}).filter(':visible').contains(textInput).first().click();
+      cy.get(".wijmo-wijlist-ul",{timeout:Constants.Timeout_HoldingSearch}).filter(':visible',{timeout:Constants.Timeout_HoldingSearch}).contains(textInput).first().click();
       cy.wait(2000);        
       cy.get(this.inputSelector).then(function($SelectedFund){
         var SelectedFund = Entity.FundName;

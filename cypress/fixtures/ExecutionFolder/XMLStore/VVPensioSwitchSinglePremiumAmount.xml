@@ -1,10 +1,10 @@
 <Root>
 <Clients>
 	<Client>
-		<ClientID>Client01</ClientID>
+		<ClientID>ClientVV01</ClientID>
 		<Title>Mrs</Title>
-		<Firstname>Lucy</Firstname>
-		<Surname>Hodge</Surname>
+		<Firstname>Tracy</Firstname>
+		<Surname>Pension</Surname>
 		<DateOfBirth>1969-11-09T00:00:00</DateOfBirth>				
 		<SwitchingQuotes>
 			<SwitchingQuote>
@@ -12,7 +12,6 @@
                 	<Switching_CurrentPlan>
                 		<Reference>CurrentPlan1</Reference>
 						<ProductID>Personal Pension</ProductID>
-						<Provider>Abbey Life</Provider>
 						<CurrentValue>5000</CurrentValue>
 						<SMV_ProjectedMaturityValueBasis>Estimated By System</SMV_ProjectedMaturityValueBasis>
 						<SMV_RetirementMaturityAge>70</SMV_RetirementMaturityAge>
@@ -25,20 +24,18 @@
 					<NewInvestmentType>2</NewInvestmentType>
 					<UsingRule>0</UsingRule>
 						<Switching_NewInvestments_ABI_Sectors>
-                            <Name>Mixed Asset</Name>
-                            <Switching_NewInvestments_ABI_SubSectors>
-                                <Name>Mixed Investment 40%-85% Shares</Name>
-                                <Amount>80</Amount>
-                            </Switching_NewInvestments_ABI_SubSectors>
+							<Name>Mixed Asset</Name>
 							<Switching_NewInvestments_ABI_SubSectors>
-                                <Name>Mixed Investment 20%-60% Shares</Name>
-                                <Amount>20</Amount>
-                            </Switching_NewInvestments_ABI_SubSectors>
-                        </Switching_NewInvestments_ABI_Sectors>
+								<Name>Flexible Investment</Name>
+								<Amount>100</Amount>
+							</Switching_NewInvestments_ABI_SubSectors>
+						</Switching_NewInvestments_ABI_Sectors>
 				</Switching_NewInvestments>
 				<Switching_AdviserCharges>
 					<Switching_AdviserCharging>
 						<Type>Pension</Type>
+						<SIA_SinglePremium>InitialSinglePremiumAmount</SIA_SinglePremium>
+						<SIA_Amount>1000</SIA_Amount>
 						<ToUseInThisQuote>Specific Adviser Charges For This Quote Only</ToUseInThisQuote>
 					</Switching_AdviserCharging>
 				</Switching_AdviserCharges>							
@@ -47,8 +44,3 @@
 	</Client>
 </Clients>
 </Root>
-
-
-
-
-				
