@@ -6,7 +6,7 @@ SBS_Editor = "#EditSafeguardedBenefitSegmentPopup",
 BasicDetails = {
   IncomeType: {
     Selector: ".BasicDetails_tooltip input",
-    inputType: InputTypes.Input_Dropdown,
+    inputType: InputTypes.Input_Dropdown_ReadOnly,
     AccordianName: "Basic Details",
     AccordianSelector: ".SafeGuardedEditor_BasicDetails",
   },
@@ -27,7 +27,7 @@ BasicDetails = {
 IncomeDetails = {
   Amount: {
     Selector: ".IncomeAmount_tooltip input",
-    inputType: InputTypes.Input_Dropdown,
+    inputType: InputTypes.Input_Integer,
     AccordianName: "Income Details",
     AccordianSelector: ".SafeGuardedEditor_IncomeDetails",
   },
@@ -66,7 +66,7 @@ IncomeDetails = {
   },
   IncomeStops: {
     Selector: ".IncomeStops_tooltip input",
-    inputType: InputTypes.Input_Dropdownr,
+    inputType: InputTypes.Input_Dropdown_ReadOnly,
     AccordianName: "Income Details",
     AccordianSelector: ".SafeGuardedEditor_IncomeDetails",
   },
@@ -81,7 +81,7 @@ IncomeDetails = {
 RevaluationandEscalation = {
   RevaluationRate: {
     Selector: ".RevaluationRaye_tooltip input",
-    inputType: InputTypes.Input_Dropdown,
+    inputType: InputTypes.Input_Dropdown_ReadOnly,
     AccordianName: "Revaluation and Escalation",
     AccordianSelector: ".SafeGuardedEditor_RandE",
   },
@@ -105,13 +105,13 @@ RevaluationandEscalation = {
   },
   RevaluationBasis: {
     Selector: ".RevaluationBasis_tooltip input",
-    inputType: InputTypes.Input_Dropdown,
+    inputType: InputTypes.Input_Dropdown_ReadOnly,
     AccordianName: "Revaluation and Escalation",
     AccordianSelector: ".SafeGuardedEditor_RandE",
   },
   EscalationRate: {
     Selector: ".EscalationRate_tooltip input",
-    inputType: InputTypes.Input_Dropdown,
+    inputType: InputTypes.Input_Dropdown_ReadOnly,
     AccordianName: "Revaluation and Escalation",
     AccordianSelector: ".SafeGuardedEditor_RandE",
   },
