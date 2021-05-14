@@ -11,7 +11,7 @@ Cypress.Commands.add("Switching_CurrentPlan_Create_1", (EntityData,CurrentPlanNo
     cy.get(swContants.CurrentPlanEditorSelector,{ timeout: constants.Timeout_GetQuoteResults  }).then(function(){    
          cy.PopulateEditor(swContants.CurrentPlanEditorSelector,swContants.AllCurrentPlanInputs,EntityData,"Switching Current Plan Editor");
          cy.wait(1000);
-         cy.clickButtonInPopup(swContants.CurrentPlanEditorSelector,"Ok");    
+        // cy.clickButtonInPopup(swContants.CurrentPlanEditorSelector,"Ok");    
      })
 });
     
@@ -19,6 +19,8 @@ Cypress.Commands.add("Switching_CurrentPlan_Create_2", (EntityData) => {});
     
 Cypress.Commands.add("Switching_CurrentPlan_Create_3", (EntityData) => {});
     
-Cypress.Commands.add("Switching_CurrentPlan_Tidy", (ActionFileNo) => {})
+Cypress.Commands.add("Switching_CurrentPlan_Tidy", (ActionFileNo) => {
+    cy.clickButtonInPopup(swContants.CurrentPlanEditorSelector,"Ok"); 
+})
 
 

@@ -99,6 +99,16 @@ EntityTypes = {
         API_ActionRequired_Assert: false,
         API_ActionRequired_Delete: false
     },
+    Switching_CurrentPlanHoldings: {
+        API_ActionRequired_Create: false,
+        API_ActionRequired_Assert: false,
+        API_ActionRequired_Delete: false
+    },
+    Switching_CurrentPlanHolding: {
+        API_ActionRequired_Create: false,
+        API_ActionRequired_Assert: false,
+        API_ActionRequired_Delete: false
+    },
     Switching_ClientDetails: {
         API_ActionRequired_Create: false,
         API_ActionRequired_Assert: false,
