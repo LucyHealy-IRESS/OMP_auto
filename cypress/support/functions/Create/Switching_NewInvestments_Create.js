@@ -11,24 +11,18 @@ Cypress.Commands.add("Switching_NewInvestments_Create_1", (EntityData) => {
         //Set New Investment Type Dropdown
         cy.SetDropdown_ByIndex(".NewInvestmentType", EntityData.NewInvestmentType)
 
-        //if(EntityData.NewInvestmentType == "3"){ //Use a Centralised Investment Proposition (CIP) to set the New Investment
-            // cy.get('.CIPGrid tr td', {timeout:Constants.Timeout_Medium}).contains(EntityData.CIPName).then(function ($row) {             
-            //     cy.wrap($row.parent().siblings().first().find('.wijmo-checkbox-box')).check({ force: true });
-            // }); 
-            
-            // var rowpos = Cypress.$('.CIPGrid tr:last').position();
-            // Cypress.$('.CIPGrid').scrollTop(rowpos.top);
-
-            // rowpos = Cypress.$('.CIPGrid tr:last').position();
-            // Cypress.$('.CIPGrid').scrollTop(rowpos.top);
-
-            // rowpos = Cypress.$('.CIPGrid tr:last').position();
-            // Cypress.$('.CIPGrid').scrollTop(rowpos.top);
-
-            // rowpos = Cypress.$('.CIPGrid tr:last').position();
-            // Cypress.$('.CIPGrid').scrollTop(rowpos.top);
-        //}
-
+        if(EntityData.NewInvestmentType == "1" ){
+            cy.SetDropdown_ByIndex(".SectorInvestments_Q1_tooltip input", EntityData.UsingRule)    ;      
+        }
+        else if(EntityData.NewInvestmentType == "2"){
+            cy.SetDropdown_ByIndex(".FundMode_Q1_tooltip input", EntityData.UsingRule) ;
+        }
+        else if(EntityData.NewInvestmentType == "3" || EntityData.NewInvestmentType == "4"){ //Use a Centralised Investment Proposition (CIP) to set the New Investment
+            cy.wait(2000);
+            cy.get('.CIPGrid tbody tr td .wijmo-checkbox input').eq(0).check({ force: true}); //select first checkbox
+            cy.wait(1000);
+            cy.SetDropdown_ByIndex(".SectorInvestments_Q1_tooltip input", EntityData.UsingRule)
+        }      
     }
 
 });
