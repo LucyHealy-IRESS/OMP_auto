@@ -50,4 +50,6 @@ Cypress.Commands.add("Switching_CurrentPlanHolding_Create_2", (EntityData) => {}
 
 Cypress.Commands.add("Switching_CurrentPlanHolding_Create_3", (EntityData) => {});
 
-Cypress.Commands.add("Switching_CurrentPlanHolding_Tidy", (EntityData) => {});
+Cypress.Commands.add("Switching_CurrentPlanHolding_Tidy", (EntityData) => {
+  //cy.clickButtonInPopup(swContants.CurrentPlanEditorSelector,"Ok"); 
+});

@@ -21,7 +21,7 @@ Cypress.Commands.add("Switching_CurrentPlan_Create_2", (EntityData) => {});
 Cypress.Commands.add("Switching_CurrentPlan_Create_3", (EntityData) => {});
     
 Cypress.Commands.add("Switching_CurrentPlan_Tidy", (ActionFileNo) => {
-    cy.clickButtonInPopup(swContants.CurrentPlanEditorSelector,"Ok"); 
+    //cy.clickButtonInPopup(swContants.CurrentPlanEditorSelector,"Ok"); 
 })
 
 
