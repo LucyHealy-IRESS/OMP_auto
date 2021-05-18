@@ -11,10 +11,10 @@ Cypress.Commands.add("Switching_NewInvestments_Create_1", (EntityData) => {
         //Set New Investment Type Dropdown
         cy.SetDropdown_ByIndex(".NewInvestmentType", EntityData.NewInvestmentType)
 
-        if(EntityData.NewInvestmentType == "1" ){
+        if(EntityData.NewInvestmentType == "2" ){
             cy.SetDropdown_ByIndex(".SectorInvestments_Q1_tooltip input", EntityData.UsingRule)    ;      
         }
-        else if(EntityData.NewInvestmentType == "2"){
+        else if(EntityData.NewInvestmentType == "1"){
             cy.SetDropdown_ByIndex(".FundMode_Q1_tooltip input", EntityData.UsingRule) ;
         }
         else if(EntityData.NewInvestmentType == "3" || EntityData.NewInvestmentType == "4"){ //Use a Centralised Investment Proposition (CIP) to set the New Investment
