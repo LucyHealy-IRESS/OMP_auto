@@ -3,7 +3,8 @@ import * as swContants from "../../constants/switching_currentPlans.js"
 import * as Constants from "../../constants/Core.js";
 
 Cypress.Commands.add("Switching_ClientDetails_Create_1", (EntityData) => {
-// cy.clickButtonInPopup(swContants.CurrentPlanEditorSelector,"Ok");    //Close the open current plan editor
+
+cy.clickButtonInPopup(swContants.CurrentPlanEditorSelector,"Ok");    //Close the open current plan editor
 cy.wait(7000); //let the current plans save
 cy.clickButtonInPopup(swContants.CurrentPlanListSelector," < Client Details ");  //we are currently in current plan popup list
 
