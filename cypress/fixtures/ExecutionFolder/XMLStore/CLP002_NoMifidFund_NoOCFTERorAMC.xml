@@ -1,0 +1,35 @@
+<Root>
+<Clients>
+	<Client>
+		<ClientID>MifidClient02</ClientID>
+		<Title>Mrs</Title>
+		<Firstname>Automated</Firstname>
+		<Surname>MifidClientTwo</Surname>
+		<DateOfBirth>1979-01-09T00:00:00</DateOfBirth>				
+		<Portfolios>
+			<Portfolio>
+				<PortfolioID>MifidClient02_Portfolio01</PortfolioID>
+					<ClientID>MifidClient02</ClientID>
+					<Reference>NoMifidFund_NoOCFTERorAMC</Reference>
+					<ProductID>1</ProductID>
+					<Investments>
+						<PortfolioInvestment>
+							<FundName>Tatton Global Managed Cautious</FundName>
+							<Units>10000.000</Units>
+							<TotalValue>10000.00</TotalValue>
+							<UseCustomFundPrice>1</UseCustomFundPrice>
+							<CustomFundPrice>100.000</CustomFundPrice>
+							<InvestmentType>Fund</InvestmentType>
+							<Status>Current</Status>
+						</PortfolioInvestment>
+					</Investments>
+			</Portfolio>
+		</Portfolios>
+	</Client>
+</Clients>
+</Root>
+
+
+
+
+				
