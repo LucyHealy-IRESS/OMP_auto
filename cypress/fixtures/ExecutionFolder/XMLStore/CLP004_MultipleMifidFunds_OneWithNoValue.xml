@@ -1,0 +1,58 @@
+<Root>
+<Clients>
+	<Client>
+		<ClientID>MifidClient04</ClientID>
+		<Title>Mr</Title>
+		<Firstname>Automated</Firstname>
+		<Surname>MifidClientFour</Surname>
+		<DateOfBirth>1978-04-01T00:00:00</DateOfBirth>				
+		<Portfolios>
+			<Portfolio>
+				<PortfolioID>MifidClient04_Portfolio01</PortfolioID>
+					<ClientID>MifidClient04</ClientID>
+					<Reference>MultipleMifidFunds</Reference>
+					<ProductID>1</ProductID>
+					<Investments>
+						<PortfolioInvestment>
+							<FundID>LU1125675006</FundID>
+							<FundName>JPM Glbl Rsr Enh Idx Eq X (acc) GBP</FundName>
+							<Units>132.615</Units>
+							<TotalValue>16000.00</TotalValue>
+							<InvestmentType>Fund</InvestmentType>
+							<Status>Current</Status>
+						</PortfolioInvestment>
+						<PortfolioInvestment>
+							<FundID>GB0031835449</FundID>
+							<FundName>JPM Global (ex-UK) Bond I Grs Acc</FundName>
+							<Units>2125.399</Units>
+							<TotalValue>4000.00</TotalValue>
+							<InvestmentType>Fund</InvestmentType>
+							<Status>Current</Status>
+						</PortfolioInvestment>
+						<PortfolioInvestment>
+							<FundID>LU1008526839</FundID>
+							<FundName>JPM Global Strat Bd A perf (acc) GBPH</FundName>
+							<Units>219.748</Units>
+							<TotalValue>15000.00</TotalValue>
+							<InvestmentType>Fund</InvestmentType>
+							<Status>Current</Status>
+						</PortfolioInvestment>
+						<PortfolioInvestment>
+							<FundID>LU1303369810</FundID>
+							<FundName>JPM Global Strat Bd C perf (acc) GBPH</FundName>
+							<Units>0.000</Units>
+							<TotalValue>0.00</TotalValue>
+							<InvestmentType>Fund</InvestmentType>
+							<Status>Current</Status>
+						</PortfolioInvestment>
+					</Investments>
+			</Portfolio>
+		</Portfolios>
+	</Client>
+</Clients>
+</Root>
+
+
+
+
+				

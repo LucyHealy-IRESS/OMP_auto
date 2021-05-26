@@ -1,0 +1,34 @@
+<Root>
+<Clients>
+	<Client>
+		<ClientID>MifidClient01</ClientID>
+		<Title>Mrs</Title>
+		<Firstname>Automated</Firstname>
+		<Surname>MifidClientOne</Surname>
+		<DateOfBirth>1969-11-09T00:00:00</DateOfBirth>				
+		<Portfolios>
+			<Portfolio>
+				<PortfolioID>MifidClient01_Portfolio01</PortfolioID>
+					<ClientID>MifidClient01</ClientID>
+					<Reference>NoMifidFund_NoOCF</Reference>
+					<ProductID>1</ProductID>
+					<Investments>
+						<PortfolioInvestment>
+							<FundID>GB00BBMJ9R19</FundID>
+							<FundName>Canlife Invesco UK Equity Income LS5</FundName>
+							<Units>46345.811</Units>
+							<TotalValue>52000.00</TotalValue>
+							<InvestmentType>Fund</InvestmentType>
+							<Status>Current</Status>
+						</PortfolioInvestment>
+					</Investments>
+			</Portfolio>
+		</Portfolios>
+	</Client>
+</Clients>
+</Root>
+
+
+
+
+				

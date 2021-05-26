@@ -1,0 +1,34 @@
+<Root>
+<Clients>
+	<Client>
+		<ClientID>MifidClient05</ClientID>
+		<Title>Mr</Title>
+		<Firstname>Automated</Firstname>
+		<Surname>MifidClientFive</Surname>
+		<DateOfBirth>1963-10-02T00:00:00</DateOfBirth>				
+		<Portfolios>
+			<Portfolio>
+				<PortfolioID>MifidClient05_Portfolio01</PortfolioID>
+					<ClientID>MifidClient05</ClientID>
+					<Reference>MifidFund_and_OtherHolding</Reference>
+					<ProductID>1</ProductID>
+					<Investments>
+						<PortfolioInvestment>
+							<FundID>IE00BYXVGZ48</FundID>
+							<FundName>Fidelity Global Qual Inc ETF Inc</FundName>
+							<Units>3404.255</Units>
+							<TotalValue>19000.00</TotalValue>
+							<InvestmentType>Fund</InvestmentType>
+							<Status>Current</Status>
+						</PortfolioInvestment>
+					</Investments>
+			</Portfolio>
+		</Portfolios>
+	</Client>
+</Clients>
+</Root>
+
+
+
+
+				

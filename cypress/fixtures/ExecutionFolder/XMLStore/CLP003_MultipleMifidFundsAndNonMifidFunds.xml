@@ -1,0 +1,58 @@
+<Root>
+<Clients>
+	<Client>
+		<ClientID>MifidClient03</ClientID>
+		<Title>Mr</Title>
+		<Firstname>Automated</Firstname>
+		<Surname>MifidClientThree</Surname>
+		<DateOfBirth>1963-10-02T00:00:00</DateOfBirth>				
+		<Portfolios>
+			<Portfolio>
+				<PortfolioID>MifidClient03_Portfolio01</PortfolioID>
+					<ClientID>MifidClient03</ClientID>
+					<Reference>MultipleMifidFundsAndNonMifidFunds</Reference>
+					<ProductID>1</ProductID>
+					<Investments>
+						<PortfolioInvestment>
+							<FundID>GB0006059330</FundID>
+							<FundName>Baillie Gifford Global Discovery B Acc</FundName>
+							<Units>1540.239</Units>
+							<TotalValue>40000.00</TotalValue>
+							<InvestmentType>Fund</InvestmentType>
+							<Status>Current</Status>
+						</PortfolioInvestment>
+						<PortfolioInvestment>
+							<FundID>GB00B4T6SD53</FundID>
+							<FundName>Jupiter Strategic Bond I Acc</FundName>
+							<Units>863.856</Units>
+							<TotalValue>1000.00</TotalValue>
+							<InvestmentType>Fund</InvestmentType>
+							<Status>Current</Status>
+						</PortfolioInvestment>
+						<PortfolioInvestment>
+							<FundID>GB00B7GSYN71</FundID>
+							<FundName>Janus Henderson Fxd Intr MthInc I Inc</FundName>
+							<Units>19383.260</Units>
+							<TotalValue>22000.00</TotalValue>
+							<InvestmentType>Fund</InvestmentType>
+							<Status>Current</Status>
+						</PortfolioInvestment>
+						<PortfolioInvestment>
+							<FundID>GB00B8N45P45</FundID>
+							<FundName>Invesco Monthly Inc Plus UK Z Acc</FundName>
+							<Units>3692.876</Units>
+							<TotalValue>12000.00</TotalValue>
+							<InvestmentType>Fund</InvestmentType>
+							<Status>Current</Status>
+						</PortfolioInvestment>
+					</Investments>
+			</Portfolio>
+		</Portfolios>
+	</Client>
+</Clients>
+</Root>
+
+
+
+
+				
