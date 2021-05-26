@@ -50,6 +50,7 @@ import './functions/Create/Switching_SafeguardedBenefitsSegments_Create.js'
 import './functions/Create/Switching_SafeguardedBenefitsSegment_Create.js'
 import './functions/Create/Switching_NewInvestments_Funds_Create.js'
 import './functions/Create/Switching_NewInvestments_Fund_Create.js'
+import './functions/Create/PortfolioSearch_Create.js'
 
 import './functions/Assert/Clients_Assert.js'
 import './functions/Assert/Client_Assert.js'
@@ -79,6 +80,7 @@ import './functions/Assert/Switching_SafeguardedBenefitsSegments_Assert.js'
 import './functions/Assert/Switching_SafeguardedBenefitsSegment_Assert.js'
 import './functions/Assert/Switching_NewInvestments_Funds_Assert.js'
 import './functions/Assert/Switching_NewInvestments_Fund_Assert.js'
+import './functions/Assert/PortfolioSearch_Assert.js'
 
 import './functions/Delete/Clients_Delete.js'
 import './functions/Delete/Client_Delete.js'
@@ -108,6 +110,7 @@ import './functions/Delete/Switching_SafeguardedBenefitsSegments_Delete.js'
 import './functions/Delete/Switching_SafeguardedBenefitsSegment_Delete.js'
 import './functions/Delete/Switching_NewInvestments_Funds_Delete.js'
 import './functions/Delete/Switching_NewInvestments_Fund_Delete.js'
+import './functions/Delete/PortfolioSearch_Delete.js'
 
 
 import '.'

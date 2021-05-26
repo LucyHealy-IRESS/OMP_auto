@@ -156,6 +156,7 @@ Cypress.Commands.add('clickThumbnail', (thumbnailName) => {
 //Click Menu Button
 Cypress.Commands.add('menuClick', (thumbnailName, button) => {
   cy.clickThumbnail(thumbnailName);
+  cy.wait(2000);
   cy.get(button).click();
 })
 
