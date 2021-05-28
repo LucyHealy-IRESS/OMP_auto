@@ -15,25 +15,26 @@ Cypress.Commands.add("PortfolioSearch_Assert_1", (EntityData) => {
                 cy.wait(5000)
                 cy.SetDropdown_ByIndex(".wijmo-wijcombobox-wrapper > .gridSchemasDropDown", "3").then(function() {
 
-                    
-                    // var temp = EntityData["Column1"];
-                    // var count = (temp.match(/is/g) || []).length;
-                    // console.log(count);
 
-                    // var id
-                    // var nColumn = EntityData["Column" + id]
+                    cy.readFile('cypress/fixtures/ExecutionFolder/Create/PS002_Model.xml').then(function (file) {
+                        
+                        var col = "<Column";
+                        var row = "<Row"
+                        var countCol = (file.match(new RegExp(col, 'g')) || []).length; //searh for the column string in the while file, then the row
+                        var countRow = (file.match(new RegExp(row, 'g')) || []).length;
 
-                    // for (id = 0; id < ; id++) {
+                        if (countCol > 0){
+                            var id
+                            for (id = 1; id <= countCol; id++) {
+                                var tableRow = ("Column" + id)
+                                var gridParam = EntityData[tableRow]
+                                
+                                cy.get(psearchconts.PortfolioSearchTable).first("tr").find("td").eq(id).should('contain', gridParam)
+                            }
+                        }
 
-                    // cy.get(psearchconts.PortfolioSearchTable).first("tr").find("td").eq(id).should('contain', nColumn)
-                    cy.get(psearchconts.PortfolioSearchTable).first("tr").find("td").eq(1).should('contain', EntityData["Column1"])
-                    cy.get(psearchconts.PortfolioSearchTable).first("tr").find("td").eq(2).should('contain', EntityData["Column2"])
-                    cy.get(psearchconts.PortfolioSearchTable).first("tr").find("td").eq(3).should('contain', EntityData["Column3"])
-                    cy.get(psearchconts.PortfolioSearchTable).first("tr").find("td").eq(4).should('contain', EntityData["Column4"])
-                    cy.get(psearchconts.PortfolioSearchTable).first("tr").find("td").eq(5).should('contain', EntityData["Column5"])
-                    cy.get(psearchconts.PortfolioSearchTable).first("tr").find("td").eq(6).should('contain', EntityData["Column6"])
-                    
-
+                        //else if ()
+                    })
                 })    
 
             })
