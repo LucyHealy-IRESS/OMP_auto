@@ -1,0 +1,69 @@
+<Root>
+<Clients>
+	<Client>
+		<ClientID>Client01</ClientID>
+		<Title>Mrs</Title>
+		<Firstname>Modeller</Firstname>
+		<Surname>ClientOne</Surname>
+		<DateOfBirth>1969-11-09T00:00:00</DateOfBirth>				
+		<RetirementModellerQuotes>
+			<RetirementModellerQuote>
+				<RetirementModeller_CurrentPlans>
+                	<RetirementModeller_CurrentPlan>
+                		<Reference>CurrentPlan1</Reference>
+						<ProductID>Personal Pension</ProductID>
+						<CurrentPlanName>PP</CurrentPlanName>
+						<CurrentValue>50000</CurrentValue>
+                	</RetirementModeller_CurrentPlan>
+        		</RetirementModeller_CurrentPlans>
+				<RetirementModeller_ClientDetails>
+				<Reference>RMQ001</Reference>
+				</RetirementModeller_ClientDetails>
+				<RetirementModeller_Scenarios>
+					<RetirementModeller_Scenario_1>
+						<Quick_Scenario>7</Quick_Scenario>
+						<Quick_RetirementAge>67</Quick_RetirementAge>
+						<Quick_Amount>15223</Quick_Amount>
+						<Quick_AddAdditionalIncome>0</Quick_AddAdditionalIncome>
+						<Quick_IncludeMarketCondition>1</Quick_IncludeMarketCondition>
+						<Quick_MarketCondition>340CBFCA-7765-447B-8C6D-1808209C60BF</Quick_MarketCondition>
+						<UseTaxAllowances>1</UseTaxAllowances>
+						<Quick_GrowthRate>High</Quick_GrowthRate>
+						<Quick_NewPlanGrowthRate>Single Common Rate for Comparison</Quick_NewPlanGrowthRate>
+						<Quick_NominalRate>9.00</Quick_NominalRate>
+						<Quick_ManageSurplusIncome>SurplusRemains</Quick_ManageSurplusIncome>
+						<Quick_TaxBasis>Deduct Tax</Quick_TaxBasis>
+						<Quick_DetuctLTAExcess>1</Quick_DetuctLTAExcess>
+						<Quick_ExcessTakenAs>As Lump Sum</Quick_ExcessTakenAs>
+						<Quick_IncludeStatePension>1</Quick_IncludeStatePension>
+						<Quick_IncludePreRetirementPlans>0</Quick_IncludePreRetirementPlans>
+						<Quick_ChangeMortalityAge>1</Quick_ChangeMortalityAge>
+						<Quick_AssumedMortalityAge>95</Quick_AssumedMortalityAge>
+						<Quick_ChangePlanOrder>0</Quick_ChangePlanOrder>
+					</RetirementModeller_Scenario_1>
+				</RetirementModeller_Scenarios>
+				<RetirementModeller_NewInvestments>
+					<NewInvestmentType>2</NewInvestmentType>
+					<UsingRule>0</UsingRule>
+						<RetirementModeller_NewInvestments_ABI_Sectors>
+							<Name>Other Sectors</Name>
+							<RetirementModeller_NewInvestments_ABI_SubSectors>
+								<Name>Global Property</Name>>
+								<Amount>100</Amount>
+							</RetirementModeller_NewInvestments_ABI_SubSectors>
+						</RetirementModeller_NewInvestments_ABI_Sectors>
+				</RetirementModeller_NewInvestments>
+				<RetirementModeller_AdviserCharges>
+					<RetirementModeller_AdviserCharging>
+						<Type>DrawdownandUFPLS</Type>
+						<ToUseInThisQuote>Specific Adviser Charges For This Quote Only</ToUseInThisQuote>
+						<O_Ongoing>On-going Annual Amount</O_Ongoing>
+						<O_AnnualAmount>100</O_AnnualAmount>
+						<O_AmountPaid>Annually</O_AmountPaid>
+					</RetirementModeller_AdviserCharging>
+				</RetirementModeller_AdviserCharges>							
+			</RetirementModellerQuote>
+		</RetirementModellerQuotes>
+	</Client>
+</Clients>
+</Root>

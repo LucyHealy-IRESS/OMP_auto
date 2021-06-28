@@ -1,0 +1,12 @@
+<Root>
+    <PortfolioSearch>
+        <PortfolioTextCriteria>NoMifidFund_NoOCFTERorAMC</PortfolioTextCriteria>
+        <ResultsSchema>5</ResultsSchema>
+            <Column1>NoMifidFund_NoOCFTERorAMC</Column1>
+            <Column2></Column2>
+            <Column3></Column3>
+            <Column4></Column4>
+            <Column5></Column5>
+            <Column6></Column6>
+    </PortfolioSearch>
+</Root>
