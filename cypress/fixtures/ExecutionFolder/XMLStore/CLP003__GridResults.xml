@@ -1,0 +1,12 @@
+<Root>
+    <PortfolioSearch>
+        <PortfolioTextCriteria>MultipleMifidFundsAndNonMifidFunds</PortfolioTextCriteria>
+        <ResultsSchema>5</ResultsSchema>
+            <Column1>MultipleMifidFundsAndNonMifidFunds</Column1>
+            <Column2>0.733 %</Column2>
+            <Column3>0.085 %</Column3>
+            <Column4>0.000 %</Column4>
+            <Column5>0.000 %</Column5>
+            <Column6>0.000 %</Column6>
+    </PortfolioSearch>
+</Root>
