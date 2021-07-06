@@ -172,6 +172,86 @@ EntityTypes = {
     //     API_ActionRequired_Assert: false,
     //     API_ActionRequired_Delete: false
     // }
+    ModellerQuotes: {
+        API_ActionRequired_Create: false,
+        API_ActionRequired_Assert: false,
+        API_ActionRequired_Delete: false
+    },
+    ModellerQuote: {
+        API_ActionRequired_Create: false,
+        API_ActionRequired_Assert: false,
+        API_ActionRequired_Delete: false
+    },
+    Modeller_CurrentPlans: {
+        API_ActionRequired_Create: false,
+        API_ActionRequired_Assert: false,
+        API_ActionRequired_Delete: false
+    },
+    Modeller_CurrentPlan: {
+        API_ActionRequired_Create: false,
+        API_ActionRequired_Assert: false,
+        API_ActionRequired_Delete: false
+    },
+    Modeller_CurrentPlanHoldings: {
+        API_ActionRequired_Create: false,
+        API_ActionRequired_Assert: false,
+        API_ActionRequired_Delete: false
+    },
+    Modeller_CurrentPlanHolding: {
+        API_ActionRequired_Create: false,
+        API_ActionRequired_Assert: false,
+        API_ActionRequired_Delete: false
+    },
+    Modeller_ClientDetails: {
+        API_ActionRequired_Create: false,
+        API_ActionRequired_Assert: false,
+        API_ActionRequired_Delete: false
+    },
+    Modeller_NewInvestments: {
+        API_ActionRequired_Create: false,
+        API_ActionRequired_Assert: false,
+        API_ActionRequired_Delete: false
+    },
+    Modeller_NewInvestments_ABI_Sectors: {
+        API_ActionRequired_Create: false,
+        API_ActionRequired_Assert: false,
+        API_ActionRequired_Delete: false
+    },
+    Modeller_NewInvestments_ABI_SubSectors: {
+        API_ActionRequired_Create: false,
+        API_ActionRequired_Assert: false,
+        API_ActionRequired_Delete: false
+    },
+    Modeller_AdviserCharges: {
+        API_ActionRequired_Create: false,
+        API_ActionRequired_Assert: false,
+        API_ActionRequired_Delete: false
+    },
+    Modeller_AdviserCharging: {
+        API_ActionRequired_Create: false,
+        API_ActionRequired_Assert: false,
+        API_ActionRequired_Delete: false
+    },
+    Modeller_SafeguardedBenefitsSegments: {
+        API_ActionRequired_Create: false,
+        API_ActionRequired_Assert: false,
+        API_ActionRequired_Delete: false
+    },
+    Modeller_SafeguardedBenefitsSegment: {
+        API_ActionRequired_Create: false,
+        API_ActionRequired_Assert: false,
+        API_ActionRequired_Delete: false
+    },
+    Modeller_NewInvestments_Funds: {
+        API_ActionRequired_Create: false,
+        API_ActionRequired_Assert: false,
+        API_ActionRequired_Delete: false
+    },
+    Modeller_NewInvestments_Fund: {
+        API_ActionRequired_Create: false,
+        API_ActionRequired_Assert: false,
+        API_ActionRequired_Delete: false
+    },
     PortfolioSearch: {
         API_ActionRequired_Create: false,
         API_ActionRequired_Assert: false,
