@@ -2,6 +2,7 @@ export const
 
 RunType_Create = "Create",
 RunType_Assert = "Assert",
+RunType_Security = "Security",
 RunType_Delete = "Delete",
 
 //Input types
@@ -16,6 +17,7 @@ Input_ProviderDropdown = "ProviderDropdown", //Used in client to translate a pro
 Input_DropdownIndex = "DropdownIndex", //select a value from the dropdown based on its nth position in the list
 Input_Dropdown_ReadOnly = "Dropdown_ReadOnly", //When a dropdown cant be typed in, cypress actually tells you its readonly
 Input_Checkbox = "Checkbox",
+Input_GridColumn = "GridColumn",
 
 API_Create = "Create",
 API_Retrieve = "Retrieve",

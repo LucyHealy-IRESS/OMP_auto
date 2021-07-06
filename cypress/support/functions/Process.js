@@ -23,6 +23,10 @@ Cypress.Commands.add("ProcessFile", (ExecutiionFolderLocation,fileName,ActionFil
   //3 Roll off what we have created
   cy.wait(3000);
   cy.ProcessXMLFile(fileLocation,constants.RunType_Delete, ActionFileNo);
+
+  //4 Roll off what we have created, needs to remove delete if this is ran
+  cy.wait(3000);
+  cy.SecurityProcessing(fileLocation);
       
   if(reloadBetweenTests){ //Dont reload if on last iteration
      cy.reload();
@@ -55,6 +59,7 @@ Cypress.Commands.add("ProcessXMLFile", function(fileLocation, Type,ActionFileNo)
                 for (var x = 0; x < EntityData.length; x++) {
                   // For each client......
                   cy.log(Entity + " " + Type + " Action" + ActionFileNo);
+                 
                   eval("cy." + Entity + "_" + Type + "_" + ActionFileNo + "(EntityData[x],"+x+");");
                   var XMLtoArraySub = Object.keys(EntityData[x]); //Get the specific client from the array    
                   ArrayOfFunctionCalls.push(Entity + "_Tidy" );       
@@ -81,7 +86,7 @@ Cypress.Commands.add("ProcessXMLFile", function(fileLocation, Type,ActionFileNo)
         }
         //iterte and call
       }
-      else if(Type==constants.RunType_Assert){
+      else if(Type==constants.RunType_Assert || Type==constants.RunType_Security){
         cy.UpdateAssertLogFile();
       }
       
@@ -134,8 +139,15 @@ Cypress.Commands.add("PopulateEditor",(EditorSelector, InputMappings, XMLDataObj
 });
 
 Cypress.Commands.add("AssertEditor",(EditorSelector, InputMappings, XMLDataObject, EditorName) => {
+  debugger;
   cy.EditorProcesssor(EditorSelector, InputMappings, XMLDataObject,false, EditorName);
 });
+
+Cypress.Commands.add("AssertGrid", (InputMappings, XMLDataObject) => {
+  for (let xmlInput in XMLDataObject) {
+  cy.ProcesssInput(XMLDataObject,xmlInput,InputMappings,false);
+  }
+})
 
 Cypress.Commands.add("RunSearch", (SearchOptions, EntityData) => {
   var SearchParam = EntityData[SearchOptions.SearchParam];
@@ -173,4 +185,53 @@ Cypress.Commands.add("SearchHasCompleted", (callback) => {
     }    
   })
 });
+
+
+//GENERIC SEARCH - review later
+// Cypress.Commands.add("RunSearches", (SearchOptions) => {
+  
+//   var SearchType = SearchOptions.SearchType
+//   var SearchParamEntity = SearchOptions.SearchParamEntity;
+//   var SearchParamText = SearchOptions.SearchParamText;
+//   var DefaultSearchCompletedCallback = function() { //This function exectutes only when the default search has finished loading
+//     var SearchCompletedCallback = function(){ //This function executes only when out client search has finished loading
+//         cy.wait(1000); //1 second ui catchup to prevent any detatching from async refreshes
+//         SearchOptions.SearchCompleteCallbackFunc();
+//     }
+//     cy.menuClick(SearchOptions.ThumbnailName, SearchOptions.Button); 
+//       cy.get(".AmendSearchPopup_Container").then(function(){ 
+        
+//         if(SearchType == "Entity"){
+//          cy.get(constantsSelectors.searchTextMatch).type(SearchParamEntity);
+//         }
+//         else if(SearchType == "Text"){
+//           cy.get(constantsSelectors.searchTextMatch).type(SearchParamText);
+//         }
+//         else if(SearchType == "Clear"){
+//           cy.get(':nth-child(1) > .wijmo-wijtree-header > .wijmo-wijtree-inner > .wijmo-checkbox > .wijmo-checkbox-box > .wijmo-checkbox-icon').dblclick();
+//         }
+
+//         cy.get('.OverviewSearchButton').click();
+//         cy.SearchesHasCompleted(SearchCompletedCallback);
+      
+//     })
+//     //cy.SetResultsSchema(".wijmo-wijcombobox-wrapper > .gridSchemasDropDown", "11")
+    
+//   }
+//   cy.SearchesHasCompleted(DefaultSearchCompletedCallback);
+// });
+
+// Cypress.Commands.add("SearchesHasCompleted", (callback) => {
+//   cy.get(".overviewHeader").find("div").find("span").contains("Matching",{timeout:constants.Timeout_SearchWait}).then(function($span){ //initial search completes as header contains x Matching Clients 
+//      cy.get(".TypeCompositePanel tr",{timeout:constants.Timeout_SearchWait}).then(function(){   
+//       cy.SetResultsSchema(".wijmo-wijcombobox-wrapper > .gridSchemasDropDown", "1")  //now we wait for the results grid to finish loading
+//       callback();
+//       }) 
+//     })    
+// });
+
+// Cypress.Commands.add("SetResultsSchema", (input, schema) => {
+//   cy.SetDropdown_ByIndex(input, schema);
+
+// });
 

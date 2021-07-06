@@ -21,6 +21,8 @@ import './functions/InputProcessing.js'
 import './functions/Utils.js'
 
 import './functions/Process.js'
+import './functions/SecurityProcess.js'
+import './functions/SecurityProcessing.js'
 
 import './functions/Create/Clients_Create.js'
 import './functions/Create/Client_Create.js'
@@ -112,6 +114,8 @@ import './functions/Delete/Switching_NewInvestments_Funds_Delete.js'
 import './functions/Delete/Switching_NewInvestments_Fund_Delete.js'
 import './functions/Delete/PortfolioSearch_Delete.js'
 
+import './functions/Security/Client_Security.js'
+import './functions/Security/Portfolio_Security.js'
 
 import '.'
 // Alternatively you can use CommonJS syntax:

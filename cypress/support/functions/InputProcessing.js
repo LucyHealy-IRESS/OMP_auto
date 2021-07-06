@@ -113,7 +113,7 @@ Cypress.Commands.add("PushToLogArray",function(attributeType,attributeName,Pass,
 cy.ProcessAssert_JqueryValCheck = function (Selector,textInput,InputType,xmlInput,EditorName) {
   cy.get(Selector).then(function ($input) {  
     var value = $input.val();
-    if(InputType == InputTypes.Input_Integer){
+    if(InputType == InputTypes.Input_Integer || InputType == InputTypes.Input_GridColumn){
       value =value.replace("£","").replace("%",""); //remove pound sign from jQuery get
     }
     if (value == textInput) {
@@ -129,14 +129,19 @@ cy.ProcessAssert_JqueryValCheck = function (Selector,textInput,InputType,xmlInpu
 
 cy.ProcessAssert_JqueryValCheck_bool = function (Selector,textInput,InputType,xmlInput,EditorName) {
   cy.get(Selector).then(function ($input) {
-    var value = $input.val();
-    if (Boolean(value) == Boolean(textInput)) {
-      cy.log("**Assert " + InputType + " :" + xmlInput + " : Pass**");
-      cy.PushToLogArray(InputType, xmlInput,true,EditorName,textInput,value);
-    } else {
-      cy.log("**Assert " + InputType + " :" + xmlInput + " : Fail**");
-      cy.PushToLogArray(InputType, xmlInput,false,EditorName,textInput,value);
+    if (InputType == InputTypes.Input_GridColumn) {
+      var value = $input.text();
     }
+    else {
+      var value = $input.val();
+    }
+      if (Boolean(value) == Boolean(textInput)) {
+        cy.log("**Assert " + InputType + " :" + xmlInput + " : Pass**");
+        cy.PushToLogArray(InputType, xmlInput,true,EditorName,textInput,value);
+      } else {
+        cy.log("**Assert " + InputType + " :" + xmlInput + " : Fail**");
+        cy.PushToLogArray(InputType, xmlInput,false,EditorName,textInput,value);
+      }
   });
 };
 
@@ -190,7 +195,21 @@ Cypress.Commands.add("ProcessAssert_UI", (xmlObject, xmlInput, xmlMappings,Edito
         }
         
       }
-    }
+    } else if (InputType == InputTypes.Input_GridColumn) {
+      var textInput = cy.GetTextInput(xmlObject,xmlInput);
+      if (textInput) {
+        if (useCypressStictAsserts) {
+            cy.get(XmlInputObject.Selector).should("contain", textInput);
+
+          }
+        else{
+          cy.get(XmlInputObject.Selector).filter(":visible").should("contain", textInput)//.should('have.length', 1);
+          //cy.ProcessAssert_JqueryValCheck_bool(XmlInputObject.Selector,textInput,InputType,xmlInput,"")
+          }
+        }
+        
+      }
+
   }
 });
 

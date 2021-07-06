@@ -13,7 +13,7 @@ Cypress.Commands.add('SetDropdown_OpenDropdown',(Selector,Value) => {
 
 Cypress.Commands.add('SetDropdown_ByIndex',(Selector,Value) => { 
     cy.get(Selector).closest(".wijmo-wijcombobox").find(".wijmo-wijcombobox-trigger").click(); //to open dropdown
-    cy.get(".wijmo-wijlist-item ").filter(':visible') //.contains(new RegExp(Value, "g")).click();  //regex to say we want exact match!
+    cy.get(".wijmo-wijlist-item ")//.filter(':visible') //.contains(new RegExp(Value, "g")).click();  //regex to say we want exact match!, had to comment filter:visible as it wasnt fiding items at the bottom of the list
     .each(($el, index, $list) => {
         if(index == (Value-1)){
             cy.wrap($el).click();
