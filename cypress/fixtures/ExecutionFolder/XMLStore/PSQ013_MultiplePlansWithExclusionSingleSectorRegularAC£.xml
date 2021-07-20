@@ -44,7 +44,7 @@
                 		<Reference>CurrentPlan3</Reference>
 						<ProductID>Personal Pension</ProductID>
 						<CurrentPlanName>PP3</CurrentPlanName>
-                        <IncludeinConsolidatedReport>1</IncludeinConsolidatedReport>
+                        <IncludeinConsolidatedReport>True</IncludeinConsolidatedReport>
 						<CurrentValue>150000</CurrentValue>
 						<SMV_ProjectedMaturityValueBasis>Monetary Rates Supplied</SMV_ProjectedMaturityValueBasis>
 						<SMV_MaturityValuesProjected>For Specific Term</SMV_MaturityValuesProjected>
