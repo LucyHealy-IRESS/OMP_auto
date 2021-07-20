@@ -1,10 +1,10 @@
 <Root>
 <Clients>
 	<Client>
-		<ClientID>Client08</ClientID>
+		<ClientID>Client04</ClientID>
 		<Title>Mr</Title>
 		<Firstname>Pension</Firstname>
-		<Surname>ClientEight</Surname>
+		<Surname>ClientFour</Surname>
 		<DateOfBirth>1969-11-09T00:00:00</DateOfBirth>				
 		<SwitchingQuotes>
 			<SwitchingQuote>
@@ -14,24 +14,32 @@
 						<ProductID>Personal Pension</ProductID>
 						<CurrentPlanName>PP</CurrentPlanName>
 						<CurrentValue>125000</CurrentValue>
-						<SMV_ProjectedMaturityValueBasis>Estimated By System</SMV_ProjectedMaturityValueBasis>
+						<SMV_ProjectedMaturityValueBasis>Monetary Rates Supplied</SMV_ProjectedMaturityValueBasis>
+						<SMV_RetirementMaturityAge>70</SMV_RetirementMaturityAge>
+						<SMV_LowRateMaturityValue>225000</SMV_LowRateMaturityValue>
+						<SMV_MidRateMaturityValue>250000</SMV_MidRateMaturityValue>
+						<SMV_HighRateMaturityValue>300000</SMV_HighRateMaturityValue>
 						<SMV_RetirementMaturityAge>70</SMV_RetirementMaturityAge>
 						<GrossPremium>800</GrossPremium>
 						<GP_Frequency>Monthly</GP_Frequency>
 						<GP_Escalation>5</GP_Escalation>
 						<GP_IncreasingEvery>May</GP_IncreasingEvery>
+						<PUP_MaturityValueLow>5000</PUP_MaturityValueLow>
+						<PUP_MaturityValueMid>10000</PUP_MaturityValueMid>
+						<PUP_MaturityValueHigh>15000</PUP_MaturityValueHigh>
+						<PUP_AsAtDate>2021-01-01T00:00:00</PUP_AsAtDate>	
 					</Switching_CurrentPlan>
         		</Switching_CurrentPlans>
 				<Switching_ClientDetails>
-				<Reference>PSQ008</Reference>
+				<Reference>PSQ004</Reference>
 				</Switching_ClientDetails>
 				<Switching_NewInvestments>
 					<NewInvestmentType>2</NewInvestmentType>
 					<UsingRule>0</UsingRule>
 						<Switching_NewInvestments_ABI_Sectors>
-							<Name>Investment Portfolios</Name>
+							<Name>Portfolio Charge</Name>
 							<Switching_NewInvestments_ABI_SubSectors>
-								<Name>Staging Investment Portfolio 1</Name>>
+								<Name>Staging Portfolio Charge 1</Name>>
 								<Amount>100</Amount>
 							</Switching_NewInvestments_ABI_SubSectors>
 						</Switching_NewInvestments_ABI_Sectors>
@@ -40,15 +48,9 @@
 					<Switching_AdviserCharging>
 						<Type>Pension</Type>
 						<ToUseInThisQuote>Specific Adviser Charges For This Quote Only</ToUseInThisQuote>
-						<SIA_SinglePremium>Initial Single Premium Percentage</SIA_SinglePremium>
-						<SIA_Percentage>3</SIA_Percentage>
 						<Reg_RegularPremium>Initial Regular Premium Percentage</Reg_RegularPremium>
-						<Reg_Percentage>1</Reg_Percentage>
-						<Reg_Continuing>Until Specific Amount Paid</Reg_Continuing>
-						<Reg_StopAfterReceived>1200</Reg_StopAfterReceived>
-						<O_Ongoing>On-going Annual Percentage</O_Ongoing>
-						<O_AnnualPercentage>2</O_AnnualPercentage>
-						<O_PercentagePaid>Monthly</O_PercentagePaid>
+						<Reg_Percentage>2</Reg_Percentage>
+						<Reg_Continuing>For All Contributions</Reg_Continuing>
 					</Switching_AdviserCharging>
 				</Switching_AdviserCharges>							
 			</SwitchingQuote>

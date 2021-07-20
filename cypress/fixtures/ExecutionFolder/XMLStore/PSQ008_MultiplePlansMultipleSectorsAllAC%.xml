@@ -1,0 +1,93 @@
+<Root>
+<Clients>
+	<Client>
+		<ClientID>Client08</ClientID>
+		<Title>Mr</Title>
+		<Firstname>Pension</Firstname>
+		<Surname>ClientEight</Surname>
+		<DateOfBirth>1959-12-05T00:00:00</DateOfBirth>				
+		<SwitchingQuotes>
+			<SwitchingQuote>
+				<Switching_CurrentPlans>
+                 	<Switching_CurrentPlan>
+                		<Reference>CurrentPlan1</Reference>
+						<ProductID>Personal Pension</ProductID>
+						<CurrentPlanName>PP</CurrentPlanName>
+						<CurrentValue>75000</CurrentValue>
+						<SMV_ProjectedMaturityValueBasis>Inflation Adjusted Rates Supplied</SMV_ProjectedMaturityValueBasis>
+						<SMV_RetirementMaturityAge>70</SMV_RetirementMaturityAge>
+						<SMV_LowRateMaturityValue>95000</SMV_LowRateMaturityValue>
+						<SMV_MidRateMaturityValue>105000</SMV_MidRateMaturityValue>
+						<SMV_HighRateMaturityValue>115000</SMV_HighRateMaturityValue>
+						<GrowthRateBasis>Fund Specific Growth Rates</GrowthRateBasis>
+						<GrowthRateLow_Nominal>1</GrowthRateLow_Nominal>
+						<GrowthRateMid_Nominal>2</GrowthRateMid_Nominal>
+						<GrowthRateHigh_Nominal>3</GrowthRateHigh_Nominal>
+						<GrossPremium>1000</GrossPremium>
+						<GP_Frequency>Monthly</GP_Frequency>
+						<GP_Escalation>8</GP_Escalation>
+						<GP_IncreasingEvery>July</GP_IncreasingEvery>
+					</Switching_CurrentPlan>
+					<Switching_CurrentPlan>
+                		<Reference>CurrentPlan2</Reference>
+						<ProductID>SSAS</ProductID>
+						<CurrentPlanName>SSAS</CurrentPlanName>
+						<CurrentValue>25000</CurrentValue>
+						<SMV_ProjectedMaturityValueBasis>Inflation Adjusted Rates Supplied</SMV_ProjectedMaturityValueBasis>
+						<SMV_RetirementMaturityAge>70</SMV_RetirementMaturityAge>
+						<SMV_LowRateMaturityValue>35000</SMV_LowRateMaturityValue>
+						<SMV_MidRateMaturityValue>45000</SMV_MidRateMaturityValue>
+						<SMV_HighRateMaturityValue>55000</SMV_HighRateMaturityValue>
+						<GrowthRateBasis>Fund Specific Growth Rates</GrowthRateBasis>
+						<GrowthRateLow_Nominal>2</GrowthRateLow_Nominal>
+						<GrowthRateMid_Nominal>4</GrowthRateMid_Nominal>
+						<GrowthRateHigh_Nominal>6</GrowthRateHigh_Nominal>
+						<GrossPremium>500</GrossPremium>
+						<GP_Frequency>Monthly</GP_Frequency>
+						<GP_Escalation>10</GP_Escalation>
+						<GP_IncreasingEvery>March</GP_IncreasingEvery>
+					</Switching_CurrentPlan>
+        		</Switching_CurrentPlans>
+				<Switching_ClientDetails>
+				<Reference>PSQ008</Reference>
+				</Switching_ClientDetails>
+				<Switching_NewInvestments>
+					<NewInvestmentType>2</NewInvestmentType>
+					<UsingRule>0</UsingRule>
+						<Switching_NewInvestments_ABI_Sectors>
+                            <Name>Mixed Asset</Name>
+                            <Switching_NewInvestments_ABI_SubSectors>
+                                <Name>Mixed Investment 40%-85% Shares</Name>
+                                <Amount>80</Amount>
+                            </Switching_NewInvestments_ABI_SubSectors>
+							<Switching_NewInvestments_ABI_SubSectors>
+                                <Name>Mixed Investment 20%-60% Shares</Name>
+                                <Amount>20</Amount>
+                            </Switching_NewInvestments_ABI_SubSectors>
+                        </Switching_NewInvestments_ABI_Sectors>
+				</Switching_NewInvestments>
+				<Switching_AdviserCharges>
+					<Switching_AdviserCharging>
+						<Type>Pension</Type>
+						<ToUseInThisQuote>Specific Adviser Charges For This Quote Only</ToUseInThisQuote>
+						<SIA_SinglePremium>Initial Single Premium Percentage</SIA_SinglePremium>
+						<SIA_Percentage>3</SIA_Percentage>
+						<Reg_RegularPremium>Initial Regular Premium Percentage</Reg_RegularPremium>
+						<Reg_Percentage>1</Reg_Percentage>
+						<Reg_Continuing>Until Specific Amount Paid</Reg_Continuing>
+						<Reg_StopAfterReceived>1200</Reg_StopAfterReceived>
+						<O_Ongoing>On-going Annual Percentage</O_Ongoing>
+						<O_AnnualPercentage>2</O_AnnualPercentage>
+						<O_PercentagePaid>Monthly</O_PercentagePaid>
+					</Switching_AdviserCharging>
+				</Switching_AdviserCharges>							
+			</SwitchingQuote>
+		</SwitchingQuotes>
+	</Client>
+</Clients>
+</Root>
+
+
+
+
+				

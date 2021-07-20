@@ -1,0 +1,75 @@
+<Root>
+<Clients>
+	<Client>
+		<ClientID>Client21</ClientID>
+		<Title>Mrs</Title>
+		<Firstname>Pension</Firstname>
+		<Surname>ClientTwentyOne</Surname>
+		<DateOfBirth>1969-03-02T00:00:00</DateOfBirth>				
+		<SwitchingQuotes>
+			<SwitchingQuote>
+				<Switching_CurrentPlans>
+                	<Switching_CurrentPlan>
+                		<Reference>CurrentPlan1</Reference>
+						<ProductID>Personal Pension</ProductID>
+						<CurrentPlanName>PP</CurrentPlanName>
+						<CurrentValue>71000</CurrentValue>
+                        <SMV_ProjectedMaturityValueBasis>Estimated By System</SMV_ProjectedMaturityValueBasis>
+                        <SMV_MaturityValuesProjected>For Specific Term</SMV_MaturityValuesProjected>
+						<SMV_TermYears>14</SMV_TermYears>
+						<SMV_AMC>0.50</SMV_AMC>
+						<GrowthRateBasis>Inflation Adjusted Fund Specific Rates</GrowthRateBasis>
+						<GrowthRateLow_Nominal>1</GrowthRateLow_Nominal>
+						<GrowthRateMid_Nominal>2</GrowthRateMid_Nominal>
+						<GrowthRateHigh_Nominal>3</GrowthRateHigh_Nominal>
+						<GrossPremium>500</GrossPremium>
+						<GP_Frequency>Monthly</GP_Frequency>
+						<GP_Escalation>0</GP_Escalation>
+						<PUP_MaturityValueMid>40000</PUP_MaturityValueMid>
+						<PUP_AsAtDate>2021-05-11T00:00:00</PUP_AsAtDate>
+                	</Switching_CurrentPlan>
+					<Switching_CurrentPlan>
+                		<Reference>CurrentPlan2</Reference>
+						<ProductID>Personal Pension</ProductID>
+						<CurrentPlanName>PP2</CurrentPlanName>
+						<CurrentValue>28000</CurrentValue>
+                        <SMV_ProjectedMaturityValueBasis>Estimated By System</SMV_ProjectedMaturityValueBasis>
+                        <SMV_MaturityValuesProjected>For Specific Term</SMV_MaturityValuesProjected>
+						<SMV_TermYears>14</SMV_TermYears>
+						<SMV_AMC>1.50</SMV_AMC>
+						<GrowthRateBasis>Inflation Adjusted Fund Specific Rates</GrowthRateBasis>
+						<GrowthRateLow_Nominal>3</GrowthRateLow_Nominal>
+						<GrowthRateMid_Nominal>3.50</GrowthRateMid_Nominal>
+						<GrowthRateHigh_Nominal>4</GrowthRateHigh_Nominal>
+						<GrossPremium>6000</GrossPremium>
+						<GP_Frequency>Annually</GP_Frequency>
+						<GP_Escalation>0</GP_Escalation>
+						<GP_IncreasingEvery>March</GP_IncreasingEvery>
+						<PUP_MaturityValueMid>20000</PUP_MaturityValueMid>
+						<PUP_AsAtDate>2021-05-11T00:00:00</PUP_AsAtDate>
+					</Switching_CurrentPlan>
+        		</Switching_CurrentPlans>
+				<Switching_ClientDetails>
+				<Reference>PSQ021</Reference>
+				</Switching_ClientDetails>
+				<Switching_NewInvestments>
+					<NewInvestmentType>2</NewInvestmentType>
+					<UsingRule>0</UsingRule>
+						<Switching_NewInvestments_ABI_Sectors>
+							<Name>Portfolio Charge</Name>
+							<Switching_NewInvestments_ABI_SubSectors>
+								<Name>Staging Portfolio Charge 1</Name>>
+								<Amount>100</Amount>
+							</Switching_NewInvestments_ABI_SubSectors>
+						</Switching_NewInvestments_ABI_Sectors>
+				</Switching_NewInvestments>							
+			</SwitchingQuote>
+		</SwitchingQuotes>
+	</Client>
+</Clients>
+</Root>
+
+
+
+
+				

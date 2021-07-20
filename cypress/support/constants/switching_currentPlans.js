@@ -168,6 +168,12 @@ export const CurrentPlanListSelector = "#SwitchingCurrentPlansListPopUp",
       AccordianName: "Supplied Maturity Values",
       AccordianSelector: ".SuppliedMaturityValuesAccordian",
     },
+    SMV_MaturityValuesProjected: {
+      Selector: ".MaturityValuesProjected_tooltip input ",
+      inputType: InputTypes.Input_Dropdown_ReadOnly,
+      AccordianName: "Supplied Maturity Values",
+      AccordianSelector: ".SuppliedMaturityValuesAccordian",
+    },
     SMV_RetirementMaturityAge: {
       Selector: ".RetirementAge_tooltip input ",
       inputType: InputTypes.Input_Integer,

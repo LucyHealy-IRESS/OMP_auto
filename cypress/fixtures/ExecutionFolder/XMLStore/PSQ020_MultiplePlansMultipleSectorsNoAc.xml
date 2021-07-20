@@ -1,0 +1,128 @@
+<Root>
+<Clients>
+	<Client>
+		<ClientID>Client20</ClientID>
+		<Title>Mrs</Title>
+		<Firstname>Pension</Firstname>
+		<Surname>ClientTwenty</Surname>
+		<DateOfBirth>1970-10-03T00:00:00</DateOfBirth>				
+		<SwitchingQuotes>
+			<SwitchingQuote>
+				<Switching_CurrentPlans>
+                	<Switching_CurrentPlan>
+                		<Reference>CurrentPlan1</Reference>
+						<ProductID>Personal Pension</ProductID>
+						<CurrentPlanName>PP1</CurrentPlanName>
+						<CurrentValue>100000</CurrentValue>
+						<SMV_ProjectedMaturityValueBasis>Inflation Adjusted Rates Supplied</SMV_ProjectedMaturityValueBasis>
+						<SMV_MaturityValuesProjected>For Specific Term</SMV_MaturityValuesProjected>
+						<SMV_TermYears>4</SMV_TermYears>
+						<SMV_LowRateMaturityValue>111000</SMV_LowRateMaturityValue>
+                        <SMV_MidRateMaturityValue>126499</SMV_MidRateMaturityValue>
+						<SMV_HighRateMaturityValue>174000</SMV_HighRateMaturityValue>
+						<GrowthRateBasis>Fund Specific Growth Rates</GrowthRateBasis>
+						<GrowthRateLow_Nominal>5</GrowthRateLow_Nominal>
+						<GrowthRateMid_Nominal>7</GrowthRateMid_Nominal>
+						<GrowthRateHigh_Nominal>9</GrowthRateHigh_Nominal>
+						<GrossPremium>450</GrossPremium>
+						<GP_Frequency>Monthly</GP_Frequency>
+						<GP_Escalation>AEI</GP_Escalation>
+						<GP_IncreasingEvery>April</GP_IncreasingEvery>
+                        <PUP_MaturityValueLow>2000</PUP_MaturityValueLow>
+                        <PUP_MaturityValueMid>7000</PUP_MaturityValueMid>
+						<PUP_MaturityValueHigh>11000</PUP_MaturityValueHigh>
+						<PUP_AsAtDate>2021-04-01T00:00:00</PUP_AsAtDate>
+                	</Switching_CurrentPlan>
+                	<Switching_CurrentPlan>
+                		<Reference>CurrentPlan2</Reference>
+						<ProductID>Personal Pension</ProductID>
+						<CurrentPlanName>PP2</CurrentPlanName>
+						<CurrentValue>670000</CurrentValue>
+						<SMV_ProjectedMaturityValueBasis>Inflation Adjusted Rates Supplied</SMV_ProjectedMaturityValueBasis>
+						<SMV_MaturityValuesProjected>For Specific Term</SMV_MaturityValuesProjected>
+						<SMV_TermYears>4</SMV_TermYears>
+						<SMV_LowRateMaturityValue>80000</SMV_LowRateMaturityValue>
+                        <SMV_MidRateMaturityValue>88500</SMV_MidRateMaturityValue>
+						<SMV_HighRateMaturityValue>109000</SMV_HighRateMaturityValue>
+						<GrossPremium>625</GrossPremium>
+						<GP_Frequency>Monthly</GP_Frequency>
+						<GP_Escalation>RPI</GP_Escalation>
+						<GP_IncreasingEvery>April</GP_IncreasingEvery>
+                        <PUP_MaturityValueLow>4000</PUP_MaturityValueLow>
+                        <PUP_MaturityValueMid>8000</PUP_MaturityValueMid>
+						<PUP_MaturityValueHigh>14000</PUP_MaturityValueHigh>
+						<PUP_AsAtDate>2021-04-01T00:00:00</PUP_AsAtDate>
+                	</Switching_CurrentPlan>
+                    <Switching_CurrentPlan>
+                		<Reference>CurrentPlan3</Reference>
+						<ProductID>Personal Pension</ProductID>
+						<CurrentPlanName>PP3</CurrentPlanName>
+						<CurrentValue>25000</CurrentValue>
+						<SMV_ProjectedMaturityValueBasis>Inflation Adjusted Rates Supplied</SMV_ProjectedMaturityValueBasis>
+						<SMV_MaturityValuesProjected>For Specific Term</SMV_MaturityValuesProjected>
+						<SMV_TermYears>4</SMV_TermYears>
+						<SMV_LowRateMaturityValue>36000</SMV_LowRateMaturityValue>
+                        <SMV_MidRateMaturityValue>55000</SMV_MidRateMaturityValue>
+						<SMV_HighRateMaturityValue>80000</SMV_HighRateMaturityValue>
+						<GrossPremium>575</GrossPremium>
+						<GP_Frequency>Monthly</GP_Frequency>
+						<GP_Escalation>5</GP_Escalation>
+						<GP_IncreasingEvery>April</GP_IncreasingEvery>
+                        <PUP_MaturityValueLow>5000</PUP_MaturityValueLow>
+                        <PUP_MaturityValueMid>6000</PUP_MaturityValueMid>
+						<PUP_MaturityValueHigh>7000</PUP_MaturityValueHigh>
+						<PUP_AsAtDate>2021-04-01T00:00:00</PUP_AsAtDate>
+                	</Switching_CurrentPlan>
+                    <Switching_CurrentPlan>
+                		<Reference>CurrentPlan4</Reference>
+						<ProductID>Personal Pension</ProductID>
+						<CurrentPlanName>PP4</CurrentPlanName>
+						<CurrentValue>56000</CurrentValue>
+						<SMV_ProjectedMaturityValueBasis>Inflation Adjusted Rates Supplied</SMV_ProjectedMaturityValueBasis>
+						<SMV_MaturityValuesProjected>For Specific Term</SMV_MaturityValuesProjected>
+						<SMV_TermYears>4</SMV_TermYears>
+						<SMV_LowRateMaturityValue>36000</SMV_LowRateMaturityValue>
+                        <SMV_MidRateMaturityValue>55000</SMV_MidRateMaturityValue>
+						<SMV_HighRateMaturityValue>80000</SMV_HighRateMaturityValue>
+						<GrowthRateBasis>Fund Specific Growth Rates</GrowthRateBasis>
+						<GrowthRateLow_Nominal>5</GrowthRateLow_Nominal>
+						<GrowthRateMid_Nominal>7</GrowthRateMid_Nominal>
+						<GrowthRateHigh_Nominal>9</GrowthRateHigh_Nominal>
+						<GrossPremium>575</GrossPremium>
+						<GP_Frequency>Monthly</GP_Frequency>
+						<GP_Escalation>3</GP_Escalation>
+						<GP_IncreasingEvery>April</GP_IncreasingEvery>
+                        <PUP_MaturityValueLow>5000</PUP_MaturityValueLow>
+                        <PUP_MaturityValueMid>6000</PUP_MaturityValueMid>
+						<PUP_MaturityValueHigh>7000</PUP_MaturityValueHigh>
+						<PUP_AsAtDate>2021-04-01T00:00:00</PUP_AsAtDate>
+                	</Switching_CurrentPlan>
+        		</Switching_CurrentPlans>
+				<Switching_ClientDetails>
+				<Reference>PSQ020</Reference>
+				</Switching_ClientDetails>
+				<Switching_NewInvestments>
+					<NewInvestmentType>2</NewInvestmentType>
+					<UsingRule>0</UsingRule>
+						<Switching_NewInvestments_ABI_Sectors>
+                            <Name>Mixed Asset</Name>
+                            <Switching_NewInvestments_ABI_SubSectors>
+                                <Name>Mixed Investment 40%-85% Shares</Name>
+                                <Amount>80</Amount>
+                            </Switching_NewInvestments_ABI_SubSectors>
+							<Switching_NewInvestments_ABI_SubSectors>
+                                <Name>Mixed Investment 20%-60% Shares</Name>
+                                <Amount>20</Amount>
+                            </Switching_NewInvestments_ABI_SubSectors>
+                        </Switching_NewInvestments_ABI_Sectors>
+				</Switching_NewInvestments>								
+			</SwitchingQuote>
+		</SwitchingQuotes>
+	</Client>
+</Clients>
+</Root>
+
+
+
+
+				
