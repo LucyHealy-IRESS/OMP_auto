@@ -3,6 +3,24 @@ import * as Constants from "../../constants/Core.js";
 
 Cypress.Commands.add("Client_Create_1", (EntityData) => {
     //Navigate to New client
+  
+
+
+    cy.get('.contentContent')
+      .find('.ui-icon ui-icon-close')
+      .its('length')
+      .then(listing => {
+    const listingCount = Cypress.$(listing).length;
+
+    if (listingCount > 0) {
+      cy.log(listingCount)
+    
+      //expect(listing).to.have.length(listingCount);
+    }
+    else {
+
+
+
     cy.get("#NewClientIconMenu", { timeout: Constants.Timeout_MenuButtonWait }).click();
 
     cy.get("#EditClientPopup .client_info_table", {  //ensure client editor is there and client info section has loaded
@@ -12,8 +30,10 @@ Cypress.Commands.add("Client_Create_1", (EntityData) => {
         cy.wait(1000);
         cy.clickButtonInPopup(ClientConstants.ClientEditorSelector,"Ok");       
     });
-   
+  }
+});   
 });
+
 
 Cypress.Commands.add("Client_Create_2", (EntityData) => {
     cy.Client_Create_1(EntityData);

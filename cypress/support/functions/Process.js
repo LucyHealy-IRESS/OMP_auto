@@ -19,15 +19,16 @@ Cypress.Commands.add("ProcessFile", (ExecutiionFolderLocation,fileName,ActionFil
   //2 Assert Pass
   cy.wait(3000);
   cy.ProcessXMLFile(fileLocation, constants.RunType_Assert,ActionFileNo);
-      
-  //3 Roll off what we have created
-  cy.wait(3000);
-  cy.ProcessXMLFile(fileLocation,constants.RunType_Delete, ActionFileNo);
 
   //4 Roll off what we have created, needs to remove delete if this is ran
   cy.wait(3000);
   cy.SecurityProcessing(fileLocation);
-      
+
+  //3 Roll off what we have created
+  cy.wait(3000);
+  cy.ProcessXMLFile(fileLocation,constants.RunType_Delete, ActionFileNo);
+
+     
   if(reloadBetweenTests){ //Dont reload if on last iteration
      cy.reload();
      cy.wait(3000);
@@ -160,7 +161,7 @@ Cypress.Commands.add("RunSearch", (SearchOptions, EntityData) => {
     cy.get(SearchOptions.MenuSelector).then(function(){ //wait till client search menu is actually open                                                                                                        //- JSSORPopUpMenu_Open is used by the amend search popup code and crashes if its not present
       cy.get('#AmendClientSearch', {timeout:constants.Timeout_Medium}).click();
       cy.get(".AmendSearchPopup_Container").then(function(){ //check amend search has opened before continuing
-        cy.get(constantsSelectors.searchTextMatch).type(SearchParam);
+        cy.get(constantsSelectors.searchTextMatch).clear().type(SearchParam);//clear added as in case of multi clients we were adding to the original search param
         cy.get('.OverviewSearchButton').click();
         cy.SearchHasCompleted(SearchCompletedCallback);
       })
@@ -230,8 +231,8 @@ Cypress.Commands.add("SearchHasCompleted", (callback) => {
 //     })    
 // });
 
-// Cypress.Commands.add("SetResultsSchema", (input, schema) => {
-//   cy.SetDropdown_ByIndex(input, schema);
+Cypress.Commands.add("SetResultsSchema", (input, schema) => {
+  cy.SetDropdown_ByIndex(input, schema);
 
-// });
+});
 

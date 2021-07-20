@@ -1,0 +1,73 @@
+<Root>
+<Clients>
+	<Client>
+		<ClientID>Client01</ClientID>
+		<Title>Mrs</Title>
+		<Firstname>Mary-Penny</Firstname>
+		<Surname>Smith-White-AABBCC</Surname>
+		<DateOfBirth>1969-11-09T00:00:00</DateOfBirth>				
+		<NextReviewDate>2021-01-01T00:00:00</NextReviewDate>	
+		<IsSharedWithCompany>False</IsSharedWithCompany>	
+		<Portfolios>
+			<Portfolio>
+				<PortfolioID>Client01_Portfolio01</PortfolioID>
+				<ClientID>Client01</ClientID>
+				<Reference>Pension 001</Reference>
+				<ProviderID>BBBBBBBB-5555-0000-0000-000000000046</ProviderID>
+				<ProductID>1</ProductID>
+				<Benchmark>FTSE 100 TR GBP</Benchmark>
+				<Status>Current</Status>
+				<NextReviewDate>2021-01-01T00:00:00</NextReviewDate>
+				<IsWorkplacePension>True</IsWorkplacePension>
+				<IsSharedWithCompany>True</IsSharedWithCompany>
+			</Portfolio>
+		</Portfolios>
+	</Client>
+	<Client>
+		<ClientID>Client02</ClientID>
+		<Title>Mr</Title>
+		<Firstname>Mary-Penny</Firstname>
+		<Surname>Smith-White-WWYYZZ</Surname>
+		<DateOfBirth>1969-11-09T00:00:00</DateOfBirth>				
+		<NextReviewDate>2021-01-01T00:00:00</NextReviewDate>	
+		<IsSharedWithCompany>False</IsSharedWithCompany>	
+		<Portfolios>
+			<Portfolio>
+				<PortfolioID>Client01_Portfolio01</PortfolioID>
+				<ClientID>Client01</ClientID>
+				<Reference>Pension 002</Reference>
+				<ProviderID>BBBBBBBB-5555-0000-0000-000000000046</ProviderID>
+				<ProductID>1</ProductID>
+				<Benchmark>FTSE 100 TR GBP</Benchmark>
+				<Status>Current</Status>
+				<NextReviewDate>2021-01-01T00:00:00</NextReviewDate>
+				<IsWorkplacePension>True</IsWorkplacePension>
+				<IsSharedWithCompany>True</IsSharedWithCompany>
+			</Portfolio>
+		</Portfolios>
+	</Client>
+		<Client>
+		<ClientID>Client03</ClientID>
+		<Title>Miss</Title>
+		<Firstname>Mary-Penny</Firstname>
+		<Surname>Smith-White-ddffgg</Surname>
+		<DateOfBirth>1969-11-09T00:00:00</DateOfBirth>				
+		<NextReviewDate>2021-01-01T00:00:00</NextReviewDate>	
+		<IsSharedWithCompany>False</IsSharedWithCompany>	
+		<Portfolios>
+			<Portfolio>
+				<PortfolioID>Client01_Portfolio01</PortfolioID>
+				<ClientID>Client01</ClientID>
+				<Reference>Pension 003</Reference>
+				<ProviderID>BBBBBBBB-5555-0000-0000-000000000046</ProviderID>
+				<ProductID>1</ProductID>
+				<Benchmark>FTSE 100 TR GBP</Benchmark>
+				<Status>Current</Status>
+				<NextReviewDate>2021-01-01T00:00:00</NextReviewDate>
+				<IsWorkplacePension>True</IsWorkplacePension>
+				<IsSharedWithCompany>True</IsSharedWithCompany>
+			</Portfolio>
+		</Portfolios>
+	</Client>
+</Clients>
+</Root>

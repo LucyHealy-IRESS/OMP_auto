@@ -58,7 +58,7 @@ Cypress.Commands.add("Security_PortfolioSearch", (xmlDoc, totalEntity, Access) =
             cy.menuClick("Portfolio Research", "#AmendSearch"); 
             cy.get(".AmendSearchPopup_Container").then(function(){ 
                 cy.wait(2000)
-                cy.get(':nth-child(2) > .wijmo-wijtree-header > .wijmo-wijtree-inner > .wijmo-checkbox > .wijmo-checkbox-box > .wijmo-checkbox-icon').dblclick();
+                cy.get(':nth-child(3) > .wijmo-wijtree-header > .wijmo-wijtree-inner > .wijmo-checkbox > .wijmo-checkbox-box > .wijmo-checkbox-icon').dblclick();
                 //cy.get(':nth-child(4) > .wijmo-wijtree-header > .wijmo-wijtree-inner > .wijmo-checkbox > .wijmo-checkbox-box > .wijmo-checkbox-icon').dblclick();
                 cy.get('.OverviewSearchButton').click().then(function(){
 

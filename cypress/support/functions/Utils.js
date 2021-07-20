@@ -16,7 +16,7 @@ Cypress.Commands.add('SetDropdown_ByIndex',(Selector,Value) => {
     cy.get(".wijmo-wijlist-item ")//.filter(':visible') //.contains(new RegExp(Value, "g")).click();  //regex to say we want exact match!, had to comment filter:visible as it wasnt fiding items at the bottom of the list
     .each(($el, index, $list) => {
         if(index == (Value-1)){
-            cy.wrap($el).click();
+            cy.wrap($el).click({force:true});
         }
     })
 })
