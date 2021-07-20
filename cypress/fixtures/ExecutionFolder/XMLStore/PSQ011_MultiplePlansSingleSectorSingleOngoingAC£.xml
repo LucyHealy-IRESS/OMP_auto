@@ -1,0 +1,83 @@
+<Root>
+<Clients>
+	<Client>
+		<ClientID>Client11</ClientID>
+		<Title>Mr</Title>
+		<Firstname>Pension</Firstname>
+		<Surname>ClientEleven</Surname>
+		<DateOfBirth>1953-09-05T00:00:00</DateOfBirth>				
+		<SwitchingQuotes>
+			<SwitchingQuote>
+				<Switching_CurrentPlans>
+                 	<Switching_CurrentPlan>
+                		<Reference>CurrentPlan1</Reference>
+						<ProductID>Personal Pension</ProductID>
+						<CurrentPlanName>PP</CurrentPlanName>
+						<CurrentValue>27000</CurrentValue>
+						<SMV_ProjectedMaturityValueBasis>Calculate Using Product Charges</SMV_ProjectedMaturityValueBasis>
+                        <SMV_FundCharge>0.33</SMV_FundCharge>
+                        <SMV_PlanCharge>0.87</SMV_PlanCharge>
+                        <SMV_PolicyFee>20</SMV_PolicyFee>
+                        <SMV_AdviserCharge>0.90</SMV_AdviserCharge>
+						<GrowthRateBasis>Fund Specific Growth Rates</GrowthRateBasis>
+						<GrowthRateLow_Nominal>1</GrowthRateLow_Nominal>
+						<GrowthRateMid_Nominal>2</GrowthRateMid_Nominal>
+						<GrowthRateHigh_Nominal>3</GrowthRateHigh_Nominal>
+						<GrossPremium>9000</GrossPremium>
+						<GP_Frequency>Annually</GP_Frequency>
+						<GP_Escalation>3</GP_Escalation>
+						<GP_IncreasingEvery>July</GP_IncreasingEvery>
+					</Switching_CurrentPlan>
+					<Switching_CurrentPlan>
+                		<Reference>CurrentPlan2</Reference>
+						<ProductID>SSAS</ProductID>
+						<CurrentPlanName>SSAS</CurrentPlanName>
+						<CurrentValue>55000</CurrentValue>
+						<SMV_ProjectedMaturityValueBasis>Calculate Using Product Charges</SMV_ProjectedMaturityValueBasis>
+					    <SMV_FundCharge>0.89</SMV_FundCharge>
+                        <SMV_PlanCharge>0.10</SMV_PlanCharge>
+                        <SMV_PolicyFee>520</SMV_PolicyFee>
+                        <SMV_AdviserCharge>0.40</SMV_AdviserCharge>
+                        <GrowthRateBasis>Fund Specific Growth Rates</GrowthRateBasis>
+						<GrowthRateLow_Nominal>2</GrowthRateLow_Nominal>
+						<GrowthRateMid_Nominal>4</GrowthRateMid_Nominal>
+						<GrowthRateHigh_Nominal>6</GrowthRateHigh_Nominal>
+						<GrossPremium>5000</GrossPremium>
+						<GP_Frequency>Annually</GP_Frequency>
+						<GP_Escalation>0</GP_Escalation>
+						<GP_IncreasingEvery>March</GP_IncreasingEvery>
+					</Switching_CurrentPlan>
+        		</Switching_CurrentPlans>
+				<Switching_ClientDetails>
+				<Reference>PSQ011</Reference>
+				</Switching_ClientDetails>
+				<Switching_NewInvestments>
+					<NewInvestmentType>2</NewInvestmentType>
+					<UsingRule>0</UsingRule>
+						<Switching_NewInvestments_ABI_Sectors>
+                            <Name>Mixed Asset</Name>
+                            <Switching_NewInvestments_ABI_SubSectors>
+                                <Name>Mixed Investment 40%-85% Shares</Name>
+                                <Amount>100</Amount>
+                            </Switching_NewInvestments_ABI_SubSectors>
+						</Switching_NewInvestments_ABI_Sectors>
+				</Switching_NewInvestments>
+				<Switching_AdviserCharges>
+					<Switching_AdviserCharging>
+						<Type>Pension</Type>
+						<ToUseInThisQuote>Specific Adviser Charges For This Quote Only</ToUseInThisQuote>
+						<O_Ongoing>On-going Annual Amount</O_Ongoing>
+						<O_AnnualAmount>465</O_AnnualAmount>
+						<O_AmountPaid>Annually</O_AmountPaid>
+					</Switching_AdviserCharging>
+				</Switching_AdviserCharges>							
+			</SwitchingQuote>
+		</SwitchingQuotes>
+	</Client>
+</Clients>
+</Root>
+
+
+
+
+				

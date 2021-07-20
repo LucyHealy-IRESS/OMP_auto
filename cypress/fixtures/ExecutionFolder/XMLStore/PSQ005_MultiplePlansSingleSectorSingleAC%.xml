@@ -1,50 +1,62 @@
 <Root>
 <Clients>
 	<Client>
-		<ClientID>Client10</ClientID>
+		<ClientID>Client05</ClientID>
 		<Title>Mrs</Title>
 		<Firstname>Pension</Firstname>
-		<Surname>ClientTen</Surname>
-		<DateOfBirth>1969-11-09T00:00:00</DateOfBirth>				
+		<Surname>ClientFive</Surname>
+		<DateOfBirth>1974-03-02T00:00:00</DateOfBirth>				
 		<SwitchingQuotes>
 			<SwitchingQuote>
 				<Switching_CurrentPlans>
                 	<Switching_CurrentPlan>
                 		<Reference>CurrentPlan1</Reference>
 						<ProductID>Personal Pension</ProductID>
-						<CurrentPlanName>PP1</CurrentPlanName>
+						<CurrentPlanName>PP</CurrentPlanName>
 						<CurrentValue>100000</CurrentValue>
 						<SMV_ProjectedMaturityValueBasis>Monetary Rates Supplied</SMV_ProjectedMaturityValueBasis>
-						<SMV_RetirementMaturityAge>70</SMV_RetirementMaturityAge>
-						<SMV_MidRateMaturityValue>250000</SMV_MidRateMaturityValue>
+						<SMV_RetirementMaturityAge>67</SMV_RetirementMaturityAge>
+						<SMV_MidRateMaturityValue>185000</SMV_MidRateMaturityValue>
+						<GrowthRateBasis>Inflation Adjusted Fund Specific Rates</GrowthRateBasis>
+						<GrowthRateLow_Nominal>1</GrowthRateLow_Nominal>
+						<GrowthRateMid_Nominal>2</GrowthRateMid_Nominal>
+						<GrowthRateHigh_Nominal>3</GrowthRateHigh_Nominal>
 						<GrossPremium>500</GrossPremium>
 						<GP_Frequency>Monthly</GP_Frequency>
 						<GP_Escalation>0</GP_Escalation>
+						<PUP_MaturityValueMid>40000</PUP_MaturityValueMid>
+						<PUP_AsAtDate>2021-05-11T00:00:00</PUP_AsAtDate>
                 	</Switching_CurrentPlan>
 					<Switching_CurrentPlan>
                 		<Reference>CurrentPlan2</Reference>
 						<ProductID>Personal Pension</ProductID>
 						<CurrentPlanName>PP2</CurrentPlanName>
-						<CurrentValue>50000</CurrentValue>
-						<SMV_ProjectedMaturityValueBasis>Monetary Rates Supplied</SMV_ProjectedMaturityValueBasis>
-						<SMV_RetirementMaturityAge>70</SMV_RetirementMaturityAge>
-						<SMV_MidRateMaturityValue>100000</SMV_MidRateMaturityValue>
+						<CurrentValue>55000</CurrentValue>
+						<SMV_ProjectedMaturityValueBasis>Inflation Adjusted Rates Supplied</SMV_ProjectedMaturityValueBasis>
+						<SMV_RetirementMaturityAge>67</SMV_RetirementMaturityAge>
+						<SMV_MidRateMaturityValue>70000</SMV_MidRateMaturityValue>
+						<GrowthRateBasis>Inflation Adjusted Fund Specific Rates</GrowthRateBasis>
+						<GrowthRateLow_Nominal>3</GrowthRateLow_Nominal>
+						<GrowthRateMid_Nominal>3.50</GrowthRateMid_Nominal>
+						<GrowthRateHigh_Nominal>4</GrowthRateHigh_Nominal>
 						<GrossPremium>6000</GrossPremium>
 						<GP_Frequency>Annually</GP_Frequency>
 						<GP_Escalation>0</GP_Escalation>
 						<GP_IncreasingEvery>March</GP_IncreasingEvery>
-                	</Switching_CurrentPlan>
+						<PUP_MaturityValueMid>20000</PUP_MaturityValueMid>
+						<PUP_AsAtDate>2021-05-11T00:00:00</PUP_AsAtDate>
+					</Switching_CurrentPlan>
         		</Switching_CurrentPlans>
 				<Switching_ClientDetails>
-				<Reference>PSQ010</Reference>
+				<Reference>PSQ005</Reference>
 				</Switching_ClientDetails>
 				<Switching_NewInvestments>
 					<NewInvestmentType>2</NewInvestmentType>
-					<UsingRule>0</UsingRule>
+					<UsingRule>5</UsingRule>
 						<Switching_NewInvestments_ABI_Sectors>
-							<Name>Mixed Asset</Name>
+							<Name>Equity - UK Funds</Name>
 							<Switching_NewInvestments_ABI_SubSectors>
-								<Name>Mixed Investment 40%-85% Shares</Name>>
+								<Name>UK All Companies</Name>>
 								<Amount>100</Amount>
 							</Switching_NewInvestments_ABI_SubSectors>
 						</Switching_NewInvestments_ABI_Sectors>
@@ -53,9 +65,8 @@
 					<Switching_AdviserCharging>
 						<Type>Pension</Type>
 						<ToUseInThisQuote>Specific Adviser Charges For This Quote Only</ToUseInThisQuote>
-						<SIA_SinglePremium>No Initial Single Premium Charge</SIA_SinglePremium>
-						<Reg_RegularPremium>No Initial Regular Premium Charge</Reg_RegularPremium>
-						<O_Ongoing>No On-going Charge</O_Ongoing>
+						<SIA_SinglePremium>Initial Single Premium Percentage</SIA_SinglePremium>
+						<SIA_Percentage>1.50</SIA_Percentage>
 					</Switching_AdviserCharging>
 				</Switching_AdviserCharges>							
 			</SwitchingQuote>

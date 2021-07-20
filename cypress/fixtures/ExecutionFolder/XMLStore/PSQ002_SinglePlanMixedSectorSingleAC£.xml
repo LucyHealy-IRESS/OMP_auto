@@ -5,7 +5,7 @@
 		<Title>Mr</Title>
 		<Firstname>Pension</Firstname>
 		<Surname>ClientTwo</Surname>
-		<DateOfBirth>1969-11-09T00:00:00</DateOfBirth>				
+		<DateOfBirth>1968-10-03T00:00:00</DateOfBirth>				
 		<SwitchingQuotes>
 			<SwitchingQuote>
 				<Switching_CurrentPlans>
@@ -14,11 +14,11 @@
 						<ProductID>Personal Pension</ProductID>
 						<CurrentPlanName>PP</CurrentPlanName>
 						<CurrentValue>150000</CurrentValue>
-						<SMV_ProjectedMaturityValueBasis>Inflation Adjusted Rates Supplied</SMV_ProjectedMaturityValueBasis>
+						<SMV_ProjectedMaturityValueBasis>Monetary Rates Supplied</SMV_ProjectedMaturityValueBasis>
 						<SMV_RetirementMaturityAge>70</SMV_RetirementMaturityAge>
-						<SMV_LowRateMaturityValue>160000</SMV_LowRateMaturityValue>
-						<SMV_MidRateMaturityValue>175000</SMV_MidRateMaturityValue>
-						<SMV_HighRateMaturityValue>190000</SMV_HighRateMaturityValue>
+						<SMV_LowRateMaturityValue>320000</SMV_LowRateMaturityValue>
+						<SMV_MidRateMaturityValue>415000</SMV_MidRateMaturityValue>
+						<SMV_HighRateMaturityValue>519000</SMV_HighRateMaturityValue>
                 	</Switching_CurrentPlan>
         		</Switching_CurrentPlans>
 				<Switching_ClientDetails>

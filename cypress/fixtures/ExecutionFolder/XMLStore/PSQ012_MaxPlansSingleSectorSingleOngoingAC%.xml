@@ -1,0 +1,162 @@
+<Root>
+<Clients>
+	<Client>
+		<ClientID>Client12</ClientID>
+		<Title>Mrs</Title>
+		<Firstname>Pension</Firstname>
+		<Surname>ClientTwelve</Surname>
+		<DateOfBirth>1977-01-09T00:00:00</DateOfBirth>				
+		<SwitchingQuotes>
+			<SwitchingQuote>
+				<Switching_CurrentPlans>
+                	<Switching_CurrentPlan>
+                		<Reference>CurrentPlan1</Reference>
+						<ProductID>Personal Pension</ProductID>
+						<CurrentPlanName>PP1</CurrentPlanName>
+						<CurrentValue>80000</CurrentValue>
+						<SMV_ProjectedMaturityValueBasis>Monetary Rates Supplied</SMV_ProjectedMaturityValueBasis>
+						<SMV_MaturityValuesProjected>For Specific Term</SMV_MaturityValuesProjected>
+						<SMV_TermYears>8</SMV_TermYears>
+						<SMV_MidRateMaturityValue>160000</SMV_MidRateMaturityValue>
+						<GrossPremium>500</GrossPremium>
+						<GP_Frequency>Monthly</GP_Frequency>
+						<GP_Escalation>0</GP_Escalation>
+                	</Switching_CurrentPlan>
+                	<Switching_CurrentPlan>
+                		<Reference>CurrentPlan2</Reference>
+						<ProductID>Personal Pension</ProductID>
+						<CurrentPlanName>PP2</CurrentPlanName>
+						<CurrentValue>40000</CurrentValue>
+						<SMV_ProjectedMaturityValueBasis>Monetary Rates Supplied</SMV_ProjectedMaturityValueBasis>
+						<SMV_MaturityValuesProjected>For Specific Term</SMV_MaturityValuesProjected>
+						<SMV_TermYears>8</SMV_TermYears>
+						<SMV_MidRateMaturityValue>90000</SMV_MidRateMaturityValue>
+						<GrossPremium>2700</GrossPremium>
+						<GP_Frequency>Monthly</GP_Frequency>
+						<GP_Escalation>0</GP_Escalation>
+                	</Switching_CurrentPlan>
+                    <Switching_CurrentPlan>
+                		<Reference>CurrentPlan3</Reference>
+						<ProductID>Personal Pension</ProductID>
+						<CurrentPlanName>PP3</CurrentPlanName>
+						<CurrentValue>20000</CurrentValue>
+						<SMV_ProjectedMaturityValueBasis>Monetary Rates Supplied</SMV_ProjectedMaturityValueBasis>
+						<SMV_MaturityValuesProjected>For Specific Term</SMV_MaturityValuesProjected>
+						<SMV_TermYears>8</SMV_TermYears>
+						<SMV_MidRateMaturityValue>60000</SMV_MidRateMaturityValue>
+						<GrossPremium>800</GrossPremium>
+						<GP_Frequency>Monthly</GP_Frequency>
+						<GP_Escalation>0</GP_Escalation>
+                	</Switching_CurrentPlan>
+                    <Switching_CurrentPlan>
+                		<Reference>CurrentPlan4</Reference>
+						<ProductID>SSAS</ProductID>
+						<CurrentPlanName>SSAS1</CurrentPlanName>
+						<CurrentValue>23000</CurrentValue>
+						<SMV_ProjectedMaturityValueBasis>Monetary Rates Supplied</SMV_ProjectedMaturityValueBasis>
+						<SMV_MaturityValuesProjected>For Specific Term</SMV_MaturityValuesProjected>
+						<SMV_TermYears>8</SMV_TermYears>
+						<SMV_MidRateMaturityValue>50000</SMV_MidRateMaturityValue>
+						<GrossPremium>799</GrossPremium>
+						<GP_Frequency>Monthly</GP_Frequency>
+						<GP_Escalation>0</GP_Escalation>
+                	</Switching_CurrentPlan>
+                    <Switching_CurrentPlan>
+                		<Reference>CurrentPlan5</Reference>
+						<ProductID>SSAS</ProductID>
+						<CurrentPlanName>SSAS2</CurrentPlanName>
+						<CurrentValue>83000</CurrentValue>
+						<SMV_ProjectedMaturityValueBasis>Monetary Rates Supplied</SMV_ProjectedMaturityValueBasis>
+						<SMV_MaturityValuesProjected>For Specific Term</SMV_MaturityValuesProjected>
+						<SMV_TermYears>8</SMV_TermYears>
+						<SMV_MidRateMaturityValue>150000</SMV_MidRateMaturityValue>
+						<GrossPremium>390</GrossPremium>
+						<GP_Frequency>Monthly</GP_Frequency>
+						<GP_Escalation>0</GP_Escalation>
+                	</Switching_CurrentPlan>
+                    <Switching_CurrentPlan>
+                		<Reference>CurrentPlan6</Reference>
+						<ProductID>SSAS</ProductID>
+						<CurrentPlanName>SSAS3</CurrentPlanName>
+						<CurrentValue>18000</CurrentValue>
+						<SMV_ProjectedMaturityValueBasis>Monetary Rates Supplied</SMV_ProjectedMaturityValueBasis>
+						<SMV_MaturityValuesProjected>For Specific Term</SMV_MaturityValuesProjected>
+						<SMV_TermYears>8</SMV_TermYears>
+						<SMV_MidRateMaturityValue>30000</SMV_MidRateMaturityValue>
+						<GrossPremium>1100</GrossPremium>
+						<GP_Frequency>Monthly</GP_Frequency>
+						<GP_Escalation>0</GP_Escalation>
+                	</Switching_CurrentPlan>
+                    <Switching_CurrentPlan>
+                		<Reference>CurrentPlan7</Reference>
+						<ProductID>SIPP</ProductID>
+						<CurrentPlanName>SIPP1</CurrentPlanName>
+						<CurrentValue>38000</CurrentValue>
+						<SMV_ProjectedMaturityValueBasis>Monetary Rates Supplied</SMV_ProjectedMaturityValueBasis>
+						<SMV_MaturityValuesProjected>For Specific Term</SMV_MaturityValuesProjected>
+						<SMV_TermYears>8</SMV_TermYears>
+						<SMV_MidRateMaturityValue>50000</SMV_MidRateMaturityValue>
+						<GrossPremium>495</GrossPremium>
+						<GP_Frequency>Monthly</GP_Frequency>
+						<GP_Escalation>0</GP_Escalation>
+                	</Switching_CurrentPlan>
+                    <Switching_CurrentPlan>
+                		<Reference>CurrentPlan8</Reference>
+						<ProductID>SIPP</ProductID>
+						<CurrentPlanName>SIPP2</CurrentPlanName>
+						<CurrentValue>44000</CurrentValue>
+						<SMV_ProjectedMaturityValueBasis>Monetary Rates Supplied</SMV_ProjectedMaturityValueBasis>
+						<SMV_MaturityValuesProjected>For Specific Term</SMV_MaturityValuesProjected>
+						<SMV_TermYears>8</SMV_TermYears>
+						<SMV_MidRateMaturityValue>50000</SMV_MidRateMaturityValue>
+						<GrossPremium>290</GrossPremium>
+						<GP_Frequency>Monthly</GP_Frequency>
+						<GP_Escalation>0</GP_Escalation>
+                	</Switching_CurrentPlan>
+                    <Switching_CurrentPlan>
+                		<Reference>CurrentPlan9</Reference>
+						<ProductID>SIPP</ProductID>
+						<CurrentPlanName>SIPP3</CurrentPlanName>
+						<CurrentValue>60000</CurrentValue>
+						<SMV_ProjectedMaturityValueBasis>Monetary Rates Supplied</SMV_ProjectedMaturityValueBasis>
+						<SMV_MaturityValuesProjected>For Specific Term</SMV_MaturityValuesProjected>
+						<SMV_TermYears>8</SMV_TermYears>
+						<SMV_MidRateMaturityValue>140000</SMV_MidRateMaturityValue>
+						<GrossPremium>1800</GrossPremium>
+						<GP_Frequency>Monthly</GP_Frequency>
+						<GP_Escalation>0</GP_Escalation>
+                	</Switching_CurrentPlan>
+        		</Switching_CurrentPlans>
+				<Switching_ClientDetails>
+				<Reference>PSQ012</Reference>
+				</Switching_ClientDetails>
+				<Switching_NewInvestments>
+					<NewInvestmentType>2</NewInvestmentType>
+					<UsingRule>0</UsingRule>
+						<Switching_NewInvestments_ABI_Sectors>
+							<Name>Portfolio Charge</Name>
+							<Switching_NewInvestments_ABI_SubSectors>
+								<Name>Staging Portfolio Charge 1</Name>>
+								<Amount>100</Amount>
+							</Switching_NewInvestments_ABI_SubSectors>
+						</Switching_NewInvestments_ABI_Sectors>
+				</Switching_NewInvestments>
+				<Switching_AdviserCharges>
+					<Switching_AdviserCharging>
+						<Type>Pension</Type>
+						<ToUseInThisQuote>Specific Adviser Charges For This Quote Only</ToUseInThisQuote>
+						<O_Ongoing>On-going Annual Percentage</O_Ongoing>
+						<O_AnnualPercentage>4</O_AnnualPercentage>
+						<O_PercentagePaid>Monthly</O_PercentagePaid>
+					</Switching_AdviserCharging>
+				</Switching_AdviserCharges>							
+			</SwitchingQuote>
+		</SwitchingQuotes>
+	</Client>
+</Clients>
+</Root>
+
+
+
+
+				
