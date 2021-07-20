@@ -1,24 +1,34 @@
 import * as ClientConstants from "../../constants/client.js";
 import * as Constants from "../../constants/Core.js";
 
-Cypress.Commands.add("Client_Create_1", (EntityData) => {
+Cypress.Commands.add("Client_Create_1", (EntityData, ClientNo) => {
     //Navigate to New client
   
 
 
-    cy.get('.contentContent')
-      .find('.ui-icon ui-icon-close')
-      .its('length')
-      .then(listing => {
-    const listingCount = Cypress.$(listing).length;
+    // cy.get('.contentContent')
+    //   .find('.ui-icon ui-icon-close')
+    //   .its('length')
+    //   .then(listing => {
+    // const listingCount = Cypress.$(listing).length;
 
-    if (listingCount > 0) {
-      cy.log(listingCount)
+    // if (listingCount > 0) {
+    //   cy.log(listingCount)
     
-      //expect(listing).to.have.length(listingCount);
-    }
-    else {
+    //   //expect(listing).to.have.length(listingCount);
+    // }
+    // else {
 
+      cy.log("Add Client no: " + (ClientNo + 1))
+      if(ClientNo > 0){ //this isnt the first current plan (which opens the editor by auto, so need to click "Add Plan first")
+          cy.wait(1000);      
+          var CurrentPlanEditorSelector = Cypress.$(swContants.CurrentPlanEditorSelector); //close the previously opened CP editor
+          if(CurrentPlanEditorSelector && CurrentPlanEditorSelector.length > 0 ){
+              cy.clickButtonInPopup(swContants.CurrentPlanEditorSelector,"Ok"); 
+              cy.wait(7000); //allow for save and close
+          }      
+          cy.clickButtonInPopup(swContants.CurrentPlanListSelector, 'Add Plan')
+      }
 
 
     cy.get("#NewClientIconMenu", { timeout: Constants.Timeout_MenuButtonWait }).click();
@@ -30,8 +40,8 @@ Cypress.Commands.add("Client_Create_1", (EntityData) => {
         cy.wait(1000);
         cy.clickButtonInPopup(ClientConstants.ClientEditorSelector,"Ok");       
     });
-  }
-});   
+//   }
+// });   
 });
 
 
