@@ -161,7 +161,7 @@ Cypress.Commands.add("RunSearch", (SearchOptions, EntityData) => {
     cy.get(SearchOptions.MenuSelector).then(function(){ //wait till client search menu is actually open                                                                                                        //- JSSORPopUpMenu_Open is used by the amend search popup code and crashes if its not present
       cy.get('#AmendClientSearch', {timeout:constants.Timeout_Medium}).click();
       cy.get(".AmendSearchPopup_Container").then(function(){ //check amend search has opened before continuing
-        cy.get(constantsSelectors.searchTextMatch).clear().type(SearchParam);//clear added as in case of multi clients we were adding to the original search param
+        cy.get(constantsSelectors.searchTextMatch).type(SearchParam);//clear added as in case of multi clients we were adding to the original search param
         cy.get('.OverviewSearchButton').click();
         cy.SearchHasCompleted(SearchCompletedCallback);
       })
