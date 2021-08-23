@@ -1,0 +1,75 @@
+<Root>
+<Clients>
+	<Client>
+		<ClientID>Client14</ClientID>
+		<Title>Mrs</Title>
+		<Firstname>Drawdown</Firstname>
+		<Surname>ClientFourteen</Surname>
+		<DateOfBirth>1959-10-10T00:00:00</DateOfBirth>				
+		<SwitchingQuotes>
+			<SwitchingQuote>
+				<Switching_CurrentPlans>
+                	<Switching_CurrentPlan>
+                		<Reference>CurrentPlan1</Reference>
+						<ProductID>Drawdown</ProductID>
+						<CurrentPlanName>DD</CurrentPlanName>
+                        <DrawdownType>Capped Drawdown</DrawdownType>
+						<CurrentValue>175000</CurrentValue>
+                        <DDI_NextGadReview>2023-08-09T00:00:00</DDI_NextGadReview>
+                        <DDI_IncomeBasis>Specific Monetary Amount</DDI_IncomeBasis>
+                        <DDI_IncomeAmount>300</DDI_IncomeAmount>
+                        <DDI_IncomeStarting>Monthly</DDI_IncomeStarting>
+                        <DDI_IncomeEscalation>Other</DDI_IncomeEscalation>
+                        <DDI_IncomeOtherEscalation>2.50</DDI_IncomeOtherEscalation>
+						<SMV_ProjectedMaturityValueBasis>Monetary Rates Supplied</SMV_ProjectedMaturityValueBasis>
+						<SMV_Drawdown_AnnuitisationAge>95</SMV_Drawdown_AnnuitisationAge>
+						<SMV_MidRateMaturityValue>260000</SMV_MidRateMaturityValue>
+                        <SMV_HighRateMaturityValue>355000</SMV_HighRateMaturityValue>
+						<AC_Regular>250</AC_Regular>
+                        <AC_Frequency>Monthly</AC_Frequency>
+                        <AC_Escalation>0</AC_Escalation>
+                        <AC_RegContsStop>At Specific Age</AC_RegContsStop>
+                        <AC_RegContsStopAge>80</AC_RegContsStopAge>
+                	</Switching_CurrentPlan>
+        		</Switching_CurrentPlans>
+				<Switching_ClientDetails>
+				<Reference>DSQ014</Reference>
+				</Switching_ClientDetails>
+				<Switching_NewInvestments>
+					<NewInvestmentType>2</NewInvestmentType>
+					<UsingRule>0</UsingRule>
+						<Switching_NewInvestments_ABI_Sectors>
+                            <Name>Mixed Asset</Name>
+                            <Switching_NewInvestments_ABI_SubSectors>
+                                <Name>Mixed Investment 40%-85% Shares</Name>
+                                <Amount>80</Amount>
+                            </Switching_NewInvestments_ABI_SubSectors>
+							<Switching_NewInvestments_ABI_SubSectors>
+                                <Name>Mixed Investment 20%-60% Shares</Name>
+                                <Amount>20</Amount>
+                            </Switching_NewInvestments_ABI_SubSectors>
+                        </Switching_NewInvestments_ABI_Sectors>
+				</Switching_NewInvestments>	
+				<Switching_AdviserCharges>
+					<Switching_AdviserCharging>
+						<Type>Drawdown</Type>
+						<ToUseInThisQuote>Specific Adviser Charges For This Quote Only</ToUseInThisQuote>
+						<Reg_RegularPremium>Initial Regular Premium Percentage</Reg_RegularPremium>
+						<Reg_Percentage>2</Reg_Percentage>
+						<Reg_Continuing>Until Specific Amount Paid</Reg_Continuing>
+						<Reg_StopAfterReceived>2500</Reg_StopAfterReceived>
+						<O_Ongoing>On-going Annual Percentage</O_Ongoing>
+						<O_AnnualPercentage>5.50</O_AnnualPercentage>
+						<O_PercentagePaid>Monthly</O_PercentagePaid>
+					</Switching_AdviserCharging>
+				</Switching_AdviserCharges>			
+			</SwitchingQuote>
+		</SwitchingQuotes>
+	</Client>
+</Clients>
+</Root>
+
+
+
+
+				

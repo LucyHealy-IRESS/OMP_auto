@@ -1,0 +1,68 @@
+<Root>
+<Clients>
+	<Client>
+		<ClientID>Client05</ClientID>
+		<Title>Mrs</Title>
+		<Firstname>Drawdown</Firstname>
+		<Surname>ClientFive</Surname>
+		<DateOfBirth>1974-03-05T00:00:00</DateOfBirth>				
+		<SwitchingQuotes>
+			<SwitchingQuote>
+				<Switching_CurrentPlans>
+                	<Switching_CurrentPlan>
+                		<Reference>CurrentPlan1</Reference>
+						<ProductID>Drawdown</ProductID>
+						<CurrentPlanName>DD</CurrentPlanName>
+                        <DrawdownType>Capped Drawdown</DrawdownType>
+						<CurrentValue>100000</CurrentValue>
+                        <DDI_NextGadReview>2023-08-09T00:00:00</DDI_NextGadReview>
+                        <DDI_IncomeBasis>Percentage of GAD</DDI_IncomeBasis>
+                        <DDI_IncomePercentage>50</DDI_IncomePercentage>
+                        <DDI_CurrentIncome>875</DDI_CurrentIncome>
+                        <DDI_IncomeStarting>Monthly</DDI_IncomeStarting>
+						<SMV_ProjectedMaturityValueBasis>Estimated By System</SMV_ProjectedMaturityValueBasis>
+						<SMV_Drawdown_AnnuitisationAge>85</SMV_Drawdown_AnnuitisationAge>
+                        <SMV_AMC>2.50</SMV_AMC>
+						<GrowthRateBasis>Inflation Adjusted Fund Specific Rates</GrowthRateBasis>
+						<GrowthRateLow_InflationAdjusted>3</GrowthRateLow_InflationAdjusted>
+						<GrowthRateMid_InflationAdjusted>3.50</GrowthRateMid_InflationAdjusted>
+						<GrowthRateHigh_InflationAdjusted>4</GrowthRateHigh_InflationAdjusted>
+                        <AC_Regular>600</AC_Regular>
+                        <AC_Frequency>Monthly</AC_Frequency>
+                        <AC_Escalation>Other</AC_Escalation>
+                        <AC_EscalationOther>2</AC_EscalationOther>
+                	</Switching_CurrentPlan>
+        		</Switching_CurrentPlans>
+				<Switching_ClientDetails>
+				<Reference>DSQ005</Reference>
+				</Switching_ClientDetails>
+				<Switching_NewInvestments>
+					<NewInvestmentType>2</NewInvestmentType>
+					<UsingRule>0</UsingRule>
+						<Switching_NewInvestments_ABI_Sectors>
+							<Name>Other Sectors</Name>
+							<Switching_NewInvestments_ABI_SubSectors>
+								<Name>Global Property</Name>>
+								<Amount>100</Amount>
+							</Switching_NewInvestments_ABI_SubSectors>
+						</Switching_NewInvestments_ABI_Sectors>
+				</Switching_NewInvestments>	
+				<Switching_AdviserCharges>
+					<Switching_AdviserCharging>
+						<Type>Drawdown</Type>
+						<ToUseInThisQuote>Specific Adviser Charges For This Quote Only</ToUseInThisQuote>
+						<Reg_RegularPremium>Initial Regular Premium Amount</Reg_RegularPremium>
+						<Reg_Amount>5</Reg_Amount>
+						<Reg_Continuing>For All Contributions</Reg_Continuing>
+					</Switching_AdviserCharging>
+				</Switching_AdviserCharges>					
+			</SwitchingQuote>
+		</SwitchingQuotes>
+	</Client>
+</Clients>
+</Root>
+
+
+
+
+				
