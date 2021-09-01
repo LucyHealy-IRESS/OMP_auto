@@ -7,4 +7,7 @@ screenshots
 videos
 
 cypress/fixtures/ExecutionFolder/Create/
+
 *.sqlite
+*.suo
+/cypress/.vs/cypress/config/applicationhost.config
