@@ -44,7 +44,7 @@ export const
     },
     Partner: {
       API_ActionRequired_Create: true,
-      API_ActionRequired_Assert: false,
+      API_ActionRequired_Assert: true,
       API_ActionRequired_Delete: false
     },
     Portfolios: {

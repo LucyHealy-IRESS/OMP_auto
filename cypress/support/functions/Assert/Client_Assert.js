@@ -18,7 +18,8 @@ Cypress.Commands.add("Client_Assert_1", (EntityData) => {
         cy.get('.btn-viewportfolios-action > .ui-button-text').click(); 
         cy.get('.ui-dialog-buttonset > .ui-button > .ui-button-text').click();//I had to add these two as with just the below line it wouldn't process to the assert, not sure why, but when you click Ok on the client editor, the dashboard doesnt regresh, then the menu doesn load. I think the ui freezes or soemthing like that.
         //cy.clickButtonInPopup(ClientConstants.ClientEditorSelector,"Ok"); //change of flow over the Income/Portfolio grids that handle different plan types
-      });     
+        // cy.clickButtonInPopup(ClientConstants.ClientEditorSelector, "Ok");
+      });
     }
 
     var SearchOptions = {

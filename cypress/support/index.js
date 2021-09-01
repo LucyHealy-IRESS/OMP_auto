@@ -75,6 +75,7 @@ import './functions/Create/PortfolioSearch_Create.js'
 
 import './functions/Assert/Clients_Assert.js'
 import './functions/Assert/Client_Assert.js'
+import './functions/Assert/Partner_Assert.js'
 import './functions/Assert/Portfolios_Assert.js'
 import './functions/Assert/Portfolio_Assert.js'
 import './functions/Assert/PortfolioInvestment_Assert.js'
