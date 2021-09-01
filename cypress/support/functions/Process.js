@@ -17,16 +17,16 @@ Cypress.Commands.add("ProcessFile", (ExecutiionFolderLocation,fileName,ActionFil
   cy.ProcessXMLFile(fileLocation, constants.RunType_Create, ActionFileNo);
 
   //2 Assert Pass
-  cy.wait(3000);
-  cy.ProcessXMLFile(fileLocation, constants.RunType_Assert,ActionFileNo);
+  //cy.wait(3000);
+  //cy.ProcessXMLFile(fileLocation, constants.RunType_Assert,ActionFileNo);
 
   //4 Roll off what we have created, needs to remove delete if this is ran
   // cy.wait(3000);
   // cy.SecurityProcessing(fileLocation);
 
   //3 Roll off what we have created
-  cy.wait(3000);
-  cy.ProcessXMLFile(fileLocation,constants.RunType_Delete, ActionFileNo);
+ // cy.wait(3000);
+  //cy.ProcessXMLFile(fileLocation,constants.RunType_Delete, ActionFileNo);
 
      
   if(reloadBetweenTests){ //Dont reload if on last iteration

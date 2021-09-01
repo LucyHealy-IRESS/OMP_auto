@@ -26,6 +26,7 @@ import './functions/SecurityProcessing.js'
 
 import './functions/Create/Clients_Create.js'
 import './functions/Create/Client_Create.js'
+import './functions/Create/Partner_Create.js'
 import './functions/Create/Portfolios_Create.js'
 import './functions/Create/Portfolio_Create.js'
 import './functions/Create/PortfolioInvestment_Create.js'
