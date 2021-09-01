@@ -11,3 +11,7 @@ cypress/fixtures/ExecutionFolder/Create/
 *.sqlite
 *.suo
 /cypress/.vs/cypress/config/applicationhost.config
+/.vs/ProjectSettings.json
+/.vs/VSWorkspaceState.json
+/cypress/.vs/ProjectSettings.json
+/cypress/.vs/VSWorkspaceState.json
