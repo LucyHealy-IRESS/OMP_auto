@@ -1,8 +1,9 @@
+import * as constants from "./constantsSelectors.js";
 import * as InputTypes from "./Core.js";
-export const
+export const CurrentPlanListSelector = "#ModellerCurrentPlansListPopUp",
 
 
-CurrentPlanEditorSelector = "#EditCurrentPlanPopup",
+CurrentPlanEditorSelector = "#EditRetirementOptionCurrentPlanPopup",
 BasicDetails = {
   ProductID: {
     Selector: ".Product_tooltip input",
@@ -13,18 +14,6 @@ BasicDetails = {
   Provider: {
     Selector: ".Provider",
     inputType: InputTypes.Input_Dropdown_ReadOnly,
-    AccordianName: "Basic Details",
-    AccordianSelector: ".BasicDetailsAccordian",
-  },
-  TransactKey: {
-    Selector: ".TransactKey_tooltip input",
-    inputType: InputTypes.Input_Dropdown,
-    AccordianName: "Basic Details",
-    AccordianSelector: ".BasicDetailsAccordian",
-  },
-  AccountNo: {
-    Selector: ".FundsNetworkAccountNumber_tooltip input",
-    inputType: InputTypes.Input_Dropdown,
     AccordianName: "Basic Details",
     AccordianSelector: ".BasicDetailsAccordian",
   },
@@ -42,8 +31,17 @@ BasicDetails = {
     AccordianSelector: ".BasicDetailsAccordian",
   },
 },
-//As At Date doesnt have the dd mm yyyy simple control
+
 CurrentValue = {
+   AsAtDate: {
+     Selector: ".PolicyValuesAsAtDate_tooltip input",
+     ddSelector: "#wijmo_input_16",
+     mmSelector: "#wijmo_input_17",
+     yyyySelector: "#wijmo_input_18",
+     inputType: InputTypes.Input_Date,
+     AccordianName: "Current Value",
+     AccordianSelector: ".CurrentValueAccordian",
+  },
   CurrentValue: {
     Selector: ".PolicyValuesCurrentValue_tooltip input",
     inputType: InputTypes.Input_Integer ,
@@ -59,12 +57,17 @@ CurrentValue = {
 },
 SuppliedMaturityValues = {
   SMV_ValueatRetirementAge: {
-    Selector: ".ProjectedMaturityBasis_tooltip ",
+    Selector: ".ProjectedMaturityBasis_tooltip input",
     inputType: InputTypes.Input_Dropdown_ReadOnly,
     AccordianName: "Supplied Maturity Values",
     AccordianSelector: ".SuppliedMaturityValuesAccordian",
   },
-  
+  SMV_Value: {
+    Selector: ".ValueatRetirementAge_tooltip input",
+    inputType: InputTypes.Input_Integer,
+    AccordianName: "Supplied Maturity Values",
+    AccordianSelector: ".SuppliedMaturityValuesAccordian",
+  },
 },
 GrowthRates = {
   GrowthRateBasis: {
@@ -119,73 +122,28 @@ GrowthRates = {
 //Some properties in here are the same as in other accordians
 ProductChages = {
   PC_FundCharge: {
-    Selector: ".ProductChargesAccordian .FundCharge_tooltip input",
+    Selector: ".FundCharge_tooltip input",
     inputType: InputTypes.Input_Integer,
     AccordianSelector: ".ProductChargesAccordian",
     AccordianName: "Product Charges",
   },
   PC_PlanCharge: {
-    Selector: ".ProductChargesAccordian .PlanCharge_tooltip input",
+    Selector: ".PlanCharge_tooltip input",
     inputType: InputTypes.Input_Integer,
     AccordianSelector: ".ProductChargesAccordian",
     AccordianName: "Product Charges",
   },
   PC_PolicyFee: {
-    Selector: ".ProductChargesAccordian .PolicyFee_tooltip input",
+    Selector: ".PolicyFee_tooltip input",
     inputType: InputTypes.Input_Integer,
     AccordianSelector: ".ProductChargesAccordian",
     AccordianName: "Product Charges",
   },
   PC_AdviserCharge: {
-    Selector: ".ProductChargesAccordian .AdviserCharge_tooltip input",
+    Selector: ".AdviserCharge_tooltip input",
     inputType: InputTypes.Input_Integer,
     AccordianSelector: ".ProductChargesAccordian",
     AccordianName: "Product Charges",
-  },
-},
-
-RegularWithdrawals = {
-  RW_RegularWithdrawal: {
-    Selector: ".RegularWithdrawal_tooltip input",
-    inputType: InputTypes.Input_Dropdown,
-    AccordianSelector: ".RegWithdrawalsAccordian",
-    AccordianName: "Regular Withdrawals",
-  },
-  RW_Percentage: {
-    Selector: ".RegularWithdrawalPercentage_tooltip input",
-    inputType: InputTypes.Input_Integer,
-    AccordianSelector: ".RegWithdrawalsAccordian",
-    AccordianName: "Regular Withdrawals",
-  },
-  RW_Amount: {
-    Selector: ".RegularWithdrawalAmount_tooltip input",
-    inputType: InputTypes.Input_Integer,
-    AccordianSelector: ".RegWithdrawalsAccordian",
-    AccordianName: "Regular Withdrawals",
-  },
-  RW_Frequency: {
-    Selector: ".RegularWithdrawalFrequency_tooltip input",
-    inputType: InputTypes.Input_Dropdown,
-    AccordianSelector: ".RegWithdrawalsAccordian",
-    AccordianName: "Regular Withdrawals",
-  },
-  RW_PaidIn: {
-    Selector: ".RegularWithdrawalPaidIn_tooltip input",
-    inputType: InputTypes.Input_Dropdown,
-    AccordianSelector: ".RegWithdrawalsAccordian",
-    AccordianName: "Regular Withdrawals",
-  },
-  RW_Escalation: {
-    Selector: ".RegularWithdrawalEscalationRate_tooltip input",
-    inputType: InputTypes.Input_Dropdown,
-    AccordianSelector: ".RegWithdrawalsAccordian",
-    AccordianName: "Regular Withdrawals",
-  },
-  RW_OtherEscalation: {
-    Selector: ".RegularWithdrawalEscalationRateOther_tooltip input",
-    inputType: InputTypes.Input_Integer,
-    AccordianSelector: ".RegWithdrawalsAccordian",
-    AccordianName: "Regular Withdrawals",
   },
 },
 
@@ -228,57 +186,6 @@ OngoingContributions = {
   },
 },
 
-
-AdditionalContributions = {
-  AC_Single: {
-    Selector: ".Drawdown_Single_tooltip input",
-    inputType: InputTypes.Input_Integer,
-    AccordianSelector: ".AdditionalContsAccordian",
-    AccordianName: "Additional Contributions",
-  },
-  AC_Regular: {
-    Selector: ".Drawdown_Regular_tooltip input",
-    inputType: InputTypes.Input_Integer,
-    AccordianSelector: ".AdditionalContsAccordian",
-    AccordianName: "Additional Contributions",
-  },
-  AC_Frequency: {
-    Selector: ".Drawdown_Frequency_tooltip input",
-    inputType: InputTypes.Input_Dropdown,
-    AccordianSelector: ".AdditionalContsAccordian",
-    AccordianName: "Additional Contributions",
-  },
-  AC_Escalation: {
-    Selector: ".Drawdown_Escalation_tooltip input",
-    inputType: InputTypes.Input_Dropdown,
-    AccordianSelector: ".AdditionalContsAccordian",
-    AccordianName: "Additional Contributions",
-  },
-  AC_EscalationOther: {
-    Selector: ".Drawdown_EscalationOther_tooltip input",
-    inputType: InputTypes.Input_Dropdown,
-    AccordianSelector: ".AdditionalContsAccordian",
-    AccordianName: "Additional Contributions",
-  },
-  AC_Anniversary: {
-    Selector: ".Drawdown_Anniversary_tooltip input",
-    inputType: InputTypes.Input_Dropdown,
-    AccordianSelector: ".AdditionalContsAccordian",
-    AccordianName: "Additional Contributions",
-  },
-  AC_RegContsStop: {
-    Selector: ".Drawdown_RegularContsStop_tooltip input",
-    inputType: InputTypes.Input_Dropdown,
-    AccordianSelector: ".AdditionalContsAccordian",
-    AccordianName: "Additional Contributions",
-  },
-  AC_RegContsStopAge: {
-    Selector: ".Drawdown_RegularContsStopAge_Relevant input",
-    inputType: InputTypes.Input_Integer,
-    AccordianSelector: ".AdditionalContsAccordian",
-    AccordianName: "Additional Contributions",
-  },
-},
 DefinedIncome = {
   DI_SafeguardedBenefits: {
     Selector: ".SafeguardedBenefits_tooltip input",
@@ -676,14 +583,10 @@ RetirementIncome = {
 AllCurrentPlanInputs = {
   ...BasicDetails,
   ...CurrentValue,
-  ...DrawdownIncome,
   ...SuppliedMaturityValues,
   ...GrowthRates,
   ...ProductChages,
-  ...RegularWithdrawals,
   ...OngoingContributions,
-  ...PaidUpMaturityValues,
-  ...AdditionalContributions,
   ...DefinedIncome,
   ...SchemeTransferDetails,
   ...AssumptionsUsed

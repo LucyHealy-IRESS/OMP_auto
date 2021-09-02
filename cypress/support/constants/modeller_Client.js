@@ -1,7 +1,6 @@
 import * as InputTypes from "./Core.js";
 export const
 
-
 ClientEditorSelector = '#RetirementOptionClientDetailsPopup',
 
 
@@ -62,12 +61,6 @@ PersonalDetails = {
 FamilyDetails = {
   MaritalStatus: {
     Selector: ".MaritalStatus_tooltip combobox",
-    inputType: InputTypes.Input_Dropdown,
-    AccordianSelector:"#FamilyDetails",
-    AccordianName: 'Family Details', 
-  },
-  Partner: {
-    Selector: ".PartnerGuid_tooltip combobox",
     inputType: InputTypes.Input_Dropdown,
     AccordianSelector:"#FamilyDetails",
     AccordianName: 'Family Details', 
