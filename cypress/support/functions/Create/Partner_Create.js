@@ -2,7 +2,7 @@ import * as ClientConstants from "../../constants/client.js";
 import * as Constants from "../../constants/Core.js";
 
 Cypress.Commands.add("Partner_Create_1", (EntityData) => {
-  cy.wait(2000); //allow for client summary menu to auto open
+  cy.wait(4000); //allow for client summary menu to auto open, variable timings 
   cy.menuClick('Client Summary', ClientConstants.AddPartnerButtonSelector); //Click Client Summary menu and click edit partner button
   cy.get("#EditClientPopup .client_info_table", {  //ensure client editor is there and client info section has loaded
     timeout: Constants.Timeout_EditorWait,
