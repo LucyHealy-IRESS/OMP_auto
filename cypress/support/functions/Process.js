@@ -140,7 +140,6 @@ Cypress.Commands.add("PopulateEditor",(EditorSelector, InputMappings, XMLDataObj
 });
 
 Cypress.Commands.add("AssertEditor",(EditorSelector, InputMappings, XMLDataObject, EditorName) => {
-  debugger;
   cy.EditorProcesssor(EditorSelector, InputMappings, XMLDataObject,false, EditorName);
 });
 

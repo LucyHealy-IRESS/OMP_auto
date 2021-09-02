@@ -21,7 +21,21 @@ Cypress.Commands.add("Partner_Create_1", (EntityData) => {
       cy.clickButtonInPopup(ClientConstants.ClientEditorSelector, "Ok");
     } else {
       cy.log("No Match");
-      cy.PopulateEditor(ClientConstants.ClientEditorSelector, ClientConstants.AllClientInputs, EntityData, "Partner"); //Populate the partner editor
+
+      //This segment of code iterates all the client selectors and changed the string input type to string_clear. This is because the partner editor is pre populated and we want to type over not append to. e.g. surnamesuname we dont want
+      var AllPartnerInputs = ClientConstants.AllClientInputs;
+      var XMLtoArraySub = Object.keys(AllPartnerInputs);
+      for (var x = 0; x < XMLtoArraySub.length; x++) {
+        var index = XMLtoArraySub[x]
+        var xd = AllPartnerInputs[index];
+        if (xd && xd.hasOwnProperty("Selector")){ //if it doesnt have the selector property then its not one thats processed on the UI front
+          if (xd.inputType == Constants.Input_String) {
+            xd.inputType = Constants.Input_String_Clear
+          }
+        }
+      }
+
+      cy.PopulateEditor(ClientConstants.ClientEditorSelector, AllPartnerInputs, EntityData, "Partner"); //Populate the partner editor
       cy.wait(1000);
       cy.clickButtonInPopup(ClientConstants.ClientEditorSelector, "Ok");
     }     
