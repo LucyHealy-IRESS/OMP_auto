@@ -9,26 +9,26 @@ BasicDetails = {
     Selector: ".Product_tooltip input",
     inputType: InputTypes.Input_Dropdown_ReadOnly,
     AccordianName: "Basic Details",
-    AccordianSelector: ".BasicDetailsAccordian",
+    AccordianSelector: "#BasicDetails",
   },
   Provider: {
     Selector: ".Provider",
     inputType: InputTypes.Input_Dropdown_ReadOnly,
     AccordianName: "Basic Details",
-    AccordianSelector: ".BasicDetailsAccordian",
+    AccordianSelector: "#BasicDetails",
   },
   CurrentPlanName: {
     Selector: ".ProductName_tooltip input",
     inputType: InputTypes.Input_String ,
     AccordianName: "Basic Details",
-    AccordianSelector: ".BasicDetailsAccordian",
+    AccordianSelector: "#BasicDetails",
   },
   
   Isworkplacepension: {
     Selector: "IsWorkplacePension",
     inputType: InputTypes.Input_Checkbox,
     AccordianName: "Basic Details",
-    AccordianSelector: ".BasicDetailsAccordian",
+    AccordianSelector: "#BasicDetails",
   },
 },
 
