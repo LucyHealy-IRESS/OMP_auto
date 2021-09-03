@@ -15,7 +15,7 @@ Cypress.Commands.add("Modeller_Scenario_Create_1", (EntityData, ScenarioNo) => {
   cy.get('.scenarios-grid tr').eq(ScenarioNo).then(function ($td) { //will need the above commented out code to deal with more than one scenario
     cy.wrap($td).closest("tr").find("button").find(".ui-icon-pencil").click().then(function () {
       cy.get(moConstants.ScenarioEditorSelector, { timeout: constants.Timeout_GetQuoteResults }).then(function () { //wait for content of editor to load
-        // cy.PopulateEditor(#QuickEditQuoteTypePopup, moConstants.AllCurrentPlanInputs, EntityData, "Modeller Scenario Editor" +  (ScenarioNo +1));
+          cy.PopulateEditor(moScenarioConstants.ModellerScenarioEditorSelector, moScenarioConstants.AllModellerScenarioInputs, EntityData, "Modeller Scenario Editor" +  (ScenarioNo +1));
         cy.wait(2000);
         cy.clickButtonInPopup('#QuickEditQuoteTypePopup', "Ok");    //Close the open current plan editor
         cy.wait(7000);//allow for save
