@@ -1,10 +1,6 @@
 import * as Constants from "../../constants/Core.js";
 
 Cypress.Commands.add("Partner_Delete_1", (EntityData) => {
-
-  //cy.menuClick('Home', "#ExistingClientsIconMenu");
-  ////cy.get("#ExistingClientsIconMenu", { timeout: Constants.Timeout_MenuButtonWait }).click();
-
   //var SearchCompleteCallback = function () {
   //  cy.wait(1000); //1 second ui catchup to prevent any detatching from async refreshes
   //  cy.get('#StoryCarousel4 .TypeCompositePanel .tableContainer', { timeout: Constants.Timeout_Medium }).find('tr', { timeout: Constants.Timeout_Medium }).first().dblclick();
@@ -24,7 +20,6 @@ Cypress.Commands.add("Partner_Delete_1", (EntityData) => {
   //var SearchOptions = {
   //  SearchParam: "Surname",
   //  ThumbnailName: "Client Search",
-  //  MenuSelector: ".JSSORPopUpMenu.DashboardNo_9D8375A5-D2F6-4073-B19D-1F128A6CAED3 .JSSORPopUpMenu_Open",
   //  SearchCompleteCallbackFunc: SearchCompleteCallback
   //}
 
