@@ -25,8 +25,8 @@ Cypress.Commands.add("ProcessFile", (ExecutiionFolderLocation,fileName,ActionFil
   // cy.SecurityProcessing(fileLocation);
 
   //3 Roll off what we have created
- // cy.wait(3000);
-  //cy.ProcessXMLFile(fileLocation,constants.RunType_Delete, ActionFileNo);
+  cy.wait(3000);
+  cy.ProcessXMLFile(fileLocation,constants.RunType_Delete, ActionFileNo);
 
      
   if(reloadBetweenTests){ //Dont reload if on last iteration

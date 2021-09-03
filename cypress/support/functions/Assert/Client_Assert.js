@@ -7,8 +7,8 @@ Cypress.Commands.add("Client_Assert_1", (EntityData) => {
 
     var SearchCompleteCallback = function(){
       cy.wait(1000); //1 second ui catchup to prevent any detatching from async refreshes
-
-      cy.get('#StoryCarousel4 .TypeCompositePanel .tableContainer', {timeout:Constants.Timeout_Medium}).find('tr', {timeout:Constants.Timeout_Medium}).first().dblclick();
+      var ClientFirstname = EntityData["Firstname"];
+      cy.get('#StoryCarousel4 .TypeCompositePanel .tableContainer', { timeout: Constants.Timeout_Medium }).find('tr', { timeout: Constants.Timeout_Medium }).contains(ClientFirstname).first().dblclick();
       cy.menuClick('Client Summary', '#EditClientIconMenu');
       cy.get("#EditClientPopup .client_info_table", {  //ensure client editor is there and client info section has loaded
         timeout: Constants.Timeout_EditorWait,
