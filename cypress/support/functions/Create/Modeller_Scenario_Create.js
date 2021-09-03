@@ -9,7 +9,6 @@ Cypress.Commands.add("Modeller_Scenario_Create_1", (EntityData) => {
     cy.clickButtonInPopup(moClientConstants.ClientEditorSelector, "Current Plans");
     cy.wait(7000);
     cy.clickButtonInPopup(moConstants.CurrentPlanListSelector, "Scenarios");
-    cy.clickButtonInPopup(moScenarioConstants.CurrentPlanListSelector, "New Investments");
 });
 
 Cypress.Commands.add("Modeller_Scenario_Create_2", (EntityData) => { });

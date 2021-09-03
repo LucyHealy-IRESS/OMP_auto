@@ -1,5 +1,5 @@
 import * as InputTypes from "./Core.js";
-export const CurrentPlanListSelector = "#OverviewRetirementOptionScenariosListPopUp",
+export const ModellerScenarioListSelector = "#OverviewRetirementOptionScenariosListPopUp",
 
 ModellerScenarioEditorSelector = '#QuickEditQuoteTypePopup',
 
