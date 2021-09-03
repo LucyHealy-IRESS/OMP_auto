@@ -153,34 +153,34 @@ Cypress.Commands.add('clickThumbnail', (thumbnailName) => {
   cy.get('[data-u="thumbnavigator"]').children().contains(thumbnailName).click({ force: true });
 })
 
-//Click Menu Button
-//Cypress.Commands.add('menuClick', (thumbnailName, button) => {
-//  cy.clickThumbnail(thumbnailName);
-//  cy.wait(2000);
-//  cy.get(button).click();
-//})
-
 Cypress.Commands.add('menuClick', (thumbnailName, button) => {
-  cy.get('[data-u="thumbnavigator"]').children().contains(thumbnailName).then(function ($thumbnailDiv) {
-    var t = $thumbnailDiv.closest('.thumbNailTitleText');
-    var classList = t[0].classList;
-    var dashboardNoClass = classList[2].split("_");
-    var dashboardNo = dashboardNoClass[2];
-
-    var JSSORMenu = Cypress.$('.JSSORPopUpMenu.DashboardNo_' + dashboardNo + ' .JSSORPopUpMenu_content') // hasclass JSSORPopUpMenu_Open
-    if (!(JSSORMenu & JSSORMenu.hasClass('JSSORPopUpMenu_Open'))) {
-      cy.log('OPEN MENU');
-      cy.wrap($thumbnailDiv).click().then(function () {
-        cy.wait(2000);
-        cy.get(button).click();
-      })
-    } else {
-      cy.log('DONT OPEN MENU');
-      cy.wait(2000);
-      cy.get(button).click();
-    }
-  });
+  cy.clickThumbnail(thumbnailName);
+  cy.wait(2000);
+  cy.get(button).click();
 })
+
+//Not fully tested but the idea is if the menu is already open then it wont click the menu and close it
+//Cypress.Commands.add('menuClick', (thumbnailName, button) => {
+//  cy.get('[data-u="thumbnavigator"]').children().contains(thumbnailName).then(function ($thumbnailDiv) {
+//    var t = $thumbnailDiv.closest('.thumbNailTitleText');
+//    var classList = t[0].classList;
+//    var dashboardNoClass = classList[2].split("_");
+//    var dashboardNo = dashboardNoClass[2];
+
+//    var JSSORMenu = Cypress.$('.JSSORPopUpMenu.DashboardNo_' + dashboardNo + ' .JSSORPopUpMenu_content') // hasclass JSSORPopUpMenu_Open
+//    if (!(JSSORMenu & JSSORMenu.hasClass('JSSORPopUpMenu_Open'))) {
+//      cy.log('OPEN MENU');
+//      cy.wrap($thumbnailDiv).click().then(function () {
+//        cy.wait(2000);
+//        cy.get(button).click();
+//      })
+//    } else {
+//      cy.log('DONT OPEN MENU');
+//      cy.wait(2000);
+//      cy.get(button).click();
+//    }
+//  });
+//})
 
 
 Cypress.Commands.add('clickButtonInPopup', (PopupID, ButtonText) => {

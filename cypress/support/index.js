@@ -124,6 +124,7 @@ import './functions/Assert/PortfolioSearch_Assert.js'
 
 import './functions/Delete/Clients_Delete.js'
 import './functions/Delete/Client_Delete.js'
+import './functions/Delete/Partner_Delete.js'
 import './functions/Delete/Portfolio_Delete.js'
 import './functions/Delete/Portfolios_Delete.js'
 import './functions/Delete/Investments_Delete.js'
