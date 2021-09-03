@@ -2,7 +2,7 @@ import * as constants from "./constantsSelectors.js";
 import * as InputTypes from "./Core.js";
 export const CurrentPlanListSelector = "#RetirementOptionCurrentPlansListPopUp",
 
-
+ScenarioEditorSelector = ".quick-editor-body",
 CurrentPlanEditorSelector = "#EditRetirementOptionCurrentPlanPopup",
 BasicDetails = {
   ProductID: {
