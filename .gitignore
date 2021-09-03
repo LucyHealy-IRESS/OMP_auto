@@ -15,3 +15,4 @@ cypress/fixtures/ExecutionFolder/Create/
 /.vs/VSWorkspaceState.json
 /cypress/.vs/ProjectSettings.json
 /.vs/slnx.sqlite-journal
+/cypress/.vs/VSWorkspaceState.json
