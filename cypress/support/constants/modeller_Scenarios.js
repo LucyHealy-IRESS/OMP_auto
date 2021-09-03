@@ -1,7 +1,7 @@
 import * as InputTypes from "./Core.js";
-export const
+export const CurrentPlanListSelector = "#OverviewRetirementOptionScenariosListPopUp",
 
-ModellerScenarioEditorSelector = '#ModellerScenarioEditorPopup',
+ModellerScenarioEditorSelector = '#QuickEditQuoteTypePopup',
 
 ScenarioQuickEditor = {
     Quick_Scenario: {
@@ -46,7 +46,7 @@ ScenarioQuickEditor = {
         AccordianSelector: "#ScenarioQuickEditor", 
         AccordianName: "ScenarioQuickEditor",     
         }, 
-    }       
+    },       
 
 AssumptionsUsed = {
     Quick_GrowthRate: {
@@ -121,9 +121,9 @@ AssumptionsUsed = {
         AccordianSelector: "#AssumptionsUsed", 
         AccordianName: "Assumptions Used",     
         },                                
-    }
+    },
 
-    AllModellerScenarioInputs = {
-        ...ScenarioQuickEditor,
-        ...AssumptionsUsed,
-    }
+AllModellerScenarioInputs = {
+    ...ScenarioQuickEditor,
+    ...AssumptionsUsed
+};

@@ -1,11 +1,13 @@
 import * as moClientConstants from "../../constants/modeller_Client.js"
 import * as moConstants from "../../constants/modeller_currentPlans.js"
+import * as moScenarioConstants from "../../constants/modeller_Scenarios.js"
 import * as Constants from "../../constants/Core.js";
 
 Cypress.Commands.add("Modeller_NewInvestments_Create_1", (EntityData) => {
     //we are currently in the client editor
     cy.clickButtonInPopup(moClientConstants.ClientEditorSelector, "Current Plans");
-    cy.clickButtonInPopup(moConstants.CurrentPlanListSelector, "New Investments");
+    cy.clickButtonInPopup(moConstants.CurrentPlanListSelector, "Scenarios");
+    cy.clickButtonInPopup(moScenarioConstants.CurrentPlanListSelector, "New Investments");
 
     if (EntityData) {
         //Set New Investment Type Dropdown
