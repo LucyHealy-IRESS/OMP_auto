@@ -1,29 +1,29 @@
 import * as Constants from "../../constants/Core.js";
 
 Cypress.Commands.add("Partner_Delete_1", (EntityData) => {
-  //var SearchCompleteCallback = function () {
-  //  cy.wait(1000); //1 second ui catchup to prevent any detatching from async refreshes
-  //  cy.get('#StoryCarousel4 .TypeCompositePanel .tableContainer', { timeout: Constants.Timeout_Medium }).find('tr', { timeout: Constants.Timeout_Medium }).first().dblclick();
-  //  cy.wait(1000);
-  //  cy.menuClick('Client Summary', '#EditClientIconMenu');
-  //  cy.get("#EditClientPopup .client_info_table", {  //ensure client editor is there and client info section has loaded
-  //    timeout: Constants.Timeout_EditorWait,
-  //  }).then(function () {
-  //    cy.get("#DeleteMenu a").click({ force: true }); //Click delete button  
-  //    cy.get("[aria-describedby='Client_Delete_Confirm']").then(function ($Container) {
-  //      cy.wrap($Container).find("button").contains("Yes").click();
-  //      cy.wait(4000);
-  //    })
-  //  });
-  //}
+  var SearchCompleteCallback = function () {
+    cy.wait(1000); //1 second ui catchup to prevent any detatching from async refreshes
+    cy.get('#StoryCarousel4 .TypeCompositePanel .tableContainer', { timeout: Constants.Timeout_Medium }).find('tr', { timeout: Constants.Timeout_Medium }).first().dblclick();
+    cy.wait(1000);
+    cy.menuClick('Client Summary', '#EditClientIconMenu');
+    cy.get("#EditClientPopup .client_info_table", {  //ensure client editor is there and client info section has loaded
+      timeout: Constants.Timeout_EditorWait,
+    }).then(function () {
+      cy.get("#DeleteMenu a").click({ force: true }); //Click delete button  
+      cy.get("[aria-describedby='Client_Delete_Confirm']").then(function ($Container) {
+        cy.wrap($Container).find("button").contains("Yes").click();
+        cy.wait(4000);
+      })
+    });
+  }
 
-  //var SearchOptions = {
-  //  SearchParam: "Surname",
-  //  ThumbnailName: "Client Search",
-  //  SearchCompleteCallbackFunc: SearchCompleteCallback
-  //}
+  var SearchOptions = {
+    SearchParam: "Surname",
+    ThumbnailName: "Client Search",
+    SearchCompleteCallbackFunc: SearchCompleteCallback
+  }
 
-  //cy.RunSearch(SearchOptions, EntityData);
+  cy.RunSearch(SearchOptions, EntityData);
 
 });
 
