@@ -2,7 +2,7 @@ import * as InputTypes from "./Core.js";
 export const
 
 ClientEditorSelector = '#RetirementOptionClientDetailsPopup',
-
+PartnerEditorSelector = '#EditPartnerIconMenuModeller',
 
 PersonalDetails = {
   Title: {
