@@ -1,7 +1,8 @@
 import * as constants from "../constants/constantsSelectors.js";
 export const
 
-ClientEditorSelector = '#EditClientPopup',
+    ClientEditorSelector = '#EditClientPopup',
+    AddPartnerButtonSelector = '#EditPartnerIconMenu',
 
 PersonalDetails = {
   ClientID: {},
