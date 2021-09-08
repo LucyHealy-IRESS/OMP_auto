@@ -20,7 +20,7 @@ Cypress.Commands.add("Partner_Create_1", (EntityData) => {
       cy.wait(4000); //allow for partner details to be bought down
       cy.clickButtonInPopup(ClientConstants.ClientEditorSelector, "Ok");
     } else {
-      cy.log("No Match");
+      cy.log("No Match for " + PartnerSearchCriteria);
 
       //This segment of code iterates all the client selectors and changed the string input type to string_clear. This is because the partner editor is pre populated and we want to type over not append to. e.g. surnamesuname we dont want
       var AllPartnerInputs = ClientConstants.AllClientInputs;
