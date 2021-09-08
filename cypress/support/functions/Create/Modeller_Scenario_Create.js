@@ -9,7 +9,9 @@ Cypress.Commands.add("Modeller_Scenario_Create_1", (EntityData, ScenarioNo) => {
   cy.log('SCENARIO NO   ' + (ScenarioNo + 1));
   if (ScenarioNo == 0) {
     cy.clickButtonInPopup(moClientConstants.ClientEditorSelector, "Current Plans");
+    cy.wait(1500);
     cy.clickButtonInPopup(moConstants.CurrentPlanListSelector, "Scenarios");
+    cy.wait(1500);
   }
 
   cy.get('.scenarios-grid tr').eq(ScenarioNo).then(function ($td) { //will need the above commented out code to deal with more than one scenario

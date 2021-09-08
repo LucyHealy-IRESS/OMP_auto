@@ -16,7 +16,8 @@ Cypress.Commands.add("Modeller_CurrentPlan_Create_1", (EntityData, CurrentPlanNo
     }
 
     cy.get(moConstants.CurrentPlanEditorSelector, { timeout: constants.Timeout_GetQuoteResults }).then(function () {
-        cy.PopulateEditor(moConstants.CurrentPlanEditorSelector, moConstants.AllCurrentPlanInputs, EntityData, "Modeller Current Plan Editor");
+      cy.PopulateEditor(moConstants.CurrentPlanEditorSelector, moConstants.AllCurrentPlanInputs, EntityData, "Modeller Current Plan Editor");
+      cy.wait(1000);
     })
 });
 
