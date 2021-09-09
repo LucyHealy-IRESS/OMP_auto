@@ -212,6 +212,16 @@ export const
       API_ActionRequired_Assert: false,
       API_ActionRequired_Delete: false
     },
+    Modeller_Scenarios: {
+        API_ActionRequired_Create: false,
+        API_ActionRequired_Assert: false,
+        API_ActionRequired_Delete: false
+    },
+    Modeller_Scenario: {
+        API_ActionRequired_Create: false,
+        API_ActionRequired_Assert: false,
+        API_ActionRequired_Delete: false
+    },
     Modeller_NewInvestments: {
       API_ActionRequired_Create: false,
       API_ActionRequired_Assert: false,

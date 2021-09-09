@@ -1,52 +1,38 @@
 import * as InputTypes from "./Core.js";
-export const
+export const ModellerScenarioListSelector = "#OverviewRetirementOptionScenariosListPopUp",
 
-ModellerScenarioEditorSelector = '#ModellerScenarioEditorPopup',
+ModellerScenarioEditorSelector = '#QuickEditQuoteTypePopup',
 
 ScenarioQuickEditor = {
     Quick_Scenario: {
         Selector: ".ScenarioPicker input",
         inputType: InputTypes.Input_Dropdown_ReadOnly,
-        AccordianSelector: "#ScenarioQuickEditor", 
-        AccordianName: "ScenarioQuickEditor",  
         },
     Quick_RetirementAge: {
         Selector: ".Quick_RetirementAge_tooltip input",
-        inputType: InputTypes.Input_Integer,
-        AccordianSelector: "#ScenarioQuickEditor", 
-        AccordianName: "ScenarioQuickEditor",  
+        inputType: InputTypes.Input_Integer, 
         },
     Quick_Amount: {
         Selector: ".Quick_Amount_tooltip input",
         inputType: InputTypes.Input_Integer,
-        AccordianSelector: "#ScenarioQuickEditor", 
-        AccordianName: "ScenarioQuickEditor",  
         },  
     Quick_AddAdditionalIncome: {
-        Selector: ".IncludeAdditionalIncomeNeeds",
-        inputType: InputTypes.Input_Checkbox,
-        AccordianSelector: "#ScenarioQuickEditor", 
-        AccordianName: "ScenarioQuickEditor",  
+        Selector: ".IncludeAdditionalIncomeNeeds input",
+        inputType: InputTypes.Input_Checkbox, 
         },  
     Quick_IncludeMarketCondition: {
-        Selector: ".IncludeMarketCondition",
-        inputType: InputTypes.Input_Checkbox,
-        AccordianSelector: "#ScenarioQuickEditor", 
-        AccordianName: "ScenarioQuickEditor",  
+        Selector: ".IncludeMarketCondition input",
+        inputType: InputTypes.Input_Checkbox, 
         }, 
     Quick_MarketCondition: {
         Selector: ".market-condition-combo input",
         inputType: InputTypes.Input_Dropdown,
-        AccordianSelector: "#ScenarioQuickEditor", 
-        AccordianName: "ScenarioQuickEditor",  
         }, 
     UseTaxAllowances: {
-        Selector: ".UseTaxAllowances",
-        inputType: InputTypes.Input_Checkbox,
-        AccordianSelector: "#ScenarioQuickEditor", 
-        AccordianName: "ScenarioQuickEditor",     
+        Selector: ".UseTaxAllowances input",
+        inputType: InputTypes.Input_Checkbox,   
         }, 
-    }       
+    },       
 
 AssumptionsUsed = {
     Quick_GrowthRate: {
@@ -121,9 +107,9 @@ AssumptionsUsed = {
         AccordianSelector: "#AssumptionsUsed", 
         AccordianName: "Assumptions Used",     
         },                                
-    }
+    },
 
-    AllModellerScenarioInputs = {
-        ...ScenarioQuickEditor,
-        ...AssumptionsUsed,
-    }
+AllModellerScenarioInputs = {
+    ...ScenarioQuickEditor,
+    ...AssumptionsUsed
+};
