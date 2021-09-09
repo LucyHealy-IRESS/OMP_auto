@@ -1,13 +1,9 @@
 import * as Constants from "../../constants/Core.js";
 
-Cypress.Commands.add("Client_Delete_1", (EntityData) => {
-
-  cy.get("#ExistingClientsIconMenu", { timeout: Constants.Timeout_MenuButtonWait }).click();
-
+Cypress.Commands.add("Partner_Delete_1", (EntityData) => {
   var SearchCompleteCallback = function () {
     cy.wait(1000); //1 second ui catchup to prevent any detatching from async refreshes
-    var ClientFirstname = EntityData["Firstname"];
-    cy.get('#StoryCarousel4 .TypeCompositePanel .tableContainer', { timeout: Constants.Timeout_Medium }).find('tr', { timeout: Constants.Timeout_Medium }).contains(ClientFirstname).first().dblclick();
+    cy.get('#StoryCarousel4 .TypeCompositePanel .tableContainer', { timeout: Constants.Timeout_Medium }).find('tr', { timeout: Constants.Timeout_Medium }).first().dblclick();
     cy.wait(1000);
     cy.menuClick('Client Summary', '#EditClientIconMenu');
     cy.get("#EditClientPopup .client_info_table", {  //ensure client editor is there and client info section has loaded
@@ -24,7 +20,6 @@ Cypress.Commands.add("Client_Delete_1", (EntityData) => {
   var SearchOptions = {
     SearchParam: "Surname",
     ThumbnailName: "Client Search",
-   // MenuSelector: ".JSSORPopUpMenu.DashboardNo_9D8375A5-D2F6-4073-B19D-1F128A6CAED3 .JSSORPopUpMenu_Open",
     SearchCompleteCallbackFunc: SearchCompleteCallback
   }
 
@@ -32,14 +27,14 @@ Cypress.Commands.add("Client_Delete_1", (EntityData) => {
 
 });
 
-Cypress.Commands.add("Client_Delete_2", (EntityData) => {
-  cy.Client_Delete_1(EntityData);
+Cypress.Commands.add("Partner_Delete_2", (EntityData) => {
+  cy.Partner_Delete_1(EntityData);
 });
 
-Cypress.Commands.add("Client_Delete_3", (EntityData) => { });
+Cypress.Commands.add("Partner_Delete_3", (EntityData) => { });
 
 
-Cypress.Commands.add("Client_Delete_API", (Client) => {
+Cypress.Commands.add("Partner_Delete_API", (Client) => {
 
   var xml_Payload = `<Client xmlns="http://api.omsystems.co.uk">
       <ClientID>[CLIENT_ID]</ClientID>

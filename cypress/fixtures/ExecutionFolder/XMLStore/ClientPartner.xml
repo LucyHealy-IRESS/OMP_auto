@@ -1,0 +1,16 @@
+<Root>
+  <Clients>
+    <Client>
+      <ClientID>ClientPartner01</ClientID>
+      <Title>Mrs</Title>
+      <Firstname>Lola</Firstname>
+      <Surname>Pearce</Surname>
+      <DateOfBirth>1969-11-09T00:00:00</DateOfBirth>     
+      <Partner>
+        <Title>Mr</Title>
+        <Firstname>Benny</Firstname>
+        <Surname>Pearce</Surname>
+      </Partner>
+    </Client>
+  </Clients>
+</Root>
