@@ -1,0 +1,38 @@
+<Root>
+	<Clients>
+		<Client>
+			<ClientID>Client01</ClientID>
+			<Title>Mrs</Title>
+			<Firstname>Invest</Firstname>
+			<Surname>cypressquote</Surname>
+			<DateOfBirth>1979-01-11T00:00:00</DateOfBirth>
+			<InvestQuotes>
+				<InvestQuote>
+					<Invest_Options>
+						<Invest_Option>
+							<Invest_Editor>Specifc Premium Pension</Invest_Editor>
+							<ProjectValue>To Retirement Age</ProjectValue>
+							<RetirementAge>67</RetirementAge>
+							<SinglePremium>100000.00</SinglePremium>
+							<RegularPremium>0.00</RegularPremium>
+						</Invest_Option>
+					</Invest_Options>
+					<Invest_ClientDetails>
+						<Reference>INVQ001</Reference>
+					</Invest_ClientDetails>
+					<Invest_NewInvestments>
+						<NewInvestmentType>2</NewInvestmentType>
+						<UsingRule>1</UsingRule>
+						<Invest_NewInvestments_ABI_Sectors>
+							<Name>Other Sectors</Name>
+							<Invest_NewInvestments_ABI_SubSectors>
+								<Name>Global Property</Name>>
+								<Amount>100</Amount>
+							</Invest_NewInvestments_ABI_SubSectors>
+						</Invest_NewInvestments_ABI_Sectors>
+					</Invest_NewInvestments>
+				</InvestQuote>
+			</InvestQuotes>
+		</Client>
+	</Clients>
+</Root>
