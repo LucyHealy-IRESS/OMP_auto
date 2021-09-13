@@ -1,0 +1,17 @@
+<Root>
+	<Clients>
+		<Client>
+			<ClientID>ClientPartner01</ClientID>
+			<Title>Mrs</Title>
+			<Firstname>Susanna</Firstname>
+			<Surname>Harrington</Surname>
+			<DateOfBirth>1970-11-09T00:00:00</DateOfBirth>
+			<Partner>
+				<Title>Mr</Title>
+				<Firstname>James</Firstname>
+				<Surname>Harrington</Surname>
+				<DateOfBirth>1970-11-09T00:00:00</DateOfBirth>
+			</Partner>
+		</Client>
+	</Clients>
+</Root>
